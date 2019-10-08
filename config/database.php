@@ -3,7 +3,7 @@
 $host = "162.241.217.198";
 $db_name = "megawor3_EBsystem";
 $username = "megawor3_appsys";
-$password = "Dr8amb15!";
+$password = "everbright1688";
   
 try {
     $con = new PDO("mysql:host={$host};dbname={$db_name}", $username, $password);
