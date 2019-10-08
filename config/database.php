@@ -1,6 +1,6 @@
 <?php
 // used to connect to the database
-$host = "162.241.217.198";
+$host = "localhost";
 $db_name = "megawor3_EBsystem";
 $username = "megawor3_appsys";
 $password = "Dr8amb15!";
