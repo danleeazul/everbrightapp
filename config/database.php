@@ -2,7 +2,7 @@
 // used to connect to the database
 $host = "localhost";
 $db_name = "megawor3_EBsystem";
-$username = "megawor3";
+$username = "megawor3_appsys";
 $password = "Dr8amb15!";
   
 try {
