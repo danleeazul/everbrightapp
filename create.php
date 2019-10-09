@@ -24,7 +24,7 @@ function GetSelectedValue(){
     var x = document.getElementById("city")
     var resultx = x.options[x.selectedIndex].value;
 
-    ar final = result + resultx  
+    var final = result + resultx  
 
     document.getElementById("result").innerHTML = final;
 }
