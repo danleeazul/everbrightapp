@@ -20,20 +20,6 @@
 }())
 
 
-function GetSelectedValue(){
-  var e = document.getElementById("unittype");
-  var result = e.options[e.selectedIndex].value;
-  
-  var x = document.getElementById("city")
-  var resultx = x.options[x.selectedIndex].value;
-
-  var final = result + resultx  
-
-  document.getElementById("result").innerHTML = final;
-}
-
-var unitchange = document.getElementById("unittype");
-unitchange.addEventListener("change", GetSelectedValue, false);
 
 window.onload = function() {
 
