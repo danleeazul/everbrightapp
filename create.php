@@ -303,7 +303,7 @@
                       <option value="SR">Sale/Rent</option>
                       <option value="PSR">PS-Resale</option>
                     </select>
-                    <p id="result"></p>     
+                    <p id="result">as</p>            
                       <div class="invalid-feedback">
                         Valid unit type is required.
                       </div>
