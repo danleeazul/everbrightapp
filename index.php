@@ -97,7 +97,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     </div> <!-- end .container -->
      
     <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">&copy; Everbright Web App v0.6</p>
+        <p class="mb-1">&copy; Everbright Web App v0.8/p>
        
       </footer>
  <!-- Optional JavaScript -->
