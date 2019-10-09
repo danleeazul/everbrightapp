@@ -7,10 +7,15 @@ $password = "everbright1688";
   
 try {
     $con = new PDO("mysql:host={$host};dbname={$db_name}", $username, $password);
+    echo 'alert(CONNECTION SUCCESSFUL)';  
+
 }
   
 // show error
 catch(PDOException $exception){
     echo "Connection error: " . $exception->getMessage();
+    echo 'alert(CONNECTION ERROR)';  
 }
 ?>
+
+alert.show
