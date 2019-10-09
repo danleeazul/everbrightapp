@@ -39,7 +39,6 @@ function GetSelectedValue(){
 
 
 window.onload = function() {
-  addEventListener('change', this.GetSelectedValue);
 
 }
 
