@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="form-validation.css">
 
+
+
+
 </head>
 <body>
   
@@ -132,7 +135,7 @@
     </table>
 </form>
 
-
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 <div class="py-5 text-center">
         <img class="d-block mx-auto mb-4" src="" alt="" width="72" height="72">
         <h2>Listings Form</h2>
@@ -153,34 +156,34 @@
                 <label for="lastName">City</label>
                 <select class="custom-select d-block w-100" id="city" required>
                   <option value="">Select...</option>
-                  <option>Antipolo</option>
-                  <option>Bacoor</option>
-                  <option>Biñan</option>
-                  <option>Cabuyao</option>
-                  <option>Calamba</option>
-                  <option>Canlubang</option>
-                  <option>Dasmariñas</option>
-                  <option>General Trias</option>
-                  <option>Las Piñas</option>
-                  <option>Lian</option>
-                  <option>Lipa</option>
-                  <option>Makati</option>
-                  <option>Mandaluyong</option>
-                  <option>Manila</option>
-                  <option>Marikina</option>
-                  <option>Meycauayan</option>
-                  <option>Morong</option>
-                  <option>Muntinlupa</option>
-                  <option>Nasugbu</option>
-                  <option>Parañaque</option>
-                  <option>Pasay</option>
-                  <option>Pasig</option>
-                  <option>Quezon Ciy</option>
-                  <option>San Juan</option>
-                  <option>Silang</option>
-                  <option>Tagaytay</option>
-                  <option>Taguig</option>
-                  <option>Talisay</option>
+                  <option value="1">Antipolo</option>
+                  <option value="1">Bacoor</option>
+                  <option value="1">Biñan</option>
+                  <option value="1">Cabuyao</option>
+                  <option value="1">Calamba</option>
+                  <option value="1">Canlubang</option>
+                  <option value="1">Dasmariñas</option>
+                  <option value="1">General Trias</option>
+                  <option value="1">Las Piñas</option>
+                  <option value="1">Lian</option>
+                  <option value="1">Lipa</option>
+                  <option value="1">Makati</option>
+                  <option value="1">Mandaluyong</option>
+                  <option value="1">Manila</option>
+                  <option value="1">Marikina</option>
+                  <option value="1">Meycauayan</option>
+                  <option value="1">Morong</option>
+                  <option value="1">Muntinlupa</option>
+                  <option value="1">Nasugbu</option>
+                  <option value="1">Parañaque</option>
+                  <option value="1">Pasay</option>
+                  <option value="1">Pasig</option>
+                  <option value="1">Quezon Ciy</option>
+                  <option value="1">San Juan</option>
+                  <option value="1">Silang</option>
+                  <option value="1">Tagaytay</option>
+                  <option value="2">Taguig</option>
+                  <option value="1">Talisay</option>
                 </select>                
                 <div class="invalid-feedback">
                   Valid City is required.
@@ -300,16 +303,16 @@
               </div>
             </div>
 
-
+            <p id="result"></p>
             <div class="row">
                 <div class="col-md-4 mb-3">
                     <label for="lastName">Type</label>
-                    <select class="custom-select d-block w-100" id="unittype" required>
+                    <select class="custom-select d-block w-100" id="unittype" onchange="GetSelectedValue()" required>
                       <option value="">Select...</option>
-                      <option>Sale</option>
-                      <option>Rent</option>
-                      <option>Sale/Rent</option>
-                      <option>PS-Resale</option>
+                      <option value="S">Sale</option>
+                      <option value="R">Rent</option>
+                      <option value="SR">Sale/Rent</option>
+                      <option value="PSR">PS-Resale</option>
                     </select>                
                       <div class="invalid-feedback">
                         Valid unit type is required.
@@ -481,14 +484,14 @@
 
       </div>
 
-
+    
 
          
             <hr class="mb-4">
             <div class="text-right">
               <button type="button" class="btn btn-outline-secondary">Cancel</button>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" href='index.php' class="btn btn-primary">Submit</button>
             
             </div>
             
@@ -502,7 +505,7 @@
       </footer>
           
     </div> <!-- end .container -->
-
+        </form>
     
  <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
