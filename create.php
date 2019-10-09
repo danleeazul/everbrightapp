@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="form-validation.css">
 
+    <script src="form-validation.js"></script>
 
 
 
@@ -297,19 +298,7 @@
                 <div class="col-md-4 mb-3">
                     <label for="lastName">Type</label>
                     <select class="custom-select d-block w-100" id="unittype" onchange="GetSelectedValue()" required>    
-                    <script>
-                        function GetSelectedValue(){
-                        var e = document.getElementById("unittype");
-                        var result = e.options[e.selectedIndex].value;
-                        
-                        var x = document.getElementById("city")
-                        var resultx = x.options[x.selectedIndex].value;
-
-                        var final = result + resultx  
-
-                        document.getElementById("result").innerHTML = final;
-                        }
-                    </script>                
+                           
                       <option value="">Select...</option>
                       <option value="S">Sale</option>
                       <option value="R">Rent</option>
