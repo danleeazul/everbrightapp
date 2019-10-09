@@ -32,6 +32,8 @@ function GetSelectedValue(){
   document.getElementById("result").innerHTML = final;
 }
 
+var unitchange = document.getElementById("unittype");
+unitchange.addEventListener("change", GetSelectedValue, false);
 
 window.onload = function() {
 
