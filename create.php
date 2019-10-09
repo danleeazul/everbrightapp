@@ -296,14 +296,14 @@
             <div class="row">
                 <div class="col-md-4 mb-3">
                     <label for="lastName">Type</label>
-                    <select class="custom-select d-block w-100" id="unittype" onchange="GetSelectedValue()" required>
+                    <select class="custom-select d-block w-100" id="unittype" onchange="GetSelectedValue()" required>                    
                       <option value="">Select...</option>
                       <option value="S">Sale</option>
                       <option value="R">Rent</option>
                       <option value="SR">Sale/Rent</option>
                       <option value="PSR">PS-Resale</option>
                     </select>
-                    <p id="result">as</p>            
+                    <p id="result"></p>     
                       <div class="invalid-feedback">
                         Valid unit type is required.
                       </div>

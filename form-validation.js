@@ -28,9 +28,14 @@ function GetSelectedValue(){
 
   var final = result + resultx  
 
-  document.getElementById("result").innerHTML = result;
+  document.getElementById("result").innerHTML = final;
 }
 
+
+window.onload = function() {
+  addEventListener('change', this.GetSelectedValue);
+
+}
 
 
 
