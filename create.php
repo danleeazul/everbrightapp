@@ -156,34 +156,23 @@
                 <label for="lastName">City</label>
                 <select class="custom-select d-block w-100" id="city" required>
                   <option value="">Select...</option>
-                  <option value="1">Antipolo</option>
-                  <option value="1">Bacoor</option>
-                  <option value="1">Biñan</option>
-                  <option value="1">Cabuyao</option>
-                  <option value="1">Calamba</option>
-                  <option value="1">Canlubang</option>
-                  <option value="1">Dasmariñas</option>
-                  <option value="1">General Trias</option>
-                  <option value="1">Las Piñas</option>
-                  <option value="1">Lian</option>
-                  <option value="1">Lipa</option>
+                  <option value="17">Antipolo</option>
+                  <option value="6">Bataan</option>
+                  <option value="15">Batangas</option>
+                  <option value="16">Bulacan</option>
+                  <option value="13">Cavite</option>
+                  <option value="7">Laguna</option>
                   <option value="1">Makati</option>
-                  <option value="1">Mandaluyong</option>
-                  <option value="1">Manila</option>
-                  <option value="1">Marikina</option>
-                  <option value="1">Meycauayan</option>
-                  <option value="1">Morong</option>
-                  <option value="1">Muntinlupa</option>
-                  <option value="1">Nasugbu</option>
-                  <option value="1">Parañaque</option>
-                  <option value="1">Pasay</option>
-                  <option value="1">Pasig</option>
-                  <option value="1">Quezon Ciy</option>
-                  <option value="1">San Juan</option>
-                  <option value="1">Silang</option>
-                  <option value="1">Tagaytay</option>
+                  <option value="4">Mandaluyong</option>
+                  <option value="18">Marikina</option>
+                  <option value="8">Muntinlupa</option>
+                  <option value="13">Parañaque</option>
+                  <option value="11">Pasay</option>
+                  <option value="13">Quezon City</option>
+                  <option value="5">San Juan</option>
                   <option value="2">Taguig</option>
-                  <option value="1">Talisay</option>
+                  <option value="19">Zambales</option>
+
                 </select>                
                 <div class="invalid-feedback">
                   Valid City is required.
@@ -303,7 +292,7 @@
               </div>
             </div>
 
-            <p id="result"></p>
+            
             <div class="row">
                 <div class="col-md-4 mb-3">
                     <label for="lastName">Type</label>
@@ -313,7 +302,8 @@
                       <option value="R">Rent</option>
                       <option value="SR">Sale/Rent</option>
                       <option value="PSR">PS-Resale</option>
-                    </select>                
+                    </select>
+                    <p id="result"></p>     
                       <div class="invalid-feedback">
                         Valid unit type is required.
                       </div>
