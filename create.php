@@ -118,15 +118,15 @@
     <table class='table table-hover table-responsive table-bordered'>
         <tr>
             <td>Name</td>
-            <td><input type='text' name='name' class='form-control' /></td>
+            <td><input type='text' name='city' class='form-control' /></td>
         </tr>
         <tr>
             <td>Description</td>
-            <td><textarea name='description' class='form-control'></textarea></td>
+            <td><textarea name='building' class='form-control'></textarea></td>
         </tr>
         <tr>
             <td>Price</td>
-            <td><input type='text' name='price' class='form-control' /></td>
+            <td><input type='text' name='neighborhood' class='form-control' /></td>
         </tr>
         <tr>
             <td></td>
@@ -493,7 +493,7 @@
 
     
       <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">&copy; Everbright Web App v0.0</p>
+        <p class="mb-1">&copy; Everbright Web App v0.6</p>
        
       </footer>
           
