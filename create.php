@@ -492,14 +492,16 @@
         </div>
 
     
-      <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">&copy; Everbright Web App v0.6</p>
-       
-      </footer>
+      
           
     </div> <!-- end .container -->
         </form>
     
+
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; Everbright Web App v0.6</p>
+       
+      </footer>
  <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="form-validation.js"></script>
