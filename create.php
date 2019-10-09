@@ -297,7 +297,7 @@
             <div class="row">
                 <div class="col-md-4 mb-3">
                     <label for="lastName">Type</label>
-                    <select class="custom-select d-block w-100" id="unittype" onchange="GetSelectedValue()" required>    
+                    <select class="custom-select d-block w-100" id="unittype" HTMLSelected.onchange="GetSelectedValue()" required>    
                            
                       <option value="">Select...</option>
                       <option value="S">Sale</option>
