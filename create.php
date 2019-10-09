@@ -1,66 +1,111 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>PDO - Create a Record - PHP CRUD Tutorial</title>
+    <title>Everbright App</title>
       
-    <!-- Latest compiled and minified Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-          
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="form-validation.css">
+
 </head>
 <body>
   
     <!-- container -->
     <div class="container">
    
-        <div class="page-header">
-            <h1>Create Product</h1>
-        </div>
+        
       
     <!-- html form to create product will be here -->
     <!-- PHP insert code will be here -->
     <?php
-if($_POST){
+        if($_POST){
  
-    // include database connection
-    include 'config/database.php';
+            // include database connection
+            include 'config/database.php';
  
-    try{
-     
-        // insert query
-        $query = "INSERT INTO products SET name=:name, description=:description, price=:price, created=:created";
- 
-        // prepare query for execution
-        $stmt = $con->prepare($query);
- 
-        // posted values
-        $name=htmlspecialchars(strip_tags($_POST['name']));
-        $description=htmlspecialchars(strip_tags($_POST['description']));
-        $price=htmlspecialchars(strip_tags($_POST['price']));
- 
-        // bind the parameters
-        $stmt->bindParam(':name', $name);
-        $stmt->bindParam(':description', $description);
-        $stmt->bindParam(':price', $price);
-         
-        // specify when this record was inserted to the database
-        $created=date('Y-m-d H:i:s');
-        $stmt->bindParam(':created', $created);
-         
-        // Execute the query
-        if($stmt->execute()){
-            echo "<div class='alert alert-success'>Record was saved.</div>";
-        }else{
-            echo "<div class='alert alert-danger'>Unable to save record.</div>";
-        }
-         
-    }
-     
-    // show error
-    catch(PDOException $exception){
-        die('ERROR: ' . $exception->getMessage());
-    }
-}
-?>
+                try{
+                
+                    // insert query
+                    $query = "INSERT INTO tbl_listings SET code=:code, type=:type, direct=:direct, property_type=:property_type,
+                    city=:city, neigborhood=:neigborhood, building=:building, unit_no=:unit_no, unit_type=:unit_type, size=:size,
+                    selling_price=:selling_price, rent_price=:rent_price, parking=:parking, inclusions=:inclusions, terms=:terms,
+                    availability=:availability, notes=:notes, owner=:owner, contact=:contact, broker=:broker, listed_by=:listed_by,
+                    source=:source, encoded_by=:encoded_by, created=:created, modified=:modified";
+            
+                    // prepare query for execution
+                    $stmt = $con->prepare($query);
+            
+                    // posted values
+                    $code=htmlspecialchars(strip_tags($_POST['code']));
+                    $type=htmlspecialchars(strip_tags($_POST['type']));
+                    $direct=htmlspecialchars(strip_tags($_POST['direct']));
+                    $property_type=htmlspecialchars(strip_tags($_POST['property_type']));
+                    $city=htmlspecialchars(strip_tags($_POST['city']));
+                    $neigborhood=htmlspecialchars(strip_tags($_POST['neigborhood']));
+                    $building=htmlspecialchars(strip_tags($_POST['building']));
+                    $unit_no=htmlspecialchars(strip_tags($_POST['unit_no']));
+                    $unit_type=htmlspecialchars(strip_tags($_POST['unit_type']));
+                    $size=htmlspecialchars(strip_tags($_POST['size']));
+                    $selling_price=htmlspecialchars(strip_tags($_POST['selling_price']));
+                    $rent_price=htmlspecialchars(strip_tags($_POST['rent_price']));
+                    $inclusions=htmlspecialchars(strip_tags($_POST['inclusions']));
+                    $terms=htmlspecialchars(strip_tags($_POST['terms']));
+                    $availability=htmlspecialchars(strip_tags($_POST['availability']));
+                    $notes=htmlspecialchars(strip_tags($_POST['notes']));
+                    $owner=htmlspecialchars(strip_tags($_POST['owner']));
+                    $contact=htmlspecialchars(strip_tags($_POST['contact']));
+                    $broker=htmlspecialchars(strip_tags($_POST['broker']));
+                    $listed_by=htmlspecialchars(strip_tags($_POST['listed_by']));
+                    $source=htmlspecialchars(strip_tags($_POST['source']));
+                    $encoded_by=htmlspecialchars(strip_tags($_POST['encoded_by']));
+            
+                    // bind the parameters
+                    $stmt->bindParam(':code', $code);
+                    $stmt->bindParam(':type', $type);
+                    $stmt->bindParam(':direct', $direct);
+                    $stmt->bindParam(':property_type', $property_type);
+                    $stmt->bindParam(':city', $city);
+                    $stmt->bindParam(':neigborhood', $neigborhood);
+                    $stmt->bindParam(':building', $building);
+                    $stmt->bindParam(':unit_no', $unit_no);
+                    $stmt->bindParam(':unit_type', $unit_type);
+                    $stmt->bindParam(':size', $size);
+                    $stmt->bindParam(':selling_price', $selling_price);
+                    $stmt->bindParam(':rent_price', $rent_price);
+                    $stmt->bindParam(':parking', $parking);
+                    $stmt->bindParam(':inclusions', $description);
+                    $stmt->bindParam(':terms', $terms);
+                    $stmt->bindParam(':availability', $availability);
+                    $stmt->bindParam(':notes', $notes);
+                    $stmt->bindParam(':owner', $owner);
+                    $stmt->bindParam(':contact', $contact);
+                    $stmt->bindParam(':broker', $broker);
+                    $stmt->bindParam(':listed_by', $listed_by);
+                    $stmt->bindParam(':source', $source);
+                    $stmt->bindParam(':encoded_by', $encoded_by);
+                    // specify when this record was inserted to the database
+                    $created=date('Y-m-d H:i:s');
+                    $stmt->bindParam(':created', $created);
+                    
+                    // Execute the query
+                    if($stmt->execute()){
+                        echo "<div class='alert alert-success'>Record was saved.</div>";
+                    }else{
+                        echo "<div class='alert alert-danger'>Unable to save record.</div>";
+                    }
+                    
+                }
+                
+                // show error
+                catch(PDOException $exception){
+                    die('ERROR: ' . $exception->getMessage());
+                }
+            }
+    ?>
  
 <!-- html form here where the product information will be entered -->
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
@@ -86,14 +131,385 @@ if($_POST){
         </tr>
     </table>
 </form>
+
+
+<div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="" alt="" width="72" height="72">
+        <h2>Listings Form</h2>
+      </div>
+    
+        <div class="py-5">
+          <h4 class="mb-3">Location</h4>
+          <form class="needs-validation" novalidate>
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <label for="firstName">Building Name</label>
+                <input type="text" class="form-control" id="buildingname" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid Building name is required.
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="lastName">City</label>
+                <select class="custom-select d-block w-100" id="city" required>
+                  <option value="">Select...</option>
+                  <option>Antipolo</option>
+                  <option>Bacoor</option>
+                  <option>Biñan</option>
+                  <option>Cabuyao</option>
+                  <option>Calamba</option>
+                  <option>Canlubang</option>
+                  <option>Dasmariñas</option>
+                  <option>General Trias</option>
+                  <option>Las Piñas</option>
+                  <option>Lian</option>
+                  <option>Lipa</option>
+                  <option>Makati</option>
+                  <option>Mandaluyong</option>
+                  <option>Manila</option>
+                  <option>Marikina</option>
+                  <option>Meycauayan</option>
+                  <option>Morong</option>
+                  <option>Muntinlupa</option>
+                  <option>Nasugbu</option>
+                  <option>Parañaque</option>
+                  <option>Pasay</option>
+                  <option>Pasig</option>
+                  <option>Quezon Ciy</option>
+                  <option>San Juan</option>
+                  <option>Silang</option>
+                  <option>Tagaytay</option>
+                  <option>Taguig</option>
+                  <option>Talisay</option>
+                </select>                
+                <div class="invalid-feedback">
+                  Valid City is required.
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="zip">Neighborhood</label>
+                <select class="custom-select d-block w-100" id="neighborhood" required>
+                  <option value="">Select...</option>
+                  <option>Addition Hills</option>
+                  <option>Alabang</option>
+                  <option>Alabang West</option>
+                  <option>Anvaya Cove</option>
+                  <option>Ayala Center</option>
+                  <option>Ayala Westgrove Heights</option>
+                  <option>Bacao</option>
+                  <option>Bagong Ilog</option>
+                  <option>Balintawak</option>
+                  <option>Bambang</option>
+                  <option>Batasan Hills</option>
+                  <option>Bayshore City</option>
+                  <option>Bel-Air Village</option>
+                  <option>BGC</option>
+                  <option>Capitol Commons</option>
+                  <option>Century City</option>
+                  <option>Corazon De Jesus</option>
+                  <option>Coronado St.</option>
+                  <option>Cubao</option>
+                  <option>Dasmariñas</option>
+                  <option>Dasmariñas Techno Park</option>
+                  <option>Diliman</option>
+                  <option>Don Bosco</option>
+                  <option>Don Galo</option>
+                  <option>Eastwood</option>
+                  <option>Ermita</option>
+                  <option>Ermitaño</option>
+                  <option>Forbes Park</option>
+                  <option>Fortune</option>
+                  <option>Greenhills</option>
+                  <option>Hulo</option>
+                  <option>Iruhin East</option>
+                  <option>Kapitolyo</option>
+                  <option>Kaunlaran</option>
+                  <option>Legazpi Village</option>
+                  <option>Little Baguio</option>
+                  <option>Loyola</option>
+                  <option>Eastwood</option>
+                  <option>Eastwood</option>
+                  <option>Eastwood</option>
+                  <option>Eastwood</option>
+                  <option>Eastwood</option>
+                  <option>Eastwood</option>
+                  <option>Eastwood</option>
+                  <option>Eastwood</option>
+                  <option>Eastwood</option>
+                  <option>Eastwood</option>
+                  <option>Eastwood</option>
+                  <option>Eastwood</option>
+                  <option>Eastwood</option>
+                  <option>Eastwood</option>
+                  <option>Eastwood</option>
+                  <option>Eastwood</option>
+                  <option>Eastwood</option>
+                  <option>Eastwood</option>
+                  <option>Eastwood</option>
+                  <option>Eastwood</option>
+                  <option>Eastwood</option>
+                  <option>Eastwood</option>
+                  <option>Eastwood</option>
+                  <option>Eastwood</option>
+                  <option>Eastwood</option>
+                  <option>Eastwood</option>
+
+                </select>    
+                <div class="invalid-feedback">
+                  Valid neighborhood required.
+                </div>
+              </div>
+            </div>
+
+           
+    
+
+            <!--UNIT DETAILS-->
+            <hr class="mb-4">
+            <h4 class="mb-3">Unit Details</h4>
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                  <label for="firstName">Unit No<span class="text-muted"> (Street/Block/Lot)</span></label>
+                  <input type="text" class="form-control" id="unitno" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                        Valid unit number is required.
+                    </div>
+                
+              </div>
+
+              <div class="col-md-4 mb-3">
+                  <label for="firstName">Size<span class="text-muted"> (sqm)</span></label>
+                  <input type="number" class="form-control" id="size" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                        Valid size is required.
+                    </div>
+              </div>
+
+              <div class="col-md-4 mb-3">
+                  <label for="zip">Direct</label>
+                  <div class="row" style="margin: 5px">
+                      <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" required>
+                          <label class="form-check-label" for="inlineRadio1">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" required>
+                          <label class="form-check-label" for="inlineRadio2">No</label>
+                        </div>
+                  </div>                
+              </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label for="lastName">Type</label>
+                    <select class="custom-select d-block w-100" id="unittype" required>
+                      <option value="">Select...</option>
+                      <option>Sale</option>
+                      <option>Rent</option>
+                      <option>Sale/Rent</option>
+                      <option>PS-Resale</option>
+                    </select>                
+                      <div class="invalid-feedback">
+                        Valid unit type is required.
+                      </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="lastName">Property Type</label>
+                    <select class="custom-select d-block w-100" id="propertytype" required>
+                      <option value="">Select...</option>
+                      <option>Commercial Lot</option>
+                      <option>Commercial Property</option>
+                      <option>Condominium/Apartments</option>
+                      <option>House & Lot</option>
+                      <option>Industrial Property</option>
+                      <option>Office</option>
+                      <option>Residential Lot</option>
+                      <option>Townhouse</option>
+                    </select>                
+                    <div class="invalid-feedback">
+                      Valid property type is required.
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label for="lastName">Parking</label>
+                    <select class="custom-select d-block w-100" id="parking">
+                      <option value="">Select...</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                      <option>9</option>
+                      <option>10</option>
+                    </select>                
+                      <div class="invalid-feedback">
+                       Valid parking number is required.
+                      </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                      <label for="firstName">Inclusion<span class="text-muted"> (sqm)</span></label>
+                      <select class="custom-select d-block w-100" id="inclusion" required>
+                          <option value="">Select...</option>
+                          <option>As is</option>
+                          <option>Bare</option>
+                          <option>Brand New</option>
+                          <option>Fully Furnished</option>
+                          <option>Fully Finished</option>
+                          <option>Interiored</option>
+                          <option>Semi Furnished</option>
+                          <option>Unfurnished</option>
+                          <option>Warm Shell</option>
+                      </select>         
+                          <div class="invalid-feedback">
+                              Valid inclusion is required.
+                          </div>            
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="firstName">Terms</label>
+                    <input type="text" class="form-control" id="terms" placeholder="" value="">  
+                        <div class="invalid-feedback">
+                            Valid terms is required.
+                        </div>            
+              </div>
+
+              <div class="col-md-4 mb-3">
+                  <label for="firstName">Availability</label>
+                  <select class="custom-select d-block w-100" id="availability" required>
+                      <option value="">Select...</option>
+                      <option>Available</option>
+                      <option>Available for Selling while Tenented</option>
+                      <option>Inactive</option>
+                      <option>Not Available</option>
+                      <option>Sold</option>
+                      <option>Tenanted</option>
+                  </select>         
+                      <div class="invalid-feedback">
+                          Valid availability is required.
+                      </div>            
+            </div>
+
+            <div class="col-md-12 mb-3">
+                <label>Notes<span class="text-muted"> (Optional)</span></label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>     
+            </div>
+
+  
+              </div>
+
+               <!--PRICE-->
+            <hr class="mb-4">
+            <h4 class="mb-3">Price</h4>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="firstName">Rent Price</label>
+                    <input type="text" class="form-control" id="rentprice" placeholder="Php" value="">
+                      <div class="invalid-feedback">
+                          Valid Rental price is required.
+                      </div>              
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="firstName">Selling Price</label>
+                    <input type="text" class="form-control" id="sellingprice" placeholder="Php" value="">
+                      <div class="invalid-feedback">
+                          Valid Selling price is required.
+                      </div>                   
+                </div>
+            </div>
+
+      <!--CONTACT AND SOURCE-->
+      <hr class="mb-4">
+      <div class="row">
+              <div class="col-md-4 mb-3">
+                  <label for="firstName">Owner</label>
+                  <input type="text" class="form-control" id="owner" placeholder="" value="" required>  
+                      <div class="invalid-feedback">
+                          Valid owner name is required.
+                      </div>            
+              </div>
+
+             <div class="col-md-4 mb-3">
+                <label for="firstName">Contact No</label>
+                <input type="text" class="form-control" id="contactno" placeholder="---- --- ---" value="" required>  
+                    <div class="invalid-feedback">
+                        Valid contact number is required.
+                    </div>            
+             </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="firstName">Broker</label>
+              <input type="text" class="form-control" id="broker" placeholder="" value="">   
+                  <div class="invalid-feedback">
+                      Valid Broker is required.
+                  </div>            
+           </div>
+
+           <div class="col-md-4 mb-3">
+              <label for="firstName">Listed By</label>
+              <input type="text" class="form-control" id="listedby" placeholder="" value="" required>  
+                  <div class="invalid-feedback">
+                      Valid listed name is required.
+                  </div>            
+          </div>
+
+         <div class="col-md-4 mb-3">
+            <label for="firstName">Source</label>
+            <input type="text" class="form-control" id="source" placeholder="" value="" required>  
+                <div class="invalid-feedback">
+                    Valid source is required.
+                </div>            
+         </div>
+
+         <div class="col-md-12 mb-3">
+            <label for="exampleFormControlFile1">Photos</label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+
+        <div class="col-md-12 mb-3">
+        <label for="exampleFormControlFile1">Viber</label>
+        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+
+      </div>
+
+
+
+         
+            <hr class="mb-4">
+            <div class="text-right">
+              <button type="button" class="btn btn-outline-secondary">Cancel</button>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+            
+            </div>
+            
+          </form>
+        </div>
+
+    
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; Everbright Web App v0.0</p>
+       
+      </footer>
           
     </div> <!-- end .container -->
-      
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-   
-<!-- Latest compiled and minified Bootstrap JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
+
+    
+ <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="form-validation.js"></script>
+
 </body>
 </html>
