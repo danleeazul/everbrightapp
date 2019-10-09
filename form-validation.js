@@ -19,17 +19,12 @@
   }, false)
 }())
 
-var val=form.year1.options[form.year1.options.selectedIndex].value;
-
 
 function GetSelectedValue(){
-  //var e = document.getElementById("unittype");
-  var e = form.unittype.options[form.unittype.selectedIndex].value
+  var e = document.getElementById("unittype");
   var result = e.options[e.selectedIndex].value;
-
-  //var x = document.getElementById("city")
-  var x = form.city.options[form.city.selectedIndex].value
-
+  
+  var x = document.getElementById("city")
   var resultx = x.options[x.selectedIndex].value;
 
   var final = result + resultx  
