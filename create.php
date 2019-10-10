@@ -482,7 +482,7 @@
          
             <hr class="mb-4">
             <div class="text-right">
-              <a  href='index.php' class="btn btn-outline-secondary">Cancel</button>
+            <button type="button" href='index.php' class="btn btn-outline-secondary">Cancel</button>
             <button type="submit" class="btn btn-primary">Submit</button>
             
             </div>
@@ -498,7 +498,7 @@
     
 
         <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">&copy; Everbright Web App v0.8</p>
+        <p class="mb-1">&copy; Everbright Web App v0.9</p>
        
       </footer>
  <!-- Optional JavaScript -->
