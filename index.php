@@ -44,11 +44,7 @@
         //check if more than 0 record found
         if($num>0){
         
-            echo "<div class='card'>";
-            echo "<div class='card-body'>";
-            echo "<h5 class='card-title'>{$building}</h5>";
-            echo "<p class='card-text'>With supporting text below as a natural lead-in to additional content.</p>";
-            echo "</div>";
+           
 
 
             // data from database will be here
@@ -72,6 +68,12 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     // this will make $row['firstname'] to
     // just $firstname only
     extract($row);
+
+    echo "<div class='card'>";
+    echo "<div class='card-body'>";
+    echo "<h5 class='card-title'>{$building}</h5>";
+    echo "<p class='card-text'>With supporting text below as a natural lead-in to additional content.</p>";
+    echo "</div>";
      
     // creating new table row per record
     echo "<tr>";
