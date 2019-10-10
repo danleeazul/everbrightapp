@@ -71,8 +71,9 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 
     echo "<div class='card'>";
     echo "<div class='card-body'>";
-    echo "<h5 class='card-title'>{$building}</h5>";
-    echo "<p class='card-text'>With supporting text below as a natural lead-in to additional content.</p>";
+    echo "<h5 class='card-title'>{$building} - {$unit_no}</h5>";
+    echo "<h4 class='card-title'>{$type} - {$rent_price} {$selling_price}</h5>";
+    echo "<p class='card-text'>Unit type: {$unit_type}</p>";
     echo "</div>";
      
     // creating new table row per record
