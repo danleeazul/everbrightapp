@@ -7,12 +7,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    
-    <link rel="stylesheet" src="form-validation.css" type="text/css">
+    <link href="https://www.everbright.com.ph/everbrightapp/form-validation.css" rel="stylesheet" type="text/css"/>
 
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="form-validation.js"></script>
+    <link rel="stylesheet" src="form-validation.css" type="text/css">
+
 </head>
 <body>
      
@@ -480,8 +482,7 @@
          
             <hr class="mb-4">
             <div class="text-right">
-              <button type="button" href='index.php' class="btn btn-outline-secondary">Cancel</button>
-
+              <a  href='index.php' class="btn btn-outline-secondary">Cancel</button>
             <button type="submit" class="btn btn-primary">Submit</button>
             
             </div>
@@ -497,7 +498,7 @@
     
 
         <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">&copy; Everbright Web App v0.6</p>
+        <p class="mb-1">&copy; Everbright Web App v0.8</p>
        
       </footer>
  <!-- Optional JavaScript -->
