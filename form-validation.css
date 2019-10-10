@@ -27,3 +27,35 @@
 
 
 
+/* 0size to 767size */
+@media (max-width: 767px) {
+  .aligntext{
+    text-align: left;
+    margin-top: -13px;
+  }
+  .card-title-price{
+    font-size: 16px;
+    margin-top: 0px;
+
+
+  }
+
+  .availabledisplay{
+    display: none;
+  }
+}
+
+/* 769size to 1080size */
+@media (min-width: 768px) {
+  .aligntext{
+    text-align: right;
+  }
+
+  .availabledisplay2{
+    display: none;
+  }
+
+  .card-title-price{
+    margin-top: 20px;
+  }
+}
