@@ -6,7 +6,7 @@
       <!-- Required meta tags -->
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      
+
       <link href="https://www.everbright.com.ph/everbrightapp/form-validation.css" rel="stylesheet" type="text/css"/>
 
       <!-- Bootstrap CSS -->
@@ -84,7 +84,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 
     echo "<div class='row'>";
     echo "<div class='col-md-6 mb-0'>";
-    echo "<p class='card-title cardavailable'>{$available}</p>";
+    echo "<p class='card-title cardavailable'>{$availability}</p>";
     echo "<p class='card-text cardparagraph'>Unit type: {$type} </p>";
     echo "<p class='card-text cardparagraph'>Size: {$size} sqm</p>";
     echo "<p class='card-text cardparagraph'>Inclusions: {$inclusions}</p>";
