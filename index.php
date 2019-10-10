@@ -29,7 +29,9 @@
         // delete message prompt will be here
         
         // select all data
-        $query = "SELECT listing_id, code, type, direct, city, neighborhood, building, unit_no, unit_type, size, selling_price, rent_price, parking, inclusions, terms, availability, notes, owner, contact, broker, listed_by, source, encoded_by FROM tbl_listings ORDER BY listing_id DESC";
+        //$query = "SELECT listing_id, code, type, direct, city, neighborhood, building, unit_no, unit_type, size, selling_price, rent_price, parking, inclusions, terms, availability, notes, owner, contact, broker, listed_by, source, encoded_by FROM tbl_listings ORDER BY listing_id DESC";
+        $query = "SELECT * FROM tbl_listings ORDER BY listing_id DESC";
+
         $stmt = $con->prepare($query);
         $stmt->execute();
         
