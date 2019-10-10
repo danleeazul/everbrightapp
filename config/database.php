@@ -12,8 +12,5 @@ try {
 // show error
 catch(PDOException $exception){
     echo "Connection error: " . $exception->getMessage();
-    echo 'alert(CONNECTION ERROR)';  
 }
 ?>
-
-alert.show
