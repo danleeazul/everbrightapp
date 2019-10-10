@@ -77,20 +77,20 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     echo "</div>";
     
 
-    echo "<div class="col-md-12 mb-3">";
+    echo "<div class='col-md-12 mb3'>";
     echo "<div class='card'>";
     echo "<div class='card-body'>";
-    echo "<div class="row">";
-    echo "<div class="col-md-6 mb-0">";
+    echo "<div class='row'>";
+    echo "<div class='col-md-6 mb-0'>";
     echo "<h5 class='card-title'><small class='text-muted codesize'>S1-1</small><br />One Uptown - 25A </h5>";
     echo "</div><!--col-->";
-    echo "<div class="col-md-6 mb-0 aligntext">";
+    echo "<div class='col-md-6 mb-0 aligntext'>";
     echo "<h5 class='card-title card-title-price'>Rent - Php 80000</h5>";
     echo "</div><!--col-->";
     echo "</div><!--row-->";
 
-    echo "<div class="row">";
-    echo "<div class="col-md-6 mb-0">";
+    echo "<div class='row'>";
+    echo "<div class='col-md-6 mb-0'>";
     echo "<p class='card-title cardavailable'>Available</p>";
     echo "<p class='card-text cardparagraph'>Unit type: 2BR</p>";
     echo "<p class='card-text cardparagraph'>Size: 45.5 sqm</p>";
@@ -99,7 +99,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     echo "<p class='card-text cardparagraph'>Owner: Patty Abila Lim</p>";
     echo "</div> <!--col-->";
 
-    echo "<div class="col-md-6 mb-0">";
+    echo "<div class='col-md-6 mb-0'>";
     echo "<p class='card-text '>Broker: N/A</p>";
     echo "<p class='card-text cardparagraph'>Contact: N/A</p>";
     echo "<p class='card-text cardparagraph'>Listed by: N/A</p>";
@@ -107,7 +107,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     echo "<p class='card-text cardparagraph'>Remarks: Interior Designed</p>";
     echo "</div> <!--col-->";
     echo "</div> <!--row-->";
-    echo "<p class="card-text"><small class="text-muted">Encoded by: Kim | Last updated: 3/8/2018</small></p>";
+    echo "<p class='card-text'><small class='text-muted'>Encoded by: Kim | Last updated: 3/8/2018</small></p>";
             
     echo "</div> <!--card-body-->";
     echo "</div> <!--card-->";
