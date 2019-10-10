@@ -29,7 +29,7 @@
         // delete message prompt will be here
         
         // select all data
-        $query = "SELECT id, type FROM tbl_category ORDER BY id DESC";
+        $query = "SELECT listing_id, code, type, city, neighborhood, building FROM tbl_listings ORDER BY listing_id DESC";
         $stmt = $con->prepare($query);
         $stmt->execute();
         
@@ -66,17 +66,17 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
      
     // creating new table row per record
     echo "<tr>";
-        echo "<td>{$id}</td>";
-        echo "<td>{$type}</td>";
+        echo "<td>{$listing_id}</td>";
+        echo "<td>{$building}</td>";
         echo "<td>";
             // read one record 
-            echo "<a href='read_one.php?id={$id}' class='btn btn-info m-r-1em'>Read</a>";
+            echo "<a href='read_one.php?id={$listing_id}' class='btn btn-info m-r-1em'>Read</a>";
              
             // we will use this links on next part of this post
-            echo "<a href='update.php?id={$id}' class='btn btn-primary m-r-1em'>Edit</a>";
+            echo "<a href='update.php?id={$listing_id}' class='btn btn-primary m-r-1em'>Edit</a>";
  
             // we will use this links on next part of this post
-            echo "<a href='#' onclick='delete_user({$id});'  class='btn btn-danger'>Delete</a>";
+            echo "<a href='#' onclick='delete_user({$listing_id});'  class='btn btn-danger'>Delete</a>";
         echo "</td>";
     echo "</tr>";
 }
@@ -95,7 +95,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     </div> <!-- end .container -->
      
     <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">&copy; Everbright Web App v0.8</p>
+        <p class="mb-1">&copy; Everbright Web App v0.11</p>
        
       </footer>
  <!-- Optional JavaScript -->
