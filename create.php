@@ -6,15 +6,13 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   
+    <link rel="stylesheet" src="form-validation.css" type="text/css">
+
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="form-validation.js"></script>
-    <link href="https://everbright.com.ph/everbrightapp/form-validation.css" media="all" rel="stylesheet" type="text/css"/>
-
-
-
-
 </head>
 <body>
      
@@ -482,9 +480,9 @@
          
             <hr class="mb-4">
             <div class="text-right">
-              <button type="button" class="btn btn-outline-secondary">Cancel</button>
+              <button type="button" href='index.php' class="btn btn-outline-secondary">Cancel</button>
 
-            <button type="submit" href='index.php' class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
             
             </div>
             
