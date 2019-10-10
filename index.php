@@ -29,7 +29,7 @@
         // delete message prompt will be here
         
         // select all data
-        $query = "SELECT listing_id, code, type, city, neighborhood, building FROM tbl_listings ORDER BY listing_id DESC";
+        $query = "SELECT listing_id, code, type, direct, city, neighborhood, building, unit_no, unit_type, size, selling_price, rent_price, parking, inclusions, terms, availability, notes, owner, contact, broker, listed_by, source, encoded_by FROM tbl_listings ORDER BY listing_id DESC";
         $stmt = $con->prepare($query);
         $stmt->execute();
         
@@ -67,7 +67,12 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     // creating new table row per record
     echo "<tr>";
         echo "<td>{$listing_id}</td>";
-        echo "<td>{$building}</td>";
+        echo "<td>{$code}</td>";
+        echo "<td>{$type}</td>";
+        echo "<td>{$direct}</td>";
+        echo "<td>{$city}</td>";
+        echo "<td>{$neigborhood}</td>";
+
         echo "<td>";
             // read one record 
             echo "<a href='read_one.php?id={$listing_id}' class='btn btn-info m-r-1em'>Read</a>";
