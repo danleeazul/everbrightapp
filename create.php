@@ -138,7 +138,6 @@
     </table>
 </form>
 
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 <div class="py-5 text-center">
         <img class="d-block mx-auto mb-4" src="" alt="" width="72" height="72">
         <h2>Listings Form</h2>
@@ -484,9 +483,9 @@
             <div class="text-right">
             <a href='index.php'><button type="button" href='index.php' class="btn btn-outline-secondary">Cancel</button></a>
             <button type="submit" value='Save' class="btn btn-primary">Submit</button>
+            
             </div>
             
-          </form>
         </div>
 
     

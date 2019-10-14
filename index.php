@@ -31,9 +31,7 @@
         // delete message prompt will be here
         
         // select all data
-        //$query = "SELECT listing_id, code, type, direct, city, neighborhood, building, unit_no, unit_type, size, selling_price, rent_price, parking, inclusions, terms, availability, notes, owner, contact, broker, listed_by, source, encoded_by FROM tbl_listings ORDER BY listing_id DESC";
         $query = "SELECT * FROM tbl_listings ORDER BY listing_id DESC";
-
         $stmt = $con->prepare($query);
         $stmt->execute();
         
@@ -45,14 +43,10 @@
         
         //check if more than 0 record found
         if($num>0){
-        
-           
-
-
             // data from database will be here
             echo "<table class='table table-hover table-responsive table-bordered'>";//start table
  
-    //creating our table heading
+              //creating our table heading
             echo "<tr>";
                 echo "<th>ID</th>";
                 echo "<th>City</th>";
