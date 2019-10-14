@@ -79,23 +79,23 @@ if($_POST){
        <div class="row">
                <div class="col-md-4 mb-3">
                    <label for="firstName">Name</label>
-                   <input type="text" class="form-control" id="owner" placeholder="" value="" required>  
+                   <input type="text" class="form-control" id="name" placeholder="" value="" required>  
                                
                </div>
  
               <div class="col-md-4 mb-3">
                  <label for="firstName">Building</label>
-                 <input type="text" class="form-control" id="owner" placeholder="" value="" required>  
+                 <input type="text" class="form-control" id="building" placeholder="" value="" required>  
               </div>
  
              <div class="col-md-4 mb-3">
                <label for="firstName">Unit No</label>
-               <input type="text" class="form-control" id="broker" placeholder="" value="" required>      
+               <input type="text" class="form-control" id="unit_no" placeholder="" value="" required>      
             </div>
  
             <div class="col-md-4 mb-3">
                 <label for="lastName">Type</label>
-                    <select class="custom-select d-block w-100" id="unittype" required>
+                    <select class="custom-select d-block w-100" id="type" required>
                       <option value="">Select...</option>
                       <option value="S">Sale</option> 
                       <option value="R">Rent</option>
@@ -104,7 +104,7 @@ if($_POST){
  
           <div class="col-md-4 mb-3">
              <label for="firstName">Price</label>
-             <input type="text" class="form-control" id="source" placeholder="Php" value="" required>           
+             <input type="text" class="form-control" id="price" placeholder="Php" value="" required>           
           </div>
        </div>
 
