@@ -22,7 +22,7 @@
     <div class="container">
    
         <div class="page-header">
-            <h1>Create Product</h1>
+            <h1>Add new signed deals</h1>
         </div>
       
         <!-- PHP insert code will be here -->
@@ -30,7 +30,7 @@
 if($_POST){
  
     // include database connection
-    include 'config/database.php';
+    include 'database.php';
  
     try{
      
@@ -113,9 +113,8 @@ if($_POST){
          
             <hr class="mb-4">
             <div class="text-right">
-              <button type="button" class="btn btn-outline-secondary">Cancel</button>
-
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href='create.php'><button type="button" href='create.php' class="btn btn-outline-secondary">Cancel</button></a>
+            <button type="submit" value='Save' class="btn btn-primary">Submit</button>
             
             </div>
             
@@ -125,7 +124,7 @@ if($_POST){
     </div> <!-- end .container -->
       
     <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">&copy; Everbright Web App v0.10</p>
+        <p class="mb-1">&copy; Everbright Web App v0.00</p>
        
       </footer>
  <!-- Optional JavaScript -->
