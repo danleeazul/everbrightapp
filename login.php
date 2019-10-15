@@ -28,18 +28,7 @@
             $access_denied=false;
             
             // post code will be here
-            
-
-            // login form html will be here
-            // include page header HTML
-            include_once "layout_head.php";
-            
-            echo "<div class='col-sm-6 col-md-4 col-md-offset-4'>";
-            
-                // alert messages will be here
-            
-                // actual HTML login form
-?>
+            ?>
 
 <form class="form-signin">
   <img class="mb-4" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
