@@ -7,7 +7,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
      
-      <link href="https://www.everright.com.ph/everbrightapp/libs/css/login.css" rel="stylesheet" type="text/css" />
+      <link href="https://www.everbright.com.ph/everbrightapp/libs/css/login.css" rel="stylesheet" type="text/css"/>
   
   
       <!-- Bootstrap CSS -->
@@ -15,31 +15,15 @@
           
 </head>
 <body>
-
-            <?php
-            // core configuration
-            include_once "config/core.php";
+  
+        <!-- PHP insert code will be here -->
+        <?php
+            if($_POST){
             
-            // include login checker
-            $require_login=false;
-            include_once "login_checker.php";
-            
-            // default to false
-            $access_denied=false;
-            
-            // post code will be here
-            
-
-            // login form html will be here
-            // include page header HTML
-            include_once "layout_head.php";
-            
-            echo "<div class='col-sm-6 col-md-4 col-md-offset-4'>";
-            
-                // alert messages will be here
-            
-                // actual HTML login form
-?>
+                // include database connection
+                include 'database.php';
+ 
+        ?>
 
 <form class="form-signin">
   <img class="mb-4" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
@@ -57,13 +41,17 @@
   <p class="mt-5 mb-3 text-muted">&copy; 2017-{{ site.time | date: "%Y" }}</p>
 </form>
 
-
-
- <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; Everbright Web App v0.00</p>
+       
+      </footer>
+ <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-
+  
 </body>
 </html>
