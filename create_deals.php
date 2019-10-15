@@ -97,8 +97,8 @@ if($_POST){
                 <label for="lastName">Type</label>
                     <select class="custom-select d-block w-100" name="type" required>
                       <option value="">Select...</option>
-                      <option value="S">Sale</option> 
-                      <option value="R">Rent</option>
+                      <option value="Sale">Sale</option> 
+                      <option value="Rent">Rent</option>
                     </select>            
            </div>
  
