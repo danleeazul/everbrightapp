@@ -14,9 +14,10 @@ $access_denied=false;
  
 // post code will be here
  
+
 // login form html will be here
-   // include database connection
-   include 'database.php';
+// include page header HTML
+include_once "layout_head.php";
  
 echo "<div class='col-sm-6 col-md-4 col-md-offset-4'>";
  
