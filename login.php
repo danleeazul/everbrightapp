@@ -39,35 +39,39 @@
                 // alert messages will be here
             
                 // actual HTML login form
-            
-            echo "</div>";
-
-            echo "<form class='form-signin' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "' method='post'>";
-            echo " <div class='text-center mb-4'>";
-            echo "   <img class='mb-4' src='{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid.svg' alt='' width='72' height='72'>";
-            echo "    <h1 class='h3 mb-3 font-weight-normal'>Floating labels</h1>";
-                echo " </div>";
-
-                echo "  <div class='form-label-group'>";
-                echo " <input type='email' id='inputEmail' class='form-control' placeholder='Email address' required autofocus>";
-                echo "  <label for='inputEmail'>Email address</label>";
-                echo " </div>";
-
-                echo " <div class='form-label-group'>";
-                echo " <input type='password' id='inputPassword' class='form-control' placeholder='Password' required>";
-                echo "  <label for='inputPassword'>Password</label>";
-                echo " </div>";
-
-            echo " <div class='checkbox mb-3'>";
-            echo "   <label>";
-                echo "     <input type='checkbox' value='remember-me'> Remember me </label>";
-                echo " </div>";
-            echo " <button class='btn btn-lg btn-primary btn-block' type='submit'>Sign in</button>";
-            echo "</form>";
-            
-            // footer HTML and JavaScript codes
-            include_once "layout_foot.php";
 ?>
+
+<form class="form-signin">
+  <div class="text-center mb-4">
+    <img class="mb-4" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Floating labels</h1>
+    <p>Build form controls with floating labels via the <code>:placeholder-shown</code> pseudo-element. <a href="https://caniuse.com/#feat=css-placeholder-shown">Works in latest Chrome, Safari, and Firefox.</a></p>
+  </div>
+
+  <div class="form-label-group">
+    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+    <label for="inputEmail">Email address</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <label for="inputPassword">Password</label>
+  </div>
+
+  <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-{{ site.time | date: "%Y" }}</p>
+</form>
+
+
+ <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 
 </body>
