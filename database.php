@@ -22,20 +22,20 @@ class Database{
     private $db_name = "megawor3_EBsystem";
     private $username = "megawor3_appsys";
     private $password = "everbright1688";
-    public $conn;
+    public $con;
  
     // get the database connection
     public function getConnection(){
  
-        $this->conn = null;
+        $this->con = null;
  
         try{
-            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+            $this->con = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
         }catch(PDOException $exception){
             echo "Connection error: " . $exception->getMessage();
         }
  
-        return $this->conn;
+        return $this->con;
     }
 }
 
