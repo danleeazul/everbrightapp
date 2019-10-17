@@ -8,7 +8,9 @@ $page_title="Index";
 // include login checker
 $require_login=true;
 include_once "login_checker.php";
- 
+
+include_once "layout_head.php";
+
  
 echo "<div class='col-md-12'>";
  
@@ -37,5 +39,5 @@ echo "<div class='col-md-12'>";
 echo "</div>";
  
 // footer HTML and JavaScript codes
-include 'layout_foot.php';
+include 'layout_footer.php';
 ?>

@@ -16,6 +16,7 @@
       
       include_once "layout_head.php";
 
+      
       // if the login form was submitted
       if($_POST){
             // email check will be here
