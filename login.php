@@ -111,9 +111,12 @@
                         Incorrect username or password.
                     </div>";
                 }
+                
+                // footer HTML and JavaScript codes
+                include_once "layout_footer.php";
+
 
                 echo "</form>";
                       
-                // footer HTML and JavaScript codes
-                include_once "layout_footer.php";
+                
 ?>
