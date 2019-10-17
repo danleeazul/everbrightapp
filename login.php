@@ -115,5 +115,5 @@
                 echo "</form>";
                       
                 // footer HTML and JavaScript codes
-                include_once "layout_foot.php";
+                include_once "layout_footer.php";
 ?>
