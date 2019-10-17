@@ -36,7 +36,7 @@ if($_POST){
     // login validation will be here
     // validate login
 if ($email_exists && password_verify($_POST['password'], $user->password) && $user->status==1){
- 
+    alert("Email Exist");
     // if it is, set the session value to true
     $_SESSION['logged_in'] = true;
     $_SESSION['user_id'] = $user->id;
@@ -51,13 +51,14 @@ if ($email_exists && password_verify($_POST['password'], $user->password) && $us
  
     // else, redirect only to 'Customer' section
     else{
-        header("Location: {$home_url}index.php?action=login_success");
+        alert("Succesfful");
     }
 }
  
 // if username does not exist or password is wrong
 else{
     $access_denied=true;
+    alert("Wrong Credentials");
 }
 }
 
