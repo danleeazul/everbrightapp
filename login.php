@@ -16,21 +16,10 @@
 </head>
 <body>
 
-            <?php
-            // core configuration
-            include_once "config/core.php";
-            
-            // include login checker
-            $require_login=false;
-            include_once "login_checker.php";
-            
-            // default to false
-            $access_denied=false;
-            
-            // post code will be here
-            ?>
+          
 
-<form class="form-signin">
+<div class="container">
+    <form class="form-signin">
   <img class="mb-4" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
   <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
   <label for="inputEmail" class="sr-only">Email address</label>
@@ -45,6 +34,10 @@
   <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
   <p class="mt-5 mb-3 text-muted">&copy; 2017-{{ site.time | date: "%Y" }}</p>
 </form>
+
+</div>
+
+
 
 
 
