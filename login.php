@@ -16,21 +16,51 @@
 </head>
 <body>
 
-<form class="form-signin">
-  <img class="mb-4" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-  <label for="inputEmail" class="sr-only">Email address</label>
-  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-  <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-  <div class="checkbox mb-3">
-    <label>
-      <input type="checkbox" value="remember-me"> Remember me
-    </label>
-  </div>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-  <p class="mt-5 mb-3 text-muted">&copy; 2017-{{ site.time | date: "%Y" }}</p>
-</form>
+      <?php
+      // core configuration
+      include_once "config/core.php";
+      
+      // set page title
+      $page_title = "Login";
+      
+      // include login checker
+      $require_login=false;
+      include_once "login_checker.php";
+      
+      // default to false
+      $access_denied=false;
+      
+      // post code will be here
+      
+      // login form html will be here
+      // include page header HTML
+include_once "layout_head.php";
+ 
+ 
+    // alert messages will be here
+
+    echo "<form class='form-signin'>";
+    echo "<img class='mb-4' src='{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid.svg' alt='' width='72' height='72'>";
+    echo "<h1 class='h3 mb-3 font-weight-normal'>Please sign in</h1>";
+    echo "<label for='inputEmail' class='sr-only'>Email address</label>";
+    echo "<input type='email' id='inputEmail' class='form-control' placeholder='Email address' required autofocus>";
+    echo "<label for='inputPassword' class='sr-only'>Password</label>";
+    echo "<input type='password' id='inputPassword' class='form-control' placeholder='Password' required>";
+    echo "<div class='checkbox mb-3'>";
+    echo "<label><input type='checkbox' value='remember-me'> Remember me</label>";
+    echo "</div>";
+    echo "<button class='btn btn-lg btn-primary btn-block' type='submit'>Sign in</button>";
+    echo "<p class='mt-5 mb-3 text-muted'>&copy; 2017-{{ site.time | date: '%Y' }}</p>";
+    echo "</form>";
+ 
+
+ 
+// footer HTML and JavaScript codes
+include_once "layout_foot.php";
+      ?>
+
+
+
 
  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
