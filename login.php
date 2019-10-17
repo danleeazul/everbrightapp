@@ -69,13 +69,16 @@
 
           // else, redirect only to 'Customer' section
           else{
-              header("Location: {$home_url}index.php?action=login_success");
+              header("Location: https://www.everbright.com.ph/everbrightapp/index.php?action=login_success");
           }//ELSE
       } //IF
 
         // if username does not exist or password is wrong
         else{
           $access_denied=true;
+          echo "<div class='alert alert-danger margin-top-40' role='alert'>
+                        Username not found.
+                    </div>";
         }
 
   }
