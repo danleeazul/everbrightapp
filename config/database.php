@@ -1,3 +1,4 @@
+
 <?php
 // used to get mysql database connection
 class Database{
