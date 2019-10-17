@@ -1,4 +1,6 @@
 <?php
+alert("Welcome");
+
 // core configuration
 include_once "config/core.php";
  
