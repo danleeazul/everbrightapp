@@ -33,8 +33,7 @@
       // post code will be here
       
       // login form html will be here
-      // include page header HTML
-include_once "layout_head.php";
+
  
  
     // alert messages will be here
