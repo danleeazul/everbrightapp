@@ -16,7 +16,19 @@
 </head>
 <body>
 
-          
+            <?php
+            // core configuration
+            include_once "config/core.php";
+            
+            // include login checker
+            $require_login=false;
+            include_once "login_checker.php";
+            
+            // default to false
+            $access_denied=false;
+            
+            // post code will be here
+            ?>
 
 <div class="container">
     <form class="form-signin">
