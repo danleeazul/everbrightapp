@@ -1,6 +1,6 @@
 <?php
 // core configuration
-include_once "config/core.php";
+include_once "ccore.php";
  
 // destroy session, it will remove ALL session settings
 session_destroy();
