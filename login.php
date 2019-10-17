@@ -73,7 +73,6 @@ else{
 // login form html will be here
 // include page header HTML
 include_once "layout_head.php";
-alert("Welcome");
  
 echo "<div class='col-sm-6 col-md-4 col-md-offset-4'>";
     // alert messages will be here
