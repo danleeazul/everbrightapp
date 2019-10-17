@@ -93,7 +93,8 @@
                 echo "<div class='checkbox mb-3'>";
                 echo "<label><input type='checkbox' value='remember-me'> Remember me</label>";
                 echo "</div>";
-                echo "<button class='btn btn-lg btn-primary btn-block' type='submit'>Sign in</button>";
+                //echo "<button class='btn btn-lg btn-primary btn-block' type='submit'>Sign in</button>";
+                echo "<input type='submit' class='btn btn-lg btn-primary btn-block' value='Log In' />";
               
 
                 // alert messages will be here
