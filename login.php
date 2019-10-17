@@ -37,19 +37,47 @@
  
  
     // alert messages will be here
+    // get 'action' value in url parameter to display corresponding prompt messages
+$action=isset($_GET['action']) ? $_GET['action'] : "";
+ 
+// tell the user he is not yet logged in
+if($action =='not_yet_logged_in'){
+    echo "<div class='alert alert-danger margin-top-40' role='alert'>Please login.</div>";
+}
+ 
+// tell the user to login
+else if($action=='please_login'){
+    echo "<div class='alert alert-info'>
+        <strong>Please login to access that page.</strong>
+    </div>";
+}
+ 
+// tell the user email is verified
+else if($action=='email_verified'){
+    echo "<div class='alert alert-success'>
+        <strong>Your email address have been validated.</strong>
+    </div>";
+}
+ 
+// tell the user if access denied
+if($access_denied){
+    echo "<div class='alert alert-danger margin-top-40' role='alert'>
+        Access Denied.<br /><br />
+        Your username or password maybe incorrect
+    </div>";
+}
 
-    echo "<form class='form-signin'>";
+    echo "<form class='form-signin' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "' method='post'>";
     echo "<img class='mb-4' src='{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid.svg' alt='' width='72' height='72'>";
     echo "<h1 class='h3 mb-3 font-weight-normal'>Please sign in</h1>";
     echo "<label for='inputEmail' class='sr-only'>Email address</label>";
-    echo "<input type='email' id='inputEmail' class='form-control' placeholder='Email address' required autofocus>";
+    echo "<input type='email' name='email' id='inputEmail' class='form-control' placeholder='Email address' required autofocus>";
     echo "<label for='inputPassword' class='sr-only'>Password</label>";
-    echo "<input type='password' id='inputPassword' class='form-control' placeholder='Password' required>";
+    echo "<input type='password' name='password' id='inputPassword' class='form-control' placeholder='Password' required>";
     echo "<div class='checkbox mb-3'>";
     echo "<label><input type='checkbox' value='remember-me'> Remember me</label>";
     echo "</div>";
     echo "<button class='btn btn-lg btn-primary btn-block' type='submit'>Sign in</button>";
-    echo "<p class='mt-5 mb-3 text-muted'>&copy; 2017-{{ site.time | date: '%Y' }}</p>";
     echo "</form>";
  
 
