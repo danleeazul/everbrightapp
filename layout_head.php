@@ -19,6 +19,8 @@
 </head>
 <body>
 
+<!-- include the navigation bar -->
+<?php include_once 'navigation.php'; ?>
  
     <!-- container -->
     <div class="container">

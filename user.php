@@ -1,6 +1,4 @@
 <?php
-    include 'database.php';
-
 // 'user' object
 class User{
  
@@ -27,9 +25,10 @@ class User{
         $this->con = $db;
     }
 
+    
+}
 
-
-    // check if given email exist in the database
+// check if given email exist in the database
 function emailExists(){
  
     // query to check if email exists
@@ -39,7 +38,7 @@ function emailExists(){
             LIMIT 0,1";
  
     // prepare the query
-    $stmt = $this->con->prepare( $query );
+    $stmt = $this->conn->prepare( $query );
  
     // sanitize
     $this->email=htmlspecialchars(strip_tags($this->email));
@@ -73,5 +72,4 @@ function emailExists(){
  
     // return false if email does not exist in the database
     return false;
-}
 }
