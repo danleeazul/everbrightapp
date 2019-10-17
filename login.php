@@ -35,8 +35,8 @@
       if($_POST){
             // email check will be here
             // include classes
-          include_once "config/database.php";
-          include_once "objects/user.php";
+          include_once "database.php";
+          include_once "user.php";
           
           // get database connection
           $database = new Database();
@@ -76,7 +76,9 @@
         // if username does not exist or password is wrong
         else{
           $access_denied=true;
-      }
+        }
+
+  }
 
                 echo "<form class='form-signin' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "' method='post'>";
                 echo "<img class='mb-4' src='{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid.svg' alt='' width='72' height='72'>";
@@ -122,17 +124,9 @@
                 }
 
                 echo "</form>";
-                
-      }
-      
-
-
-    
- 
-
- 
-// footer HTML and JavaScript codes
-include_once "layout_foot.php";
+                      
+                // footer HTML and JavaScript codes
+                include_once "layout_foot.php";
       ?>
 
 
