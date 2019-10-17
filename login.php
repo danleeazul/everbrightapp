@@ -89,8 +89,18 @@
                 
 
                 echo "<form class='form-signin' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "' method='post'>";
+                echo "<img class='mb-4' src='{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid.svg' alt='' width='72' height='72'>";
+                echo "<h1 class='h3 mb-3 font-weight-normal'>Please sign in</h1>";
+                echo "<label for='inputEmail' class='sr-only'>Email address</label>";
+                echo "<input type='email' name='email' id='inputEmail' class='form-control' placeholder='Email address' required autofocus>";
+                echo "<label for='inputPassword' class='sr-only'>Password</label>";
+                echo "<input type='password' name='password' id='inputPassword' class='form-control' placeholder='Password' required>";
+                echo "<div class='checkbox mb-3'>";
+                echo "<label><input type='checkbox' value='remember-me'> Remember me</label>";
+                echo "</div>";
+                echo "<button class='btn btn-lg btn-primary btn-block' type='submit'>Sign in</button>";
 
-                  // alert messages will be here
+                 // alert messages will be here
                 // get 'action' value in url parameter to display corresponding prompt messages
                 $action=isset($_GET['action']) ? $_GET['action'] : "";
                 
@@ -121,17 +131,6 @@
                     </div>";
                 }
 
-
-                echo "<img class='mb-4' src='{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid.svg' alt='' width='72' height='72'>";
-                echo "<h1 class='h3 mb-3 font-weight-normal'>Please sign in</h1>";
-                echo "<label for='inputEmail' class='sr-only'>Email address</label>";
-                echo "<input type='email' name='email' id='inputEmail' class='form-control' placeholder='Email address' required autofocus>";
-                echo "<label for='inputPassword' class='sr-only'>Password</label>";
-                echo "<input type='password' name='password' id='inputPassword' class='form-control' placeholder='Password' required>";
-                echo "<div class='checkbox mb-3'>";
-                echo "<label><input type='checkbox' value='remember-me'> Remember me</label>";
-                echo "</div>";
-                echo "<button class='btn btn-lg btn-primary btn-block' type='submit'>Sign in</button>";
                 echo "</form>";
     
  
