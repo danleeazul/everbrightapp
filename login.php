@@ -52,13 +52,9 @@
           $email_exists = $user->emailExists();
           
           // login validation will be here
-      }
-      
-      // login form html will be here
 
-
-      // validate login
-  if ($email_exists && password_verify($_POST['password'], $user->password) && $user->status==1){
+            // validate login
+        if ($email_exists && password_verify($_POST['password'], $user->password) && $user->status==1){
           // if it is, set the session value to true
           $_SESSION['logged_in'] = true;
           $_SESSION['user_id'] = $user->id;
@@ -80,7 +76,7 @@
         // if username does not exist or password is wrong
         else{
           $access_denied=true;
-  }
+      }
 
                 echo "<form class='form-signin' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "' method='post'>";
                 echo "<img class='mb-4' src='{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid.svg' alt='' width='72' height='72'>";
@@ -95,7 +91,7 @@
                 echo "<button class='btn btn-lg btn-primary btn-block' type='submit'>Sign in</button>";
               
 
-                 // alert messages will be here
+                // alert messages will be here
                 // get 'action' value in url parameter to display corresponding prompt messages
                 $action=isset($_GET['action']) ? $_GET['action'] : "";
                 
@@ -126,6 +122,11 @@
                 }
 
                 echo "</form>";
+                
+      }
+      
+
+
     
  
 
