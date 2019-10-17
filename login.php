@@ -85,9 +85,11 @@
  
   
     
-  echo " <div class='container'>";
-  echo " <div class='row'>";
-  echo " <div class='col-md-4 mb-2'>";
+
+                
+
+                echo "<form class='form-signin' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "' method='post'>";
+
                   // alert messages will be here
                 // get 'action' value in url parameter to display corresponding prompt messages
                 $action=isset($_GET['action']) ? $_GET['action'] : "";
@@ -119,7 +121,7 @@
                     </div>";
                 }
 
-                echo "<form class='form-signin' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "' method='post'>";
+
                 echo "<img class='mb-4' src='{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid.svg' alt='' width='72' height='72'>";
                 echo "<h1 class='h3 mb-3 font-weight-normal'>Please sign in</h1>";
                 echo "<label for='inputEmail' class='sr-only'>Email address</label>";
@@ -131,11 +133,6 @@
                 echo "</div>";
                 echo "<button class='btn btn-lg btn-primary btn-block' type='submit'>Sign in</button>";
                 echo "</form>";
-
-                echo " </div>";
-                echo "  </div>";//row
-                echo "  </div>";//container
-
     
  
 
