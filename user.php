@@ -1,4 +1,6 @@
 <?php
+    include 'database.php';
+
 // 'user' object
 class User{
  
