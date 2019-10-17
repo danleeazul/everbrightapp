@@ -9,8 +9,6 @@ $page_title="Index";
 $require_login=true;
 include_once "login_checker.php";
  
-// include page header HTML
-include_once 'layout_head.php';
  
 echo "<div class='col-md-12'>";
  

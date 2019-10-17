@@ -82,12 +82,6 @@
           $access_denied=true;
   }
 
- 
-  
-    
-
-                
-
                 echo "<form class='form-signin' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "' method='post'>";
                 echo "<img class='mb-4' src='{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid.svg' alt='' width='72' height='72'>";
                 echo "<h1 class='h3 mb-3 font-weight-normal'>Please sign in</h1>";
@@ -99,6 +93,7 @@
                 echo "<label><input type='checkbox' value='remember-me'> Remember me</label>";
                 echo "</div>";
                 echo "<button class='btn btn-lg btn-primary btn-block' type='submit'>Sign in</button>";
+              
 
                  // alert messages will be here
                 // get 'action' value in url parameter to display corresponding prompt messages
@@ -112,7 +107,7 @@
                 // tell the user to login
                 else if($action=='please_login'){
                     echo "<div class='alert alert-info'>
-                        <strong>Please login to access that page.</strong>
+                        <strong>Please login.</strong>
                     </div>";
                 }
             
@@ -126,8 +121,7 @@
                 // tell the user if access denied
                 if($access_denied){
                     echo "<div class='alert alert-danger margin-top-40' role='alert'>
-                        Access Denied.<br /><br />
-                        Your username or password maybe incorrect
+                        Incorrect username or password.
                     </div>";
                 }
 

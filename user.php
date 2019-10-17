@@ -24,7 +24,7 @@ class User{
  
     // constructor
     public function __construct($db){
-        $this->conn = $db;
+        $this->con = $db;
     }
 
 
@@ -39,7 +39,7 @@ function emailExists(){
             LIMIT 0,1";
  
     // prepare the query
-    $stmt = $this->conn->prepare( $query );
+    $stmt = $this->con->prepare( $query );
  
     // sanitize
     $this->email=htmlspecialchars(strip_tags($this->email));
