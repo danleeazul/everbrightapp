@@ -85,7 +85,7 @@
  
   
     
-
+  echo " <div class='container'>";
   echo " <div class='row'>";
   echo " <div class='col-md-4 mb-2'>";
                   // alert messages will be here
@@ -133,8 +133,8 @@
                 echo "</form>";
 
                 echo " </div>";
-                echo "  </div>";
-
+                echo "  </div>";//row
+                echo "  </div>";//container
 
     
  
