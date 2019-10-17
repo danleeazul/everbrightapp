@@ -15,7 +15,6 @@ $access_denied=false;
  
 // post code will be here
 // if the login form was submitted
-alert("Welcome");
 if($_POST){
     // email check will be here
     // include classes
@@ -74,9 +73,10 @@ else{
 // login form html will be here
 // include page header HTML
 include_once "layout_head.php";
+
  
 echo "<div class='col-sm-6 col-md-4 col-md-offset-4'>";
- 
+alert("Welcome");
     // alert messages will be here
     // get 'action' value in url parameter to display corresponding prompt messages
 $action=isset($_GET['action']) ? $_GET['action'] : "";
