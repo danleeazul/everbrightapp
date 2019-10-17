@@ -29,6 +29,9 @@
       
       // default to false
       $access_denied=false;
+
+      // include page header HTML
+    include_once "layout_head.php";
       
       // post code will be here
       
