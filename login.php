@@ -15,6 +15,7 @@ $access_denied=false;
  
 // post code will be here
 // if the login form was submitted
+alert("Welcome");
 if($_POST){
     // email check will be here
     // include classes
@@ -36,7 +37,7 @@ if($_POST){
     
     // login validation will be here
     // validate login
-    alert("Welcome");
+ 
 if ($email_exists && password_verify($_POST['password'], $user->password) && $user->status==1){
     alert("Email Exist");
     // if it is, set the session value to true
