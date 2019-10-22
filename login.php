@@ -53,7 +53,8 @@ if ($email_exists && password_verify($_POST['password'], $user->password) && $us
  
     // else, redirect only to 'Customer' section
     else{
-        alert("Succesfful");
+        header("www.everbright.com.ph/everbrightapp/index.php");
+        
     }
 }
  
