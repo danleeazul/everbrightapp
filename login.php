@@ -38,7 +38,6 @@ if($_POST){
     // validate login
  
 if ($email_exists && password_verify($_POST['password'], $user->password) && $user->status==1){
-    alert("Email Exist");
     // if it is, set the session value to true
     $_SESSION['logged_in'] = true;
     $_SESSION['user_id'] = $user->id;
