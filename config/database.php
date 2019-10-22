@@ -12,12 +12,19 @@ class Database{
  
     // get the database connection
     public function getConnection(){
- 
+        $host = "localhost";
+        $db_name = "megawor3_EBsystem";
+        $username = "megawor3_appsys";
+        $password = "everbright1688";
+
         $this->conn = null;
  
-        try{
-            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
-        }catch(PDOException $exception){
+        try {
+            $con = new PDO("mysql:host={$host};dbname={$db_name}", $username, $password);
+        }
+          
+        // show error
+        catch(PDOException $exception){
             echo "Connection error: " . $exception->getMessage();
         }
  
