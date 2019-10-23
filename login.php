@@ -1,6 +1,6 @@
 <?php
 // core configuration
-include_once "config/core.php";
+include_once "core.php";
  
 // set page title
 $page_title = "Login";
