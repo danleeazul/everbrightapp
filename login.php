@@ -15,8 +15,8 @@ $access_denied=false;
 // if the login form was submitted
 if($_POST){
     // include classes
-include_once "config/database.php";
-include_once "objects/user.php";
+include_once "databaselogin.php";
+include_once "user.php";
  
 // get database connection
 $database = new Database();
