@@ -20,7 +20,7 @@ class Database{
         $this->conn = null;
  
         try {
-            $con = new PDO("mysql:host={$host};dbname={$db_name}", $username, $password);
+            $conn = new PDO("mysql:host={$host};dbname={$db_name}", $username, $password);
         }
           
         // show error
