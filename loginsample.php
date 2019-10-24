@@ -18,7 +18,7 @@
 <body>
   
     <!-- container -->
-    
+    <div class='col-sm-6 col-md-4 col-md-offset-4'>
         <!-- PHP insert code will be here -->
 <?php
 include_once "config/core.php"; 
@@ -73,7 +73,7 @@ $access_denied=false;
 }
 
 
-echo "<div class='col-sm-6 col-md-4 col-md-offset-4'>";
+
  
     // alert messages will be here
     // get 'action' value in url parameter to display corresponding prompt messages
@@ -82,6 +82,7 @@ $action=isset($_GET['action']) ? $_GET['action'] : "";
 // tell the user he is not yet logged in
 if($action =='not_yet_logged_in'){
     echo "<div class='alert alert-danger margin-top-40' role='alert'>Please login.</div>";
+    
 }
  
 // tell the user to login
@@ -105,7 +106,7 @@ if($access_denied){
         Your username or password maybe incorrect
     </div>";
 }
-echo "</div>";
+
 
 
 ?>
@@ -127,6 +128,9 @@ echo "</div>";
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 </form>
    
+</div>
+
+
 
  <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
