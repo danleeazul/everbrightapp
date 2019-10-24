@@ -18,11 +18,7 @@
 <body>
   
     <!-- container -->
-    <div class="container">
-   
-        <div class="page-header">
-            <h1>Add new signed deals</h1>
-        </div>
+    
         <!-- PHP insert code will be here -->
 <?php
 include_once "core.php"; 
@@ -77,30 +73,9 @@ $access_denied=false;
 ?>
  
 <!-- html form here where the product information will be entered -->
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-      <!--DEALS-->
-      <hr class="mb-4">
-       <div class="row">
-               <div class="col-md-4 mb-3">
-                   <label for="firstName">Email</label>
-                   <input type="text" class="form-control" name="email" placeholder="" value="" required>  
-                               
-               </div>
- 
-              <div class="col-md-4 mb-3">
-                 <label for="firstName">Password</label>
-                 <input type="password" class="form-control" name="password" placeholder="" value="" required>  
-              </div>
- 
-       </div>
 
-            <hr class="mb-4">
-            <div class="text-right">
-            <button type="submit" value='Save' class="btn btn-primary">Submit</button>
-            
-            </div>
-            
-            <form class="form-signin" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+
+<form class="form-signin" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                 <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
                 <label for="inputEmail" class="sr-only">Email address</label>
                 <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
@@ -113,10 +88,7 @@ $access_denied=false;
                 </div>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
             </form>
-          
-</form>
-        
-    </div> <!-- end .container -->
+   
       
     <footer class="my-5 pt-5 text-muted text-center text-small">
         <p class="mb-1">&copy; Everbright Web App v0.00</p>
