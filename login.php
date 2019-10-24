@@ -11,6 +11,25 @@ include_once "login_checker.php";
  
 // default to false
 $access_denied=false;
+
+
+ // actual HTML login form
+ echo "<div class='account-wall'>";
+ echo "<div id='my-tab-content' class='tab-content'>";
+     echo "<div class='tab-pane active' id='login'>";
+         echo "<form class='form-signin' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "' method='post'>";
+             echo "<input type='text' name='email' class='form-control' placeholder='Email' required autofocus />";
+             echo "<input type='password' name='password' class='form-control' placeholder='Password' required />";
+             echo "<input type='submit' class='btn btn-lg btn-primary btn-block' value='Log In' />";
+         echo "</form>";
+     echo "</div>";
+ echo "</div>";
+echo "</div>";
+
+echo "</div>";
+
+
+
  
 // post code will be here
 // if the login form was submitted
@@ -98,20 +117,7 @@ if($access_denied){
     </div>";
 }
  
-    // actual HTML login form
-    echo "<div class='account-wall'>";
-        echo "<div id='my-tab-content' class='tab-content'>";
-            echo "<div class='tab-pane active' id='login'>";
-                echo "<form class='form-signin' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "' method='post'>";
-                    echo "<input type='text' name='email' class='form-control' placeholder='Email' required autofocus />";
-                    echo "<input type='password' name='password' class='form-control' placeholder='Password' required />";
-                    echo "<input type='submit' class='btn btn-lg btn-primary btn-block' value='Log In' />";
-                echo "</form>";
-            echo "</div>";
-        echo "</div>";
-    echo "</div>";
- 
-echo "</div>";
+   
  
 // footer HTML and JavaScript codes
 include_once "layout_foot.php";
