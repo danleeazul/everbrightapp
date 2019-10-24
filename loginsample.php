@@ -18,7 +18,6 @@
 <body>
   
     <!-- container -->
-    <div class='col-sm-6 col-md-4 col-md-offset-4'>
         <!-- PHP insert code will be here -->
 <?php
 include_once "config/core.php"; 
@@ -72,49 +71,46 @@ $access_denied=false;
     }
 }
 
-
-
- 
-    // alert messages will be here
-    // get 'action' value in url parameter to display corresponding prompt messages
-$action=isset($_GET['action']) ? $_GET['action'] : "";
- 
-// tell the user he is not yet logged in
-if($action =='not_yet_logged_in'){
-    echo "<div class='alert alert-danger margin-top-40' role='alert'>Please login.</div>";
-    
-}
- 
-// tell the user to login
-else if($action=='please_login'){
-    echo "<div class='alert alert-info'>
-        <strong>Please login to access that page.</strong>
-    </div>";
-}
- 
-// tell the user email is verified
-else if($action=='email_verified'){
-    echo "<div class='alert alert-success'>
-        <strong>Your email address have been validated.</strong>
-    </div>";
-}
- 
-// tell the user if access denied
-if($access_denied){
-    echo "<div class='alert alert-danger margin-top-40' role='alert'>
-        Access Denied.<br /><br />
-        Your username or password maybe incorrect
-    </div>";
-}
-
-
-
 ?>
  
 <!-- html form here where the product information will be entered -->
 
 
 <form class="form-signin" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+        <?php
+            // alert messages will be here
+            // get 'action' value in url parameter to display corresponding prompt messages
+            $action=isset($_GET['action']) ? $_GET['action'] : "";
+        
+            // tell the user he is not yet logged in
+            if($action =='not_yet_logged_in'){
+                echo "<div class='alert alert-danger margin-top-40' role='alert'>Please login.</div>";
+                
+            }
+            
+            // tell the user to login
+            else if($action=='please_login'){
+                echo "<div class='alert alert-info'>
+                    <strong>Please login to access that page.</strong>
+                </div>";
+            }
+            
+            // tell the user email is verified
+            else if($action=='email_verified'){
+                echo "<div class='alert alert-success'>
+                    <strong>Your email address have been validated.</strong>
+                </div>";
+            }
+            
+            // tell the user if access denied
+            if($access_denied){
+                echo "<div class='alert alert-danger margin-top-40' role='alert'>
+                    Access Denied.<br /><br />
+                    Your username or password maybe incorrect
+                </div>";
+            }
+        ?>
+
                 <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
                 <label for="inputEmail" class="sr-only">Email address</label>
                 <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
@@ -128,7 +124,6 @@ if($access_denied){
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 </form>
    
-</div>
 
 
 
