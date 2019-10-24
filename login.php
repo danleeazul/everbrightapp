@@ -115,7 +115,9 @@ echo "</div>";
            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                     <input type='text' name='email' class='form-control' placeholder='Email' required autofocus />
                     <input type='password' name='password' class='form-control' placeholder='Password' required />
-                    <button type="submit" value='Save' class="btn btn-primary">Submit</button>
+                    <<input type='submit' class='btn btn-lg btn-primary btn-block' value='Log In' />
+                    <!-- <button type="submit" value='Save' class="btn btn-primary">Submit</button> -->
+
             </form>
             </div>
        </div>
