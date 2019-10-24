@@ -25,7 +25,8 @@ class User{
         $this->conn = $db;
     }
 
-    // check if given email exist in the database
+
+        // check if given email exist in the database
 function emailExists(){
  
     // query to check if email exists
@@ -70,7 +71,6 @@ function emailExists(){
     // return false if email does not exist in the database
     return false;
 }
-
 
 
 }

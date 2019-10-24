@@ -1,6 +1,6 @@
 <?php
 // core configuration
-include_once "core.php";
+include_once "config/core.php";
  
 // set page title
 $page_title = "Login";
@@ -12,11 +12,13 @@ include_once "login_checker.php";
 // default to false
 $access_denied=false;
  
+// post code will be here
 // if the login form was submitted
 if($_POST){
+    // email check will be here
     // include classes
-include_once "databaselogin.php";
-include_once "user.php";
+include_once "config/database.php";
+include_once "objects/user.php";
  
 // get database connection
 $database = new Database();
@@ -31,6 +33,7 @@ $user->email=$_POST['email'];
 // check if email exists, also get user details using this emailExists() method
 $email_exists = $user->emailExists();
  
+// login validation will be here
 // validate login
 if ($email_exists && password_verify($_POST['password'], $user->password) && $user->status==1){
  
@@ -58,11 +61,13 @@ else{
 }
 }
  
+// login form html will be here
 // include page header HTML
 include_once "layout_head.php";
  
 echo "<div class='col-sm-6 col-md-4 col-md-offset-4'>";
  
+    // alert messages will be here
     // get 'action' value in url parameter to display corresponding prompt messages
 $action=isset($_GET['action']) ? $_GET['action'] : "";
  
@@ -92,6 +97,7 @@ if($access_denied){
         Your username or password maybe incorrect
     </div>";
 }
+ 
     // actual HTML login form
     echo "<div class='account-wall'>";
         echo "<div id='my-tab-content' class='tab-content'>";
