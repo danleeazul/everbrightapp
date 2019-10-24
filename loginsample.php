@@ -67,7 +67,7 @@ $access_denied=false;
                 $_SESSION['lastname'] = $user->lastname;
             
                 // if access level is 'Admin', redirect to admin section
-                if($user->access_level=='Admin'){
+                if($access_level=="Admin"){
                     header("Location: {$home_url}admin/index.php?action=login_success");
                 }
             
