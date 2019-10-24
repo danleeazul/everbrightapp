@@ -78,10 +78,7 @@ $access_denied=false;
                 }
             }
  
-            // if username does not exist or password is wrong
-            else{
-                $access_denied=true;
-            }
+            
        
          
     }
