@@ -27,7 +27,7 @@
       
         <!-- PHP insert code will be here -->
         <?php
-
+ob_start();
 include_once "core.php";
      
 // include login checker
@@ -67,18 +67,22 @@ $access_denied=false;
                 $_SESSION['lastname'] = $user->lastname;
             
                 // if access level is 'Admin', redirect to admin section
-                if($access_level=="Admin"){
+                if($user->access_level=='Admin'){
                     header("Location: {$home_url}admin/index.php?action=login_success");
                 }
             
                 // else, redirect only to 'Customer' section
                 else{
                     // header("Location: {$home_url}index.php?action=login_success");
-                   header("Location: https://www.everbright.com.ph/everbrightapp/index"); 
+                   header("Location: https://www.everbright.com.ph/everbrightapp/index.php?action=login_success");
+                   exit();
                 }
             }
  
-            
+            // if username does not exist or password is wrong
+            else{
+                $access_denied=true;
+            }
        
          
     }
