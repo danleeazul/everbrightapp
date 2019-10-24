@@ -1,7 +1,9 @@
 <?php
 // core configuration
 include_once "config/core.php";
- 
+include_once "config/database.php";
+include_once "objects/user.php";
+
 // set page title
 $page_title = "Login";
  
@@ -73,8 +75,7 @@ echo "</div>";
 if($_POST){
     // email check will be here
     // include classes
-include_once "config/database.php";
-include_once "objects/user.php";
+
  
 // get database connection
 $database = new Database();
