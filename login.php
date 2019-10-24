@@ -29,7 +29,7 @@ $user = new User($db);
  
 // check if email and password are in the database
 $user->email=$_POST['email'];
- 
+echo "User:".$user;
 // check if email exists, also get user details using this emailExists() method
 $email_exists = $user->emailExists();
  
