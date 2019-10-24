@@ -27,18 +27,21 @@
       
         <!-- PHP insert code will be here -->
         <?php
-if($_POST){
- 
-    include_once "config/core.php";
+
+include_once "core.php";
      
-    // include login checker
-    $require_login=false;
-    include_once "login_checker.php";
-    $access_denied=false;
+// include login checker
+$require_login=false;
+include_once "login_checker.php";
+$access_denied=false;
+
+    if($_POST){
+ 
+    
 
     try{
-        include_once "config/database.php";
-        include_once "objects/user.php";
+        include_once "database.php";
+        include_once "user.php";
 
         // get database connection
         $database = new Database();
