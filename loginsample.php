@@ -21,15 +21,16 @@
     
         <!-- PHP insert code will be here -->
 <?php
-include_once "core.php"; 
+include_once "config/core.php"; 
+
 // include login checker
 $require_login=false;
 include_once "login_checker.php";
 $access_denied=false;
     if($_POST){
     try{
-        include_once "database.php";
-        include_once "user.php";
+        include_once "config/database.php";
+        include_once "object/user.php";
         // get database connection
         $database = new Database();
         $db = $database->getConnection();
@@ -70,6 +71,43 @@ $access_denied=false;
         die('ERROR: ' . $exception->getMessage());
     }
 }
+
+
+echo "<div class='col-sm-6 col-md-4 col-md-offset-4'>";
+ 
+    // alert messages will be here
+    // get 'action' value in url parameter to display corresponding prompt messages
+$action=isset($_GET['action']) ? $_GET['action'] : "";
+ 
+// tell the user he is not yet logged in
+if($action =='not_yet_logged_in'){
+    echo "<div class='alert alert-danger margin-top-40' role='alert'>Please login.</div>";
+}
+ 
+// tell the user to login
+else if($action=='please_login'){
+    echo "<div class='alert alert-info'>
+        <strong>Please login to access that page.</strong>
+    </div>";
+}
+ 
+// tell the user email is verified
+else if($action=='email_verified'){
+    echo "<div class='alert alert-success'>
+        <strong>Your email address have been validated.</strong>
+    </div>";
+}
+ 
+// tell the user if access denied
+if($access_denied){
+    echo "<div class='alert alert-danger margin-top-40' role='alert'>
+        Access Denied.<br /><br />
+        Your username or password maybe incorrect
+    </div>";
+}
+echo "</div>";
+
+
 ?>
  
 <!-- html form here where the product information will be entered -->
@@ -87,13 +125,9 @@ $access_denied=false;
                     </label>
                 </div>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-            </form>
+</form>
    
-      
-    <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">&copy; Everbright Web App v0.00</p>
-       
-      </footer>
+
  <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://everbright.com.ph/everbrightapp/form-validation.js"></script>
