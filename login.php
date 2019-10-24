@@ -115,7 +115,7 @@ echo "</div>";
            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                     <input type='text' name='email' class='form-control' placeholder='Email' required autofocus />
                     <input type='password' name='password' class='form-control' placeholder='Password' required />
-                    <<input type='submit' class='btn btn-lg btn-primary btn-block' value='Log In' />
+                    <input type='submit' class='btn btn-lg btn-primary btn-block' value='Log In' />
                     <!-- <button type="submit" value='Save' class="btn btn-primary">Submit</button> -->
 
             </form>
@@ -123,8 +123,3 @@ echo "</div>";
        </div>
     </div>
  </div>
-
-<?php 
-// footer HTML and JavaScript codes
-include_once "layout_foot.php";
-?>
