@@ -55,13 +55,12 @@ $access_denied=false;
                 $_SESSION['lastname'] = $user->lastname;
                 // if access level is 'Admin', redirect to admin section
                 if($user->access_level=='Admin'){
-                    header("Location: {$home_url}admin/index.php?action=login_success");
-                   
+                    echo "<script type='text/javascript'> document.location = 'https://www.everbright.com.ph/everbrightapp/admin/index.php'; </script>";
+
                 }
                 // else, redirect only to 'Customer' section
                 else{
-                    // header("Location: {$home_url}index.php?action=login_success");
-                   //header("Location: https://www.everbright.com.ph/everbrightapp/index.php");
+                
                    echo "<script type='text/javascript'> document.location = 'https://www.everbright.com.ph/everbrightapp/index.php'; </script>";
                 }
             }
@@ -102,6 +101,30 @@ $access_denied=false;
             
             </div>
             
+
+            <div class="text-center mb-4">
+    <img class="mb-4" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Floating labels</h1>
+    <p>Build form controls with floating labels via the <code>:placeholder-shown</code> pseudo-element. <a href="https://caniuse.com/#feat=css-placeholder-shown">Works in latest Chrome, Safari, and Firefox.</a></p>
+  </div>
+
+  <div class="form-label-group">
+    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+    <label for="inputEmail">Email address</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <label for="inputPassword">Password</label>
+  </div>
+
+  <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-{{ site.time | date: "%Y" }}</p>
           
 </form>
         
