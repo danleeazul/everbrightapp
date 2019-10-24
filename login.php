@@ -12,7 +12,6 @@ include_once "login_checker.php";
  
 // default to false
 $access_denied=false;
-echo "SAMPLE";
 // post code will be here
 // if the login form was submitted
 if($_POST){
@@ -100,19 +99,20 @@ if($access_denied){
 echo "</div>";
 ?>
  
-    
+ <div class='col-sm-6 col-md-4 col-md-offset-4'>
+
     <div class='account-wall'>
         <div id='my-tab-content' class='tab-content'>
            <div class='tab-pane active' id='login'>
            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                     <input type='text' name='email' class='form-control' placeholder='Email' required autofocus />
                     <input type='password' name='password' class='form-control' placeholder='Password' required />
-                   <input type='submit' class='btn btn-lg btn-primary btn-block' value='Log In' />
-               </form>
+                    <button type="submit" value='Save' class="btn btn-primary">Submit</button>
+            </form>
             </div>
        </div>
     </div>
- 
+ </div>
 
 <?php 
 // footer HTML and JavaScript codes
