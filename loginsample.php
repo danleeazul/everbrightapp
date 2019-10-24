@@ -73,7 +73,8 @@ $access_denied=false;
             
                 // else, redirect only to 'Customer' section
                 else{
-                    header("Location: {$home_url}index.php?action=login_success");
+                    // header("Location: {$home_url}index.php?action=login_success");
+                    echo "WORKING"
                 }
             }
  
