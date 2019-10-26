@@ -54,7 +54,7 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "            </h4>";
     echo "            <ul class='list-group mb-3'>";
     echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
-    echo "                  <img  src='https://www.everbright.com.ph/headshot/EB-Nica.png' width='45' height='45'>";
+    echo "                  <img  src='https://www.everbright.com.ph/headshot/EB-Nica.png' width='50' height='50'>";
     echo "                <div>";
     echo "                  <h6 class='my-0'>One Uptown - 20H-SW</h6>";
     echo "                  <small>Rent</small>";
@@ -78,7 +78,7 @@ echo "<div class='mdc-drawer-app-content'>";
 
     echo "            <ul class='list-group mb-3'>";
     echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
-    echo "                  <img  src='https://www.everbright.com.ph/headshot/EB-Nica.png' width='45' height='45'>";
+    echo "                  <img  src='https://www.everbright.com.ph/headshot/EB-Nica.png' width='50' height='50'>";
     echo "                <div class='requirementsleft'>";
     echo "                  <h6 class='my-0'>Legaspi Village</h6>";
     echo "                  <small>Makati | Sale</small>";
