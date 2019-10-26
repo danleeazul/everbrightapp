@@ -44,6 +44,55 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "<main onclick='closeNav()' class='main-content'>";
     echo " <div class='mdc-top-app-bar--fixed-adjust'>";
 
+    echo "  <div class='row col p-3'>";
+    echo "      <h3>Dashboard</h3>";
+    echo "  <div class='container'>";
+    echo "      <div class='row'>";
+    echo "          <div class='col-md-5 order-md-2 mb-4'>";
+    echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
+    echo "              <span class='text-muted'>Closed Deals</span>";
+    echo "              <span class='badge badge-secondary badge-pill'>3</span>";
+    echo "            </h4>";
+    echo "            <ul class='list-group mb-3'>";
+    echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
+    echo "                  <img  src='https://www.everbright.com.ph/headshot/EB-Nica.png' width='45' height='45'>";
+    echo "                <div>";
+    echo "                  <h6 class='my-0'>One Uptown - 20H-SW</h6>";
+    echo "                  <small class='text-muted'>Rent</small>";
+    echo "                </div>";
+    echo "                <span class='text-muted'>₱80,000</span>";
+
+    echo "              </li>";
+                        
+    echo "            </ul>";
+              
+    echo "          </div>";
+              
+              
+              
+    echo "        <div class='col-md-7 order-md-1'>";
+    echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
+    echo "                    <span class='text-muted'>Requirements</span>";
+    echo "            </h4>";
+
+    echo "            <ul class='list-group mb-3'>";
+    echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
+    echo "                  <img  src='https://www.everbright.com.ph/headshot/EB-Nica.png' width='45' height='45'>";
+    echo "                <div class='requirementsleft'>";
+    echo "                  <h6 class='my-0'>Legaspi Village</h6>";
+    echo "                  <small class='text-muted'>Makati | Sale</small>";
+    echo "                  <br />";
+    echo "                  <small>1BR | Furnished | Ok for Bank Financing</small>";
+    echo "                </div>";
+    echo "                <span class='text-muted'>₱8,000,000</span>";
+
+    echo "              </li>";
+                      
+    echo "            </ul>";
+ 
+    echo "        </div>";
+
+
 
     include 'layout_foot.php';
     ?>
