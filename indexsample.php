@@ -33,7 +33,7 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "  <section class='mdc-top-app-bar__section mdc-top-app-bar__section--align-start'>";
 
     echo "   <a type='button' onclick='openNav()' id='sidebarCollapse' class='demo-menu material-icons mdc-top-app-bar__navigation-icon'>menu</a>";
-    echo "   <h3>Dashboard</h3>";
+    echo "   <h3 style='margin-left: 15px;>Dashboard</h3>";
     echo "  </section>";
     echo "<section class='mdc-top-app-bar__section mdc-top-app-bar__section--align-end' role='toolbar'>";
     echo " <a class='material-icons mdc-top-app-bar__action-item' aria-label='Search' alt='Search'>search</a>";
