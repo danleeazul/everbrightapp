@@ -28,26 +28,4 @@
                         </aside>
        
 
-        <div class="mdc-drawer-app-content">
-          <header class="mdc-top-app-bar">
-            <div class="mdc-top-app-bar__row">
-                
-              <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-
-                <a type="button" onclick="openNav()" id="sidebarCollapse" class="demo-menu material-icons mdc-top-app-bar__navigation-icon">menu</a>
-                <h3>Dashboard</h3>
-                <!-- <h3 class="headtitle"><strong>Dashboard</strong></h3> -->
-              </section>
-              <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-                <a class="material-icons mdc-top-app-bar__action-item" aria-label="Search" alt="Search">search</a>
-              </section>
-            </div>
-          </header>
-      
-          <main onclick="closeNav()" class="main-content">
-            <div class="mdc-top-app-bar--fixed-adjust">
-
-
-            </div>
-          </main>
-        </div>
+        
