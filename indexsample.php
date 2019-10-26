@@ -95,7 +95,7 @@ echo "<div class='mdc-drawer-app-content'>";
 
 
 
-    include 'layout_foot.php';
+    include 'footer.php';
     ?>
             
 
