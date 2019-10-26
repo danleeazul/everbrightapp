@@ -48,13 +48,13 @@ $access_denied=false;
                 $_SESSION['lastname'] = $user->lastname;
                 // if access level is 'Admin', redirect to admin section
                 if($user->access_level=='Admin'){
-                    echo "<script type='text/javascript'> document.location = 'https://www.everbright.com.ph/everbrightapp/admin/index.php'; </script>";
+                    echo "<script type='text/javascript'> document.location = 'https://www.everbright.com.ph/everbrightapp/admin/index.php?action=login_success'; </script>";
 
                 }
                 // else, redirect only to 'Customer' section
                 else{
                 
-                   echo "<script type='text/javascript'> document.location = 'https://www.everbright.com.ph/everbrightapp/index.php'; </script>";
+                   echo "<script type='text/javascript'> document.location = 'https://www.everbright.com.ph/everbrightapp/index.php?action=login_success'; </script>";
                 }
             }
             // if username does not exist or password is wrong
@@ -85,14 +85,7 @@ $access_denied=false;
                 echo "<div class='alert alert-danger margin-top-40' role='alert'>Please login.</div>";
                 
             }
-            
-            // tell the user to login
-            else if($action=='please_login'){
-                echo "<div class='alert alert-info'>
-                    <strong>Please login to access that page.</strong>
-                </div>";
-            }
-            
+
             // tell the user email is verified
             else if($action=='email_verified'){
                 echo "<div class='alert alert-success'>
