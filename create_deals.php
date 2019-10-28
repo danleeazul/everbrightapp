@@ -59,8 +59,8 @@ if($_POST){
 
 
         // specify when this record was inserted to the database
-        $created=date('Y-m-d H:i:s');
-        $stmt->bindParam(':created', $created);
+        $date=date('Y-m-d H:i:s');
+        $stmt->bindParam(':date', $date);
          
          
         // Execute the query
