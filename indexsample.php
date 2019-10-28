@@ -63,7 +63,9 @@ echo "<div class='mdc-drawer-app-content'>";
         echo "              <span class='text-muted'>Closed Deals</span>";
         echo "              <span class='badge badge-secondary badge-pill'>1</span>";
         echo "            </h4>";
-       
+       echo "            <ul class='list-group mb-3'>";
+
+
         // table body will be here
         // retrieve our table contents
     // fetch() is faster than fetchAll()
@@ -74,7 +76,7 @@ echo "<div class='mdc-drawer-app-content'>";
         extract($row);
          
         // creating new table row per record
-        echo "            <ul class='list-group mb-3'>";
+        
         echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
         echo "                  <img  src='https://www.everbright.com.ph/headshot/EB-Nica.png' width='50' height='50'>";
         echo "                <div>";
@@ -87,15 +89,15 @@ echo "<div class='mdc-drawer-app-content'>";
     
         echo "              </li>";
                             
-        echo "            </ul>";
-                  
-        echo "          </div>";
+        
     }
      
          
     }
               
-              
+           echo "            </ul>";
+                  
+        echo "          </div>";   
               
     echo "        <div class='col-md-7 order-md-1'>";
     echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
