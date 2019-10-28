@@ -93,7 +93,7 @@ if($_POST){
                       <option value="https://www.everbright.com.ph/headshot/EB-Bry.png">Bryan Sam Asis</option>
                       <option value="https://www.everbright.com.ph/headshot/EB-Renz.png">Renz Ocampo</option>
                     </select>           
-                    <p id="image" name="image" style="visibility: none;">as</p>     
+                    <p id="image" name="image" style="visibility: hidden;">as</p>     
                </div>
  
               <div class="col-md-4 mb-3">
