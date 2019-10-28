@@ -34,7 +34,7 @@ if($_POST){
     try{
      
         // insert query
-        $query = "INSERT INTO tbl_deals SET name=:name, building=:building, unit_no=:unit_no, type=:type, price=:price, date=:date";
+        $query = "INSERT INTO tbl_deals SET name=:name, building=:building, unit_no=:unit_no, type=:type, price=:price, image=:image date=:date";
  
         // prepare query for execution
         $stmt = $con->prepare($query);
@@ -45,6 +45,7 @@ if($_POST){
         $unit_no=htmlspecialchars(strip_tags($_POST['unit_no']));
         $type=htmlspecialchars(strip_tags($_POST['type']));
         $price=htmlspecialchars(strip_tags($_POST['price']));
+        $image=htmlspecialchars(strip_tags($_POST['image']));
         $date=htmlspecialchars(strip_tags($_POST['date']));
 
  
@@ -92,7 +93,7 @@ if($_POST){
                       <option value="https://www.everbright.com.ph/headshot/EB-Bry.png">Bryan Sam Asis</option>
                       <option value="https://www.everbright.com.ph/headshot/EB-Renz.png">Renz Ocampo</option>
                     </select>           
-                    <p id="nameimage">as</p>     
+                    <p id="image" name="image" style="visibility: none;">as</p>     
                </div>
  
               <div class="col-md-4 mb-3">
@@ -158,7 +159,7 @@ if($_POST){
 
 
 
- document.getElementById("nameimage").innerHTML = unitcode;
+ document.getElementById("image").innerHTML = unitcode;
 }
     </script>
   
