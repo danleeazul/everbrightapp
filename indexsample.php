@@ -12,7 +12,7 @@ $page_title="Everbright App";
 // include page header HTML
 include_once 'header.php';
 
-include 'config/database.php';
+include_once 'config/database.php';
 $query = 'SELECT * FROM tbl_deals ORDER BY id DESC';
 $stmt = $con->prepare($query);
 $stmt->execute();
@@ -82,8 +82,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     echo "        </div>";
 }
  
-// end table
-echo "</table>";
      
 }
 
