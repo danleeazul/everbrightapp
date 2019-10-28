@@ -87,10 +87,10 @@ echo "<div class='mdc-drawer-app-content'>";
 
         echo "                  <h6 class='my-0'>{$building}</h6>";
         echo "                  <small>{$type}</small>";
+        echo "                  <small class='text-muted'>{$date}</small>";
         echo "                        </td>";
         echo "                        <td style='width: 100px; text-align: right;'>";
-
-        echo "                  <small class='text-muted'>{$date}</small>";
+            
         echo "                <span class='text-muted'>₱{$price}</span>";
         echo "                        </td>";
         echo "                        </tr>";
