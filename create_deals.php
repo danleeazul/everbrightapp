@@ -55,6 +55,8 @@ if($_POST){
         $stmt->bindParam(':unit_no', $unit_no);
         $stmt->bindParam(':type', $type);
         $stmt->bindParam(':price', $price);
+        $stmt->bindParam(':image', $image);
+
 
         // specify when this record was inserted to the database
         $created=date('Y-m-d H:i:s');
