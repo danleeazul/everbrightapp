@@ -76,31 +76,20 @@ echo "<div class='mdc-drawer-app-content'>";
         extract($row);
          
         // creating new table row per record
+
         echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
-
-        echo "<div class='row'>";
-        echo "    <div class='col-md-3 mb-3'>";
         echo "                  <img  src='https://www.everbright.com.ph/headshot/EB-Nica.png' width='50' height='50'>";
-
-        echo "   </div>";
-
-        echo "    <div class='col-md-3 mb-'>";
         echo "                <div>";
         echo "                  <h6 class='my-0'>{$building}</h6>";
         echo "                  <small>{$type}</small>";
         echo "                  <br />";
         echo "                  <small class='text-muted'>{$date}</small>";
         echo "                </div>";
-        echo "    </div>";
-
-        echo "   <div class='col-md-3 mb-3'>";
         echo "                <span class='text-muted'>₱{$price}</span>";
-
-        echo "  </div>";
-
-        echo " </div>";
+    
         echo "              </li>";
-   
+                            
+        
     }
      
          
