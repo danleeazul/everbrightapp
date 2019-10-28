@@ -86,7 +86,7 @@ if($_POST){
        <div class="row">
                <div class="col-md-4 mb-3">
                <label for="lastName">Name</label>
-                    <select class="custom-select d-block w-100" name="name" id="name" onchange="GetSelectedValue()" required>
+                    <select class="custom-select d-block w-100" name="name" id="nameimage" onchange="GetSelectedValue()" required>
                       <option value="">Select...</option>
                       <option value="https://www.everbright.com.ph/headshot/EB-Joana.png">Joana Marie Legaspi</option>
                       <option value="https://www.everbright.com.ph/headshot/EB-Aj.png">Aira Joy Lim</option> 
@@ -95,7 +95,7 @@ if($_POST){
                       <option value="https://www.everbright.com.ph/headshot/EB-Bry.png">Bryan Sam Asis</option>
                       <option value="https://www.everbright.com.ph/headshot/EB-Renz.png">Renz Ocampo</option>
                     </select>           
-                    <p id="image" name="image" style="visibility: hidden;">as</p>     
+                    <p id="image" name="image">as</p>     
                </div>
  
               <div class="col-md-4 mb-3">
@@ -154,7 +154,7 @@ if($_POST){
  function GetSelectedValue(){
 
 
-  var e = document.getElementById("name");
+  var e = document.getElementById("nameimage");
   var result = e.options[e.selectedIndex].value;
 
   var unitcode = result
