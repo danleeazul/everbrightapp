@@ -59,27 +59,27 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     echo "          </div>";
 
 
-    echo "        <div class='col-md-7 order-md-1'>";
-    echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
-    echo "                    <span class='text-muted'>Requirements</span>";
-    echo "            </h4>";
+    // echo "        <div class='col-md-7 order-md-1'>";
+    // echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
+    // echo "                    <span class='text-muted'>Requirements</span>";
+    // echo "            </h4>";
 
-    echo "            <ul class='list-group mb-3'>";
-    echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
-    echo "                  <img  src='https://www.everbright.com.ph/headshot/EB-Nica.png' width='50' height='50'>";
-    echo "                <div class='requirementsleft'>";
-    echo "                  <h6 class='my-0'>Legaspi Village</h6>";
-    echo "                  <small>Makati | Sale</small>";
-    echo "                  <br />";
-    echo "                  <small class='text-muted'>1BR | Furnished | Ok for Bank Financing</small>";
-    echo "                </div>";
-    echo "                <span class='text-muted'>₱8,000,000</span>";
+    // echo "            <ul class='list-group mb-3'>";
+    // echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
+    // echo "                  <img  src='https://www.everbright.com.ph/headshot/EB-Nica.png' width='50' height='50'>";
+    // echo "                <div class='requirementsleft'>";
+    // echo "                  <h6 class='my-0'>Legaspi Village</h6>";
+    // echo "                  <small>Makati | Sale</small>";
+    // echo "                  <br />";
+    // echo "                  <small class='text-muted'>1BR | Furnished | Ok for Bank Financing</small>";
+    // echo "                </div>";
+    // echo "                <span class='text-muted'>₱8,000,000</span>";
 
-    echo "              </li>";
+    // echo "              </li>";
                       
-    echo "            </ul>";
+    // echo "            </ul>";
  
-    echo "        </div>";
+    // echo "        </div>";
 }
  
      
