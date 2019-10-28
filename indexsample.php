@@ -90,7 +90,7 @@ echo "<div class='mdc-drawer-app-content'>";
         echo "                  <br />";
         echo "                  <small class='text-muted'>{$date}</small>";
         echo "                        </td>";
-        echo "                        <td style='width: 100px; text-align: right;'>";
+        echo "                        <td style='width: 100px;'>";
             
         echo "                <span class='text-muted'>₱{$price}</span>";
         echo "                        </td>";
