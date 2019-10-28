@@ -22,15 +22,7 @@ $num = $stmt->rowCount();
 
 if($num>0){
  
-    echo " <div class='row col p-3'>";
-    echo "  <div class='container'>";
-    echo "      <div class='row'>";
    
-              
-              
-              
-    
-     
     // table body will be here
     // retrieve our table contents
 // fetch() is faster than fetchAll()
@@ -41,6 +33,9 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     extract($row);
      
     // creating new table row per record
+    echo " <div class='row col p-3'>";
+    echo "  <div class='container'>";
+    echo "      <div class='row'>";
     echo "          <div class='col-md-5 order-md-2 mb-4'>";
     echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
     echo "              <span class='text-muted'>Closed Deals</span>";
