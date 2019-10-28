@@ -81,11 +81,11 @@ echo "<div class='mdc-drawer-app-content'>";
         echo "                      <table style='border: none;'>";
         echo "                     <tr>";
         echo "                      <td>";
-        echo "                  <img  src='https://www.everbright.com.ph/headshot/EB-Nica.png' width='50' height='50'>";
+        echo "                  <img  src='{$image}' width='50' height='50'>";
         echo "                    </td>";
         echo "                     <td style='width: 400px; padding-left: 10px; padding-right: 10px;'>";
 
-        echo "                  <h6 class='my-0'>{$building}</h6>";
+        echo "                  <h6 class='my-0'>{$building} - {$unit_no}</h6>";
         echo "                  <small>{$type}</small>";
         echo "                  <br />";
         echo "                  <small class='text-muted'>{$date}</small>";
