@@ -21,7 +21,14 @@ $stmt->execute();
 $num = $stmt->rowCount();
 
 if($num>0){
- 
+    echo " <div class='row col p-3'>";
+    echo "  <div class='container'>";
+    echo "      <div class='row'>";
+    echo "          <div class='col-md-5 order-md-2 mb-4'>";
+    echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
+    echo "              <span class='text-muted'>Closed Deals</span>";
+    echo "              <span class='badge badge-secondary badge-pill'>1</span>";
+    echo "            </h4>";
    
     // table body will be here
     // retrieve our table contents
@@ -33,14 +40,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     extract($row);
      
     // creating new table row per record
-    echo " <div class='row col p-3'>";
-    echo "  <div class='container'>";
-    echo "      <div class='row'>";
-    echo "          <div class='col-md-5 order-md-2 mb-4'>";
-    echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
-    echo "              <span class='text-muted'>Closed Deals</span>";
-    echo "              <span class='badge badge-secondary badge-pill'>1</span>";
-    echo "            </h4>";
     echo "            <ul class='list-group mb-3'>";
     echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
     echo "                  <img  src='https://www.everbright.com.ph/headshot/EB-Nica.png' width='50' height='50'>";
