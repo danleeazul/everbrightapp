@@ -81,7 +81,7 @@ echo "<div class='mdc-drawer-app-content'>";
         echo "                      <table style='border: none;'>";
         echo "                     <tr>";
         echo "                      <td>";
-        echo "                  <img  src='{$image}' width='50' height='50'>";
+        echo "                  <img  src='{$name}' width='50' height='50'>";
         echo "                    </td>";
         echo "                     <td style='width: 400px; padding-left: 10px; padding-right: 10px;'>";
 
