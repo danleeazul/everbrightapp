@@ -78,15 +78,23 @@ echo "<div class='mdc-drawer-app-content'>";
         // creating new table row per record
 
         echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
+        echo "                      <table style='border: none;'>";
+        echo "                     <tr>";
+        echo "                      <td>";
         echo "                  <img  src='https://www.everbright.com.ph/headshot/EB-Nica.png' width='50' height='50'>";
-        echo "                <div>";
+        echo "                    </td>";
+        echo "                     <td style='width: 200px; padding-left: 10px; padding-right: 10px;'>";
+
         echo "                  <h6 class='my-0'>{$building}</h6>";
         echo "                  <small>{$type}</small>";
-        echo "                  <br />";
+        echo "                        </td>";
+        echo "                        <td style='width: 100px; text-align: right;'>";
+
         echo "                  <small class='text-muted'>{$date}</small>";
-        echo "                </div>";
         echo "                <span class='text-muted'>₱{$price}</span>";
-    
+        echo "                        </td>";
+        echo "                        </tr>";
+        echo "                    </table>";
         echo "              </li>";
                             
         

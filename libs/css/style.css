@@ -86,6 +86,14 @@
       text-align: end;
       align-self: flex-end;
     }
+
+    /* .carddeals{
+      width: ;
+    } */
+
+    .tableborder{
+      border: none;
+    }
     
     @media screen and (max-height: 450px) {
       .sidenav {padding-top: 15px;}
