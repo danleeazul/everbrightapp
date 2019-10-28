@@ -12,6 +12,86 @@ $page_title="Everbright App";
 // include page header HTML
 include_once 'header.php';
 
+include 'config/database.php';
+$query = 'SELECT * FROM tbl_deals ORDER BY id DESC';
+$stmt = $con->prepare($query);
+$stmt->execute();
+
+// this is how to get number of rows returned
+$num = $stmt->rowCount();
+
+if($num>0){
+ 
+    echo " <div class='row col p-3'>";
+    echo "  <div class='container'>";
+    echo "      <div class='row'>";
+   
+              
+              
+              
+    
+     
+    // table body will be here
+    // retrieve our table contents
+// fetch() is faster than fetchAll()
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+    // extract row
+    // this will make $row['firstname'] to
+    // just $firstname only
+    extract($row);
+     
+    // creating new table row per record
+    echo "          <div class='col-md-5 order-md-2 mb-4'>";
+    echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
+    echo "              <span class='text-muted'>Closed Deals</span>";
+    echo "              <span class='badge badge-secondary badge-pill'>1</span>";
+    echo "            </h4>";
+    echo "            <ul class='list-group mb-3'>";
+    echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
+    echo "                  <img  src='https://www.everbright.com.ph/headshot/EB-Nica.png' width='50' height='50'>";
+    echo "                <div>";
+    echo "                  <h6 class='my-0'>{$building}</h6>";
+    echo "                  <small>{$type}</small>";
+    echo "                  <br />";
+    echo "                  <small class='text-muted'>{$date}</small>";
+    echo "                </div>";
+    echo "                <span class='text-muted'>₱{$price}</span>";
+
+    echo "              </li>";
+                        
+    echo "            </ul>";
+              
+    echo "          </div>";
+
+
+    echo "        <div class='col-md-7 order-md-1'>";
+    echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
+    echo "                    <span class='text-muted'>Requirements</span>";
+    echo "            </h4>";
+
+    echo "            <ul class='list-group mb-3'>";
+    echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
+    echo "                  <img  src='https://www.everbright.com.ph/headshot/EB-Nica.png' width='50' height='50'>";
+    echo "                <div class='requirementsleft'>";
+    echo "                  <h6 class='my-0'>Legaspi Village</h6>";
+    echo "                  <small>Makati | Sale</small>";
+    echo "                  <br />";
+    echo "                  <small class='text-muted'>1BR | Furnished | Ok for Bank Financing</small>";
+    echo "                </div>";
+    echo "                <span class='text-muted'>₱8,000,000</span>";
+
+    echo "              </li>";
+                      
+    echo "            </ul>";
+ 
+    echo "        </div>";
+}
+ 
+// end table
+echo "</table>";
+     
+}
+
 echo "<div class='mdc-drawer-app-content'>";
 
 
