@@ -34,7 +34,7 @@ if($_POST){
     try{
      
         // insert query
-        $query = "INSERT INTO tbl_deals SET name=:name, building=:building, unit_no=:unit_no, type=:type, price=:price, image=:image date=:date";
+        $query = "INSERT INTO tbl_deals SET name=:name, building=:building, unit_no=:unit_no, type=:type, price=:price, image=:image, deals_date=:deals_date";
  
         // prepare query for execution
         $stmt = $con->prepare($query);
@@ -46,7 +46,7 @@ if($_POST){
         $type=htmlspecialchars(strip_tags($_POST['type']));
         $price=htmlspecialchars(strip_tags($_POST['price']));
         $image=htmlspecialchars(strip_tags($_POST['image']));
-        $date=htmlspecialchars(strip_tags($_POST['date']));
+        $deals_date=htmlspecialchars(strip_tags($_POST['deals_date']));
 
  
         // bind the parameters
@@ -59,8 +59,8 @@ if($_POST){
 
 
         // specify when this record was inserted to the database
-        $date=date('Y-m-d H:i:s');
-        $stmt->bindParam(':date', $date);
+        $deals_date=date('Y-m-d H:i:s');
+        $stmt->bindParam(':deals_date', $deals_date);
          
          
         // Execute the query
