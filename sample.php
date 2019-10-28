@@ -32,7 +32,7 @@ include 'config/database.php';
 // delete message prompt will be here
  
 // select all data
-$query = "SELECT id, name, description, price FROM products ORDER BY id DESC";
+$query = "SELECT * FROM tbl_deals ORDER BY id DESC";
 $stmt = $con->prepare($query);
 $stmt->execute();
  
@@ -69,9 +69,9 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
      
     // creating new table row per record
     echo "<tr>";
-        echo "<td>{$id}</td>";
+        echo "<td>{$deals_id}</td>";
         echo "<td>{$name}</td>";
-        echo "<td>{$description}</td>";
+        echo "<td>{$building}</td>";
         echo "<td>&#36;{$price}</td>";
         echo "<td>";
             // read one record 
