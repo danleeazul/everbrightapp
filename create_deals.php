@@ -83,7 +83,7 @@ if($_POST){
        <div class="row">
                <div class="col-md-4 mb-3">
                <label for="lastName">Name</label>
-                    <select class="custom-select d-block w-100" name="name" onchange="GetSelectedValue()" required>
+                    <select class="custom-select d-block w-100" name="name" id="name" onchange="GetSelectedValue()" required>
                       <option value="">Select...</option>
                       <option value="https://www.everbright.com.ph/headshot/EB-Joana.png">Joana Marie Legaspi</option>
                       <option value="https://www.everbright.com.ph/headshot/EB-Aj.png">Aira Joy Lim</option> 
