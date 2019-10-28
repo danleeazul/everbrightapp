@@ -85,7 +85,7 @@ if($_POST){
                <label for="lastName">Name</label>
                     <select class="custom-select d-block w-100" name="name" onchange="GetSelectedValue()" required>
                       <option value="">Select...</option>
-                      <option value="https://www.everbright.com.ph/headshot/EB-Joana.png">Joana Marie Legaspo</option>
+                      <option value="https://www.everbright.com.ph/headshot/EB-Joana.png">Joana Marie Legaspi</option>
                       <option value="https://www.everbright.com.ph/headshot/EB-Aj.png">Aira Joy Lim</option> 
                       <option value="https://www.everbright.com.ph/headshot/EB-Nica.png">Nica Ginez</option>
                       <option value="https://www.everbright.com.ph/headshot/EB-Demi.png">Demi Dela Cruz</option>
@@ -147,6 +147,7 @@ if($_POST){
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <script>
+
  function GetSelectedValue(){
 
 
