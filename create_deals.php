@@ -32,10 +32,6 @@ if($_POST){
     // include database connection
     include 'database.php';
 
-
-
-
- 
     try{
      
         // insert query
@@ -60,9 +56,6 @@ if($_POST){
         $stmt->bindParam(':unit_no', $unit_no);
         $stmt->bindParam(':type', $type);
         $stmt->bindParam(':price', $price);
-
-
-        // specify when this record was inserted to the database
         $stmt->bindParam(':deals_date', $deals_date);
          
          
@@ -163,7 +156,8 @@ if($_POST){
  <script>
 
 $('#datepicker1').datepicker({
-            uiLibrary: 'bootstrap4'
+            uiLibrary: 'bootstrap4',
+            format: 'yyyy-mm-dd'
         });
 
 function getDate(){
