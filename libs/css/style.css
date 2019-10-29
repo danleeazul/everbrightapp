@@ -102,27 +102,27 @@
     
     @media (max-width:768px) {
   
-      .mdc-top-app-bar__navigation-icon {
-          display: block;
-        }
+        .mdc-top-app-bar__navigation-icon {
+            display: block;
+          }
   
-        .mdc-top-app-bar__section{
-          margin-left: 0px;
-        }
+          .mdc-top-app-bar__section{
+            margin-left: 0px;
+          }
+    
+          .mdc-top-app-bar__section .headtitle{
+            margin-left: 20px;
+          }
   
-        .mdc-top-app-bar__section .headtitle{
-          margin-left: 20px;
-        }
-  
-    .mdc-drawer{
-      width: 0%;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      }
-      .closebtn{
-          visibility: visible;
-      }
+        .mdc-drawer{
+          width: 0%;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          }
+          .closebtn{
+              visibility: visible;
+          }
   
         .sidenav {
           height: 100%;
