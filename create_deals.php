@@ -137,7 +137,7 @@ if($_POST){
             
             </div>
             
-            <p id="image"  visibility="hidden" name="image">url</p>     
+            <p id="image" style="visibility= hidden;"  name="image">url</p>     
 
           
 </form>
