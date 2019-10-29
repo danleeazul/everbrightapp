@@ -67,6 +67,7 @@ if($_POST){
             echo "<div class='alert alert-success'>Record was saved.</div>";
         }else{
             echo "<div class='alert alert-danger'>Unable to save record.</div>";
+            echo $deals_date;
         }
          
     }
