@@ -125,7 +125,7 @@ if($_POST){
 
           <div class="col-md-4 mb-3">
              <label for="firstName">Date Contract Signed</label>
-             <input id="datepicker1" width="auto" required />
+             <input id="datepicker1" data-type="datepicker" date-datepicker="true" width="276" />
           </div>
 
        </div>
