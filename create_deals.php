@@ -46,7 +46,7 @@ if($_POST){
         $unit_no=htmlspecialchars(strip_tags($_POST['unit_no']));
         $type=htmlspecialchars(strip_tags($_POST['type']));
         $price=htmlspecialchars(strip_tags($_POST['price']));
-        $deals_date=date('Y-m-d', (strtotime($dadeals_date)));
+        $deals_date=date('Y-m-d', (strtotime($deals_date)));
 
      
 
@@ -121,11 +121,11 @@ if($_POST){
 
           <div class="col-md-4 mb-3">
              <label for="firstName">Date Contract Signed</label>
-             <input id="deals_dates" width="auto" required />
+             <input id="deals_date" width="auto" required />
           </div>
 
        </div>
-        <p id="deals_datex"   name="deals_date"></p> 
+        <p id="deals_datex"   name="deals_dates"></p> 
 
 
 
@@ -149,21 +149,20 @@ if($_POST){
       </footer>
 
       <p id="image" style="visibility: hidden;"  name="image">url</p>     
-      <p id="deals_date"   name="deals_date"></p>
 
  <!-- Optional JavaScript -->
 
 
  <script>
 
-$('#deals_dates').datepicker({
+$('#deals_date').datepicker({
             uiLibrary: 'bootstrap4',
             format: 'yyyy-mm-dd'
         });
 
  function getDate(){
-   var x = document.getElementById("deals_dates").value;
-   document.getElementById("deals_datex").innerHTML = x;
+   var x = document.getElementById("deals_date").value;
+   document.getElementById("deals_dates").innerHTML = x;
  }
 
 
