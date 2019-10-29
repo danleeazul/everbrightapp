@@ -125,6 +125,7 @@ if($_POST){
           </div>
 
        </div>
+       <p id="deals_date" style="visibility: hidden;"   name="deals_date"></p>
 
 
 
