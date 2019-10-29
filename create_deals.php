@@ -155,6 +155,14 @@ if($_POST){
 
     <script>
 
+$('#datepicker1').datepicker({
+            uiLibrary: 'bootstrap4'
+        });
+
+        console.log(datepicker1);
+
+
+
  function GetSelectedValue(){
 
 
