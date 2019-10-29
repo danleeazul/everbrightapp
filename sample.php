@@ -32,7 +32,7 @@ include 'config/database.php';
 // delete message prompt will be here
  
 // select all data
-$query = "SELECT * FROM tbl_deals ORDER BY id DESC";
+$query = "SELECT * FROM wp_posts ORDER BY id DESC";
 $stmt = $con->prepare($query);
 $stmt->execute();
  
