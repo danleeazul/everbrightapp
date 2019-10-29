@@ -58,7 +58,7 @@ if($_POST){
 
 
         // specify when this record was inserted to the database
-        $deals_date=date('Y-m-d H:i:s');
+        $deals_date=date('Y-m-d');
         $stmt->bindParam(':deals_date', $deals_date);
          
          
@@ -94,7 +94,6 @@ if($_POST){
                       <option value="https://www.everbright.com.ph/headshot/EB-Bry.png">Bryan Sam Asis</option>
                       <option value="https://www.everbright.com.ph/headshot/EB-Renz.png">Renz Ocampo</option>
                     </select>           
-                    <p id="image" name="image">as</p>     
                </div>
  
               <div class="col-md-4 mb-3">
@@ -123,7 +122,7 @@ if($_POST){
 
           <div class="col-md-4 mb-3">
              <label for="firstName">Date Contract Signed</label>
-             <input id="datepicker1" width="276" />
+             <input id="datepicker1" width="auto" name="deals_date" required />
           </div>
 
        </div>
@@ -138,6 +137,8 @@ if($_POST){
             
             </div>
             
+            <p id="image"  visibility="hidden" name="image">url</p>     
+
           
 </form>
         
