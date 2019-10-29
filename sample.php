@@ -67,7 +67,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     // creating new table row per record
     echo "<tr>";
         echo "<td>{$id}</td>";
-        echo "<td>{$post_content}</td>";
         echo "<td>{$post_title}</td>";
     echo "</tr>";
 }
