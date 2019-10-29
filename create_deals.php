@@ -31,6 +31,10 @@ if($_POST){
  
     // include database connection
     include 'database.php';
+
+
+
+
  
     try{
      
@@ -48,7 +52,10 @@ if($_POST){
         $price=htmlspecialchars(strip_tags($_POST['price']));
         $deals_date=htmlspecialchars(strip_tags($_POST['deals_date']));
 
- 
+        $getDate = str_replace('/', '-', $deals_date );
+        $newDate = date("Y-m-d", strtotime($getDate));
+
+
         // bind the parameters
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':building', $building);
@@ -58,7 +65,7 @@ if($_POST){
 
 
         // specify when this record was inserted to the database
-        $stmt->bindParam(':deals_date', $deals_date);
+        $stmt->bindParam(':deals_date', $newDate);
          
          
         // Execute the query
@@ -75,6 +82,8 @@ if($_POST){
         die('ERROR: ' . $exception->getMessage());
     }
 }
+
+
 ?>
  
 <!-- html form here where the product information will be entered -->
@@ -121,7 +130,7 @@ if($_POST){
 
           <div class="col-md-4 mb-3">
              <label for="firstName">Date Contract Signed</label>
-             <input id="datepicker1" width="auto" name="deals_date" required />
+             <input id="datepicker1" width="auto" required />
           </div>
 
        </div>
@@ -132,7 +141,7 @@ if($_POST){
             <hr class="mb-4">
             <div class="text-right">
             <a href='create.php'><button type="button" href='create.php' class="btn btn-outline-secondary">Cancel</button></a>
-            <button type="submit" value='Save' class="btn btn-primary">Submit</button>
+            <button type="submit" value='Save' onclick="getDate()" class="btn btn-primary">Submit</button>
             
             </div>
             
@@ -148,6 +157,7 @@ if($_POST){
       </footer>
 
       <p id="image" style="visibility: hidden;"  name="image">url</p>     
+      <p id="deals_date" style="visibility: hidden;"  name="deals_date"></p>
 
  <!-- Optional JavaScript -->
 
@@ -158,17 +168,18 @@ $('#datepicker1').datepicker({
             uiLibrary: 'bootstrap4'
         });
 
- function GetSelectedValue(){
+function getDate(){
+  var x = document.getElementById("datepicker1").value;
+  document.getElementById("deals_date").innerHTML = x;
+}
 
 
+function GetSelectedValue(){
   var e = document.getElementById("nameimage");
   var result = e.options[e.selectedIndex].value;
-
   var unitcode = result
 
-
-
- document.getElementById("image").innerHTML = unitcode;
+document.getElementById("image").innerHTML = unitcode;
 }
     </script>
 
