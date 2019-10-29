@@ -9,13 +9,11 @@
       <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
       <link href="https://www.everbright.com.ph/everbrightapp/libs/css/form-validation.css" rel="stylesheet" type="text/css"/>
-  
-  
       <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
       <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
-    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+      <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
           
 </head>
 <body>
@@ -125,7 +123,7 @@ if($_POST){
 
           <div class="col-md-4 mb-3">
              <label for="firstName">Date Contract Signed</label>
-             <input id="datepicker1" data-type="datepicker" date-datepicker="true" width="276" />
+             <input id="datepicker1" width="276" />
           </div>
 
        </div>
@@ -161,9 +159,6 @@ if($_POST){
 $('#datepicker1').datepicker({
             uiLibrary: 'bootstrap4'
         });
-
-        console.log(datepicker1);
-
 
  function GetSelectedValue(){
 
