@@ -58,7 +58,6 @@ if($_POST){
 
 
         // specify when this record was inserted to the database
-        $deals_date=date('Y-m-d');
         $stmt->bindParam(':deals_date', $deals_date);
          
          
