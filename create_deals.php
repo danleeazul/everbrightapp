@@ -121,11 +121,11 @@ if($_POST){
 
           <div class="col-md-4 mb-3">
              <label for="firstName">Date Contract Signed</label>
-             <input id="deals_date" width="auto" required />
+             <input id="deals_dates" width="auto" required />
           </div>
 
        </div>
-       <!-- <p id="deals_date" style="visibility: hidden;"   name="deals_date"></p> -->
+        <p id="deals_date"   name="deals_date"></p> 
 
 
 
@@ -156,15 +156,15 @@ if($_POST){
 
  <script>
 
-$('#deals_date').datepicker({
+$('#deals_dates').datepicker({
             uiLibrary: 'bootstrap4',
             format: 'yyyy-mm-dd'
         });
 
-// function getDate(){
-//   var x = document.getElementById("deals_date").value;
-//   document.getElementById("deals_date").innerHTML = x;
-// }
+ function getDate(){
+   var x = document.getElementById("deals_dates").value;
+   document.getElementById("deals_date").innerHTML = x;
+ }
 
 
 function GetSelectedValue(){
