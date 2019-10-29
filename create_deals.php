@@ -137,7 +137,6 @@ if($_POST){
             
             </div>
             
-            <p id="image" style="visibility= hidden;"  name="image">url</p>     
 
           
 </form>
@@ -148,6 +147,9 @@ if($_POST){
         <p class="mb-1">&copy; Everbright Web App v0.00</p>
        
       </footer>
+
+      <p id="image" style="visibility: hidden;"  name="image">url</p>     
+
  <!-- Optional JavaScript -->
 
 
