@@ -32,7 +32,7 @@ include 'config/database.php';
 // delete message prompt will be here
  
 // select all data
-$query = "SELECT * FROM wp_posts ORDER BY ID DESC";
+$query = "SELECT * FROM wp_posts ORDER BY post_author DESC";
 $stmt = $con->prepare($query);
 $stmt->execute();
  
@@ -66,7 +66,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
      
     // creating new table row per record
     echo "<tr>";
-        echo "<td>{$ID}</td>";
+        echo "<td>{$post_author}</td>";
         echo "<td>{$post_title}</td>";
     echo "</tr>";
 }
