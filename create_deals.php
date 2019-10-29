@@ -46,6 +46,7 @@ if($_POST){
         $unit_no=htmlspecialchars(strip_tags($_POST['unit_no']));
         $type=htmlspecialchars(strip_tags($_POST['type']));
         $price=htmlspecialchars(strip_tags($_POST['price']));
+        $deals_date=date('Y-m-d', (strtotime($dadeals_date)));
 
      
 
