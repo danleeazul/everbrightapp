@@ -46,7 +46,6 @@ if($_POST){
         $unit_no=htmlspecialchars(strip_tags($_POST['unit_no']));
         $type=htmlspecialchars(strip_tags($_POST['type']));
         $price=htmlspecialchars(strip_tags($_POST['price']));
-        $deals_date=date('Y-m-d', (strtotime($deals_date)));
 
      
 
@@ -56,8 +55,10 @@ if($_POST){
         $stmt->bindParam(':unit_no', $unit_no);
         $stmt->bindParam(':type', $type);
         $stmt->bindParam(':price', $price);
-        $stmt->bindParam(':deals_date', $deals_date);
-         
+
+         // specify when this record was inserted to the database
+         $deals_date=date('Y-m-d',($deals_date));
+         $stmt->bindParam(':deals_date', $deals_date);
          
         // Execute the query
         if($stmt->execute()){
