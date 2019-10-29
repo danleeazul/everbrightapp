@@ -148,7 +148,7 @@ if($_POST){
       </footer>
 
       <p id="image" style="visibility: hidden;"  name="image">url</p>     
-      <p id="deals_date" style="visibility: hidden;"  name="deals_date"></p>
+      <p id="deals_date"   name="deals_date"></p>
 
  <!-- Optional JavaScript -->
 
