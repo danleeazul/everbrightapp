@@ -46,8 +46,11 @@ if($_POST){
         $unit_no=htmlspecialchars(strip_tags($_POST['unit_no']));
         $type=htmlspecialchars(strip_tags($_POST['type']));
         $price=htmlspecialchars(strip_tags($_POST['price']));
+        $deals_date=$_POST['deals_date'];
 
-     
+        $deals_date = mysql_real_escape_string($deals_date);
+
+
 
         // bind the parameters
         $stmt->bindParam(':name', $name);
@@ -57,7 +60,6 @@ if($_POST){
         $stmt->bindParam(':price', $price);
 
          // specify when this record was inserted to the database
-         $deals_date=date('Y-m-d',(strtotime($deals_date)));
          $stmt->bindParam(':deals_date', $deals_date);
          
         // Execute the query
