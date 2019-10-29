@@ -126,11 +126,11 @@ if($_POST){
 
           <div class="col-md-4 mb-3">
              <label for="firstName">Date Contract Signed</label>
-             <input id="deals_date" width="auto" required />
+             <input id="deals_date" width="auto" onchange="getDate()" required />
           </div>
 
        </div>
-        <p id="deals_datex"   name="deals_dates"></p> 
+        <p id="deals_datex"></p> 
 
 
 
@@ -138,7 +138,7 @@ if($_POST){
             <hr class="mb-4">
             <div class="text-right">
             <a href='create.php'><button type="button" href='create.php' class="btn btn-outline-secondary">Cancel</button></a>
-            <button type="submit" value='Save' onclick="getDate()" class="btn btn-primary">Submit</button>
+            <button type="submit" value='Save'  class="btn btn-primary">Submit</button>
             
             </div>
             
@@ -167,7 +167,7 @@ $('#deals_date').datepicker({
 
  function getDate(){
    var x = document.getElementById("deals_date").value;
-   document.getElementById("deals_dates").innerHTML = x;
+   document.getElementById("deals_datex").innerHTML = x;
  }
 
 
