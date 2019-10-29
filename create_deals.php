@@ -28,7 +28,6 @@
         <!-- PHP insert code will be here -->
         <?php
 
-       
 
 if($_POST){
  
@@ -50,8 +49,9 @@ if($_POST){
         $type=htmlspecialchars(strip_tags($_POST['type']));
         $price=htmlspecialchars(strip_tags($_POST['price']));
 
-        $deals_date = date('Y-m-d',strtotime($_POST['deals_date']));
-
+        $deals_date=strtotime($_POST['deals_date']); 
+        $edate=date("Y-m-d",$deals_date);
+        
 
         // bind the parameters
         $stmt->bindParam(':name', $name);
