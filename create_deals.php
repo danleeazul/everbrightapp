@@ -119,6 +119,12 @@ if($_POST){
              <label for="firstName">Price</label>
              <input type="text" class="form-control" name="price" placeholder="Php" value="" required>           
           </div>
+
+          <div class="col-md-4 mb-3">
+             <label for="firstName">Date Contract Signed</label>
+             <input id="datepicker1" width="auto" name=datesigned required />
+          </div>
+
        </div>
 
 
