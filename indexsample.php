@@ -117,13 +117,7 @@ echo "<div class='mdc-drawer-app-content'>";
                   
         echo "          </div>";   
               
-    echo "        <div class='col-md-7 order-md-1'>";
-    echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
-    echo "                    <span class='text-muted'>Requirements</span>"; 
-    echo "                   <button type='submit' href='create_req.php' value='Save' class='btn btn-primary'>Add</button>"; 
-    echo "            </h4>";
 
-    echo "            <ul class='list-group mb-3'>";
 
     $querya = 'SELECT * FROM tbl_requirements ORDER BY requirements_id DESC';
     $stmta = $cona->prepare($querya);
@@ -131,8 +125,19 @@ echo "<div class='mdc-drawer-app-content'>";
     
     // this is how to get number of rows returned
     $numa = $stmta->rowCount();
+        if($numa>0){
+            
+    echo "        <div class='col-md-7 order-md-1'>";
+    echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
+    echo "                    <span class='text-muted'>Requirements</span>"; 
+    echo "           <a href='create_req.php'><button type='button' href='create_req.php' class='btn btn-primary'>Cancel</button></a>"; 
+    echo "            </h4>";
+   
 
-    if($numa>0){
+    echo "            <ul class='list-group mb-3'>";
+
+
+   
         while ($rowa = $stmta->fetch(PDO::FETCH_ASSOC)){
         
             extract($rowa);
