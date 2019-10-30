@@ -5,7 +5,7 @@
                             <div>
                           <!-- <img  src='https://everbright.com.ph/staging/wp-content/uploads/2019/09/everbright-logo-04.png' width='250' height='65'> -->
                           </div>
-                          <div class="mdc-drawer__content">
+                          <div style="height: 93%;" class="mdc-drawer__content">
                           
                             <nav class="mdc-list">
                              
@@ -34,7 +34,7 @@
                 <table style='border: none; width: 100%;'>                       
                             <tr>
                               <td><p style="padding-left:20px;" class='text-muted'>© Everbright v0.0</p></td>
-                              <td style="padding-right:30px; paddint-bottom:20px" class="text-right"><a href="logout.php" class="text-decoration-none">Log out</a></td>
+                              <td style="padding-right:30px; padding-bottom:20px" class="text-right"><a href="logout.php" class="text-decoration-none">Log out</a></td>
                             </tr>   
                         </table>
               </div>
