@@ -116,8 +116,11 @@ echo "<div class='mdc-drawer-app-content'>";
 
 
     
-    echo "            </ul>";         
-    echo "          </div>";   
+              
+           echo "            </ul>";
+                  
+        echo "          </div>";   
+              
     echo "        <div class='col-md-7 order-md-1'>";
     echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
     echo "                    <span class='text-muted'>Requirements</span>"; 
@@ -126,21 +129,23 @@ echo "<div class='mdc-drawer-app-content'>";
 
     echo "            <ul class='list-group mb-3'>";
 
-       
-            echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
-            echo "                  <img  src='{$name}' width='50' height='50'>";
-            echo "                <div class='requirementsleft'>";
-            echo "                  <h6 class='my-0'>{$building}</h6>";
-            echo "                  <small>{$location} | {$type}</small>";
-            echo "                  <br />";
-            echo "                  <small class='text-muted'>{$requirements}</small>";
-            echo "                </div>";
-            echo "                <span class='text-muted'>{$price}</span>";
-            echo "              </li>";
-       
 
+    
+
+    echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
+    echo "                  <img  src='https://www.everbright.com.ph/headshot/EB-Nica.png' width='50' height='50'>";
+    echo "                <div class='requirementsleft'>";
+    echo "                  <h6 class='my-0'>Legaspi Village</h6>";
+    echo "                  <small>Makati | Sale</small>";
+    echo "                  <br />";
+    echo "                  <small class='text-muted'>1BR | Furnished | Ok for Bank Financing</small>";
+    echo "                </div>";
+    echo "                <span class='text-muted'>₱8,000,000</span>";
+
+    echo "              </li>";
+                      
     echo "            </ul>";
-
+ 
     echo "        </div>";
 
 
