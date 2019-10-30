@@ -50,7 +50,7 @@ if($_POST){
         $price=htmlspecialchars(strip_tags($_POST['price']));
 
         $deals_date=strtotime($_POST['deals_date']); 
-        $edate=date("Y-m-d",$deals_date);
+        $deals_date=date("Y-m-d",$deals_date);
         
 
         // bind the parameters
@@ -61,7 +61,7 @@ if($_POST){
         $stmt->bindParam(':price', $price);
 
          // specify when this record was inserted to the database
-         $stmt->bindParam(':deals_date', $deals_date);
+         $stmt->bindParam(':deals_date', '$deals_date');
          
         // Execute the query
         if($stmt->execute()){
