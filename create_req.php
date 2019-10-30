@@ -106,7 +106,7 @@ if($_POST){
  
              <div class="col-md-4 mb-3">
                <label for="firstName">Location</label>
-               <select class="custom-select d-block w-100" id="location" required>
+               <select class="custom-select d-block w-100" name="location" required>
                   <option value="">Select...</option>
                   <option value="17">Antipolo</option>
                   <option value="6">Bataan</option>
@@ -128,13 +128,22 @@ if($_POST){
             </div>
  
             <div class="col-md-4 mb-3">
+                <label for="lastName">Type</label>
+                    <select class="custom-select d-block w-100" name="type" required>
+                      <option value="">Select...</option>
+                      <option value="Sale">Sale</option> 
+                      <option value="Rent">Rent</option>
+                    </select>            
+           </div>
+
+            <div class="col-md-4 mb-3">
             <label for="firstName">Price</label>
              <input type="text" class="form-control" name="price" placeholder="Php" value="" required>     
            </div>
  
-          <div class="col-md-8 mb-3">
+          <div class="col-md-12 mb-3">
              <label for="firstName">Specification</label>
-             <textarea class="form-control" id="exampleFormControlTextarea1" name="requirements" rows="3"></textarea>          
+             <textarea class="form-control" id="exampleFormControlTextarea1" name="requirements" rows="3" required></textarea>          
           </div>
 
 
