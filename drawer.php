@@ -24,9 +24,14 @@
                               </a>
                               <hr class="mb-4">
                                 
-                              <a class="nav-link" href="<?php echo $home_url; ?>logout.php">
-                                <span class='text-muted'>Logout</span>
-                              </a>
+
+                        <table class="style='border: none;'">                       
+                            <tr>
+                              <td>© Everbright Web App v0.0</td>
+                              <td><span href=" <?php echo $home_url; ?>logout.php" class='text-muted'>Log out</span>   </td>
+                            </tr>   
+                        </table>
+                              
                             </nav>
                             
                           </div>
