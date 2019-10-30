@@ -49,9 +49,9 @@ if($_POST){
         $type=htmlspecialchars(strip_tags($_POST['type']));
         $price=htmlspecialchars(strip_tags($_POST['price']));
 
-        $deals_date=strtotime($_POST['deals_date']); 
-        $deals_date=date("Y-m-d",$deals_date);
-        
+  
+
+
 
         // bind the parameters
         $stmt->bindParam(':name', $name);
@@ -61,6 +61,7 @@ if($_POST){
         $stmt->bindParam(':price', $price);
 
          // specify when this record was inserted to the database
+         $start_date = date("Y-m-d", strtotime($deals_date));
          $stmt->bindParam(':deals_date', $deals_date);
          
         // Execute the query
@@ -162,7 +163,7 @@ if($_POST){
 
 $('#deals_date').datepicker({
             uiLibrary: 'bootstrap4',
-            format: 'yyyy-mm-dd'
+            //format: 'yyyy-mm-dd'
         });
 
  function getDate(){
