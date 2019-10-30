@@ -116,33 +116,8 @@
     ?>
  
 <!-- html form here where the product information will be entered -->
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-    <table class='table table-hover table-responsive table-bordered'>
-        <tr>
-            <td>Name</td>
-            <td><input type='text' name='city' class='form-control' /></td>
-        </tr>
-        <tr>
-            <td>Description</td>
-            <td><textarea name='building' class='form-control'></textarea></td>
-        </tr>
-        <tr>
-            <td>Price</td>
-            <td><input type='text' name='neighborhood' class='form-control' /></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <input type='submit' value='Save' class='btn btn-primary' />
-                <a href='index.php' class='btn btn-danger'>Back to read products</a>
-            </td>
-        </tr>
-    </table>
-</form>
-
 
 <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-4" src="" alt="" width="72" height="72">
         <h2>Listings Form</h2>
       </div>
     

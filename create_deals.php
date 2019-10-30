@@ -21,10 +21,9 @@
     <!-- container -->
     <div class="container">
    
-        <div class="page-header">
-            <h1>Add new signed deals</h1>
-        </div>
-      
+    <div class="py-5 text-center">
+        <h2>New Contract Signed</h2>
+    </div>
         <!-- PHP insert code will be here -->
         <?php
 
