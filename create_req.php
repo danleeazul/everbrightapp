@@ -22,7 +22,7 @@
     <div class="container">
    
     <div class="py-5 text-center">
-        <h2>New Contract Sign</h2>
+        <h2>Add Requirements</h2>
     </div>
         <!-- PHP insert code will be here -->
         <?php
@@ -36,7 +36,7 @@ if($_POST){
     try{
      
         // insert query
-        $query = "INSERT INTO tbl_deals SET name=:name, building=:building, unit_no=:unit_no, type=:type, price=:price, deals_date=:deals_date";
+        $query = "INSERT INTO tbl_requirements SET name=:name, building=:building, location=:location, type=:type, requirements=:requirements, price=:price";
  
         // prepare query for execution
         $stmt = $con->prepare($query);
@@ -44,10 +44,10 @@ if($_POST){
         // posted values
         $name=htmlspecialchars(strip_tags($_POST['name']));
         $building=htmlspecialchars(strip_tags($_POST['building']));
-        $unit_no=htmlspecialchars(strip_tags($_POST['unit_no']));
+        $location=htmlspecialchars(strip_tags($_POST['location']));
         $type=htmlspecialchars(strip_tags($_POST['type']));
+        $requirements=htmlspecialchars(strip_tags($_POST['requirements']));
         $price=htmlspecialchars(strip_tags($_POST['price']));
-        $deals_date=htmlspecialchars(strip_tags($_POST['deals_date']));
 
 
 
@@ -55,14 +55,11 @@ if($_POST){
         // bind the parameters
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':building', $building);
-        $stmt->bindParam(':unit_no', $unit_no);
+        $stmt->bindParam(':location', $location);
         $stmt->bindParam(':type', $type);
+        $stmt->bindParam(':requirements', $requirements);
         $stmt->bindParam(':price', $price);
 
-
-        $deals_date = date('Y-m-d', strtotime($deals_date));
-         $stmt->bindParam(':deals_date', $deals_date);
-         
         // Execute the query
         if($stmt->execute()){
             echo "<div class='alert alert-success'>Record was saved.</div>";
@@ -103,42 +100,45 @@ if($_POST){
                </div>
  
               <div class="col-md-4 mb-3">
-                 <label for="firstName">Building<span class="text-muted"> / Parking</span></label>
+                 <label for="firstName">Building</label>
                  <input type="text" class="form-control" name="building" placeholder="" value="" required>  
               </div>
  
              <div class="col-md-4 mb-3">
-               <label for="firstName">Unit No<span class="text-muted"> / Parking Slot</span></label>
-               <input type="text" class="form-control" name="unit_no" placeholder="" value="" required>      
+               <label for="firstName">Location</label>
+               <select class="custom-select d-block w-100" id="location" required>
+                  <option value="">Select...</option>
+                  <option value="17">Antipolo</option>
+                  <option value="6">Bataan</option>
+                  <option value="15">Batangas</option>
+                  <option value="16">Bulacan</option>
+                  <option value="13">Cavite</option>
+                  <option value="7">Laguna</option>
+                  <option value="1">Makati</option>
+                  <option value="4">Mandaluyong</option>
+                  <option value="18">Marikina</option>
+                  <option value="8">Muntinlupa</option>
+                  <option value="13">Parañaque</option>
+                  <option value="11">Pasay</option>
+                  <option value="13">Quezon City</option>
+                  <option value="5">San Juan</option>
+                  <option value="2">Taguig</option>
+                  <option value="19">Zambales</option>
+                </select>                   
             </div>
  
             <div class="col-md-4 mb-3">
-                <label for="lastName">Type</label>
-                    <select class="custom-select d-block w-100" name="type" required>
-                      <option value="">Select...</option>
-                      <option value="Sale">Sale</option> 
-                      <option value="Rent">Rent</option>
-                      <option value="Rent">Renewal</option>
-
-                    </select>            
+            <label for="firstName">Price</label>
+             <input type="text" class="form-control" name="price" placeholder="Php" value="" required>     
            </div>
  
           <div class="col-md-4 mb-3">
              <label for="firstName">Price</label>
-             <input type="text" class="form-control" name="price" placeholder="Php" value="" required>           
+             <textarea class="form-control" id="exampleFormControlTextarea1" name="requirements" rows="3"></textarea>          
           </div>
 
-          <div class="col-md-4 mb-3">
-             <label for="firstName">Date Contract Signed</label>
-             <input id="deals_dates" name="deals_date" width="auto" onchange="getDate()" required />
-          </div>
 
        </div>
-        <p id="deals_datex"></p> 
-
-
-
-         
             <hr class="mb-4">
             <div class="text-right">
             <a href='indexsample.php'><button type="button" href='indexsample.php' class="btn btn-outline-secondary">Cancel</button></a>
@@ -152,25 +152,13 @@ if($_POST){
         
     </div> <!-- end .container -->
       
+    <p id="image" style="visibility: hidden;"  name="image">url</p>     
 
-      <p id="image" style="visibility: hidden;"  name="image">url</p>     
 
  <!-- Optional JavaScript -->
 
 
  <script>
-
-$('#deals_dates').datepicker({
-            uiLibrary: 'bootstrap4',
-            //format: 'yyyy-mm-dd'
-        });
-
- function getDate(){
-   var x = document.getElementById("deals_dates").value;
-   document.getElementById("deals_datex").innerHTML = x;
- }
-
-
 function GetSelectedValue(){
   var e = document.getElementById("nameimage");
   var result = e.options[e.selectedIndex].value;
@@ -178,6 +166,7 @@ function GetSelectedValue(){
 
 document.getElementById("image").innerHTML = unitcode;
 }
+
     </script>
 
 
