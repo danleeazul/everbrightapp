@@ -59,8 +59,6 @@ if($_POST){
         $price=htmlspecialchars(strip_tags($_POST['price']));
         $deals_date=htmlspecialchars(strip_tags($_POST['deals_date']));
 
-  
-
 
 
         // bind the parameters
