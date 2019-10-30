@@ -127,8 +127,8 @@ if($_POST){
                 </select>                   
             </div>
  
-            <div class="col-md-4 mb-3">
-            <label for="firstName">Price</label>
+            <div class="col-md-6 mb-3">
+            <label for="firstName">Specification</label>
              <input type="text" class="form-control" name="price" placeholder="Php" value="" required>     
            </div>
  
