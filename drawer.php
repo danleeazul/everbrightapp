@@ -28,7 +28,7 @@
                         <table class="style='border: none;'">                       
                             <tr>
                               <td><span class='text-muted'>© Everbright v0.0</span></td>
-                              <td><span href="logout.php" class='text-muted'>Log out</span>   </td>
+                              <td><span href="logout.php" class='text-primary'>Log out</span>   </td>
                             </tr>   
                         </table>
                               
