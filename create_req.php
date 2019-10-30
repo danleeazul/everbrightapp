@@ -80,7 +80,7 @@ if($_POST){
 ?>
  
 <!-- html form here where the product information will be entered -->
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+<form class="needs-validation" novalidate action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
       <!--DEALS-->
       <hr class="mb-4">
        <div class="row">
