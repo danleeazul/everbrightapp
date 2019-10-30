@@ -30,8 +30,7 @@
                             </nav>
                             
                           </div>
-                           </div>
-                           <div class="textbottom"> 
+                          <div class="textbottom"> 
                 <table class="style='border: none;'">                       
                             <tr>
                               <td><p class='text-muted'>© Everbright v0.0</p></td>
@@ -39,6 +38,8 @@
                             </tr>   
                         </table>
               </div>
+                           </div>
+                         
                         </aside>
        
 
