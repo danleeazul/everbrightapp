@@ -38,7 +38,7 @@ echo "<div class='mdc-drawer-app-content'>";
 
 
     echo "<header class='mdc-top-app-bar'>";
-    echo "  <div class='mdc-top-app-bar__row shadow p-3 mb-5 bg-white rounded'>";
+    echo "  <div class='mdc-top-app-bar__row shadow-sm p-3 mb-5 bg-white rounded'>";
                 
     echo "  <section class='mdc-top-app-bar__section mdc-top-app-bar__section--align-start'>";
 
