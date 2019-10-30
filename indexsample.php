@@ -117,16 +117,6 @@ echo "<div class='mdc-drawer-app-content'>";
                   
         echo "          </div>";   
               
-
-
-    $querya = 'SELECT * FROM tbl_requirements ORDER BY requirements_id DESC';
-    $stmta = $cona->prepare($querya);
-    $stmta->execute();
-    
-    // this is how to get number of rows returned
-    $numa = $stmta->rowCount();
-        if($numa>0){
-            
     echo "        <div class='col-md-7 order-md-1'>";
     echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
     echo "                    <span class='text-muted'>Requirements</span>"; 
@@ -136,8 +126,14 @@ echo "<div class='mdc-drawer-app-content'>";
 
     echo "            <ul class='list-group mb-3'>";
 
+    $querya = 'SELECT * FROM tbl_requirements ORDER BY requirements_id DESC';
+    $stmta = $cona->prepare($querya);
+    $stmta->execute();
+    
+    // this is how to get number of rows returned
+    $numa = $stmta->rowCount();
 
-   
+    if($numa>0){
         while ($rowa = $stmta->fetch(PDO::FETCH_ASSOC)){
         
             extract($rowa);
