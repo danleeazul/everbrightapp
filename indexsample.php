@@ -20,7 +20,12 @@ $stmt->execute();
 // this is how to get number of rows returned
 $num = $stmt->rowCount();
 
+$querya = 'SELECT * FROM tbl_requirements ORDER BY requirements_id DESC';
+$stmta = $cona->prepare($querya);
+$stmta->execute();
 
+// this is how to get number of rows returned
+$numa = $stmta->rowCount();
 
 echo "<div class='mdc-drawer-app-content'>";
 
@@ -107,12 +112,7 @@ echo "<div class='mdc-drawer-app-content'>";
     
     }
 
-    $querya = 'SELECT * FROM tbl_requirements ORDER BY requirements_id DESC';
-$stmta = $con->prepare($querya);
-$stmta->execute();
 
-// this is how to get number of rows returned
-$numa = $stmta->rowCount();
 
 
 
@@ -130,9 +130,10 @@ $numa = $stmta->rowCount();
 
     echo "            <ul class='list-group mb-3'>";
 
-
-    
-
+    if($num>0){
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+        
+            extract($row);
     echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
     echo "                  <img  src='https://www.everbright.com.ph/headshot/EB-Nica.png' width='50' height='50'>";
     echo "                <div class='requirementsleft'>";
@@ -144,6 +145,12 @@ $numa = $stmta->rowCount();
     echo "                <span class='text-muted'>₱8,000,000</span>";
 
     echo "              </li>";
+
+        }//while
+    }//IF
+    
+
+   
                       
     echo "            </ul>";
  
