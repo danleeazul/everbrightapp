@@ -120,7 +120,7 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "        <div class='col-md-7 order-md-1'>";
     echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
     echo "                    <span class='text-muted'>Requirements</span>"; 
-    echo "           <a href='create_req.php'><button type='button' href='create_req.php' class='btn btn-primary'>Add</button></a>"; 
+    // echo "           <a href='create_req.php'><button type='button' href='create_req.php' class='btn btn-primary'>Add</button></a>"; 
     echo "            </h4>";
    
 
@@ -156,14 +156,14 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "                  <img  src='{$name}' width='50' height='50'>";
     echo "                    </td>";
     echo "                     <td style='width: 800px; padding-left: 10px; padding-right: 10px;'>";
-    echo "                  <h6 class='my-0 card-title'>{$building}</h6> <br />";
+    echo "                  <h6 class='my-0 card-title'>{$building}</h6>";
     echo "                  <small>{$location} | {$type}</small>";
     echo "                  <br />";
     echo "                  <p class='card-text'>{$requirements}</p>";
     echo "                        </td>";
     echo "                        <td style='width: 100px;'>";
         
-    echo "                <span class='text-muted'>₱{$price}</span>";
+    echo "                <span class='text-muted'>{$price}</span>";
     echo "                        </td>";
     echo "                        </tr>";
     echo "                    </table>";
