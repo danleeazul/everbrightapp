@@ -35,11 +35,15 @@ if($_POST){
     include 'database.php';
     $deals_date=htmlspecialchars(strip_tags($_POST['deals_date']));
 
-        $deals_date = str_replace('/','-',$deals_date);
+        // $deals_date = str_replace('/','-',$deals_date);
+        // echo $deals_date;
+        // $timestamp2 = strtotime($deals_date);
+        // echo $deals_date;
+        // $deals_date = date('Y-m-d', $timestamp2);
+        // echo $deals_date;
+        
         echo $deals_date;
-        $timestamp2 = strtotime($deals_date);
-        echo $deals_date;
-        $deals_date = date('Y-m-d', $timestamp2);
+        $deals_date = date('Y-m-d', strtotime($deals_date));
         echo $deals_date;
 
     try{
