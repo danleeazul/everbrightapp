@@ -115,8 +115,7 @@ echo "<div class='mdc-drawer-app-content'>";
     }//IF
 
 
-    if($num2>0){
-
+    
     echo "            </ul>";         
     echo "          </div>";   
     echo "        <div class='col-md-7 order-md-1'>";
@@ -127,8 +126,7 @@ echo "<div class='mdc-drawer-app-content'>";
 
     echo "            <ul class='list-group mb-3'>";
 
-        while ($row2 = $stmt2->fetch(PDO::FETCH_ASSOC)){
-            extract($row2);
+       
             echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
             echo "                  <img  src='{$name}' width='50' height='50'>";
             echo "                <div class='requirementsleft'>";
@@ -139,9 +137,10 @@ echo "<div class='mdc-drawer-app-content'>";
             echo "                </div>";
             echo "                <span class='text-muted'>{$price}</span>";
             echo "              </li>";
-        }   //While
-    }    //IF              
+       
+
     echo "            </ul>";
+
     echo "        </div>";
 
 
