@@ -22,7 +22,7 @@
     <div class="container">
    
     <div class="py-5 text-center">
-        <h2>New Contract Sign</h2>
+        <h2>New Contract Signed</h2>
     </div>
         <!-- PHP insert code will be here -->
         <?php
@@ -134,7 +134,7 @@ if($_POST){
           </div>
 
        </div>
-        <p id="deals_datex"></p> 
+        <!-- <p id="deals_datex"></p>  -->
 
 
 

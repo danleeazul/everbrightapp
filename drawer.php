@@ -4,6 +4,10 @@
                             <div id="mySidenav" class="sidenav">
                           <div class="mdc-drawer__content">
                             <nav class="mdc-list">
+                              <div>
+                                <img href="/libs/images/everbright-logo.png">
+                              </div>
+
                               <a class="mdc-list-item mdc-list-item--activated" href="#" aria-selected="true">
                                 <i class="material-icons mdc-list-item__graphic" aria-hidden="true">dashboard</i>
                                 <span class="mdc-list-item__text">Dashboard</span>
