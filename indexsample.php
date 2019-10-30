@@ -38,8 +38,7 @@ echo "<div class='mdc-drawer-app-content'>";
 
 
     echo "<header class='mdc-top-app-bar'>";
-    echo "  <div class='mdc-top-app-bar__row shadow-sm p-3 mb-5 bg-white rounded'>";
-                
+    echo "  <div class='mdc-top-app-bar__row'>";
     echo "  <section class='mdc-top-app-bar__section mdc-top-app-bar__section--align-start'>";
 
     echo "   <a type='button' onclick='openNav()' id='sidebarCollapse' class='demo-menu material-icons mdc-top-app-bar__navigation-icon'>menu</a>";
