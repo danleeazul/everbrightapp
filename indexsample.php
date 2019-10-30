@@ -50,7 +50,7 @@ echo "<div class='mdc-drawer-app-content'>";
     echo " </div>";
     echo " </header>";
       
-    echo "<main onclick='closeNav()' class='main-content'>";
+    echo "<main onclick='closeNav()' style='height: 93%;' class='main-content'>";
     echo " <div class='mdc-top-app-bar--fixed-adjust'>";
 
     if($num>0){
