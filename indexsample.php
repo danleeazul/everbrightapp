@@ -20,6 +20,13 @@ $stmt->execute();
 // this is how to get number of rows returned
 $num = $stmt->rowCount();
 
+$query2 = 'SELECT * FROM tbl_requirements ORDER BY requirements_id DESC';
+$stmt2 = $con2->prepare($query2);
+$stmt2->execute();
+
+// this is how to get number of rows returned
+$num2 = $stmt2->rowCount();
+
 
 
 
@@ -104,15 +111,14 @@ echo "<div class='mdc-drawer-app-content'>";
         echo "              </li>";
                             
         
-    }
-     
-         
-    }
-              
-           echo "            </ul>";
-                  
-        echo "          </div>";   
-              
+    }//While
+    }//IF
+
+
+    if($num2>0){
+
+    echo "            </ul>";         
+    echo "          </div>";   
     echo "        <div class='col-md-7 order-md-1'>";
     echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
     echo "                    <span class='text-muted'>Requirements</span>"; 
@@ -120,20 +126,21 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "            </h4>";
 
     echo "            <ul class='list-group mb-3'>";
-    echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
-    echo "                  <img  src='https://www.everbright.com.ph/headshot/EB-Nica.png' width='50' height='50'>";
-    echo "                <div class='requirementsleft'>";
-    echo "                  <h6 class='my-0'>Legaspi Village</h6>";
-    echo "                  <small>Makati | Sale</small>";
-    echo "                  <br />";
-    echo "                  <small class='text-muted'>1BR | Furnished | Ok for Bank Financing</small>";
-    echo "                </div>";
-    echo "                <span class='text-muted'>₱8,000,000</span>";
 
-    echo "              </li>";
-                      
+        while ($row2 = $stmt2->fetch(PDO::FETCH_ASSOC)){
+            echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
+            echo "                  <img  src='{$name}' width='50' height='50'>";
+            echo "                <div class='requirementsleft'>";
+            echo "                  <h6 class='my-0'>{$building}</h6>";
+            echo "                  <small>{$location} | {$type}</small>";
+            echo "                  <br />";
+            echo "                  <small class='text-muted'>{$requirements}</small>";
+            echo "                </div>";
+            echo "                <span class='text-muted'>{$price}</span>";
+            echo "              </li>";
+        }   //While
+    }    //IF              
     echo "            </ul>";
- 
     echo "        </div>";
 
 

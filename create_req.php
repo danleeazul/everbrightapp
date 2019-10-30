@@ -108,22 +108,22 @@ if($_POST){
                <label for="firstName">Location</label>
                <select class="custom-select d-block w-100" name="location" required>
                   <option value="">Select...</option>
-                  <option value="17">Antipolo</option>
-                  <option value="6">Bataan</option>
-                  <option value="15">Batangas</option>
-                  <option value="16">Bulacan</option>
-                  <option value="13">Cavite</option>
-                  <option value="7">Laguna</option>
-                  <option value="1">Makati</option>
-                  <option value="4">Mandaluyong</option>
-                  <option value="18">Marikina</option>
-                  <option value="8">Muntinlupa</option>
-                  <option value="13">Parañaque</option>
-                  <option value="11">Pasay</option>
+                  <option value="Antipolo">Antipolo</option>
+                  <option value="Bataan">Bataan</option>
+                  <option value="Batangas">Batangas</option>
+                  <option value="Bulacan">Bulacan</option>
+                  <option value="Cavite">Cavite</option>
+                  <option value="Laguna">Laguna</option>
+                  <option value="Makati">Makati</option>
+                  <option value="Mandaluyong">Mandaluyong</option>
+                  <option value="Marikina">Marikina</option>
+                  <option value="Muntinlupa">Muntinlupa</option>
+                  <option value="Parañaque">Parañaque</option>
+                  <option value="Pasay">Pasay</option>
                   <option value="13">Quezon City</option>
-                  <option value="5">San Juan</option>
-                  <option value="2">Taguig</option>
-                  <option value="19">Zambales</option>
+                  <option value="Quezon City">San Juan</option>
+                  <option value="Taguig">Taguig</option>
+                  <option value="Zambales">Zambales</option>
                 </select>                   
             </div>
  
