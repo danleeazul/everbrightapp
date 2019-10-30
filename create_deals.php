@@ -131,7 +131,7 @@ if($_POST){
 
           <div class="col-md-4 mb-3">
              <label for="firstName">Date Contract Signed</label>
-             <input id="deals_date" name="deals_date" width="auto" onchange="getDate()" required />
+             <input id="deals_dates" name="deals_date" width="auto" onchange="getDate()" required />
           </div>
 
        </div>
@@ -165,13 +165,13 @@ if($_POST){
 
  <script>
 
-$('#deals_date').datepicker({
+$('#deals_dates').datepicker({
             uiLibrary: 'bootstrap4',
             //format: 'yyyy-mm-dd'
         });
 
  function getDate(){
-   var x = document.getElementById("deals_date").value;
+   var x = document.getElementById("deals_dates").value;
    document.getElementById("deals_datex").innerHTML = x;
  }
 
