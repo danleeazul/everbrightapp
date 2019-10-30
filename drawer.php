@@ -2,10 +2,11 @@
 
 <aside  class="mdc-drawer">
                             <div id="mySidenav" class="sidenav">
-                          <div class="mdc-drawer__content">
-                          <div>
-                          <img  src='https://everbright.com.ph/staging/wp-content/uploads/2019/09/everbright-logo-04.png' width='150' height='150'>
+                            <div>
+                          <!-- <img  src='https://everbright.com.ph/staging/wp-content/uploads/2019/09/everbright-logo-04.png' width='250' height='65'> -->
                           </div>
+                          <div class="mdc-drawer__content">
+                          
                             <nav class="mdc-list">
                              
 
@@ -24,7 +25,7 @@
                               <hr class="mb-4">
                                 
                               <a class="nav-link" href="<?php echo $home_url; ?>logout.php">
-                                <span class="mdc-top-app-bar__section--align-end">Logout</span>
+                                <span class='text-muted'>Logout</span>
                               </a>
                             </nav>
                             
