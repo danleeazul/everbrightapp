@@ -59,10 +59,10 @@ if($_POST){
         $stmt->bindParam(':unit_no', $unit_no);
         $stmt->bindParam(':type', $type);
         $stmt->bindParam(':price', $price);
-
+        echo $deals_date;
          // specify when this record was inserted to the database
          $deals_date=date('Y-m-d',($deals_date));
-        echo $deals_date;
+        
          //$stmt->bindParam(':deals_date', $deals_date);
          
         // Execute the query
