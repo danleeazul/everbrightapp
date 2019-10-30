@@ -22,7 +22,7 @@
     <div class="container">
    
     <div class="py-5 text-center">
-        <h2>New Contract Signed</h2>
+        <h2>New Contract Sign</h2>
     </div>
         <!-- PHP insert code will be here -->
         <?php
@@ -101,12 +101,12 @@ if($_POST){
                </div>
  
               <div class="col-md-4 mb-3">
-                 <label for="firstName">Building<span class="text-muted"> /Parking</span></label>
+                 <label for="firstName">Building<span class="text-muted"> / Parking</span></label>
                  <input type="text" class="form-control" name="building" placeholder="" value="" required>  
               </div>
  
              <div class="col-md-4 mb-3">
-               <label for="firstName">Unit No<span class="text-muted"> /Parking Slot</span></label>
+               <label for="firstName">Unit No<span class="text-muted"> / Parking Slot</span></label>
                <input type="text" class="form-control" name="unit_no" placeholder="" value="" required>      
             </div>
  
