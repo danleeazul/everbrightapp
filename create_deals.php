@@ -61,7 +61,7 @@ if($_POST){
         $stmt->bindParam(':price', $price);
 
          // specify when this record was inserted to the database
-         $start_date = date("Y-m-d", strtotime($deals_date));
+         $deals_date = date("Y-m-d", strtotime($deals_date));
          $stmt->bindParam(':deals_date', $deals_date);
          
         // Execute the query
