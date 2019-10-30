@@ -3,10 +3,11 @@
 <aside  class="mdc-drawer">
                             <div id="mySidenav" class="sidenav">
                           <div class="mdc-drawer__content">
-                            <nav class="mdc-list">
-                              <div>
-                                <img href="www.everbright.com.ph/everbrightapp/libs/images/everbright-logo.png">
+                          <div>
+                                <img href="https://www.everbright.com.ph/everbrightapp/libs/images/everbright-logo.png">
                               </div>
+                            <nav class="mdc-list">
+                             
 
                               <a class="mdc-list-item mdc-list-item--activated" href="#" aria-selected="true">
                                 <i class="material-icons mdc-list-item__graphic" aria-hidden="true">dashboard</i>
