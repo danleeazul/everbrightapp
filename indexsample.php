@@ -132,19 +132,19 @@ echo "<div class='mdc-drawer-app-content'>";
     // this is how to get number of rows returned
     $numa = $stmta->rowCount();
 
-    if($num>0){
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+    if($numa>0){
+        while ($rowa = $stmta->fetch(PDO::FETCH_ASSOC)){
         
-            extract($row);
+            extract($rowa);
     echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
-    echo "                  <img  src='https://www.everbright.com.ph/headshot/EB-Nica.png' width='50' height='50'>";
+    echo "                  <img  src='{$name}' width='50' height='50'>";
     echo "                <div class='requirementsleft'>";
-    echo "                  <h6 class='my-0'>Legaspi Village</h6>";
-    echo "                  <small>Makati | Sale</small>";
+    echo "                  <h6 class='my-0'>{$building}</h6>";
+    echo "                  <small>{$location} | {$type}</small>";
     echo "                  <br />";
-    echo "                  <small class='text-muted'>1BR | Furnished | Ok for Bank Financing</small>";
+    echo "                  <small class='text-muted'>{$requirements}</small>";
     echo "                </div>";
-    echo "                <span class='text-muted'>₱8,000,000</span>";
+    echo "                <span class='text-muted'>{$price}</span>";
 
     echo "              </li>";
 
