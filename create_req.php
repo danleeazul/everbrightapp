@@ -96,12 +96,18 @@ if($_POST){
                       <option value="https://www.everbright.com.ph/headshot/EB-Demi.png">Demi Dela Cruz</option>
                       <option value="https://www.everbright.com.ph/headshot/EB-Bry.png">Bryan Sam Asis</option>
                       <option value="https://www.everbright.com.ph/headshot/EB-Renz.png">Renz Ocampo</option>
-                    </select>           
+                    </select>    
+                    <div class="invalid-feedback">
+                    Select Agents/Brokers
+                    </div>         
                </div>
  
               <div class="col-md-4 mb-3">
                  <label for="firstName">Building</label>
                  <input type="text" class="form-control" name="building" placeholder="" value="" required>  
+                 <div class="invalid-feedback">
+                    Valid building is required.
+                    </div>  
               </div>
  
              <div class="col-md-4 mb-3">
@@ -125,6 +131,9 @@ if($_POST){
                   <option value="Taguig">Taguig</option>
                   <option value="Zambales">Zambales</option>
                 </select>                   
+                <div class="invalid-feedback">
+                    Valid location is required.
+                    </div>  
             </div>
  
             <div class="col-md-4 mb-3">
@@ -134,16 +143,25 @@ if($_POST){
                       <option value="Sale">Sale</option> 
                       <option value="Rent">Rent</option>
                     </select>            
+                    <div class="invalid-feedback">
+                    Valid property type is required.
+                    </div>  
            </div>
 
             <div class="col-md-4 mb-3">
             <label for="firstName">Price</label>
-             <input type="text" class="form-control" name="price" placeholder="Php" value="" required>     
+             <input type="text" class="form-control" name="price" placeholder="Php" value="" required> 
+             <div class="invalid-feedback">
+                    Valid price is required.
+            </div>      
            </div>
  
           <div class="col-md-12 mb-3">
              <label for="firstName">Specification</label>
-             <textarea class="form-control" id="exampleFormControlTextarea1" name="requirements" rows="3" required></textarea>          
+             <textarea class="form-control" id="exampleFormControlTextarea1" name="requirements" rows="3" required></textarea>      
+             <div class="invalid-feedback">
+                    Valid specification is required.
+            </div>      
           </div>
 
 

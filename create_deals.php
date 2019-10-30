@@ -99,17 +99,26 @@ if($_POST){
                       <option value="https://www.everbright.com.ph/headshot/EB-Demi.png">Demi Dela Cruz</option>
                       <option value="https://www.everbright.com.ph/headshot/EB-Bry.png">Bryan Sam Asis</option>
                       <option value="https://www.everbright.com.ph/headshot/EB-Renz.png">Renz Ocampo</option>
-                    </select>           
+                    </select>      
+                    <div class="invalid-feedback">
+                      Select Agents/Brokers
+                    </div>     
                </div>
  
               <div class="col-md-4 mb-3">
                  <label for="firstName">Building<span class="text-muted"> / Parking</span></label>
                  <input type="text" class="form-control" name="building" placeholder="" value="" required>  
+                 <div class="invalid-feedback">
+                    Valid building or parking is required.
+                    </div>   
               </div>
  
              <div class="col-md-4 mb-3">
                <label for="firstName">Unit No<span class="text-muted"> / Parking Slot</span></label>
-               <input type="text" class="form-control" name="unit_no" placeholder="" value="" required>      
+               <input type="text" class="form-control" name="unit_no" placeholder="" value="" required> 
+               <div class="invalid-feedback">
+                    Valid unit no or parking slot no is required.
+                    </div>       
             </div>
  
             <div class="col-md-4 mb-3">
@@ -119,18 +128,26 @@ if($_POST){
                       <option value="Sale">Sale</option> 
                       <option value="Rent">Rent</option>
                       <option value="Rent">Renewal</option>
-
-                    </select>            
+                    </select> 
+                    <div class="invalid-feedback">
+                    Valid type is required.
+                    </div>             
            </div>
  
           <div class="col-md-4 mb-3">
              <label for="firstName">Price</label>
-             <input type="text" class="form-control" name="price" placeholder="Php" value="" required>           
+             <input type="text" class="form-control" name="price" placeholder="Php" value="" required>    
+             <div class="invalid-feedback">
+                    Valid price is required.
+                    </div>         
           </div>
 
           <div class="col-md-4 mb-3">
              <label for="firstName">Date Contract Signed</label>
              <input id="deals_dates" name="deals_date" width="auto" onchange="getDate()" required />
+             <div class="invalid-feedback">
+                    Valid date contract signed is required.
+                    </div>  
           </div>
 
        </div>
@@ -159,6 +176,25 @@ if($_POST){
 
 
  <script>
+          (function () {
+  'use strict'
+
+  window.addEventListener('load', function () {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation')
+
+    // Loop over them and prevent submission
+    Array.prototype.filter.call(forms, function (form) {
+      form.addEventListener('submit', function (event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+        form.classList.add('was-validated')
+      }, false)
+    })
+  }, false)
+}())
 
 $('#deals_dates').datepicker({
             uiLibrary: 'bootstrap4',
