@@ -20,6 +20,13 @@ $stmt->execute();
 // this is how to get number of rows returned
 $num = $stmt->rowCount();
 
+$query2 = 'SELECT * FROM tbl_requirements ORDER BY requirements_id DESC';
+$stmt2 = $con2->prepare($query2);
+$stmt2->execute();
+
+// this is how to get number of rows returned
+$num2 = $stmt2->rowCount();
+
 
 
 
@@ -116,7 +123,7 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "        <div class='col-md-7 order-md-1'>";
     echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
     echo "                    <span class='text-muted'>Requirements</span>"; 
-    echo "                   <button type='submit' value='Save' class='btn btn-primary'>Add</button>"; 
+    echo "                   <button type='submit' href='create_req.php' value='Save' class='btn btn-primary'>Add</button>"; 
     echo "            </h4>";
 
     echo "            <ul class='list-group mb-3'>";
