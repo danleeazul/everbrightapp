@@ -59,9 +59,13 @@ if($_POST){
         $stmt->bindParam(':unit_no', $unit_no);
         $stmt->bindParam(':type', $type);
         $stmt->bindParam(':price', $price);
+
+        $deals_date = str_replace('/','-',$deals_date);
         echo $deals_date;
-         // specify when this record was inserted to the database
-         $deals_date=date('Y-m-d',($deals_date));
+        $timestamp2 = strtotime($deals_date);
+        echo $deals_date;
+        $deals_date = date('Y-m-d', $timestamp2);
+        echo $deals_date;
         
          //$stmt->bindParam(':deals_date', $deals_date);
          
