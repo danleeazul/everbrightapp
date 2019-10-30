@@ -144,10 +144,10 @@ if($_POST){
 
           <div class="col-md-4 mb-3">
              <label for="firstName">Date Contract Signed</label>
-             <input id="deals_dates" name="deals_date" width="auto" onchange="getDate()" required />
+             <input id="deals_dates" class="form-control" name="deals_date" width="auto" onchange="getDate()" required />
              <div class="invalid-feedback">
                     Valid date contract signed is required.
-                    </div>  
+            </div>  
           </div>
 
        </div>

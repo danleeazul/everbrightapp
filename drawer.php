@@ -24,13 +24,15 @@
                               </a>
                               <hr class="mb-4">
                                 
-
-                        <table class="style='border: none;'">                       
+              <div class="textbottom"> 
+                <table class="style='border: none;'">                       
                             <tr>
                               <td><span class='text-muted'>© Everbright v0.0</span></td>
                               <td><span href="logout.php" class='text-primary'>Log out</span>   </td>
                             </tr>   
                         </table>
+              </div>
+                        
                               
                             </nav>
                             
