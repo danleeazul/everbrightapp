@@ -5,7 +5,7 @@
                           <div class="mdc-drawer__content">
                             <nav class="mdc-list">
                               <div>
-                                <img href="/libs/images/everbright-logo.png">
+                                <img href="www.everbright.com.ph/everbrightapp/libs/images/everbright-logo.png">
                               </div>
 
                               <a class="mdc-list-item mdc-list-item--activated" href="#" aria-selected="true">
