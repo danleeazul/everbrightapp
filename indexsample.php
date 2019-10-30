@@ -20,13 +20,6 @@ $stmt->execute();
 // this is how to get number of rows returned
 $num = $stmt->rowCount();
 
-$query2 = 'SELECT * FROM tbl_requirements ORDER BY requirements_id DESC';
-$stmt2 = $con2->prepare($query2);
-$stmt2->execute();
-
-// this is how to get number of rows returned
-$num2 = $stmt2->rowCount();
-
 
 
 
@@ -111,11 +104,10 @@ echo "<div class='mdc-drawer-app-content'>";
         echo "              </li>";
                             
         
-    }//While
-    }//IF
-
-
+    }
+     
     
+    }
               
            echo "            </ul>";
                   
