@@ -128,6 +128,7 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "            <ul class='list-group mb-3'>";
 
         while ($row2 = $stmt2->fetch(PDO::FETCH_ASSOC)){
+            extract($row2);
             echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
             echo "                  <img  src='{$name}' width='50' height='50'>";
             echo "                <div class='requirementsleft'>";
