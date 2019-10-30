@@ -21,6 +21,8 @@ $stmt->execute();
 $num = $stmt->rowCount();
 
 
+echo $num;
+
 
 echo "<div class='mdc-drawer-app-content'>";
 
@@ -55,6 +57,9 @@ echo "<div class='mdc-drawer-app-content'>";
     echo " <div class='mdc-top-app-bar--fixed-adjust'>";
 
     if($num>0){
+
+
+
         echo " <div class='row col p-3'>";
         echo "  <div class='container'>";
         echo "      <div class='row'>";

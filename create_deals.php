@@ -34,15 +34,6 @@ if($_POST){
     // include database connection
     include 'database.php';
 
-        // $deals_date = str_replace('/','-',$deals_date);
-        // echo $deals_date;
-        // $timestamp2 = strtotime($deals_date);
-        // echo $deals_date;
-        // $deals_date = date('Y-m-d', $timestamp2);
-        // echo $deals_date;
-
-       
-
     try{
      
         // insert query
@@ -61,6 +52,7 @@ if($_POST){
 
 
 
+
         // bind the parameters
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':building', $building);
@@ -68,10 +60,8 @@ if($_POST){
         $stmt->bindParam(':type', $type);
         $stmt->bindParam(':price', $price);
 
-        echo $deals_date;
+
         $deals_date = date('Y-m-d', strtotime($deals_date));
-        echo $deals_date;
-        
          $stmt->bindParam(':deals_date', $deals_date);
          
         // Execute the query
@@ -112,12 +102,12 @@ if($_POST){
                </div>
  
               <div class="col-md-4 mb-3">
-                 <label for="firstName">Building</label>
+                 <label for="firstName">Building<span class="text-muted">/Parking</span></label>
                  <input type="text" class="form-control" name="building" placeholder="" value="" required>  
               </div>
  
              <div class="col-md-4 mb-3">
-               <label for="firstName">Unit No</label>
+               <label for="firstName">Unit No<span class="text-muted">/Parking Slot</span></label>
                <input type="text" class="form-control" name="unit_no" placeholder="" value="" required>      
             </div>
  
@@ -127,6 +117,8 @@ if($_POST){
                       <option value="">Select...</option>
                       <option value="Sale">Sale</option> 
                       <option value="Rent">Rent</option>
+                      <option value="Rent">Renewal</option>
+
                     </select>            
            </div>
  
@@ -148,7 +140,7 @@ if($_POST){
          
             <hr class="mb-4">
             <div class="text-right">
-            <a href='create.php'><button type="button" href='create.php' class="btn btn-outline-secondary">Cancel</button></a>
+            <a href='indexsample.php'><button type="button" href='indexsample.php' class="btn btn-outline-secondary">Cancel</button></a>
             <button type="submit" value='Save'  class="btn btn-primary">Submit</button>
             
             </div>
@@ -159,10 +151,6 @@ if($_POST){
         
     </div> <!-- end .container -->
       
-    <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">&copy; Everbright Web App v0.00</p>
-       
-      </footer>
 
       <p id="image" style="visibility: hidden;"  name="image">url</p>     
 
