@@ -120,14 +120,14 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "        <div class='col-md-7 order-md-1'>";
     echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
     echo "                    <span class='text-muted'>Requirements</span>"; 
-    echo "           <a href='create_req.php'><button type='button' href='create_req.php' class='btn btn-primary'>Cancel</button></a>"; 
+    echo "           <a href='create_req.php'><button type='button' href='create_req.php' class='btn btn-primary'>Add</button></a>"; 
     echo "            </h4>";
    
 
     echo "            <ul class='list-group mb-3'>";
 
     $querya = 'SELECT * FROM tbl_requirements ORDER BY requirements_id DESC';
-    $stmta = $cona->prepare($querya);
+    $stmta = $con->prepare($querya);
     $stmta->execute();
     
     // this is how to get number of rows returned
