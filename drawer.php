@@ -4,7 +4,7 @@
                             <div id="mySidenav" class="sidenav">
                           <div class="mdc-drawer__content">
                           <div>
-                          <img  src='https://www.everbright.com.ph/libs/css/everbright-logo.png'>
+                          <img  src='https://everbright.com.ph/staging/wp-content/uploads/2019/09/everbright-logo-04.png' width='150' height='150'>
                           </div>
                             <nav class="mdc-list">
                              
