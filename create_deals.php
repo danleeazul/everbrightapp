@@ -62,10 +62,7 @@ if($_POST){
 
          // specify when this record was inserted to the database
 
-         //$deals_date = str_replace('/','-',$deals_date);
-         $deals_date = strtotime($deals_date);
-         $deals_date = date('Y-m-d', $deals_date);
-
+         $deals_date = date("Y-m-d", strtotime($deals_date));
          $stmt->bindParam(':deals_date', $deals_date);
          
         // Execute the query
