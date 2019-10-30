@@ -20,12 +20,7 @@ $stmt->execute();
 // this is how to get number of rows returned
 $num = $stmt->rowCount();
 
-$querya = 'SELECT * FROM tbl_requirements ORDER BY requirements_id DESC';
-$stmta = $cona->prepare($querya);
-$stmta->execute();
 
-// this is how to get number of rows returned
-$numa = $stmta->rowCount();
 
 echo "<div class='mdc-drawer-app-content'>";
 
@@ -129,6 +124,13 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "            </h4>";
 
     echo "            <ul class='list-group mb-3'>";
+
+    $querya = 'SELECT * FROM tbl_requirements ORDER BY requirements_id DESC';
+    $stmta = $cona->prepare($querya);
+    $stmta->execute();
+    
+    // this is how to get number of rows returned
+    $numa = $stmta->rowCount();
 
     if($num>0){
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
