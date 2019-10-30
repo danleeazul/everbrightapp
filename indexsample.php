@@ -88,7 +88,7 @@ echo "<div class='mdc-drawer-app-content'>";
         echo "                    </td>";
         echo "                     <td style='width: 400px; padding-left: 10px; padding-right: 10px;'>";
 
-        echo "                  <h6 class='my-0'>{$building} - {$unit_no}</h6>";
+        echo "                  <h6 class='my-0 card-title'>{$building} - {$unit_no}</h6>";
         echo "                  <small>{$type}</small>";
         echo "                  <br />";
         echo "                  <small class='text-muted'>{$deals_date}</small>";
@@ -156,11 +156,10 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "                  <img  src='{$name}' width='50' height='50'>";
     echo "                    </td>";
     echo "                     <td style='width: 800px; padding-left: 10px; padding-right: 10px;'>";
-    echo "                  <h6 class='my-0'>{$building}</h6>";
+    echo "                  <h6 class='my-0 card-title'>{$building}</h6> <br />";
     echo "                  <small>{$location} | {$type}</small>";
     echo "                  <br />";
-    echo "                  <small class='text-muted'>{$requirements}</small>";
-     
+    echo "                  <p class='card-text'>{$requirements}</p>";
     echo "                        </td>";
     echo "                        <td style='width: 100px;'>";
         
