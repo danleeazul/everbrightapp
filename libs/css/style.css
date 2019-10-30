@@ -37,7 +37,7 @@
     
     .main-content {
       overflow: auto;
-      height: 100%;
+      height: 93%%;
       margin: 20px 50px;
   
     }
@@ -55,6 +55,7 @@
   
     .mdc-drawer__content{
       background-color: white;
+      height: 93%;
     }
     
     
