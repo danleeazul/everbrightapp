@@ -120,7 +120,7 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "        <div class='col-md-7 order-md-1'>";
     echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
     echo "                    <span class='text-muted'>Requirements</span>"; 
-    // echo "           <a href='create_req.php'><button type='button' href='create_req.php' class='btn btn-primary'>Add</button></a>"; 
+    echo "           <a href='create_req.php'><button type='button' href='create_req.php' class='btn btn-primary btn-sm'>Add</button></a>"; 
     echo "            </h4>";
    
 
@@ -159,7 +159,7 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "                  <h6 class='my-0 card-title'>{$building}</h6>";
     echo "                  <small>{$location} | {$type}</small>";
     echo "                  <br />";
-    echo "                  <p class='card-text'>{$requirements}</p>";
+    echo "                  <p class='card-text cardtextmin'>{$requirements}</p>";
     echo "                        </td>";
     echo "                        <td style='width: 100px;'>";
         
