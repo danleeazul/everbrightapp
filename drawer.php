@@ -31,10 +31,10 @@
                             
                           </div>
                           <div class="textbottom"> 
-                <table class="style='border: none;'">                       
+                <table style='border: none; width: 100%;'>                       
                             <tr>
                               <td><p class='text-muted'>© Everbright v0.0</p></td>
-                              <td><a href="logout.php" class="text-decoration-none">Log out</a></td>
+                              <td class="text-right"><a href="logout.php" class="text-decoration-none">Log out</a></td>
                             </tr>   
                         </table>
               </div>
