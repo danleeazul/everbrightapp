@@ -31,9 +31,13 @@ function closeNav() {
     //   navbutton.className = 'mdc-list-item mdc-list-item--activated';
     // }
 
-    document.getElementById("navbutton").className =
-   document.getElementById("navbutton").className.replace
-      ( /(?:^|\s)mdc-list-item(?!\S)/g , '' )
+    if ( document.getElementById("navbutton").classList.contains('mdc-list-item--activated') ){
+      document.getElementById("navbutton").classList.remove('mdc-list-item--activated');
+    }
+    else{
+      document.getElementById("MyElement").classList.add('mdc-list-item--activated');
+    }
+
 }
 
 }
