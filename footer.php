@@ -35,7 +35,7 @@ function closeNav() {
       document.getElementById("navbutton").classList.remove('mdc-list-item--activated');
     }
     else{
-      document.getElementById("MyElement").classList.add('mdc-list-item--activated');
+      document.getElementById("navbutton").classList.add('mdc-list-item--activated');
     }
 
 }
