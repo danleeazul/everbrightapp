@@ -32,7 +32,8 @@ function closeNav() {
     // }
 
     if ( document.getElementById("navbutton").classList.contains('mdc-list-item--activated') ){
-      document.getElementById("navbutton").classList.remove('mdc-list-item--activated');
+        // document.getElementById("navbutton").classList.remove('mdc-list-item--activated');
+        echo "working";
     }
     else{
       document.getElementById("navbutton").classList.add('mdc-list-item--activated');
