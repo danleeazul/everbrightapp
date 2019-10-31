@@ -10,15 +10,15 @@
                             <nav class="mdc-list">
                              
 
-                              <a class="mdc-list-item mdc-list-item--activated" onclick="clickSingleA(this)" href="#" aria-selected="true">
+                              <a id="navbutton" class="mdc-list-item mdc-list-item--activated" onclick="clickSingleA(this)" href="#" aria-selected="true">
                                 <i class="material-icons mdc-list-item__graphic" aria-hidden="true">dashboard</i>
                                 <span class="mdc-list-item__text">Dashboard</span>
                               </a>
-                              <a class="mdc-list-item" href="#" onclick="clickSingleA(this)">
+                              <a id="navbutton" class="mdc-list-item" href="#" onclick="clickSingleA(this)">
                                 <i class="material-icons mdc-list-item__graphic" aria-hidden="true">format_list_bulleted</i>
                                 <span class="mdc-list-item__text">Listing</span>
                               </a>
-                              <a class="mdc-list-item" href="#" onclick="clickSingleA(this)">
+                              <a id="navbutton" class="mdc-list-item" href="#" onclick="clickSingleA(this)">
                                 <i class="material-icons mdc-list-item__graphic" aria-hidden="true">person</i>
                                 <span class="mdc-list-item__text">Accounts</span>
                               </a>

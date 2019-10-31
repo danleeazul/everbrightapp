@@ -21,14 +21,17 @@ function closeNav() {
 
     function clickSingleA(a)
 {
-    // items = document.querySelectorAll('mdc-list-item mdc-list-item--activated');
+    items = document.querySelectorAll('mdc-list-item mdc-list-item--activated');
 
-    // if(items.length) 
-    // {
-    //     items.className = 'mdc-list-item';
-    // }
 
-    // a.className = 'mdc-list-item mdc-list-item--activated';
+    if(items.length) 
+    {
+      document.getElementById("navbutton").className = "mdc-list-item";
+    }
+
+    document.getElementById("navbutton").className = "mdc-list-item mdc-list-item--activated";
+
+
 }
 
 }
