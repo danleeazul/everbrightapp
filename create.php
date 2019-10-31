@@ -199,33 +199,43 @@
                   <option>Legazpi Village</option>
                   <option>Little Baguio</option>
                   <option>Loyola</option>
-                  <option>Eastwood</option>
-                  <option>Eastwood</option>
-                  <option>Eastwood</option>
-                  <option>Eastwood</option>
-                  <option>Eastwood</option>
-                  <option>Eastwood</option>
-                  <option>Eastwood</option>
-                  <option>Eastwood</option>
-                  <option>Eastwood</option>
-                  <option>Eastwood</option>
-                  <option>Eastwood</option>
-                  <option>Eastwood</option>
-                  <option>Eastwood</option>
-                  <option>Eastwood</option>
-                  <option>Eastwood</option>
-                  <option>Eastwood</option>
-                  <option>Eastwood</option>
-                  <option>Eastwood</option>
-                  <option>Eastwood</option>
-                  <option>Eastwood</option>
-                  <option>Eastwood</option>
-                  <option>Eastwood</option>
-                  <option>Eastwood</option>
-                  <option>Eastwood</option>
-                  <option>Eastwood</option>
-                  <option>Eastwood</option>
-
+                  <option>Maharlika West</option>
+                  <option>McKinely West</option>
+                  <option>MOA Complex</option>
+                  <option>Moonwalk</option>
+                  <option>New Manila</option>
+                  <option>Nuvali</option>
+                  <option>Old Balara</option>
+                  <option>Ortigas Center</option>
+                  <option>Pandayan</option>
+                  <option>Pio Del Pilar</option>
+                  <option>Poblacion</option>
+                  <option>Pulo</option>
+                  <option>Punta de Fuego</option>
+                  <option>Rockwell Center</option>
+                  <option>Roxas District</option>
+                  <option>Salawag</option>
+                  <option>Salcedo Village</option>
+                  <option>Sampaloc</option>
+                  <option>San Antonio Village</option>
+                  <option>San Celestine</option>
+                  <option>San Lorenzon Village</option>
+                  <option>Santa Cruz</option>
+                  <option>Santa Mesa</option>
+                  <option>Silang Junction North</option>
+                  <option>Soutwoods</option>
+                  <option>Sta. Rosa</option>
+                  <option>Sungay North</option>
+                  <option>Tranca</option>
+                  <option>Ugong</option>
+                  <option>Urdaneta Village</option>
+                  <option>Usasan</option>
+                  <option>Valencia</option>
+                  <option>Vertis North</option>
+                  <option>Wack-Wack</option>
+                  <option>Western Bicutan</option>
+                  <option>Zapote</option>
+                  <option>Zapote V</option>
                 </select>    
                 <div class="invalid-feedback">
                   Valid neighborhood required.

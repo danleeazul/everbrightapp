@@ -19,6 +19,18 @@ function closeNav() {
 
     }
 
+    function clickSingleA(a)
+{
+    items = document.querySelectorAll('.mdc-list-item.mdc-list-item--activated');
+
+    if(items.length) 
+    {
+        items[0].className = 'mdc-list-item--activated';
+    }
+
+    a.className = 'mdc-list-item mdc-list-item--activated';
+}
+
 }
 
 </script>
