@@ -5,7 +5,7 @@
                             <div>
                           <!-- <img  src='https://everbright.com.ph/staging/wp-content/uploads/2019/09/everbright-logo-04.png' width='250' height='65'> -->
                           </div>
-                          <div style="height: 93%;" class="mdc-drawer__content">
+                          <div style="height: 90%;" class="mdc-drawer__content">
                           
                             <nav class="mdc-list">
                              
