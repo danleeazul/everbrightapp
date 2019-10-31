@@ -19,7 +19,7 @@ function closeNav() {
 
     }
 
-    function clickSingleA(a)
+    function clickSingleA()
 {
     // items = document.querySelectorAll('.mdc-list-item.mdc-list-item--activated');
 
