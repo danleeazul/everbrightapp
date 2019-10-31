@@ -21,14 +21,14 @@ function closeNav() {
 
     function clickSingleA(a)
 {
-    items = document.querySelectorAll('mdc-list-item mdc-list-item--activated');
+    items = document.querySelectorAll('.mdc-list-item.mdc-list-item--activated');
 
     if(items.length) 
     {
         items[0].className = 'mdc-list-item';
     }
     else{
-          a.className = 'mdc-list-item mdc-list-item--activated';
+      navbutton.className = 'mdc-list-item mdc-list-item--activated';
     }
 
 }
