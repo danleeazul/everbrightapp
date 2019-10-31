@@ -25,7 +25,7 @@ function closeNav() {
 
     if(items.length) 
     {
-        items[0].className = 'mdc-list-item--activated';
+        items[0].className = 'mdc-list-item';
     }
 
     a.className = 'mdc-list-item mdc-list-item--activated';
