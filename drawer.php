@@ -10,7 +10,7 @@
                             <nav class="mdc-list">
                              
 
-                              <a class="mdc-list-item mdc-list-item--activated" onclick="clickSingleA(this)" href="#" aria-selected="true">
+                              <a class="mdc-list-item " onclick="clickSingleA(this)" href="#" aria-selected="true">
                                 <i class="material-icons mdc-list-item__graphic" aria-hidden="true">dashboard</i>
                                 <span class="mdc-list-item__text">Dashboard</span>
                               </a>
