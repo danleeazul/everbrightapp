@@ -85,26 +85,21 @@ echo "                  </aside>";
     echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
     echo "              <span class='text-muted'>Filter</span>";
     echo "            </h4>";
-   echo "            <ul class='list-group mb-3'>";
-   echo "       <li class='list-group-item d-flex justify-content-between lh-condensed'>";
-   echo "           <div>";
-   echo "           <input type='text' class='form-control' id='listedby' placeholder='ID' value=''> ";
-   echo "           </div>";
-   echo "       </li>";
-
-   echo " <li class='list-group-item d-flex justify-content-between lh-condensed'>";
-   echo "        <div>";
-   echo "                 <select class='custom-select d-block w-100' id='unittype' onchange='GetSelectedValue()'>     ";                        
-   echo "                  <option value=''>Select...</option>";
-   echo "                  <option value='S'>Sale</option>";
-   echo "                  <option value='R'>Rent</option>";
-   echo "                  <option value='SR'>Sale/Rent</option>";
-   echo "                  <option value='PSR'>PS-Resale</option>";
-   echo "               </select>";
-   echo "        </div>";
-   echo "      </li>";
-                        
-       echo "            </ul>";   
+    echo "                    <form class='card p-2'>";
+    echo "                    <div class='input-group' style='padding-bottom: 10px;'>";
+    echo "                   <input type='text' class='form-control' placeholder='Promo code'>";
+    echo "                    </div>";
+    echo "                    <div class='input-group' style='padding-bottom: 10px;'>";
+    echo "                    <input type='text' class='form-control' placeholder='Promo code'>";
+    echo "                    </div>";
+    echo "                    <div class='input-group' style='padding-bottom: 10px;'>";
+    echo "                    <input type='text' class='form-control' placeholder='Promo code'>";
+    echo "                    </div>";
+    echo "                    <div class='input-group' style='padding-bottom: 10px;'>";
+    echo "                    <input type='text' class='form-control' placeholder='Promo code'>";
+    echo "                    </div>";
+    echo "                </form>";
+   
     echo "          </div>";   
 
 
