@@ -26,7 +26,7 @@ echo "<aside  class='mdc-drawer'>";
 echo "                      <div id='mySidenav' class='sidenav'>";
 echo "                      <div>";
 echo "                    </div>";
-echo "                    <div style='height: 89%;' class='mdc-drawer__content'>";
+echo "                    <div style='height: 90%;' class='mdc-drawer__content'>";
                     
 echo "                      <nav class='mdc-list'>";
                              
@@ -91,7 +91,6 @@ echo "                  </aside>";
    echo "           <div>";
    echo "           <input type='text' class='form-control' id='listedby' placeholder='ID' value=''>  ";
    echo "           </div>";
-   echo "               <span class='text-muted'>$12</span>";
    echo "       </li>";
                         
        echo "            </ul>";   
