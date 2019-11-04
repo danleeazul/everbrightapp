@@ -22,7 +22,42 @@ $num = $stmt->rowCount();
 
 
 
+echo "<aside  class='mdc-drawer'>";
+echo "                      <div id='mySidenav' class='sidenav'>";
+echo "                      <div>";
+echo "                    </div>";
+echo "                    <div style='height: 90%;' class='mdc-drawer__content'>";
+                    
+echo "                      <nav class='mdc-list'>";
+                             
 
+echo "                             <a id='navbutton' class='mdc-list-item'  href='indexsample.php' aria-selected='true'>";
+echo "                              <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>dashboard</i>";
+echo "                          <span class='mdc-list-item__text'>Dashboard</span>";
+echo "                        </a>";
+echo "                        <a id='navbutton' class='mdc-list-item mdc-list-item--activated' >";
+echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>format_list_bulleted</i>";
+echo "                          <span class='mdc-list-item__text'>Listing</span>";
+echo "                        </a>";
+echo "                        <a id='navbutton' class='mdc-list-item' href='#' >";
+echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>person</i>";
+echo "                          <span class='mdc-list-item__text'>Accounts</span>";
+echo "                        </a>";
+echo "                        <hr class='mb-4'>";                 
+echo "                      </nav>";
+
+echo "                    </div>";
+echo "                    <div class='textbottom'> ";
+echo "          <table style='border: none; width: 100%;'>                       ";
+echo "                      <tr>";
+echo "                        <td><p style='padding-left:20px;' class='text-muted'>© Everbright v0.0</p></td>";
+echo "                        <td style='padding-right:30px; padding-bottom:20px' class='text-right'><a href='logout.php' class='text-decoration-none'>Log out</a></td>";
+echo "                      </tr>   ";
+echo "                  </table>";
+echo "        </div>";
+echo "                     </div>";
+                         
+echo "                  </aside>";
        
 
         
@@ -47,7 +82,7 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "  <section class='mdc-top-app-bar__section mdc-top-app-bar__section--align-start'>";
 
     echo "   <a type='button' onclick='openNav()' id='sidebarCollapse' class='demo-menu material-icons mdc-top-app-bar__navigation-icon'>menu</a>";
-    echo "   <h3 style='margin-left: 15px;'>Dashboard</h3>";
+    echo "   <h3 style='margin-left: 15px;'>Listing</h3>";
     echo "  </section>";
     echo "<section class='mdc-top-app-bar__section mdc-top-app-bar__section--align-end' role='toolbar'>";
     echo " <a class='material-icons mdc-top-app-bar__action-item' aria-label='Search' alt='Search'>search</a>";
