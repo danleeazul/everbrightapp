@@ -152,7 +152,6 @@
                   <option value="5">San Juan</option>
                   <option value="2">Taguig</option>
                   <option value="19">Zambales</option>
-
                 </select>                
                 <div class="invalid-feedback">
                   Valid City is required.
