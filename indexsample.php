@@ -20,7 +20,7 @@ $stmt->execute();
 // this is how to get number of rows returned
 $num = $stmt->rowCount();
 
-
+//  DRAWER
 echo "<aside  class='mdc-drawer'>";
 echo "                      <div id='mySidenav' class='sidenav'>";
 echo "                      <div>";
@@ -54,38 +54,26 @@ echo "                        <td style='padding-right:30px; padding-bottom:20px
 echo "                      </tr>   ";
 echo "                  </table>";
 echo "        </div>";
-echo "                     </div>";
-                         
+echo "                     </div>";                     
 echo "                  </aside>";
 
 
 echo "<div class='mdc-drawer-app-content'>";
 
 
-
-    //       // to prevent undefined index notice
-    // $action = isset($_GET['action']) ? $_GET['action'] : "";
- 
-    // // if login was successful
-    // if($action=='login_success'){
-    //     echo "<div class='alert alert-info'>";
-    //         echo "<strong>Hi " . $_SESSION['firstname'] . ", welcome back!</strong>";
-    //     echo "</div>";
-    // }
-
-
+//  HEADER
     echo "<header class='mdc-top-app-bar'>";
     echo "  <div class='mdc-top-app-bar__row'>";
     echo "  <section class='mdc-top-app-bar__section mdc-top-app-bar__section--align-start'>";
-
     echo "   <a type='button' onclick='openNav()' id='sidebarCollapse' class='demo-menu material-icons mdc-top-app-bar__navigation-icon'>menu</a>";
     echo "   <h3 style='margin-left: 15px;'>Dashboard</h3>";
     echo "  </section>";
-    echo "<section class='mdc-top-app-bar__section mdc-top-app-bar__section--align-end' role='toolbar'>";
-    echo " <a class='material-icons mdc-top-app-bar__action-item' aria-label='Search' alt='Search'>search</a>";
-    echo " </section>";
+    // echo "<section class='mdc-top-app-bar__section mdc-top-app-bar__section--align-end' role='toolbar'>";
+    // echo " <a class='material-icons mdc-top-app-bar__action-item' aria-label='Search' alt='Search'>search</a>";
+    // echo " </section>";
     echo " </div>";
     echo " </header>";
+//  END HEADER    
       
     echo "<main onclick='closeNav()' style='height: 93%;' class='main-content'>";
     echo " <div class='mdc-top-app-bar--fixed-adjust'>";
