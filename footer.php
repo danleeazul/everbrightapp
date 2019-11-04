@@ -15,7 +15,7 @@ $(document).ready(function()){
       $.ajax({
         url:"fetch.php",
         method:"post",
-        data:{search.txt},
+        data:{search:txt},
         dataType:"text"
         success:function(data)
         {

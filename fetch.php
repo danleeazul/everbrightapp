@@ -1,9 +1,10 @@
 <?php
 include_once 'config/database.php';
     $output = '';
-    $sql = "SELECT * FROM tbl_listings WHERE listing_id LIKE '%".$_POST["search"]."%'";
-    $result = mysqli_query($connect, $sql);
-
+    $sql = "SELECT * FROM tbl_requirements WHERE requirements_id LIKE '%".$_POST["search"]."%'";
+    $stmta = $con->prepare($querya);
+    $stmta->execute();
+    $numa = $stmta->rowCount();
 
     echo "        <div class='col-md-9 order-md-1'>";
     echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
@@ -15,12 +16,16 @@ include_once 'config/database.php';
     echo "            <ul class='list-group mb-3'>";
 
 
-    if(mysqli_num_rows($result) > 0){
+    if($numa > 0){
 
-        
+    
+            while ($rowa = $stmta->fetch(PDO::FETCH_ASSOC)){
 
+                extract($rowa);
+                $output .='hi
+                
+                ';
 
-        while($row = mysqli_fetch_array($result)){
             echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
 
 echo "  <table style='border: none;'>";
