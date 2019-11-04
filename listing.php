@@ -176,8 +176,6 @@ echo "                    </table>";
 
 echo "              </li>";
 
-}//while
-}//IF
 
 
 
