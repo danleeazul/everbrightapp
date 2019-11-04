@@ -112,29 +112,26 @@ echo "                  </aside>";
     echo "                         </select>      ";          
       echo "                    </div>";
     echo "                    <div class='input-group' style='padding-bottom: 10px;'>";
-    echo "                           <select class="custom-select d-block w-100" id="city" required>";
-    echo "                            <option value="">Select...</option>";
-    echo "                            <option value="17">Antipolo</option>";
-    echo "                           <option value="6">Bataan</option>";
-    echo "                           <option value="15">Batangas</option>";
-    echo "                           <option value="16">Bulacan</option>";
-    echo "                           <option value="13">Cavite</option>";
-    echo "                            <option value="7">Laguna</option>";
-    echo "                            <option value="1">Makati</option>";
-    echo "                            <option value="4">Mandaluyong</option>";
-    echo "                            <option value="18">Marikina</option>";
-    echo "                            <option value="8">Muntinlupa</option>";
-    echo "                           <option value="13">Parañaque</option>";
-    echo "                           <option value="11">Pasay</option>";
-    echo "                           <option value="13">Quezon City</option>";
-    echo "                           <option value="5">San Juan</option>";
-    echo "                           <option value="2">Taguig</option>";
-    echo "                           <option value="19">Zambales</option>";
-    echo "                       </select> ";
+    echo "                           <select class='custom-select d-block w-100' id='city' required>";
+    echo "                           <option value=''>Select...</option>";
+    echo "                           <option value='17'>Antipolo</option>";
+    echo "                            <option value='6'>Bataan</option>";
+    echo "                            <option value='15'>Batangas</option>";
+    echo "                            <option value='16'>Bulacan</option>";
+    echo "                            <option value='13'>Cavite</option>";
+    echo "                            <option value='7'>Laguna</option>";
+    echo "                           <option value='1'>Makati</option>";
+    echo "                            <option value='4'>Mandaluyong</option>";
+    echo "                           <option value='18'>Marikina</option>";
+    echo "                           <option value='8'>Muntinlupa</option>";
+    echo "                            <option value='13'>Parañaque</option>";
+    echo "                            <option value='11'>Pasay</option>";
+    echo "                            <option value='13'>Quezon City</option>";
+    echo "                            <option value='5'>San Juan</option>";
+    echo "                            <option value='2'>Taguig</option>";
+    echo "                            <option value='19'>Zambales</option>";
+    echo "                        </select> ";
     echo "                    </div>";
-
-
-    
     echo "                </form>";
    
     echo "          </div>";   
