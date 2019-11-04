@@ -2,20 +2,26 @@
 include_once 'config/database.php';
     $output = '';
     $sql = "SELECT * FROM tbl_requirements WHERE requirements_id LIKE '%".$_POST["search"]."%'";
-    $result = mysqli_query($connect, $sql);
- 
+    $result = mysqli_query($con, $sql);
+
+
+    $stmta = $con->prepare($sql);
+    $stmta->execute();
+    $numa = $stmta->rowCount();
     
 
 
-    if(mysqli_num_rows($result) > 0){
+    if($numa>0){
 
         
 $output .='<h4>SEARCH</h4>';
 
-        while($row = mysqli_fetch_array($result)){
+while ($rowa = $stmta->fetch(PDO::FETCH_ASSOC)){
+    
+    extract($rowa);
 
                 $output .='
-                <p>'.$row['building'].'</p>
+                <p>'.$rowa['building'].'</p>
                                 
                 ';
             

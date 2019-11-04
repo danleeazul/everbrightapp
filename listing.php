@@ -226,53 +226,51 @@ echo "            </h4>";
 
 echo "            <ul class='list-group mb-3'>";
 
-// $querya = 'SELECT * FROM tbl_requirements ORDER BY requirements_id DESC';
-// $stmta = $con->prepare($querya);
-// $stmta->execute();
+$querya = 'SELECT * FROM tbl_requirements ORDER BY requirements_id DESC';
+$stmta = $con->prepare($querya);
+$stmta->execute();
 
-// // this is how to get number of rows returned
-// $numa = $stmta->rowCount();
+// this is how to get number of rows returned
+$numa = $stmta->rowCount();
 
-// if($numa>0){
-//     while ($rowa = $stmta->fetch(PDO::FETCH_ASSOC)){
+if($numa>0){
+    while ($rowa = $stmta->fetch(PDO::FETCH_ASSOC)){
     
-//         extract($rowa);
+        extract($rowa);
        
        
 
-// echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
+echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
 
-// echo "  <table style='border: none;'>";
-// echo "                     <tr>";
-// echo "                      <td>";
-// echo "                  <img  src='{$name}' width='50' height='50'>";
-// echo "                    </td>";
-// echo "                     <td style='width: 800px; padding-left: 10px; padding-right: 10px;'>";
-// echo "                  <h6 class='my-0 card-title'>{$building}</h6>";
-// echo "                  <small>{$location} | {$type}</small>";
-// echo "                  <br />";
-// echo "                  <p class='card-text cardtextmin'>{$requirements}</p>";
-// echo "                        </td>";
-// echo "                        <td style='width: 100px;'>";
+echo "  <table style='border: none;'>";
+echo "                     <tr>";
+echo "                      <td>";
+echo "                  <img  src='{$name}' width='50' height='50'>";
+echo "                    </td>";
+echo "                     <td style='width: 800px; padding-left: 10px; padding-right: 10px;'>";
+echo "                  <h6 class='my-0 card-title'>{$building}</h6>";
+echo "                  <small>{$location} | {$type}</small>";
+echo "                  <br />";
+echo "                  <p class='card-text cardtextmin'>{$requirements}</p>";
+echo "                        </td>";
+echo "                        <td style='width: 100px;'>";
     
-// echo "                <span class='text-muted'>{$price}</span>";
-// echo "                        </td>";
-// echo "                        </tr>";
-// echo "                    </table>";
+echo "                <span class='text-muted'>{$price}</span>";
+echo "                        </td>";
+echo "                        </tr>";
+echo "                    </table>";
 
-// echo "              </li>";
+echo "              </li>";
 
-//     }//while
-// }//IF
+    }//while
+}//IF
 
-echo "<div id='result'></div>";
 
 
                   
- echo "            </ul>";
+echo "            </ul>";
 
- echo "        </div>";
-
+echo "        </div>";
 
 
 
@@ -282,5 +280,3 @@ echo "<div id='result'></div>";
 
     include 'footer.php';
     ?>
-
-    
