@@ -265,15 +265,16 @@ echo "            <ul class='list-group mb-3'>";
 //     }//while
 // }//IF
 
+echo "<div id='result'></div>";
 
 
                   
-// echo "            </ul>";
+ echo "            </ul>";
 
-// echo "        </div>";
+ echo "        </div>";
 
 
-echo "<div id='result'></div>";
+
 
 
 
