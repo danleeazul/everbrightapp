@@ -5,7 +5,7 @@ include_once 'config/database.php';
     $result = $con->prepare($sql);
 
 
-    $stmta = $con->prepare($querya);
+    $stmta = $con->prepare($sql);
     $stmta->execute();    
     $numa = $stmta->rowCount();
     

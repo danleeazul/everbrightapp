@@ -17,10 +17,9 @@ include_once 'config/database.php';
 
     if(mysqli_num_rows($result) > 0){
 
-        
-
-
-        while($row = mysqli_fetch_array($result)){
+        while ($row = $stmta->fetch(PDO::FETCH_ASSOC)){
+    
+            extract($row);
 
                 $output .='
                 <li class="list-group-item d-flex justify-content-between lh-condensed">
