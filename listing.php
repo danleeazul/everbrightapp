@@ -89,8 +89,9 @@ echo "                  </aside>";
    echo "            <ul class='list-group mb-3'>";
    echo "       <li class='list-group-item d-flex justify-content-between lh-condensed'>";
    echo "           <div>";
-   echo "                     <label for='firstName'>Listed By</label>";
-   echo "                     <input type='text' id='listedby' placeholder='' value=''>  ";
+
+   echo "                <h6 class='my-0'>Product name</h6>";
+   echo "               <small class='text-muted'>Brief description</small>";
    echo "           </div>";
    echo "               <span class='text-muted'>$12</span>";
    echo "       </li>";
@@ -124,6 +125,14 @@ if($numa>0){
        
 
 echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
+// echo "                  <img  src='{$name}' width='50' height='50'>";
+// echo "                <div class='requirementsleft'>";
+// echo "                  <h6 class='my-0'>{$building}</h6>";
+// echo "                  <small>{$location} | {$type}</small>";
+// echo "                  <br />";
+// echo "                  <small class='text-muted'>{$requirements}</small>";
+// echo "                </div>";
+// echo "                <span class='text-muted'>{$price}</span>";
 
 echo "  <table style='border: none;'>";
 echo "                     <tr>";
