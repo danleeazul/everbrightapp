@@ -79,56 +79,22 @@ echo "                  </aside>";
 
 //  INSERT HERE THE CONTENT
 
-if($num>0){
-
-
-
     echo " <div class='row col p-3'>";
     echo "  <div class='container'>";
     echo "      <div class='row'>";
     echo "          <div class='col-md-5 order-md-2 mb-4'>";
     echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
-    echo "              <span class='text-muted'>Closed Deals &nbsp<span class='badge badge-secondary'>{$num}</span></span>";
-    echo "           <a href='create_deals.php'><button type='button' href='create_deals.php' class='btn btn-primary btn-sm'>Add</button></a>"; 
+    echo "              <span class='text-muted'>Filter</span>";
     echo "            </h4>";
    echo "            <ul class='list-group mb-3'>";
-
-
-    // table body will be here
-    // retrieve our table contents
-// fetch() is faster than fetchAll()
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-    // extract row
-    // this will make $row['firstname'] to
-    // just $firstname only
-    extract($row);
-     
-    // creating new table row per record
-
-    echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
-    echo "                      <table style='border: none;'>";
-    echo "                     <tr>";
-    echo "                      <td>";
-    echo "                  <img  src='{$name}' width='50' height='50'>";
-    echo "                    </td>";
-    echo "                     <td style='width: 400px; padding-left: 10px; padding-right: 10px;'>";
-
-    echo "                  <h6 class='my-0 card-title'>{$building} - {$unit_no}</h6>";
-    echo "                  <small>{$type}</small>";
-    echo "                  <br />";
-    echo "                  <small class='text-muted'>{$deals_date}</small>";
-    echo "                        </td>";
-    echo "                        <td style='width: 100px;'>";
-        
-    echo "                <span class='text-muted'>₱{$price}</span>";
-    echo "                        </td>";
-    echo "                        </tr>";
-    echo "                    </table>";
-    echo "              </li>";
+   echo "<li class='list-group-item d-flex justify-content-between lh-condensed'>";
+   echo "<div>";
+   echo " <h6 class='my-0'>Product name</h6>";
+   echo " <small class='text-muted'>Brief description</small>";
+   echo " </div>";
+   echo "  <span class='text-muted'>$12</span>";
+   echo " </li>";
                         
-    
-                }
-                }
        echo "            </ul>";   
     echo "          </div>";   
 
