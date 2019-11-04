@@ -26,7 +26,7 @@ echo "<aside  class='mdc-drawer'>";
 echo "                      <div id='mySidenav' class='sidenav'>";
 echo "                      <div>";
 echo "                    </div>";
-echo "                    <div style='height: 90%;' class='mdc-drawer__content'>";
+echo "                    <div style='height: 89%;' class='mdc-drawer__content'>";
                     
 echo "                      <nav class='mdc-list'>";
                              
@@ -89,10 +89,7 @@ echo "                  </aside>";
    echo "            <ul class='list-group mb-3'>";
    echo "       <li class='list-group-item d-flex justify-content-between lh-condensed'>";
    echo "           <div>";
-   echo "            <label for='firstName'>Listed By</label>";
-   echo "           <input type='text' class='form-control' id='listedby' placeholder='' value=''>  ";
-   echo "                <h6 class='my-0'>Product name</h6>";
-   echo "               <small class='text-muted'>Brief description</small>";
+   echo "           <input type='text' class='form-control' id='listedby' placeholder='ID' value=''>  ";
    echo "           </div>";
    echo "               <span class='text-muted'>$12</span>";
    echo "       </li>";
