@@ -1,4 +1,5 @@
 <?php
+include_once 'config/database.php';
     $output = '';
     $sql = "SELECT * FROM tbl_listings WHERE listing_id LIKE '%".$_POST["search"]."%'";
     $result = mysqli_query($connect, $sql);
