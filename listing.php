@@ -87,7 +87,7 @@ echo "                  </aside>";
     echo "            </h4>";
     echo "                    <form class='card p-2'>";
     echo "                    <div class='input-group' style='padding-bottom: 10px;'>";
-    echo "                   <input type='text' class='form-control' placeholder='Listing ID'>";
+    echo "                   <input type='text' name='listing_id' name='listing_id'  class='form-control' placeholder='Listing ID'>";
     echo "                    </div>";
     echo "                    <div class='input-group' style='padding-bottom: 10px;'>";
     echo "                             <select class='custom-select d-block w-100' id='unittype' onchange='GetSelectedValue()' required> ";                            
@@ -132,6 +132,85 @@ echo "                  </aside>";
     echo "                            <option value='19'>Zambales</option>";
     echo "                        </select> ";
     echo "                    </div>";
+    echo "                    <div class='input-group' style='padding-bottom: 10px;'>";
+    echo "                    <select class='custom-select d-block w-100' id='neighborhood' required>";
+    echo "                    <option value=''>Select...</option>";
+    echo "                    <option>Addition Hills</option>";
+    echo "                     <option>Alabang</option>";
+    echo "                     <option>Alabang West</option>";
+    echo "                     <option>Anvaya Cove</option>";
+    echo "                    <option>Ayala Center</option>";
+    echo "                    <option>Ayala Westgrove Heights</option>";
+    echo "                    <option>Bacao</option>";
+    echo "                    <option>Bagong Ilog</option>";
+    echo "                    <option>Balintawak</option>";
+    echo "                     <option>Bambang</option>";
+    echo "                    <option>Batasan Hills</option>";
+    echo "                    <option>Bayshore City</option>";
+    echo "                   <option>Bel-Air Village</option>";
+    echo "                   <option>BGC</option>";
+    echo "                   <option>Capitol Commons</option>";
+    echo "                   <option>Century City</option>";
+    echo "                   <option>Corazon De Jesus</option>";
+    echo "                   <option>Coronado St.</option>";
+    echo "                  <option>Cubao</option>";
+    echo "                   <option>Dasmariñas</option>";
+    echo "                  <option>Dasmariñas Techno Park</option>";
+    echo "                   <option>Diliman</option>";
+    echo "                  <option>Don Bosco</option>";
+    echo "                   <option>Don Galo</option>";
+    echo "                  <option>Eastwood</option>";
+    echo "                   <option>Ermita</option>";
+    echo "                   <option>Ermitaño</option>";
+    echo "                  <option>Forbes Park</option>";
+    echo "                   <option>Fortune</option>";
+    echo "                  <option>Greenhills</option>";
+    echo "                  <option>Hulo</option>";
+    echo "                  <option>Iruhin East</option>";
+    echo "                   <option>Kapitolyo</option>";
+    echo "                  <option>Kaunlaran</option>";
+    echo "                  <option>Legazpi Village</option>";
+    echo "                  <option>Little Baguio</option>";
+    echo "                  <option>Loyola</option>";
+    echo "                  <option>Maharlika West</option>";
+    echo "                  <option>McKinely West</option>";
+    echo "                  <option>MOA Complex</option>";
+    echo "                  <option>Moonwalk</option>";
+    echo "                   <option>New Manila</option>";
+    echo "                   <option>Nuvali</option>";
+    echo "                   <option>Old Balara</option>";
+    echo "                   <option>Ortigas Center</option>";
+    echo "                  <option>Pandayan</option>";
+    echo "                  <option>Pio Del Pilar</option>";
+    echo "                   <option>Poblacion</option>";
+    echo "                   <option>Pulo</option>";
+    echo "                  <option>Punta de Fuego</option>";
+    echo "                  <option>Rockwell Center</option>";
+    echo "                  <option>Roxas District</option>";
+    echo "                  <option>Salawag</option>";
+    echo "                  <option>Salcedo Village</option>";
+    echo "                    <option>Sampaloc</option>";
+    echo "                   <option>San Antonio Village</option>";
+    echo "                  <option>San Celestine</option>";
+    echo "                  <option>San Lorenzon Village</option>";
+    echo "                  <option>Santa Cruz</option>";
+    echo "                  <option>Santa Mesa</option>";
+    echo "                  <option>Silang Junction North</option>";
+    echo "                  <option>Soutwoods</option>";
+    echo "                  <option>Sta. Rosa</option>";
+    echo "                   <option>Sungay North</option>";
+    echo "                  <option>Tranca</option>";
+    echo "                  <option>Ugong</option>";
+    echo "                  <option>Urdaneta Village</option>";
+    echo "                   <option>Usasan</option>";
+    echo "                  <option>Valencia</option>";
+    echo "                  <option>Vertis North</option>";
+    echo "                   <option>Wack-Wack</option>";
+    echo "                   <option>Western Bicutan</option>";
+    echo "                  <option>Zapote</option>";
+    echo "                   <option>Zapote V</option>";
+    echo "              </select> ";
+    echo "                    </div>";
     echo "                </form>";
    
     echo "          </div>";   
@@ -162,14 +241,6 @@ if($numa>0){
        
 
 echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
-// echo "                  <img  src='{$name}' width='50' height='50'>";
-// echo "                <div class='requirementsleft'>";
-// echo "                  <h6 class='my-0'>{$building}</h6>";
-// echo "                  <small>{$location} | {$type}</small>";
-// echo "                  <br />";
-// echo "                  <small class='text-muted'>{$requirements}</small>";
-// echo "                </div>";
-// echo "                <span class='text-muted'>{$price}</span>";
 
 echo "  <table style='border: none;'>";
 echo "                     <tr>";
@@ -202,9 +273,13 @@ echo "            </ul>";
 echo "        </div>";
 
 
+echo "<div id='result'></div>";
+
 
 
 //  ENDING CONTENT
 
     include 'footer.php';
     ?>
+
+    

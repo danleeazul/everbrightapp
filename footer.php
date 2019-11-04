@@ -3,6 +3,30 @@
 </div>
 
 <script>
+
+$(document).ready(function()){
+  $('#listing_id').keyup(function(){
+    var txt = $(this).val();
+    if(txt != ''){
+
+    }
+    else{
+      $('#result').html('');
+      $.ajax({
+        url:"fetch.php",
+        method:"post",
+        data:{search.txt},
+        dataType:"text"
+        success:function(data)
+        {
+          $('#result').html(data);
+        }
+      })
+    }
+  });
+}
+
+
                function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
 }
@@ -18,29 +42,6 @@ function closeNav() {
         document.getElementById("mySidenav").style.width = "250px";
 
     }
-
-    function clickSingleA()
-{
-    // items = document.querySelectorAll('.mdc-list-item.mdc-list-item--activated');
-
-    // if(items.length) 
-    // {
-    //     items[0].className = 'mdc-list-item';
-    // }
-    // else{
-    //   navbutton.className = 'mdc-list-item mdc-list-item--activated';
-    // }
-
-    if ( document.getElementById("navbutton").classList.contains('mdc-list-item--activated') ){
-        // document.getElementById("navbutton").classList.remove('mdc-list-item--activated');
-        console.log("working");
-    }
-    else{
-      document.getElementById("navbutton").classList.add('mdc-list-item--activated');
-    }
-
-}
-
 }
 
 </script>

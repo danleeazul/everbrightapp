@@ -468,7 +468,7 @@
          
             <hr class="mb-4">
             <div class="text-right">
-            <a href='index.php'><button type="button" href='index.php' class="btn btn-outline-secondary">Cancel</button></a>
+            <a href='index.php'><button type="button" href='listing.php' class="btn btn-outline-secondary">Cancel</button></a>
             <button type="submit" value='Save' class="btn btn-primary">Submit</button>
             
             </div>
