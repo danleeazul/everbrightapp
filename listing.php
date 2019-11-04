@@ -80,13 +80,11 @@ echo "                  </aside>";
 //  INSERT HERE THE CONTENT
 
 
-if($num>0){
-
-
-
     echo " <div class='row col p-3'>";
     echo "  <div class='container'>";
     echo "      <div class='row'>";
+ 
+   
 
 
 echo "        <div class='col-md-7 order-md-1'>";
@@ -101,6 +99,7 @@ echo "            <ul class='list-group mb-3'>";
    
 
 echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
+
 
 echo "  <table style='border: none;'>";
 echo "                     <tr>";
@@ -121,13 +120,7 @@ echo "                        </tr>";
 echo "                    </table>";
 
 echo "              </li>";
-
-
-
-
-              
 echo "            </ul>";
-
 echo "        </div>";
 
 
