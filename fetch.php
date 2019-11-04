@@ -2,9 +2,8 @@
 include_once 'config/database.php';
     $output = '';
     $sql = "SELECT * FROM tbl_requirements WHERE requirements_id LIKE '%".$_POST["search"]."%'";
-    $stmta = $con->prepare($querya);
-    $stmta->execute();
-    $numa = $stmta->rowCount();
+    $result = mysqli_query($connect, $sql);
+ 
 
     echo "        <div class='col-md-9 order-md-1'>";
     echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
@@ -16,42 +15,38 @@ include_once 'config/database.php';
     echo "            <ul class='list-group mb-3'>";
 
 
-    if($numa > 0){
+    if(mysqli_num_rows($result) > 0){
 
-    
-            while ($rowa = $stmta->fetch(PDO::FETCH_ASSOC)){
+        
 
-                extract($rowa);
-                $output .='hi
-                
+
+        while($row = mysqli_fetch_array($result)){
+
+                $output .='
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+
+                <table style="border: none;">
+                                   <tr>
+                                    <td>
+                                <img  src="" width="50" height="50">
+                                  </td>
+                                   <td style="width: 800px; padding-left: 10px; padding-right: 10px;">
+                                <h6 class="my-0 card-title">'.$row['building'].'</h6>
+                                <small>'.$row['building'].' | '.$row['type'].'</small>
+                                <br />
+                                <p class="card-text cardtextmin">'.$row['requirements'].'</p>
+                                      </td>
+                                      <td style="width: 100px;">
+                  
+                              <span class="text-muted">'.$row['price'].'</span>
+                                      </td>
+                                      </tr>
+                                  </table>
+                            </li>
                 ';
-
-            echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
-
-echo "  <table style='border: none;'>";
-echo "                     <tr>";
-echo "                      <td>";
-echo "                  <img  src='' width='50' height='50'>";
-echo "                    </td>";
-echo "                     <td style='width: 800px; padding-left: 10px; padding-right: 10px;'>";
-echo "                  <h6 class='my-0 card-title'>{$building}</h6>";
-echo "                  <small>{$city} | {$type}</small>";
-echo "                  <br />";
-echo "                  <p class='card-text cardtextmin'>{$type}</p>";
-echo "                        </td>";
-echo "                        <td style='width: 100px;'>";
-    
-echo "                <span class='text-muted'>{$selling_price}</span>";
-echo "                        </td>";
-echo "                        </tr>";
-echo "                    </table>";
-
-echo "              </li>";
+            
         }
-
-
-
-
+        echo $output;
     }
     else{
         echo 'Data not found';
