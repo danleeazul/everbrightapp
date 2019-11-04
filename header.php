@@ -16,4 +16,4 @@
   </head>
   <body class="mdc-typography">
      <!-- include the drawer/navigation bar -->
-     <?php include_once 'drawer.php'; ?>  
+     <?php //include_once 'drawer.php'; ?>  
