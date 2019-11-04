@@ -226,7 +226,7 @@ echo "            </h4>";
 
 echo "            <ul class='list-group mb-3'>";
 
-$querya = "SELECT * FROM tbl_requirements WHERE requirements_id LIKE '%3%' ";
+$querya = "SELECT * FROM tbl_requirements WHERE type LIKE '%sample%' ";
 $stmta = $con->prepare($querya);
 $stmta->execute();
 
