@@ -31,13 +31,14 @@ include_once 'config/database.php';
 //     }
 
 
-if(mysqli_num_rows($result) > 0){
+if($numa>0){
 
         
     $output .='<h4>SEARCH</h4>';
     
-    while($row = mysqli_fetch_array($result)){
-        
+    while ($row = $stmta->fetch(PDO::FETCH_ASSOC)){
+    
+      
         extract($row);
     
                     $output .='
