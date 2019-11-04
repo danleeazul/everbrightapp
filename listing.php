@@ -88,7 +88,12 @@ echo "                  </aside>";
    echo "            <ul class='list-group mb-3'>";
    echo "       <li class='list-group-item d-flex justify-content-between lh-condensed'>";
    echo "           <div>";
-   echo "           <input type='text' class='form-control' id='listedby' placeholder='ID' value=''>  ";
+   echo "           <input type='text' class='form-control' id='listedby' placeholder='ID' value=''> <br/> ";
+   echo "           </div>";
+   echo "       </li>";
+
+   echo " <li class='list-group-item d-flex justify-content-between lh-condensed'>";
+   echo "        <div>";
    echo "                 <select class='custom-select d-block w-100' id='unittype' onchange='GetSelectedValue()' required>     ";                        
    echo "                  <option value=''>Select...</option>";
    echo "                  <option value='S'>Sale</option>";
@@ -96,8 +101,8 @@ echo "                  </aside>";
    echo "                  <option value='SR'>Sale/Rent</option>";
    echo "                  <option value='PSR'>PS-Resale</option>";
    echo "               </select>";
-   echo "           </div>";
-   echo "       </li>";
+   echo "        </div>";
+   echo "      </li>";
                         
        echo "            </ul>";   
     echo "          </div>";   
