@@ -226,7 +226,7 @@ echo "            </h4>";
 
 echo "            <ul class='list-group mb-3'>";
 
-$querya = 'SELECT * FROM tbl_requirements ORDER BY requirements_id DESC';
+$querya = "SELECT * FROM tbl_requirements WHERE requirements_id ='3' ";
 $stmta = $con->prepare($querya);
 $stmta->execute();
 
