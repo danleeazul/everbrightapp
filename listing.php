@@ -82,7 +82,7 @@ echo "                  </aside>";
     echo " <div class='row col p-3'>";
     echo "  <div class='container'>";
     echo "      <div class='row'>";
-    echo "          <div class='col-md-5 order-md-2 mb-4'>";
+    echo "          <div class='col-md-3 order-md-2 mb-4'>";
     echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
     echo "              <span class='text-muted'>Filter</span>";
     echo "            </h4>";
