@@ -135,56 +135,6 @@ echo "          </div>";
    
 
 
-echo "        <div class='col-md-7 order-md-1'>";
-echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
-echo "                    <span class='text-muted'>Requirements</span>"; 
-echo "           <a href='create_req.php'><button type='button' href='create_req.php' class='btn btn-primary btn-sm'>Add</button></a>"; 
-echo "            </h4>";
-
-
-echo "            <ul class='list-group mb-3'>";
-   
-   
-
-echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
-// echo "                  <img  src='{$name}' width='50' height='50'>";
-// echo "                <div class='requirementsleft'>";
-// echo "                  <h6 class='my-0'>{$building}</h6>";
-// echo "                  <small>{$location} | {$type}</small>";
-// echo "                  <br />";
-// echo "                  <small class='text-muted'>{$requirements}</small>";
-// echo "                </div>";
-// echo "                <span class='text-muted'>{$price}</span>";
-
-echo "  <table style='border: none;'>";
-echo "                     <tr>";
-echo "                      <td>";
-echo "                  <img  src='{$name}' width='50' height='50'>";
-echo "                    </td>";
-echo "                     <td style='width: 800px; padding-left: 10px; padding-right: 10px;'>";
-echo "                  <h6 class='my-0 card-title'>{$building}</h6>";
-echo "                  <small>{$location} | {$type}</small>";
-echo "                  <br />";
-echo "                  <p class='card-text cardtextmin'>{$requirements}</p>";
-echo "                        </td>";
-echo "                        <td style='width: 100px;'>";
-
-echo "                <span class='text-muted'>{$price}</span>";
-echo "                        </td>";
-echo "                        </tr>";
-echo "                    </table>";
-
-echo "              </li>";
-
-
-
-
-              
-echo "            </ul>";
-
-echo "        </div>";
-
-
 
 //  ENDING CONTENT
 
