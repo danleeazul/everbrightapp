@@ -217,16 +217,11 @@
 
             
 
-            <ul class='list-group mb-3'>
+            <ul class='list-group mb-3' id="result">
 
-            <li class='list-group-item d-flex justify-content-between lh-condensed'>
 
            
-<div id="result"></div>
 
-   </table>
-
-            </li>
             
     </ul>
     </div>
