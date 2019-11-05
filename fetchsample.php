@@ -9,6 +9,8 @@ $output = '';
 if(isset($_POST["query"]))
 {
  $search=htmlspecialchars(strip_tags($_POST['query']));
+ $search2=htmlspecialchars(strip_tags($_POST['query']));
+
  //$search = mysqli_real_escape_string($con, $_POST["query"]);
  $query = "
   SELECT * FROM tbl_requirements 
