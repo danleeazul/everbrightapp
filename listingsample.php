@@ -224,6 +224,8 @@
            
 <div id="result"></div>
 
+   </table>
+
             </li>
             
     </ul>

@@ -34,13 +34,12 @@ if($numa>0)
 {
  $output .= '
  <table style="border: none;">
- 
-</table>
  ';
  while ($row = $result->fetch(PDO::FETCH_ASSOC))
  //while($row = mysqli_fetch_array($result))
  {
   $output .= '
+
   <tr>
   <td>
 <img  src="'.$row["name"].'" width="50" height="50">
