@@ -3,9 +3,13 @@
 include_once 'config/database.php';
 $connect = mysqli_connect("localhost", "root", "", "testing");
 $output = '';
+
+
+
 if(isset($_POST["query"]))
 {
- $search = mysqli_real_escape_string($con, $_POST["query"]);
+ $search=htmlspecialchars(strip_tags($_POST['query']));
+ //$search = mysqli_real_escape_string($con, $_POST["query"]);
  $query = "
   SELECT * FROM tbl_requirements 
   WHERE requirements_id LIKE '%".$search."%'
@@ -21,8 +25,12 @@ else
   SELECT * FROM tbl_requirements ORDER BY requirements_id
  ";
 }
-$result = mysqli_query($con, $query);
-if(mysqli_num_rows($result) > 0)
+//$result = mysqli_query($con, $query);
+$result = $con->prepare($query);
+$result->execute();
+
+$numa = $result->rowCount();
+if($numa>0)
 {
  $output .= '
   <div class="table-responsive">
@@ -35,7 +43,8 @@ if(mysqli_num_rows($result) > 0)
      <th>Type</th>
     </tr>
  ';
- while($row = mysqli_fetch_array($result))
+ while ($row = $result->fetch(PDO::FETCH_ASSOC))
+ //while($row = mysqli_fetch_array($result))
  {
   $output .= '
    <tr>

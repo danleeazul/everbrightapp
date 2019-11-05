@@ -226,7 +226,6 @@ echo "            </h4>";
 
 echo "            <ul class='list-group mb-3'>";
 
-$listing_id=htmlspecialchars(strip_tags($_POST['listing_id']));
 
 
 $querya = "SELECT * FROM tbl_requirements WHERE requirements LIKE '%$listing_id%' ";
