@@ -33,6 +33,7 @@ $numa = $result->rowCount();
 if($numa>0)
 {
  $output .= '
+ <li class="list-group-item d-flex justify-content-between lh-condensed">
  <table style="border: none;">
  ';
  while ($row = $result->fetch(PDO::FETCH_ASSOC))
@@ -55,6 +56,10 @@ if($numa>0)
 <span class="text-muted">'.$row["price"].'</span>
     </td>
     </tr>
+
+   </table>
+
+   </li>
   ';
  }
  echo $output;
