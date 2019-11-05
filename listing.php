@@ -110,7 +110,7 @@ echo "                  </aside>";
     echo "                             <option>Residential Lot</option>";
     echo "                             <option>Townhouse</option>";
     echo "                         </select>      ";          
-      echo "                    </div>";
+    echo "                    </div>";
     echo "                    <div class='input-group' style='padding-bottom: 10px;'>";
     echo "                           <select class='custom-select d-block w-100' id='city' required>";
     echo "                           <option value=''>City</option>";
