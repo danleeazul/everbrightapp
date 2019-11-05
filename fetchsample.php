@@ -33,14 +33,14 @@ $numa = $result->rowCount();
 if($numa>0)
 {
  $output .= '
- <li class="list-group-item d-flex justify-content-between lh-condensed">
- <table style="border: none;">
+
  ';
  while ($row = $result->fetch(PDO::FETCH_ASSOC))
  //while($row = mysqli_fetch_array($result))
  {
   $output .= '
-
+  <li class="list-group-item d-flex justify-content-between lh-condensed">
+  <table style="border: none;">
   <tr>
   <td>
 <img  src="'.$row["name"].'" width="50" height="50">
@@ -59,7 +59,7 @@ if($numa>0)
 
    </table>
 
-   </li>
+            </li>
   ';
  }
  echo $output;
