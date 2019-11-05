@@ -86,7 +86,7 @@
                 </h4>
                         <form class='card p-2'>
                         <div class='input-group' style='padding-bottom: 10px;'>
-                       <input type='text' name='listing_id' name='listing_id'  class='form-control' placeholder='Listing ID'>
+                       <input type='text' name='listing_id' id='listing_id'  class='form-control' placeholder='Listing ID'>
                         </div>
                         <div class='input-group' style='padding-bottom: 10px;'>
                                  <select class='custom-select d-block w-100' id='unittype' onchange='GetSelectedValue()' required>                             
@@ -112,8 +112,8 @@
                         </div>
                         <div class='input-group' style='padding-bottom: 10px;'>
                                <select class='custom-select d-block w-100' id='city' required>
-                               <option value=''>City</option>
-                               <option value='17'>Antipolo</option>
+                                  <option value=''>City</option>
+                                  <option value='17'>Antipolo</option>
                                 <option value='6'>Bataan</option>
                                 <option value='15'>Batangas</option>
                                 <option value='16'>Bulacan</option>
@@ -132,7 +132,7 @@
                             </select> 
                         </div>
                         <div class='input-group' style='padding-bottom: 10px;'>
-                        <select class='custom-select d-block w-100' id='neighborhood' required>
+                   <select class='custom-select d-block w-100' id='neighborhood' required>
                         <option value=''>Select...</option>
                         <option>Addition Hills</option>
                          <option>Alabang</option>
