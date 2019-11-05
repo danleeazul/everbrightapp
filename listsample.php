@@ -86,7 +86,7 @@
                 </h4>
                         <form class='card p-2'>
                         <div class='input-group' style='padding-bottom: 10px;'>
-                       <input type='text' name='listing_id' id='listing_id'  class='form-control' placeholder='Listing ID'>
+                       <input type='text' name='search_text' id='search_text'  class='form-control' placeholder='Listing ID'>
                         </div>
                         <div class='input-group' style='padding-bottom: 10px;'>
                                  <select class='custom-select d-block w-100' id='unittype' onchange='GetSelectedValue()' required>                             
