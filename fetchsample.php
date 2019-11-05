@@ -33,27 +33,29 @@ $numa = $result->rowCount();
 if($numa>0)
 {
  $output .= '
-  <div class="table-responsive">
-   <table class="table table bordered">
-    <tr>
-     <th>ID</th>
-     <th>Name</th>
-     <th>Building</th>
-     <th>Location Code</th>
-     <th>Type</th>
-    </tr>
+ <table style="border: none;">
+ 
+</table>
  ';
  while ($row = $result->fetch(PDO::FETCH_ASSOC))
  //while($row = mysqli_fetch_array($result))
  {
   $output .= '
-   <tr>
-    <td>'.$row["requirements_id"].'</td>
-    <td>'.$row["name"].'</td>
-    <td>'.$row["building"].'</td>
-    <td>'.$row["location"].'</td>
-    <td>'.$row["type"].'</td>
-   </tr>
+  <tr>
+  <td>
+<img  src="'.$row["name"].'" width="50" height="50">
+</td>
+ <td style="width: 800px; padding-left: 10px; padding-right: 10px;">
+<h6 class="my-0 card-title">'.$row["building"].'</h6>
+<small>'.$row["location"].' | '.$row["type"].'</small>
+<br />
+<p class="card-text cardtextmin">'.$row["requirements"].'</p>
+    </td>
+    <td style="width: 100px;">
+
+<span class="text-muted">'.$row["price"].'</span>
+    </td>
+    </tr>
   ';
  }
  echo $output;
