@@ -220,7 +220,7 @@ echo "                  </aside>";
 
 
        
-echo " <div id='result'></div>";
+echo "<div id='result'></div>";
 
 
 

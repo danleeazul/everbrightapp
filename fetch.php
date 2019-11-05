@@ -29,24 +29,25 @@ $result->execute();
 
 $numa = $result->rowCount();
 
+echo "<div class='col-md-9 order-md-1'>";
+echo "<h4 class='d-flex justify-content-between align-items-center mb-3'>";
+echo "<span class='text-muted'>Requirements</span>";
+echo "<a href='create_req.php'><button type='button' href='create_req.php' class='btn btn-primary btn-sm'>Add</button></a>";
+echo "</h4>";
 
+echo "<ul class='list-group mb-3'>";
 
 if($numa>0)
 {
  $output .= '
- <div class="col-md-9 order-md-1">
- <h4 class="d-flex justify-content-between align-items-center mb-3">
- <span class="text-muted">Requirements</span>
- <a href="create_req.php"><button type="button" href="create_req.php" class="btn btn-primary btn-sm">Add</button></a>
- </h4>
- 
- <ul class="list-group mb-3">
+   <li class="list-group-item d-flex justify-content-between lh-condensed">
+   <table style="border: none;">
+
  ';
  while ($row = $result->fetch(PDO::FETCH_ASSOC))
  {
   $output .= '
-   <li class="list-group-item d-flex justify-content-between lh-condensed">
-   <table style="border: none;">
+
                       <tr>
                        <td>
                    <img  src="'.$row["name"].'" width="50" height="50">
@@ -62,12 +63,12 @@ if($numa>0)
                  <span class="text-muted">'.$row["price"].'</span>
                          </td>
                          </tr>
-                     </table>
-               </li>
   ';
  }
- echo "            </ul>";
-echo "        </div>";
+ echo "</table>";
+ echo "</li>";
+ echo "</ul>";
+ echo "</div>";
  echo $output;
 }
 else
