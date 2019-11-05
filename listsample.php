@@ -7,13 +7,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://www.everbright.com.ph/everbrightapp/libs/css/style.css">
+    <link href="https://www.everbright.com.ph/everbrightapp//libs/css/form-validation.css" rel="stylesheet" type="text/css"/>
 
 
     <!-- Bootstrap CSS -->
@@ -22,7 +17,7 @@
 </head>
 <body class="mdc-typography">
 
-
+//  DASHBOARD
 <aside  class='mdc-drawer'>
                       <div id='mySidenav' class='sidenav'>
                       <div>
@@ -60,7 +55,7 @@
                          
                   </aside>
 
-         
+                  //  HEADER
     <div class='mdc-drawer-app-content'>
     <header class='mdc-top-app-bar'>
       <div class='mdc-top-app-bar__row'>
@@ -70,13 +65,13 @@
       </section>
      </div>
      </header>
-
+// END HEADER
 
     <main onclick='closeNav()' style='height: 93%;' class='main-content'>
      <div class='mdc-top-app-bar--fixed-adjust'>
 
 
-
+//  INSERT HERE THE CONTENT
      <div class='row col p-3'>
       <div class='container'>
           <div class='row'>
@@ -86,7 +81,7 @@
                 </h4>
                         <form class='card p-2'>
                         <div class='input-group' style='padding-bottom: 10px;'>
-                       <input type='text' name='search_text' id='search_text'  class='form-control' placeholder='Listing ID'>
+                       <input type='text' name='listing_id' name='listing_id'  class='form-control' placeholder='Listing ID'>
                         </div>
                         <div class='input-group' style='padding-bottom: 10px;'>
                                  <select class='custom-select d-block w-100' id='unittype' onchange='GetSelectedValue()' required>                             
@@ -112,8 +107,8 @@
                         </div>
                         <div class='input-group' style='padding-bottom: 10px;'>
                                <select class='custom-select d-block w-100' id='city' required>
-                                  <option value=''>City</option>
-                                  <option value='17'>Antipolo</option>
+                               <option value=''>City</option>
+                               <option value='17'>Antipolo</option>
                                 <option value='6'>Bataan</option>
                                 <option value='15'>Batangas</option>
                                 <option value='16'>Bulacan</option>
@@ -132,7 +127,7 @@
                             </select> 
                         </div>
                         <div class='input-group' style='padding-bottom: 10px;'>
-                   <select class='custom-select d-block w-100' id='neighborhood' required>
+                        <select class='custom-select d-block w-100' id='neighborhood' required>
                         <option value=''>Select...</option>
                         <option>Addition Hills</option>
                          <option>Alabang</option>
@@ -222,22 +217,34 @@
            <a href='create_req.php'><button type='button' href='create_req.php' class='btn btn-primary btn-sm'>Add</button></a> 
             </h4>
 
-            <div id="result"></div>
+
             <ul class='list-group mb-3'>
 
             <li class='list-group-item d-flex justify-content-between lh-condensed'>
 
-           
-
+<table style='border: none;'>
+                   <tr>
+                    <td>
+                <img  src='{$name}' width='50' height='50'>
+                  </td>
+                   <td style='width: 800px; padding-left: 10px; padding-right: 10px;'>
+                <h6 class='my-0 card-title'>{$building}</h6>
+                <small>{$location} | {$type}</small>
+                <br />
+                <p class='card-text cardtextmin'>{$requirements}</p>
+                      </td>
+                      <td style='width: 100px;'>
+  
+              <span class='text-muted'>{$price}</span>
+                      </td>
+                      </tr>
+                  </table>
 
             </li>
-            
     </ul>
     </div>
 
-    </div>
-</main>
-</div>
+    
 
 
 
@@ -250,32 +257,32 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <script>
-    $(document).ready(function(){
+       
+$(document).ready(function(){
+  load_data();
+  
+  function load_data(query)
+ {
+    $.ajax({
+              url:"fetchsample.php",
+              method:"POST",
+              data:{query:query},
+              success:function(data)
+              {
+              $('#result').html(data);
+              }
+          });
+ }
 
-load_data();
-
-function load_data(query)
-{
-   $.ajax({
-             url:"fetchsample.php",
-             method:"POST",
-             data:{query:query},
-             success:function(data)
-             {
-             $('#result').html(data);
-             }
-         });
-}
-
-$('#search_text').keyup(function(){
-   var search = $(this).val();
-   if(search != ''){
-   load_data(search);
-   }
-   else{
-   load_data();
-   }
-});
+ $('#search_text').keyup(function(){
+    var search = $(this).val();
+    if(search != ''){
+    load_data(search);
+    }
+    else{
+    load_data();
+    }
+ });
 
 });
 

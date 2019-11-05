@@ -16,7 +16,7 @@ if(isset($_POST["query"]))
   OR name LIKE '%".$search."%' 
   OR building LIKE '%".$search."%' 
   OR location LIKE '%".$search."%' 
-  OR type LIKE '%".$search."%'
+  OR type LIKE '%".$search2."%'
  ";
 }
 else

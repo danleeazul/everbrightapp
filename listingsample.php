@@ -82,12 +82,12 @@
                        <input type='text' name='search_text' id='search_text'  class='form-control' placeholder='Listing ID'>
                         </div>
                         <div class='input-group' style='padding-bottom: 10px;'>
-                                 <select class='custom-select d-block w-100' id='unittype' onchange='GetSelectedValue()' required>                             
+                                 <select class='custom-select d-block w-100' id='unittype' name='unittype' onchange='GetSelectedValue()' required>                             
                                  <option value=''>Unit Type</option>
-                                 <option value='S'>Sale</option>
-                                 <option value='R'>Rent</option>
-                                 <option value='SR'>Sale/Rent</option>
-                                 <option value='PSR'>PS-Resale</option>
+                                 <option value='Sale'>Sale</option>
+                                 <option value='Rent'>Rent</option>
+                                 <option value='Sale/Rent'>Sale/Rent</option>
+                                 <option value='PS-Resale'>PS-Resale</option>
                                  </select>
                         </div>
                         <div class='input-group' style='padding-bottom: 10px;'>
@@ -257,6 +257,16 @@ $(document).ready(function(){
     var search = $(this).val();
     if(search != ''){
     load_data(search);
+    }
+    else{
+    load_data();
+    }
+ });
+
+ $('#unittype').keyup(function(){
+    var search2 = $(this).val();
+    if(search2 != ''){
+    load_data(search2);
     }
     else{
     load_data();
