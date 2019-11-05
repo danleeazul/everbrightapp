@@ -9,7 +9,7 @@
  <body>
   <div class="container">
    <br />
-   <h2>Ajax Live Data Search using Jquery PHP MySql</h2><br />
+   <h2 >Ajax Live Data Search using Jquery PHP MySql</h2><br />
    <div class="form-group">
     <div class="input-group">
      <span class="input-group-addon">Search</span>
@@ -30,26 +30,26 @@ $(document).ready(function(){
 
  function load_data(query)
  {
-  $.ajax({
-   url:"fetchsample.php",
-   method:"POST",
-   data:{query:query},
-   success:function(data)
-   {
-    $('#result').html(data);
-   }
-  });
+    $.ajax({
+              url:"fetchsample.php",
+              method:"POST",
+              data:{query:query},
+              success:function(data)
+              {
+              $('#result').html(data);
+              }
+          });
  }
+
  $('#search_text').keyup(function(){
-  var search = $(this).val();
-  if(search != '')
-  {
-   load_data(search);
-  }
-  else
-  {
-   load_data();
-  }
+    var search = $(this).val();
+    if(search != ''){
+    load_data(search);
+    }
+    else{
+    load_data();
+    }
  });
+ 
 });
 </script>

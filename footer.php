@@ -4,27 +4,33 @@
 
 <script>
 
-$(document).ready(function()){
-  $('#listing_id').keyup(function(){
-    var txt = $(this).val();
-    if(txt != ''){
+$(document).ready(function(){
+  load_data();
+  
+  function load_data(query)
+ {
+    $.ajax({
+              url:"fetch.php",
+              method:"POST",
+              data:{query:query},
+              success:function(data)
+              {
+              $('#result').html(data);
+              }
+          });
+ }
 
+ $('#search_text').keyup(function(){
+    var search = $(this).val();
+    if(search != ''){
+    load_data(search);
     }
     else{
-      $('#result').html('');
-      $.ajax({
-        url:"fetch.php",
-        method:"post",
-        data:{search:txt},
-        dataType:"text"
-        success:function(data)
-        {
-          $('#result').html(data);
-        }
-      })
+    load_data();
     }
-  });
-}
+ });
+
+});
 
 
                function openNav() {
