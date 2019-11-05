@@ -22,7 +22,7 @@ if(isset($_POST["query"]))
 else
 {
  $query = "
-  SELECT * FROM tbl_requirements ORDER BY requirements_id
+  SELECT * FROM tbl_requirements ORDER BY requirements_id DESC'
  ";
 }
 //$result = mysqli_query($con, $query);
