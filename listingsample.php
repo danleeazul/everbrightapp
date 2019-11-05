@@ -215,13 +215,14 @@
            <a href='create_req.php'><button type='button' href='create_req.php' class='btn btn-primary btn-sm'>Add</button></a> 
             </h4>
 
-            <div id="result"></div>
+            
+
             <ul class='list-group mb-3'>
 
             <li class='list-group-item d-flex justify-content-between lh-condensed'>
 
            
-
+<div id="result"></div>
 
             </li>
             
@@ -231,25 +232,6 @@
     </div>
 </main>
 </div>
-
-
-<!-- 
-
-  <div class="container">
-   <br />
-   <h2 >Ajax Live Data Search using Jquery PHP MySql</h2><br />
-   <div class="form-group">
-
-    <div class="input-group">
-     <span class="input-group-addon">Search</span>
-     <input type="text" name="search_text" id="search_text" placeholder="Search by Customer Details" class="form-control" />
-    </div>
-
-   </div>
-
-   <br />
-
-   <div id="result"></div> -->
 
   </div>
  </body>
