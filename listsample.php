@@ -222,15 +222,16 @@
            <a href='create_req.php'><button type='button' href='create_req.php' class='btn btn-primary btn-sm'>Add</button></a> 
             </h4>
 
-
+            <div id="result"></div>
             <ul class='list-group mb-3'>
 
             <li class='list-group-item d-flex justify-content-between lh-condensed'>
 
-            <div id="result"></div>
+           
 
 
             </li>
+            
     </ul>
     </div>
 
