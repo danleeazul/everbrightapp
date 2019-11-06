@@ -19,7 +19,7 @@ if(isset($_POST["action"]))
  {
   $location_filter = implode("','", $_POST["location"]);
   $query .= "
-   AND product_brand IN('".$location_filter."')
+   AND location IN('".$location_filter."')
   ";
  }
 //  if(isset($_POST["ram"]))
