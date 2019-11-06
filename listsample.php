@@ -44,20 +44,22 @@ include_once 'config/database.php';
                     <p id="price_show">1000 - 65000</p>
                     <div id="price_range"></div>
                 </div>    
+
+
                 <div class="list-group">
-     <h3>Brand</h3>
+                   <h3>Location</h3>
                     <div style="height: 180px; overflow-y: auto; overflow-x: hidden;">
      <?php
 
-                    $query = "SELECT DISTINCT(product_brand) FROM product WHERE product_status = '1' ORDER BY product_id DESC";
+                    $query = "SELECT DISTINCT(location) FROM tbl_requirements  ORDER BY requirements_id DESC";
                     $statement = $connect->prepare($query);
                     $statement->execute();
                     $result = $statement->fetchAll();
                     foreach($result as $row)
                     {
-                    ?>
+      ?>
                     <div class="list-group-item checkbox">
-                        <label><input type="checkbox" class="common_selector brand" value="<?php echo $row['product_brand']; ?>"  > <?php echo $row['product_brand']; ?></label>
+                        <label><input type="checkbox" class="common_selector location" value="<?php echo $row['product_brand']; ?>"  > <?php echo $row['product_brand']; ?></label>
                     </div>
                     <?php
                     }
@@ -66,47 +68,11 @@ include_once 'config/database.php';
                     </div>
                 </div>
 
-    <div class="list-group">
-     <h3>RAM</h3>
-                    <?php
 
-                    $query = "
-                    SELECT DISTINCT(product_ram) FROM product WHERE product_status = '1' ORDER BY product_ram DESC
-                    ";
-                    $statement = $connect->prepare($query);
-                    $statement->execute();
-                    $result = $statement->fetchAll();
-                    foreach($result as $row)
-                    {
-                    ?>
-                    <div class="list-group-item checkbox">
-                        <label><input type="checkbox" class="common_selector ram" value="<?php echo $row['product_ram']; ?>" > <?php echo $row['product_ram']; ?> GB</label>
-                    </div>
-                    <?php    
-                    }
 
-                    ?>
-                </div>
+
     
-    <div class="list-group">
-     <h3>Internal Storage</h3>
-     <?php
-                    $query = "
-                    SELECT DISTINCT(product_storage) FROM product WHERE product_status = '1' ORDER BY product_storage DESC
-                    ";
-                    $statement = $connect->prepare($query);
-                    $statement->execute();
-                    $result = $statement->fetchAll();
-                    foreach($result as $row)
-                    {
-                    ?>
-                    <div class="list-group-item checkbox">
-                        <label><input type="checkbox" class="common_selector storage" value="<?php echo $row['product_storage']; ?>"  > <?php echo $row['product_storage']; ?> GB</label>
-                    </div>
-                    <?php
-                    }
-                    ?> 
-                </div>
+
             </div>
 
             <div class="col-md-9">
@@ -138,13 +104,13 @@ $(document).ready(function(){
         var action = 'fetch_data';
         var minimum_price = $('#hidden_minimum_price').val();
         var maximum_price = $('#hidden_maximum_price').val();
-        var brand = get_filter('brand');
+        var location = get_filter('location');
         var ram = get_filter('ram');
         var storage = get_filter('storage');
         $.ajax({
             url:"fetch.php",
             method:"POST",
-            data:{action:action, minimum_price:minimum_price, maximum_price:maximum_price, brand:brand, ram:ram, storage:storage},
+            data:{action:action, minimum_price:minimum_price, maximum_price:maximum_price, location:location, ram:ram, storage:storage},
             success:function(data){
                 $('.filter_data').html(data);
             }
