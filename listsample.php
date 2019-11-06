@@ -55,7 +55,8 @@ include('config/database.php');
                     $statement = $connect->prepare($query);
                     $statement->execute();
                     $result = $statement->fetchAll();
-                    foreach($result as $row)
+                    $num = $statement->rowCount();
+                    foreach($num as $row)
                     {
       ?>
                     <div class="list-group-item checkbox">
