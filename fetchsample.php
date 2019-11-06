@@ -9,18 +9,21 @@ $output = '';
 if(isset($_POST["query"]))
 {
  $search=htmlspecialchars(strip_tags($_POST['query']));
-
- $search2=htmlspecialchars(strip_tags($_POST['query']));
-
  //$search = mysqli_real_escape_string($con, $_POST["query"]);
  $query = "
-  SELECT * FROM tbl_requirements 
+  SELECT * FROM tbl_requirements
   WHERE requirements_id LIKE '%".$search."%'
   OR name LIKE '%".$search."%' 
   OR building LIKE '%".$search."%' 
   OR location LIKE '%".$search."%' 
-  AND type LIKE '%".$search2."%'
+  AND type LIKE '%".$search."%'
  ";
+}
+if(isset($_POST["query2"])){
+   $unittype=htmlspecialchars(strip_tags($_POST['query']));
+   $query .= "
+    AND type LIKE '%".$unittype."%'
+   ";
 }
 else
 {

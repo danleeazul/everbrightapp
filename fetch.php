@@ -1,79 +1,72 @@
 <?php
-//fetch.php
-include_once 'config/database.php';
-$output = '';
 
+//fetch_data.php
 
+include('database_connection.php');
 
-
-if(isset($_POST["query"]))
-{
- $search=htmlspecialchars(strip_tags($_POST['query']));
- $query = "
-  SELECT * FROM tbl_requirements 
-  WHERE requirements_id LIKE '%".$search."%'
-  OR name LIKE '%".$search."%' 
-  OR building LIKE '%".$search."%' 
-  OR location LIKE '%".$search."%' 
-  OR type LIKE '%".$search."%'
- ";
-}
-else
+if(isset($_POST["action"]))
 {
  $query = "
-  SELECT * FROM tbl_requirements ORDER BY requirements_id
+  SELECT * FROM product WHERE product_status = '1'
  ";
-}
-$result = $con->prepare($query);
-$result->execute();
-
-$numa = $result->rowCount();
-
-echo "<div class='col-md-9 order-md-1'>";
-echo "<h4 class='d-flex justify-content-between align-items-center mb-3'>";
-echo "<span class='text-muted'>Requirements</span>";
-echo "<a href='create_req.php'><button type='button' href='create_req.php' class='btn btn-primary btn-sm'>Add</button></a>";
-echo "</h4>";
-
-echo "<ul class='list-group mb-3'>";
-
-if($numa>0)
-{
- $output .= '
-   <li class="list-group-item d-flex justify-content-between lh-condensed">
-   <table style="border: none;">
-
- ';
- while ($row = $result->fetch(PDO::FETCH_ASSOC))
+ if(isset($_POST["minimum_price"], $_POST["maximum_price"]) && !empty($_POST["minimum_price"]) && !empty($_POST["maximum_price"]))
  {
-  $output .= '
-
-                      <tr>
-                       <td>
-                   <img  src="'.$row["name"].'" width="50" height="50">
-                     </td>
-                      <td style="width: 800px; padding-left: 10px; padding-right: 10px;">
-                   <h6 class="my-0 card-title">'.$row["building"].'</h6>
-                   <small>'.$row["location"].' | '.$row["type"].'</small>
-                   <br />
-                   <p class="card-text cardtextmin">'.$row["requirements"].'</p>
-                         </td>
-                         <td style="width: 100px;">
-     
-                 <span class="text-muted">'.$row["price"].'</span>
-                         </td>
-                         </tr>
-  ';
+  $query .= "
+   AND product_price BETWEEN '".$_POST["minimum_price"]."' AND '".$_POST["maximum_price"]."'
+  ";
  }
- echo "</table>";
- echo "</li>";
- echo "</ul>";
- echo "</div>";
+ if(isset($_POST["brand"]))
+ {
+  $brand_filter = implode("','", $_POST["brand"]);
+  $query .= "
+   AND product_brand IN('".$brand_filter."')
+  ";
+ }
+ if(isset($_POST["ram"]))
+ {
+  $ram_filter = implode("','", $_POST["ram"]);
+  $query .= "
+   AND product_ram IN('".$ram_filter."')
+  ";
+ }
+ if(isset($_POST["storage"]))
+ {
+  $storage_filter = implode("','", $_POST["storage"]);
+  $query .= "
+   AND product_storage IN('".$storage_filter."')
+  ";
+ }
+
+ $statement = $connect->prepare($query);
+ $statement->execute();
+ $result = $statement->fetchAll();
+ $total_row = $statement->rowCount();
+ $output = '';
+ if($total_row > 0)
+ {
+  foreach($result as $row)
+  {
+   $output .= '
+   <div class="col-sm-4 col-lg-3 col-md-3">
+    <div style="border:1px solid #ccc; border-radius:5px; padding:16px; margin-bottom:16px; height:450px;">
+     <img src="image/'. $row['product_image'] .'" alt="" class="img-responsive" >
+     <p align="center"><strong><a href="#">'. $row['product_name'] .'</a></strong></p>
+     <h4 style="text-align:center;" class="text-danger" >'. $row['product_price'] .'</h4>
+     <p>Camera : '. $row['product_camera'].' MP<br />
+     Brand : '. $row['product_brand'] .' <br />
+     RAM : '. $row['product_ram'] .' GB<br />
+     Storage : '. $row['product_storage'] .' GB </p>
+    </div>
+
+   </div>
+   ';
+  }
+ }
+ else
+ {
+  $output = '<h3>No Data Found</h3>';
+ }
  echo $output;
-}
-else
-{
- echo 'Data Not Found';
 }
 
 ?>

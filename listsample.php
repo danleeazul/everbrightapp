@@ -1,309 +1,187 @@
-<!DOCTYPE HTML>
-<html>
+<?php 
+
+//index.php
+
+
+include_once 'config/database.php';
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <title>Everbright App</title>
-      
-    <!-- Required meta tags -->
+
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <link href="https://www.everbright.com.ph/everbrightapp//libs/css/form-validation.css" rel="stylesheet" type="text/css"/>
+    <title>Product filter in php</title>
 
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href = "css/jquery-ui.css" rel = "stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
 </head>
-<body class="mdc-typography">
 
-//  DASHBOARD
-<aside  class='mdc-drawer'>
-                      <div id='mySidenav' class='sidenav'>
-                      <div>
+<body>
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+         <br />
+         <h2>Advance Ajax Product Filters in PHP</h2>
+         <br />
+            <div class="col-md-3">                    
+    <div class="list-group">
+     <h3>Price</h3>
+     <input type="hidden" id="hidden_minimum_price" value="0" />
+                    <input type="hidden" id="hidden_maximum_price" value="65000" />
+                    <p id="price_show">1000 - 65000</p>
+                    <div id="price_range"></div>
+                </div>    
+                <div class="list-group">
+     <h3>Brand</h3>
+                    <div style="height: 180px; overflow-y: auto; overflow-x: hidden;">
+     <?php
+
+                    $query = "SELECT DISTINCT(product_brand) FROM product WHERE product_status = '1' ORDER BY product_id DESC";
+                    $statement = $connect->prepare($query);
+                    $statement->execute();
+                    $result = $statement->fetchAll();
+                    foreach($result as $row)
+                    {
+                    ?>
+                    <div class="list-group-item checkbox">
+                        <label><input type="checkbox" class="common_selector brand" value="<?php echo $row['product_brand']; ?>"  > <?php echo $row['product_brand']; ?></label>
                     </div>
-                    <div style='height: 90%;' class='mdc-drawer__content'>
-                    
-                      <nav class='mdc-list'>
-                             
+                    <?php
+                    }
 
-                             <a id='navbutton' class='mdc-list-item'  href='indexsample.php' aria-selected='true'>
-                              <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>dashboard</i>
-                          <span class='mdc-list-item__text'>Dashboard</span>
-                        </a>
-                        <a id='navbutton' class='mdc-list-item mdc-list-item--activated' >
-                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>format_list_bulleted</i>
-                          <span class='mdc-list-item__text'>Listing</span>
-                        </a>
-                        <a id='navbutton' class='mdc-list-item' href='#' >
-                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>person</i>
-                          <span class='mdc-list-item__text'>Accounts</span>
-                        </a>
-                        <hr class='mb-4'>                 
-                      </nav>
-
+                    ?>
                     </div>
-                    <div class='textbottom'> 
-          <table style='border: none; width: 100%;'>                       
-                      <tr>
-                        <td><p style='padding-left:20px;' class='text-muted'>© Everbright v0.0</p></td>
-                        <td style='padding-right:30px; padding-bottom:20px' class='text-right'><a href='logout.php' class='text-decoration-none'>Log out</a></td>
-                      </tr>   
-                  </table>
-        </div>
-                     </div>
-                         
-                  </aside>
+                </div>
 
-                  //  HEADER
-    <div class='mdc-drawer-app-content'>
-    <header class='mdc-top-app-bar'>
-      <div class='mdc-top-app-bar__row'>
-      <section class='mdc-top-app-bar__section mdc-top-app-bar__section--align-start'>
-       <a type='button' onclick='openNav()' id='sidebarCollapse' class='demo-menu material-icons mdc-top-app-bar__navigation-icon'>menu</a>
-       <h3 style='margin-left: 15px;'>Listing</h3>
-      </section>
-     </div>
-     </header>
-// END HEADER
+    <div class="list-group">
+     <h3>RAM</h3>
+                    <?php
 
-    <main onclick='closeNav()' style='height: 93%;' class='main-content'>
-     <div class='mdc-top-app-bar--fixed-adjust'>
+                    $query = "
+                    SELECT DISTINCT(product_ram) FROM product WHERE product_status = '1' ORDER BY product_ram DESC
+                    ";
+                    $statement = $connect->prepare($query);
+                    $statement->execute();
+                    $result = $statement->fetchAll();
+                    foreach($result as $row)
+                    {
+                    ?>
+                    <div class="list-group-item checkbox">
+                        <label><input type="checkbox" class="common_selector ram" value="<?php echo $row['product_ram']; ?>" > <?php echo $row['product_ram']; ?> GB</label>
+                    </div>
+                    <?php    
+                    }
 
-
-//  INSERT HERE THE CONTENT
-     <div class='row col p-3'>
-      <div class='container'>
-          <div class='row'>
-              <div class='col-md-3 order-md-2 mb-4'>
-                <h4 class='d-flex justify-content-between align-items-center mb-3'>
-                  <span class='text-muted'>Filter</span>
-                </h4>
-                        <form class='card p-2'>
-                        <div class='input-group' style='padding-bottom: 10px;'>
-                       <input type='text' name='listing_id' name='listing_id'  class='form-control' placeholder='Listing ID'>
-                        </div>
-                        <div class='input-group' style='padding-bottom: 10px;'>
-                                 <select class='custom-select d-block w-100' id='unittype' onchange='GetSelectedValue()' required>                             
-                                 <option value=''>Unit Type</option>
-                                 <option value='S'>Sale</option>
-                                 <option value='R'>Rent</option>
-                                 <option value='SR'>Sale/Rent</option>
-                                 <option value='PSR'>PS-Resale</option>
-                                 </select>
-                        </div>
-                        <div class='input-group' style='padding-bottom: 10px;'>
-                                 <select class='custom-select d-block w-100' id='propertytype'>
-                                 <option value=''>Property Type</option>
-                                 <option>Commercial Lot</option>
-                                <option>Commercial Property</option>
-                                 <option>Condominium/Apartments</option>
-                                 <option>House & Lot</option>
-                                 <option>Industrial Property</option>
-                                 <option>Office</option>
-                                 <option>Residential Lot</option>
-                                 <option>Townhouse</option>
-                             </select>                
-                        </div>
-                        <div class='input-group' style='padding-bottom: 10px;'>
-                               <select class='custom-select d-block w-100' id='city' required>
-                               <option value=''>City</option>
-                               <option value='17'>Antipolo</option>
-                                <option value='6'>Bataan</option>
-                                <option value='15'>Batangas</option>
-                                <option value='16'>Bulacan</option>
-                                <option value='13'>Cavite</option>
-                                <option value='7'>Laguna</option>
-                               <option value='1'>Makati</option>
-                                <option value='4'>Mandaluyong</option>
-                               <option value='18'>Marikina</option>
-                               <option value='8'>Muntinlupa</option>
-                                <option value='13'>Parañaque</option>
-                                <option value='11'>Pasay</option>
-                                <option value='13'>Quezon City</option>
-                                <option value='5'>San Juan</option>
-                                <option value='2'>Taguig</option>
-                                <option value='19'>Zambales</option>
-                            </select> 
-                        </div>
-                        <div class='input-group' style='padding-bottom: 10px;'>
-                        <select class='custom-select d-block w-100' id='neighborhood' required>
-                        <option value=''>Select...</option>
-                        <option>Addition Hills</option>
-                         <option>Alabang</option>
-                         <option>Alabang West</option>
-                         <option>Anvaya Cove</option>
-                        <option>Ayala Center</option>
-                        <option>Ayala Westgrove Heights</option>
-                        <option>Bacao</option>
-                        <option>Bagong Ilog</option>
-                        <option>Balintawak</option>
-                         <option>Bambang</option>
-                        <option>Batasan Hills</option>
-                        <option>Bayshore City</option>
-                       <option>Bel-Air Village</option>
-                       <option>BGC</option>
-                       <option>Capitol Commons</option>
-                       <option>Century City</option>
-                       <option>Corazon De Jesus</option>
-                       <option>Coronado St.</option>
-                      <option>Cubao</option>
-                       <option>Dasmariñas</option>
-                      <option>Dasmariñas Techno Park</option>
-                       <option>Diliman</option>
-                      <option>Don Bosco</option>
-                       <option>Don Galo</option>
-                      <option>Eastwood</option>
-                       <option>Ermita</option>
-                       <option>Ermitaño</option>
-                      <option>Forbes Park</option>
-                       <option>Fortune</option>
-                      <option>Greenhills</option>
-                      <option>Hulo</option>
-                      <option>Iruhin East</option>
-                       <option>Kapitolyo</option>
-                      <option>Kaunlaran</option>
-                      <option>Legazpi Village</option>
-                      <option>Little Baguio</option>
-                      <option>Loyola</option>
-                      <option>Maharlika West</option>
-                      <option>McKinely West</option>
-                      <option>MOA Complex</option>
-                      <option>Moonwalk</option>
-                       <option>New Manila</option>
-                       <option>Nuvali</option>
-                       <option>Old Balara</option>
-                       <option>Ortigas Center</option>
-                      <option>Pandayan</option>
-                      <option>Pio Del Pilar</option>
-                       <option>Poblacion</option>
-                       <option>Pulo</option>
-                      <option>Punta de Fuego</option>
-                      <option>Rockwell Center</option>
-                      <option>Roxas District</option>
-                      <option>Salawag</option>
-                      <option>Salcedo Village</option>
-                        <option>Sampaloc</option>
-                       <option>San Antonio Village</option>
-                      <option>San Celestine</option>
-                      <option>San Lorenzon Village</option>
-                      <option>Santa Cruz</option>
-                      <option>Santa Mesa</option>
-                      <option>Silang Junction North</option>
-                      <option>Soutwoods</option>
-                      <option>Sta. Rosa</option>
-                       <option>Sungay North</option>
-                      <option>Tranca</option>
-                      <option>Ugong</option>
-                      <option>Urdaneta Village</option>
-                       <option>Usasan</option>
-                      <option>Valencia</option>
-                      <option>Vertis North</option>
-                       <option>Wack-Wack</option>
-                       <option>Western Bicutan</option>
-                      <option>Zapote</option>
-                       <option>Zapote V</option>
-                  </select> 
-                        </div>
-                    </form>
-   
-              </div>   
-
-
-          
-        <div class='col-md-9 order-md-1'>
-            <h4 class='d-flex justify-content-between align-items-center mb-3'>
-                    <span class='text-muted'>Requirements</span> 
-           <a href='create_req.php'><button type='button' href='create_req.php' class='btn btn-primary btn-sm'>Add</button></a> 
-            </h4>
-
-
-            <ul class='list-group mb-3'>
-
-            <li class='list-group-item d-flex justify-content-between lh-condensed'>
-
-<table style='border: none;'>
-                   <tr>
-                    <td>
-                <img  src='{$name}' width='50' height='50'>
-                  </td>
-                   <td style='width: 800px; padding-left: 10px; padding-right: 10px;'>
-                <h6 class='my-0 card-title'>{$building}</h6>
-                <small>{$location} | {$type}</small>
-                <br />
-                <p class='card-text cardtextmin'>{$requirements}</p>
-                      </td>
-                      <td style='width: 100px;'>
-  
-              <span class='text-muted'>{$price}</span>
-                      </td>
-                      </tr>
-                  </table>
-
-            </li>
-    </ul>
-    </div>
-
+                    ?>
+                </div>
     
+    <div class="list-group">
+     <h3>Internal Storage</h3>
+     <?php
+                    $query = "
+                    SELECT DISTINCT(product_storage) FROM product WHERE product_status = '1' ORDER BY product_storage DESC
+                    ";
+                    $statement = $connect->prepare($query);
+                    $statement->execute();
+                    $result = $statement->fetchAll();
+                    foreach($result as $row)
+                    {
+                    ?>
+                    <div class="list-group-item checkbox">
+                        <label><input type="checkbox" class="common_selector storage" value="<?php echo $row['product_storage']; ?>"  > <?php echo $row['product_storage']; ?> GB</label>
+                    </div>
+                    <?php
+                    }
+                    ?> 
+                </div>
+            </div>
 
+            <div class="col-md-9">
+             <br />
+                <div class="row filter_data">
 
+                </div>
+            </div>
+        </div>
 
+    </div>
+<style>
+#loading
+{
+ text-align:center; 
+ background: url('loader.gif') no-repeat center; 
+ height: 150px;
+}
+</style>
 
- <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://everbright.com.ph/everbrightapp//libs/js/form-validation.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-    <script>
-       
+<script>
 $(document).ready(function(){
-  load_data();
-  
-  function load_data(query)
- {
-    $.ajax({
-              url:"fetchsample.php",
-              method:"POST",
-              data:{query:query},
-              success:function(data)
-              {
-              $('#result').html(data);
-              }
-          });
- }
 
- $('#search_text').keyup(function(){
-    var search = $(this).val();
-    if(search != ''){
-    load_data(search);
+    filter_data();
+
+    function filter_data()
+    {
+        $('.filter_data').html('<div id="loading" style="" ></div>');
+        var action = 'fetch_data';
+        var minimum_price = $('#hidden_minimum_price').val();
+        var maximum_price = $('#hidden_maximum_price').val();
+        var brand = get_filter('brand');
+        var ram = get_filter('ram');
+        var storage = get_filter('storage');
+        $.ajax({
+            url:"fetch.php",
+            method:"POST",
+            data:{action:action, minimum_price:minimum_price, maximum_price:maximum_price, brand:brand, ram:ram, storage:storage},
+            success:function(data){
+                $('.filter_data').html(data);
+            }
+        });
     }
-    else{
-    load_data();
+
+    function get_filter(class_name)
+    {
+        var filter = [];
+        $('.'+class_name+':checked').each(function(){
+            filter.push($(this).val());
+        });
+        return filter;
     }
- });
+
+    $('.common_selector').click(function(){
+        filter_data();
+    });
+
+    $('#price_range').slider({
+        range:true,
+        min:1000,
+        max:65000,
+        values:[1000, 65000],
+        step:500,
+        stop:function(event, ui)
+        {
+            $('#price_show').html(ui.values[0] + ' - ' + ui.values[1]);
+            $('#hidden_minimum_price').val(ui.values[0]);
+            $('#hidden_maximum_price').val(ui.values[1]);
+            filter_data();
+        }
+    });
 
 });
-
-
-               function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-}
-
-
-
-function closeNav() {
-    if ($(window).width() < 768) {
-            document.getElementById("mySidenav").style.width = "0";
-
-    }
-    else{
-        document.getElementById("mySidenav").style.width = "250px";
-
-    }
-}
-</script>   
+</script>
 
 </body>
+
 </html>
