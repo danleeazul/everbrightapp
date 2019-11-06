@@ -47,13 +47,11 @@ include('config/database.php');
                     <div id="price_range"></div>
                 </div>    
 
-
                 <div class="list-group">
                    <h3>Building</h3>
                     <div style="height: 180px; overflow-y: auto; overflow-x: hidden;">
      <?php
-
-                    $query = "SELECT DISTINCT(building) FROM tbl_requirements  ORDER BY requirements_id DESC";
+                    $query = "SELECT building FROM tbl_requirements  ORDER BY requirements_id DESC";
                     $statement = $connect->prepare($query);
                     $statement->execute();
                     $result = $statement->fetchAll();
