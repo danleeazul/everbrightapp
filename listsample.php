@@ -3,7 +3,9 @@
 //index.php
 
 
-include_once 'config/database.php';
+// include 'config/database.php';
+include('config/database.php');
+
 
 ?>
 
@@ -47,7 +49,7 @@ include_once 'config/database.php';
 
 
                 <div class="list-group">
-                   <h3>Location</h3>
+                   <h3>Building</h3>
                     <div style="height: 180px; overflow-y: auto; overflow-x: hidden;">
      <?php
 
