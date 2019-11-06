@@ -59,7 +59,7 @@ include_once 'config/database.php';
                     {
       ?>
                     <div class="list-group-item checkbox">
-                        <label><input type="checkbox" class="common_selector location" value="<?php echo $row['product_brand']; ?>"  > <?php echo $row['product_brand']; ?></label>
+                        <label><input type="checkbox" class="common_selector location" value="<?php echo $row['location']; ?>"  > <?php echo $row['location']; ?></label>
                     </div>
                     <?php
                     }
