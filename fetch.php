@@ -15,11 +15,11 @@ if(isset($_POST["action"]))
 //    AND product_price BETWEEN '".$_POST["minimum_price"]."' AND '".$_POST["maximum_price"]."'
 //   ";
 //  }
- if(isset($_POST["location"]))
+ if(isset($_POST["building"]))
  {
-  $location_filter = implode("','", $_POST["location"]);
+  $building_filter = implode("','", $_POST["building"]);
   $query .= "
-   AND location IN('".$location_filter."')
+   AND building IN('".$building_filter."')
   ";
  }
 //  if(isset($_POST["ram"]))
@@ -53,7 +53,7 @@ if(isset($_POST["action"]))
      <p align="center"><strong><a href="#">'. $row['building'] .'</a></strong></p>
      <h4 style="text-align:center;" class="text-danger" >'. $row['price'] .'</h4>
      <p>Type : '. $row['type'].' MP<br />
-     Location : '. $row['location'] .' <br />
+     Building : '. $row['building'] .' <br />
      Requirements : '. $row['requirements'] .' GB<br />
     </div>
    </div>

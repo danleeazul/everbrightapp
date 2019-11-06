@@ -51,7 +51,7 @@ include_once 'config/database.php';
                     <div style="height: 180px; overflow-y: auto; overflow-x: hidden;">
      <?php
 
-                    $query = "SELECT DISTINCT(location) FROM tbl_requirements  ORDER BY requirements_id DESC";
+                    $query = "SELECT DISTINCT(building) FROM tbl_requirements  ORDER BY requirements_id DESC";
                     $statement = $connect->prepare($query);
                     $statement->execute();
                     $result = $statement->fetchAll();
@@ -59,7 +59,7 @@ include_once 'config/database.php';
                     {
       ?>
                     <div class="list-group-item checkbox">
-                        <label><input type="checkbox" class="common_selector location" value="<?php echo $row['location']; ?>"  > <?php echo $row['location']; ?></label>
+                        <label><input type="checkbox" class="common_selector building" value="<?php echo $row['building']; ?>"  > <?php echo $row['building']; ?></label>
                     </div>
                     <?php
                     }
@@ -104,13 +104,13 @@ $(document).ready(function(){
         var action = 'fetch_data';
         var minimum_price = $('#hidden_minimum_price').val();
         var maximum_price = $('#hidden_maximum_price').val();
-        var location = get_filter('location');
+        var building = get_filter('building');
         var ram = get_filter('ram');
         var storage = get_filter('storage');
         $.ajax({
             url:"fetch.php",
             method:"POST",
-            data:{action:action, minimum_price:minimum_price, maximum_price:maximum_price, location:location, ram:ram, storage:storage},
+            data:{action:action, minimum_price:minimum_price, maximum_price:maximum_price, building:building, ram:ram, storage:storage},
             success:function(data){
                 $('.filter_data').html(data);
             }
