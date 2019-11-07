@@ -85,7 +85,7 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
     echo "              <span class='text-muted'>Closed Deals &nbsp<span class='badge badge-secondary'>{$num}</span></span>";
     echo " <div> ";
-    echo "           <a><button type='button' data-toggle='modal' data-target='#dealsModal' class='btn btn-outline-danger btn-sm'><i class='material-icons mdc-list-item__graphic' aria-hidden='true'>delete</i></button></a>"; 
+    echo "           <a><button type='button' data-toggle='modal' data-target='#dealsModal' class='btn btn-outline-danger btn-sm'>Remove</button></a>"; 
     echo "           <a href='create_deals.php'><button type='button' href='create_deals.php' class='btn btn-primary btn-sm'>Add</button></a>"; 
     echo " </div> ";
 
