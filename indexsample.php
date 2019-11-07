@@ -145,6 +145,8 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
     echo "                    <span class='text-muted'>Requirements</span>"; 
     echo "           <a href='create_req.php'><button type='button' href='create_req.php' class='btn btn-primary btn-sm'>Add</button></a>"; 
+    echo "           <a href='create_req.php'><button type='button' href='create_req.php' class='btn btn-outline-danger btn-sm'>Remove All</button></a>"; 
+
     echo "            </h4>";
    
 

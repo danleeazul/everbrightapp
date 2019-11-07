@@ -46,12 +46,11 @@ include('config/database.php');
                     <p id="price_show">1000 - 65000</p>
                     <div id="price_range"></div>
                 </div>    
-
                 <div class="list-group">
                    <h3>Building</h3>
                     <div style="height: 180px; overflow-y: auto; overflow-x: hidden;">
      <?php
-                    $query = "SELECT * FROM tbl_requirements  ORDER BY requirements_id DESC";
+                    $query = "SELECT building FROM tbl_requirements ORDER BY requirements_id DESC";
                     $statement = $connect->prepare($query);
                     $statement->execute();
                     $result = $statement->fetchAll();
@@ -67,11 +66,6 @@ include('config/database.php');
                     ?>
                     </div>
                 </div>
-
-
-
-
-    
 
             </div>
 
