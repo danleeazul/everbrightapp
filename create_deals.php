@@ -158,7 +158,7 @@ if($_POST){
          
             <hr class="mb-4">
             <div class="text-right">
-            <a href='indexsample.php'><button type="button" href='indexsample.php' class="btn btn-outline-secondary">Cancel</button></a>
+            <a href='indexsample.php'><button type="button" href='dashboard.php' class="btn btn-outline-secondary">Cancel</button></a>
             <button type="submit" value='Save'  class="btn btn-primary">Submit</button>
             
             </div>
