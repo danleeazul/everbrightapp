@@ -39,7 +39,7 @@ echo "                        <a id='navbutton' class='mdc-list-item mdc-list-it
 echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>format_list_bulleted</i>";
 echo "                          <span class='mdc-list-item__text'>Listing</span>";
 echo "                        </a>";
-echo "                        <a id='navbutton' class='mdc-list-item' href='login.php' >";
+echo "                        <a id='navbutton' data-toggle='modal' data-target='#logoutModal' class='mdc-list-item' >";
 echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>exit_to_app</i>";
 echo "                          <span class='mdc-list-item__text'>Logout</span>";
 echo "                        </a>";  
@@ -82,6 +82,28 @@ echo "                  </aside>";
 echo "<div data-type='AwesomeTableView' data-viewID='-LLD1dgOXU8YdFoS1qxE'></div>";
 
 //  ENDING CONTENT
+
+//LOGOUT MODAL
+echo "  <div class='modal fade' id='logoutModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>";
+echo " <div class='modal-dialog' role='document'>";
+echo "   <div class='modal-content'>";
+echo "     <div class='modal-header'>";
+echo "       <h5 class='modal-title' id='exampleModalLabel'>Log out</h5>";
+echo "       <button type='button' class='close' data-dismiss='modal' aria-label='Close'>";
+echo "        <span aria-hidden='true'>&times;</span>";
+echo "      </button>";
+echo "    </div>";
+echo "   <div class='modal-body'>";
+echo "  <p>Are you sure you want to log out?</p>";
+echo "    </div>";
+echo "   <div class='modal-footer'>";
+echo "    <button type='button' class='btn btn-outline-secondary' data-dismiss='modal'>Close</button>";
+echo "     <button type='button' onclick='logout_modals()' class='btn btn-primary'>Log out</button>";
+echo "   </div>";
+echo "  </div>";
+echo " </div>";
+echo " </div>";
+//END LOGOUT MODAL
 
     include 'footer.php';
     ?>
