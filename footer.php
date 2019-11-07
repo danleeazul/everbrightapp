@@ -34,7 +34,8 @@ $(document).ready(function(){
 
 // confirm record deletion
 function delete_user(){
-         window.location = 'deletereq.php';
+        // window.location = 'deletereq.php';
+         document.location = 'deletereq.php';
      } 
 
 

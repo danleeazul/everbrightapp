@@ -6,7 +6,12 @@ try {
     // delete query
     $query = "DELETE * FROM tbl_requirements";
     $stmt = $con->prepare($query);
-    $stmt->execute();
+    
+    if($stmt->execute()){
+        header('Location: index.php');
+    }else{
+        die('Unable to delete record.');
+    }
 }
  
 // show error
