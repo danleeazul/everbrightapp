@@ -144,11 +144,11 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "        <div class='col-md-7 order-md-1'>";
     echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
     echo "                    <span class='text-muted'>Requirements</span>"; 
-    echo "           <a href='create_req.php'><button type='button' href='create_req.php' class='btn btn-primary btn-sm'>Add</button></a>"; 
+    echo "          <div>";   
+    echo "           <a href='create_req.php'><button type='button' href='create_req.php' class='btn btn-primary btn-sm'>Add</button></a>";
     echo "           <a href='create_req.php'><button type='button' href='create_req.php' class='btn btn-outline-danger btn-sm'>Remove All</button></a>"; 
-
     echo "            </h4>";
-   
+    echo "          <div>"; 
 
     echo "            <ul class='list-group mb-3'>";
 
