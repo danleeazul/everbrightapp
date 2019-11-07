@@ -166,15 +166,6 @@ echo "<div class='mdc-drawer-app-content'>";
            
 
     echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
-    // echo "                  <img  src='{$name}' width='50' height='50'>";
-    // echo "                <div class='requirementsleft'>";
-    // echo "                  <h6 class='my-0'>{$building}</h6>";
-    // echo "                  <small>{$location} | {$type}</small>";
-    // echo "                  <br />";
-    // echo "                  <small class='text-muted'>{$requirements}</small>";
-    // echo "                </div>";
-    // echo "                <span class='text-muted'>{$price}</span>";
-
     echo "  <table style='border: none;'>";
     echo "                     <tr>";
     echo "                      <td>";
@@ -192,7 +183,7 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "                        </td>";
     echo "                        </tr>";
     echo "                    </table>";
-
+    echo"                     <button type='button' class='close'aria-label='Close'><span aria-hidden='true'>&times;</span></button>            ";
     echo "              </li>";
 
         }//while
