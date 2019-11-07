@@ -34,8 +34,13 @@ $(document).ready(function(){
 
 // confirm record deletion
 function delete_user(){
-        // window.location = 'deletereq.php';
          document.location = 'deletereq.php';
+     } 
+
+
+     // confirm record deletion
+function delete_deals(){
+         document.location = 'deletedeals.php';
      } 
 
 

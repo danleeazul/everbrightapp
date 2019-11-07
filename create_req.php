@@ -147,7 +147,7 @@ if($_POST){
                     Valid property type is required.
                     </div>  
            </div>
-
+    
             <div class="col-md-4 mb-3">
             <label for="firstName">Price</label>
              <input type="text" class="form-control" name="price" placeholder="Php" value="" required> 

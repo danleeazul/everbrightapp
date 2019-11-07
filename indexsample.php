@@ -89,8 +89,7 @@ echo "<div class='mdc-drawer-app-content'>";
         echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
         echo "              <span class='text-muted'>Closed Deals &nbsp<span class='badge badge-secondary'>{$num}</span></span>";
         echo " <div> ";
-        echo "                       <a>   <i class='material-icons mdc-list-item__graphic'data-toggle='modal' data-target='#exampleModal' aria-hidden='true'>delete</i></a>";
-        // echo "           <a><button type='button' data-toggle='modal' data-target='#exampleModal' class='btn btn-outline-danger btn-sm'>Remove</button></a>"; 
+        echo "           <a><button type='button' data-toggle='modal' data-target='#dealsModal' class='btn btn-outline-danger btn-sm'>Remove</button></a>"; 
         echo "           <a href='create_deals.php'><button type='button' href='create_deals.php' class='btn btn-primary btn-sm'>Add</button></a>"; 
         echo " </div> ";
 
@@ -217,13 +216,13 @@ echo "<div class='mdc-drawer-app-content'>";
     echo " <div class='modal-dialog' role='document'>";
     echo "   <div class='modal-content'>";
     echo "     <div class='modal-header'>";
-    echo "       <h5 class='modal-title' id='exampleModalLabel'>Remove Records</h5>";
+    echo "       <h5 class='modal-title' id='exampleModalLabel'>Remove Requirements</h5>";
     echo "       <button type='button' class='close' data-dismiss='modal' aria-label='Close'>";
     echo "        <span aria-hidden='true'>&times;</span>";
     echo "      </button>";
     echo "    </div>";
     echo "   <div class='modal-body'>";
-    echo "  <p>Are you sure you want to remove all this record?</p>";
+    echo "  <p>Are you sure you want to remove all this requirements?</p>";
         echo "    </div>";
         echo "   <div class='modal-footer'>";
         echo "    <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>";
@@ -232,6 +231,27 @@ echo "<div class='mdc-drawer-app-content'>";
         echo "  </div>";
   echo " </div>";
   echo " </div>";
+
+
+  echo "  <div class='modal fade' id='dealsModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>";
+  echo " <div class='modal-dialog' role='document'>";
+  echo "   <div class='modal-content'>";
+  echo "     <div class='modal-header'>";
+  echo "       <h5 class='modal-title' id='exampleModalLabel'>Remove Deals</h5>";
+  echo "       <button type='button' class='close' data-dismiss='modal' aria-label='Close'>";
+  echo "        <span aria-hidden='true'>&times;</span>";
+  echo "      </button>";
+  echo "    </div>";
+  echo "   <div class='modal-body'>";
+  echo "  <p>Are you sure you want to remove all deals?</p>";
+      echo "    </div>";
+      echo "   <div class='modal-footer'>";
+      echo "    <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>";
+      echo "     <button type='button' onclick='delete_deals()' class='btn btn-primary'>Remove</button>";
+      echo "   </div>";
+      echo "  </div>";
+echo " </div>";
+echo " </div>";
 
     include 'footer.php';
     ?>
