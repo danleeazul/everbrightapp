@@ -127,7 +127,7 @@ echo "<div class='mdc-drawer-app-content'>";
     }
     else{
         echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
-        echo "  <p>No Closed Deals yet</p>";
+       echo" <p class='card-text'>No closed deals yet!!!</p>";
         echo "              </li>";
     }
 
@@ -198,6 +198,11 @@ echo "<div class='mdc-drawer-app-content'>";
 
         }//while
     }//IF
+    else{
+        echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
+       echo" <p class='card-text'>No requirements</p>";
+        echo "              </li>";
+    }
     
 
    
