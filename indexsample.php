@@ -38,11 +38,10 @@ echo "                        <a id='navbutton' class='mdc-list-item' href='list
 echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>format_list_bulleted</i>";
 echo "                          <span class='mdc-list-item__text'>Listing</span>";
 echo "                        </a>";
-echo "                        <a id='navbutton' class='mdc-list-item' href='#' >";
-echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>person</i>";
-echo "                          <span class='mdc-list-item__text'>Accounts</span>";
-echo "                        </a>";
-echo "                        <hr class='mb-4'>";                 
+echo "                        <a id='navbutton' class='mdc-list-item' href='login.php' >";
+echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>exit_to_app</i>";
+echo "                          <span class='mdc-list-item__text'>Logout</span>";
+echo "                        </a>";                
 echo "                      </nav>";
 
 echo "                    </div>";

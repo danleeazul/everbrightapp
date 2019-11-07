@@ -1,147 +1,284 @@
-<?php 
+<?php
+// core configuration
+include_once "config/core.php";
+ 
+// set page title
+$page_title="Everbright App";
+ 
+// include login checker
+// $require_login=true;
+// include_once "login_checker.php";
+ 
+// include page header HTML
+include_once 'header.php';
 
-//index.php
+include_once 'config/database.php';
+$query = 'SELECT * FROM tbl_deals ORDER BY deals_id DESC';
+$stmt = $con->prepare($query);
+$stmt->execute();
+
+// this is how to get number of rows returned
+$num = $stmt->rowCount();
 
 
-// include 'config/database.php';
-include('config/database.php');
+//  DASHBOARD
+echo "<aside  class='mdc-drawer'>";
+echo "                      <div id='mySidenav' class='sidenav'>";
+echo "                      <div>";
+echo "                    </div>";
+echo "                    <div style='height: 90%;' class='mdc-drawer__content'>";
+                    
+echo "                      <nav class='mdc-list'>";
+                             
+
+echo "                             <a id='navbutton' class='mdc-list-item'  href='indexsample.php' aria-selected='true'>";
+echo "                              <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>dashboard</i>";
+echo "                          <span class='mdc-list-item__text'>Dashboard</span>";
+echo "                        </a>";
+echo "                        <a id='navbutton' class='mdc-list-item mdc-list-item--activated' >";
+echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>format_list_bulleted</i>";
+echo "                          <span class='mdc-list-item__text'>Listing</span>";
+echo "                        </a>";
+echo "                        <a id='navbutton' class='mdc-list-item' href='#' >";
+echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>person</i>";
+echo "                          <span class='mdc-list-item__text'>Accounts</span>";
+echo "                        </a>";
+echo "                        <hr class='mb-4'>";                 
+echo "                      </nav>";
+
+echo "                    </div>";
+echo "                    <div class='textbottom'> ";
+echo "          <table style='border: none; width: 100%;'>                       ";
+echo "                      <tr>";
+echo "                        <td><p style='padding-left:20px;' class='text-muted'>© Everbright v0.0</p></td>";
+echo "                        <td style='padding-right:30px; padding-bottom:20px' class='text-right'><a href='logout.php' class='text-decoration-none'>Log out</a></td>";
+echo "                      </tr>   ";
+echo "                  </table>";
+echo "        </div>";
+echo "                     </div>";
+                         
+echo "                  </aside>";
+       
+
+        
+//  HEADER
+    echo "<div class='mdc-drawer-app-content'>";
+    echo "<header class='mdc-top-app-bar'>";
+    echo "  <div class='mdc-top-app-bar__row'>";
+    echo "  <section class='mdc-top-app-bar__section mdc-top-app-bar__section--align-start'>";
+    echo "   <a type='button' onclick='openNav()' id='sidebarCollapse' class='demo-menu material-icons mdc-top-app-bar__navigation-icon'>menu</a>";
+    echo "   <h3 style='margin-left: 15px;'>Listing</h3>";
+    echo "  </section>";
+    echo " </div>";
+    echo " </header>";
+// END HEADER
+
+    echo "<main onclick='closeNav()' style='height: 93%;' class='main-content'>";
+    echo " <div class='mdc-top-app-bar--fixed-adjust'>";
 
 
-?>
+//  INSERT HERE THE CONTENT
+    echo " <div class='row col p-3'>";
+    echo "  <div class='container'>";
+    echo "      <div class='row'>";
+    echo "          <div class='col-md-3 order-md-2 mb-4'>";
+    echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
+    echo "              <span class='text-muted'>Filter</span>";
+    echo "            </h4>";
+    echo "                    <form class='card p-2'>";
+    echo "                    <div class='input-group' style='padding-bottom: 10px;'>";
+    echo "                   <input type='text' name='listing_id' name='listing_id'  class='form-control' placeholder='Listing ID'>";
+    echo "                    </div>";
+    echo "                    <div class='input-group' style='padding-bottom: 10px;'>";
+    echo "                             <select class='custom-select d-block w-100' id='unittype' onchange='GetSelectedValue()' required> ";                            
+    echo "                             <option value=''>Unit Type</option>";
+    echo "                             <option value='S'>Sale</option>";
+    echo "                             <option value='R'>Rent</option>";
+    echo "                             <option value='SR'>Sale/Rent</option>";
+    echo "                             <option value='PSR'>PS-Resale</option>";
+    echo "                             </select>";
+    echo "                    </div>";
+    echo "                    <div class='input-group' style='padding-bottom: 10px;'>";
+    echo "                             <select class='custom-select d-block w-100' id='propertytype'>";
+    echo "                             <option value=''>Property Type</option>";
+    echo "                             <option>Commercial Lot</option>";
+    echo "                            <option>Commercial Property</option>";
+    echo "                             <option>Condominium/Apartments</option>";
+    echo "                             <option>House & Lot</option>";
+    echo "                             <option>Industrial Property</option>";
+    echo "                             <option>Office</option>";
+    echo "                             <option>Residential Lot</option>";
+    echo "                             <option>Townhouse</option>";
+    echo "                         </select>      ";          
+    echo "                    </div>";
+    echo "                    <div class='input-group' style='padding-bottom: 10px;'>";
+    echo "                           <select class='custom-select d-block w-100' id='city' required>";
+    echo "                           <option value=''>City</option>";
+    echo "                           <option value='17'>Antipolo</option>";
+    echo "                            <option value='6'>Bataan</option>";
+    echo "                            <option value='15'>Batangas</option>";
+    echo "                            <option value='16'>Bulacan</option>";
+    echo "                            <option value='13'>Cavite</option>";
+    echo "                            <option value='7'>Laguna</option>";
+    echo "                           <option value='1'>Makati</option>";
+    echo "                            <option value='4'>Mandaluyong</option>";
+    echo "                           <option value='18'>Marikina</option>";
+    echo "                           <option value='8'>Muntinlupa</option>";
+    echo "                            <option value='13'>Parañaque</option>";
+    echo "                            <option value='11'>Pasay</option>";
+    echo "                            <option value='13'>Quezon City</option>";
+    echo "                            <option value='5'>San Juan</option>";
+    echo "                            <option value='2'>Taguig</option>";
+    echo "                            <option value='19'>Zambales</option>";
+    echo "                        </select> ";
+    echo "                    </div>";
+    echo "                    <div class='input-group' style='padding-bottom: 10px;'>";
+    echo "                    <select class='custom-select d-block w-100' id='neighborhood' required>";
+    echo "                    <option value=''>Select...</option>";
+    echo "                    <option>Addition Hills</option>";
+    echo "                     <option>Alabang</option>";
+    echo "                     <option>Alabang West</option>";
+    echo "                     <option>Anvaya Cove</option>";
+    echo "                    <option>Ayala Center</option>";
+    echo "                    <option>Ayala Westgrove Heights</option>";
+    echo "                    <option>Bacao</option>";
+    echo "                    <option>Bagong Ilog</option>";
+    echo "                    <option>Balintawak</option>";
+    echo "                     <option>Bambang</option>";
+    echo "                    <option>Batasan Hills</option>";
+    echo "                    <option>Bayshore City</option>";
+    echo "                   <option>Bel-Air Village</option>";
+    echo "                   <option>BGC</option>";
+    echo "                   <option>Capitol Commons</option>";
+    echo "                   <option>Century City</option>";
+    echo "                   <option>Corazon De Jesus</option>";
+    echo "                   <option>Coronado St.</option>";
+    echo "                  <option>Cubao</option>";
+    echo "                   <option>Dasmariñas</option>";
+    echo "                  <option>Dasmariñas Techno Park</option>";
+    echo "                   <option>Diliman</option>";
+    echo "                  <option>Don Bosco</option>";
+    echo "                   <option>Don Galo</option>";
+    echo "                  <option>Eastwood</option>";
+    echo "                   <option>Ermita</option>";
+    echo "                   <option>Ermitaño</option>";
+    echo "                  <option>Forbes Park</option>";
+    echo "                   <option>Fortune</option>";
+    echo "                  <option>Greenhills</option>";
+    echo "                  <option>Hulo</option>";
+    echo "                  <option>Iruhin East</option>";
+    echo "                   <option>Kapitolyo</option>";
+    echo "                  <option>Kaunlaran</option>";
+    echo "                  <option>Legazpi Village</option>";
+    echo "                  <option>Little Baguio</option>";
+    echo "                  <option>Loyola</option>";
+    echo "                  <option>Maharlika West</option>";
+    echo "                  <option>McKinely West</option>";
+    echo "                  <option>MOA Complex</option>";
+    echo "                  <option>Moonwalk</option>";
+    echo "                   <option>New Manila</option>";
+    echo "                   <option>Nuvali</option>";
+    echo "                   <option>Old Balara</option>";
+    echo "                   <option>Ortigas Center</option>";
+    echo "                  <option>Pandayan</option>";
+    echo "                  <option>Pio Del Pilar</option>";
+    echo "                   <option>Poblacion</option>";
+    echo "                   <option>Pulo</option>";
+    echo "                  <option>Punta de Fuego</option>";
+    echo "                  <option>Rockwell Center</option>";
+    echo "                  <option>Roxas District</option>";
+    echo "                  <option>Salawag</option>";
+    echo "                  <option>Salcedo Village</option>";
+    echo "                    <option>Sampaloc</option>";
+    echo "                   <option>San Antonio Village</option>";
+    echo "                  <option>San Celestine</option>";
+    echo "                  <option>San Lorenzon Village</option>";
+    echo "                  <option>Santa Cruz</option>";
+    echo "                  <option>Santa Mesa</option>";
+    echo "                  <option>Silang Junction North</option>";
+    echo "                  <option>Soutwoods</option>";
+    echo "                  <option>Sta. Rosa</option>";
+    echo "                   <option>Sungay North</option>";
+    echo "                  <option>Tranca</option>";
+    echo "                  <option>Ugong</option>";
+    echo "                  <option>Urdaneta Village</option>";
+    echo "                   <option>Usasan</option>";
+    echo "                  <option>Valencia</option>";
+    echo "                  <option>Vertis North</option>";
+    echo "                   <option>Wack-Wack</option>";
+    echo "                   <option>Western Bicutan</option>";
+    echo "                  <option>Zapote</option>";
+    echo "                   <option>Zapote V</option>";
+    echo "              </select> ";
+    echo "                    </div>";
+    echo "                </form>";
+   
+    echo "          </div>";   
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
+          
+echo "        <div class='col-md-9 order-md-1'>";
+echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
+echo "                    <span class='text-muted'>Requirements</span>"; 
+echo "           <a href='create_req.php'><button type='button' href='create_req.php' class='btn btn-primary btn-sm'>Add</button></a>"; 
+echo "            </h4>";
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-    <title>Product filter in php</title>
+echo "            <ul class='list-group mb-3'>";
 
-    <script src="js/jquery-1.10.2.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link href = "css/jquery-ui.css" rel = "stylesheet">
-    <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
-</head>
 
-<body>
-    <!-- Page Content -->
-    <div class="container">
-        <div class="row">
-         <br />
-         <h2>Advance Ajax Product Filters in PHP</h2>
-         <br />
-            <div class="col-md-3">                    
-    <div class="list-group">
-     <h3>Price</h3>
-     <input type="hidden" id="hidden_minimum_price" value="0" />
-                    <input type="hidden" id="hidden_maximum_price" value="65000" />
-                    <p id="price_show">1000 - 65000</p>
-                    <div id="price_range"></div>
-                </div>    
-                <div class="list-group">
-                   <h3>Building</h3>
-                    <div style="height: 180px; overflow-y: auto; overflow-x: hidden;">
-     <?php
-                    $query = "SELECT building FROM tbl_requirements ORDER BY requirements_id DESC";
-                    $statement = $connect->prepare($query);
-                    $statement->execute();
-                    $result = $statement->fetchAll();
-                    $num = $statement->rowCount();
-                    foreach($num as $row)
-                    {
-      ?>
-                    <div class="list-group-item checkbox">
-                        <label><input type="checkbox" class="common_selector building" value="<?php echo $row['building']; ?>"  > <?php echo $row['building']; ?></label>
-                    </div>
-                    <?php
-                    }
-                    ?>
-                    </div>
-                </div>
 
-            </div>
+$querya = "SELECT * FROM tbl_requirements WHERE requirements LIKE '%$listing_id%' ";
+$stmta = $con->prepare($querya);
+$stmta->execute();
 
-            <div class="col-md-9">
-             <br />
-                <div class="row filter_data">
+// this is how to get number of rows returned
+$numa = $stmta->rowCount();
 
-                </div>
-            </div>
-        </div>
+if($numa>0){
+    while ($rowa = $stmta->fetch(PDO::FETCH_ASSOC)){
+    
+        extract($rowa);
+       
+       
 
-    </div>
-<style>
-#loading
-{
- text-align:center; 
- background: url('loader.gif') no-repeat center; 
- height: 150px;
-}
-</style>
+echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
 
-<script>
-$(document).ready(function(){
+echo "  <table style='border: none;'>";
+echo "                     <tr>";
+echo "                      <td>";
+echo "                  <img  src='{$name}' width='50' height='50'>";
+echo "                    </td>";
+echo "                     <td style='width: 800px; padding-left: 10px; padding-right: 10px;'>";
+echo "                  <h6 class='my-0 card-title'>{$building}</h6>";
+echo "                  <small>{$location} | {$type}</small>";
+echo "                  <br />";
+echo "                  <p class='card-text cardtextmin'>{$requirements}</p>";
+echo "                        </td>";
+echo "                        <td style='width: 100px;'>";
+    
+echo "                <span class='text-muted'>{$price}</span>";
+echo "                        </td>";
+echo "                        </tr>";
+echo "                    </table>";
 
-    filter_data();
+echo "              </li>";
 
-    function filter_data()
-    {
-        $('.filter_data').html('<div id="loading" style="" ></div>');
-        var action = 'fetch_data';
-        var minimum_price = $('#hidden_minimum_price').val();
-        var maximum_price = $('#hidden_maximum_price').val();
-        var building = get_filter('building');
-        var ram = get_filter('ram');
-        var storage = get_filter('storage');
-        $.ajax({
-            url:"fetch.php",
-            method:"POST",
-            data:{action:action, minimum_price:minimum_price, maximum_price:maximum_price, building:building, ram:ram, storage:storage},
-            success:function(data){
-                $('.filter_data').html(data);
-            }
-        });
-    }
+    }//while
+}//IF
 
-    function get_filter(class_name)
-    {
-        var filter = [];
-        $('.'+class_name+':checked').each(function(){
-            filter.push($(this).val());
-        });
-        return filter;
-    }
 
-    $('.common_selector').click(function(){
-        filter_data();
-    });
 
-    $('#price_range').slider({
-        range:true,
-        min:1000,
-        max:65000,
-        values:[1000, 65000],
-        step:500,
-        stop:function(event, ui)
-        {
-            $('#price_show').html(ui.values[0] + ' - ' + ui.values[1]);
-            $('#hidden_minimum_price').val(ui.values[0]);
-            $('#hidden_maximum_price').val(ui.values[1]);
-            filter_data();
-        }
-    });
+                  
+echo "            </ul>";
 
-});
-</script>
+echo "        </div>";
 
-</body>
 
-</html>
+
+
+
+//  ENDING CONTENT
+
+    include 'footer.php';
+    ?>
