@@ -145,8 +145,8 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
     echo "                    <span class='text-muted'>Requirements</span>"; 
     echo "          <div>";   
+    echo "           <a href='create_req.php'><button type='button' href='create_req.php' data-toggle='modal' data-target='#exampleModal' class='btn btn-outline-danger btn-sm'>Remove</button></a>"; 
     echo "           <a href='create_req.php'><button type='button' href='create_req.php' class='btn btn-primary btn-sm'>Add</button></a>";
-    echo "           <a href='create_req.php'><button type='button' href='create_req.php' class='btn btn-outline-danger btn-sm'>Remove All</button></a>"; 
     echo "            </h4>";
     echo "          <div>"; 
 
@@ -207,6 +207,25 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "        </div>";
 
 
+    echo "  <div class='modal fade' id='exampleModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>";
+    echo " <div class='modal-dialog' role='document'>";
+    echo "   <div class='modal-content'>";
+    echo "     <div class='modal-header'>";
+    echo "       <h5 class='modal-title' id='exampleModalLabel'>Delete Records</h5>";
+    echo "       <button type='button' class='close' data-dismiss='modal' aria-label='Close'>";
+    echo "        <span aria-hidden='true'>&times;</span>";
+    echo "      </button>";
+    echo "    </div>";
+    echo "   <div class='modal-body'>";
+    echo "  <p>Are you sure you want to delete all this record?</p>";
+        echo "    </div>";
+        echo "   <div class='modal-footer'>";
+        echo "    <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>";
+        echo "     <button type='button' class='btn btn-primary'>Remove</button>";
+        echo "   </div>";
+        echo "  </div>";
+  echo " </div>";
+  echo " </div>";
 
     include 'footer.php';
     ?>
