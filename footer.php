@@ -41,7 +41,7 @@ function delete_user(){
      // confirm record deletion
 function delete_deals(){
          document.location = 'deletedeals.php';
-     } 
+     }
 
 
 function openNav() {

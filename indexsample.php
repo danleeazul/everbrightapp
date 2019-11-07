@@ -96,9 +96,6 @@ echo "<div class='mdc-drawer-app-content'>";
     if($num>0){
     // fetch() is faster than fetchAll()
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-        // extract row
-        // this will make $row['firstname'] to
-        // just $firstname only
         extract($row);
          
         // creating new table row per record
