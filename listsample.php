@@ -31,7 +31,7 @@ echo "                    <div style='height: 90%;' class='mdc-drawer__content'>
 echo "                      <nav class='mdc-list'>";
                              
 
-echo "                             <a id='navbutton' class='mdc-list-item'  href='indexsample.php' aria-selected='true'>";
+echo "                             <a id='navbutton' class='mdc-list-item'  href='dashboard.php' aria-selected='true'>";
 echo "                              <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>dashboard</i>";
 echo "                          <span class='mdc-list-item__text'>Dashboard</span>";
 echo "                        </a>";

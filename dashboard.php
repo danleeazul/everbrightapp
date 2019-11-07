@@ -1,121 +1,261 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Everbright App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://www.everbright.com.ph/everbrightapp/libs/css/dashboard.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-
-    <div class=" navbar-dark bg-primary container-fluid fixed-top shadow">
-    <div class="row collapse show no-gutters d-flex h-100 position-relative">
-        <div class="col-3 px-0 w-sidebar navbar-collapse collapse d-none d-md-flex">
-            <!-- spacer col -->
-            <a href="#" class="navbar-brand">Everbright</a>
-        </div>
-        <div class="col px-3 px-md-0 py-3">
-            <div class="d-flex">
-                <!-- toggler -->
-                <a data-toggle="collapse" href="#" data-target=".collapse" role="button" class="">
-                    <i class="fa fa-bars fa-lg" style="color: white"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="navbar container-fluid px-0 h-100">
-    <div class="row min-vh-100 collapse show no-gutters d-flex h-100 position-relative">
-        <div class="col-3 p-0 h-100 text-white w-sidebar navbar-collapse collapse d-none d-md-flex sidebar">
-            <!-- fixed sidebar -->
-            <div class="navbar-dark bg-blue position-fixed h-100 w-sidebar">
-                <h6 class="px-3 pt-3">Fixed Menu</h6>
-                <ul class="nav flex-column flex-nowrap text-truncate">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Listing</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="row col p-3">
-            <h3>Dashboard</h3>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-5 order-md-2 mb-4">
-                      <h4 class="d-flex justify-content-between align-items-center mb-3">
-                        <span class="text-muted">Closed Deals</span>
-                        <span class="badge badge-secondary badge-pill">3</span>
-                      </h4>
-                      <ul class="list-group mb-3">
-                        <li class="list-group-item d-flex justify-content-between lh-condensed">
-                            <img  src="https://www.everbright.com.ph/headshot/EB-Nica.png" width="45" height="45">
-                          <div>
-                            <h6 class="my-0">One Uptown - 20H-SW</h6>
-                            <small class="text-muted">Rent</small>
-                          </div>
-                          <span class="text-muted">₱80,000</span>
-
-                        </li>
-                        
-                      </ul>
-              
-                    </div>
-              
-              
-              
-                  <div class="col-md-7 order-md-1">
-                      <h4 class="d-flex justify-content-between align-items-center mb-3">
-                              <span class="text-muted">Requirements</span>
-                      </h4>
-
-                      <ul class="list-group mb-3">
-                        <li class="list-group-item d-flex justify-content-between lh-condensed">
-                            <img  src="https://www.everbright.com.ph/headshot/EB-Nica.png" width="45" height="45">
-                          <div class="requirementsleft">
-                            <h6 class="my-0">Legaspi Village</h6>
-                            <small class="text-muted">Makati | Sale</small>
-                            <br />
-                            <small>1BR | Furnished | Ok for Bank Financing</small>
-                          </div>
-                          <span class="text-muted">₱8,000,000</span>
-
-                        </li>
-                      
-                      </ul>
+<?php
+// core configuration
+include_once "config/core.php";
  
-                  </div>
+// set page title
+$page_title="Everbright App";
+ 
+// include login checker
+// $require_login=true;
+// include_once "login_checker.php";
+ 
+// include page header HTML
+include_once 'header.php';
+
+include_once 'config/database.php';
+$query = 'SELECT * FROM tbl_deals ORDER BY deals_id DESC';
+$stmt = $con->prepare($query);
+$stmt->execute();
+
+// this is how to get number of rows returned
+$num = $stmt->rowCount();
+
+//  DRAWER
+echo "<aside  class='mdc-drawer'>";
+echo "                      <div id='mySidenav' class='sidenav'>";
+echo "                      <div>";
+echo "                    </div>";
+echo "                    <div style='height: 90%;' class='mdc-drawer__content'>";
+                    
+echo "                      <nav class='mdc-list'>";
+                             
+
+echo "                             <a id='navbutton' class='mdc-list-item mdc-list-item--activated'  aria-selected='true'>";
+echo "                              <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>dashboard</i>";
+echo "                        <span class='mdc-list-item__text'>Dashboard</span>";
+echo "                        </a>";
+echo "                        <a id='navbutton' class='mdc-list-item' href='listing.php' >";
+echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>format_list_bulleted</i>";
+echo "                          <span class='mdc-list-item__text'>Listing</span>";
+echo "                        </a>";
+echo "                        <a id='navbutton' class='mdc-list-item' href='login.php' >";
+echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>exit_to_app</i>";
+echo "                          <span class='mdc-list-item__text'>Logout</span>";
+echo "                        </a>";                
+echo "                      </nav>";
+
+// echo "                    </div>";
+// echo "                    <div class='textbottom'> ";
+// echo "          <table style='border: none; width: 100%;'>                       ";
+// echo "                      <tr>";
+// echo "                        <td><p style='padding-left:20px;' class='text-muted'>© Everbright v0.0</p></td>";
+// echo "                        <td style='padding-right:30px; padding-bottom:20px' class='text-right'><a href='logout.php' class='text-decoration-none'>Log out</a></td>";
+// echo "                      </tr>   ";
+// echo "                  </table>";
+// echo "        </div>";
+// echo "                     </div>";                     
+echo "                  </aside>";
 
 
-                </div> <!--Row-->
+echo "<div class='mdc-drawer-app-content'>";
+
+
+//  HEADER
+    echo "<header class='mdc-top-app-bar'>";
+    echo "  <div class='mdc-top-app-bar__row'>";
+    echo "  <section class='mdc-top-app-bar__section mdc-top-app-bar__section--align-start'>";
+    echo "   <a type='button' onclick='openNav()' id='sidebarCollapse' class='demo-menu material-icons mdc-top-app-bar__navigation-icon'>menu</a>";
+    echo "   <h3 style='margin-left: 15px;'>Dashboard</h3>";
+    echo "  </section>";
+    // echo "<section class='mdc-top-app-bar__section mdc-top-app-bar__section--align-end' role='toolbar'>";
+    // echo " <a class='material-icons mdc-top-app-bar__action-item' aria-label='Search' alt='Search'>search</a>";
+    // echo " </section>";
+    echo " </div>";
+    echo " </header>";
+//  END HEADER    
+      
+    echo "<main onclick='closeNav()' style='height: 93%;' class='main-content'>";
+    echo " <div class='mdc-top-app-bar--fixed-adjust'>";
+
+    echo " <div class='row col p-3'>";
+    echo "  <div class='container'>";
+    echo "      <div class='row'>";
+    echo "          <div class='col-md-5 order-md-2 mb-4'>";
+    echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
+    echo "              <span class='text-muted'>Closed Deals &nbsp<span class='badge badge-secondary'>{$num}</span></span>";
+    echo " <div> ";
+    echo "           <a><button type='button' data-toggle='modal' data-target='#dealsModal' class='btn btn-outline-danger btn-sm'>Remove</button></a>"; 
+    echo "           <a href='create_deals.php'><button type='button' href='create_deals.php' class='btn btn-primary btn-sm'>Add</button></a>"; 
+    echo " </div> ";
+
+    echo "            </h4>";
+   
+    echo "            <ul class='list-group mb-3'>";
+
+    if($num>0){
+    // fetch() is faster than fetchAll()
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+        extract($row);
+         
+        // creating new table row per record
+
+        echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
+        echo "                      <table style='border: none;'>";
+        echo "                     <tr>";
+        echo "                      <td>";
+        echo "                  <img  src='{$name}' width='50' height='50'>";
+        echo "                    </td>";
+        echo "                     <td style='width: 400px; padding-left: 10px; padding-right: 10px;'>";
+
+        echo "                  <h6 class='my-0 card-title'>{$building} - {$unit_no}</h6>";
+        echo "                  <small>{$type}</small>";
+        echo "                  <br />";
+        echo "                  <small class='text-muted'>{$deals_date}</small>";
+        echo "                        </td>";
+        echo "                        <td style='width: 100px;'>";
+            
+        echo "                <span class='text-muted'>₱{$price}</span>";
+        echo "                        </td>";
+        echo "                        </tr>";
+        echo "                    </table>";
+        echo "              </li>";
+                            
+        
+    }
+     
+    }
+    else{
+        echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
+       echo" <p class='card-text'>No closed deals yet!!!</p>";
+        echo "              </li>";
+    }
+
+
+
+
+
+
               
-                <footer class="my-5 pt-5 text-muted text-center text-small">
-                  <p class="mb-1">&copy; 2017- Company Name</p>
-                  <ul class="list-inline">
-                    <li class="list-inline-item"><a href="#">Privacy</a></li>
-                    <li class="list-inline-item"><a href="#">Terms</a></li>
-                    <li class="list-inline-item"><a href="#">Support</a></li>
-                  </ul>
-                </footer>
-              </div>
-        </div>
-    </div>
-</div>
- <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
-</html>
+           echo "            </ul>";
+                  
+        echo "          </div>";   
+              
+    echo "        <div class='col-md-7 order-md-1'>";
+    echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
+    echo "                    <span class='text-muted'>Requirements</span>"; 
+    echo "          <div>";   
+    echo "           <a><button type='button' data-toggle='modal' data-target='#exampleModal' class='btn btn-outline-danger btn-sm'>Remove</button></a>"; 
+    echo "           <a href='create_req.php'><button type='button' href='create_req.php' class='btn btn-primary btn-sm'>Add</button></a>";
+    echo "            </h4>";
+    echo "          <div>"; 
+
+    echo "            <ul class='list-group mb-3'>";
+
+    $querya = 'SELECT * FROM tbl_requirements ORDER BY requirements_id DESC';
+    $stmta = $con->prepare($querya);
+    $stmta->execute();
+    
+    // this is how to get number of rows returned
+    $numa = $stmta->rowCount();
+
+    if($numa>0){
+        while ($rowa = $stmta->fetch(PDO::FETCH_ASSOC)){
+        
+            extract($rowa);
+           
+           
+
+    echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
+    // echo "                  <img  src='{$name}' width='50' height='50'>";
+    // echo "                <div class='requirementsleft'>";
+    // echo "                  <h6 class='my-0'>{$building}</h6>";
+    // echo "                  <small>{$location} | {$type}</small>";
+    // echo "                  <br />";
+    // echo "                  <small class='text-muted'>{$requirements}</small>";
+    // echo "                </div>";
+    // echo "                <span class='text-muted'>{$price}</span>";
+
+    echo "  <table style='border: none;'>";
+    echo "                     <tr>";
+    echo "                      <td>";
+    echo "                  <img  src='{$name}' width='50' height='50'>";
+    echo "                    </td>";
+    echo "                     <td style='width: 800px; padding-left: 10px; padding-right: 10px;'>";
+    echo "                  <h6 class='my-0 card-title'>{$building}</h6>";
+    echo "                  <small>{$location} | {$type}</small>";
+    echo "                  <br />";
+    echo "                  <p class='card-text cardtextmin'>{$requirements}</p>";
+    echo "                        </td>";
+    echo "                        <td style='width: 100px;'>";
+        
+    echo "                <span class='text-muted'>{$price}</span>";
+    echo "                        </td>";
+    echo "                        </tr>";
+    echo "                    </table>";
+
+    echo "              </li>";
+
+        }//while
+    }//IF
+    else{
+        echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
+       echo" <p class='card-text'>No requirements</p>";
+        echo "              </li>";
+    }
+    
+
+   
+                      
+    echo "            </ul>";
+ 
+    echo "        </div>";
+
+
+    echo "  <div class='modal fade' id='exampleModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>";
+    echo " <div class='modal-dialog' role='document'>";
+    echo "   <div class='modal-content'>";
+    echo "     <div class='modal-header'>";
+    echo "       <h5 class='modal-title' id='exampleModalLabel'>Remove Requirements</h5>";
+    echo "       <button type='button' class='close' data-dismiss='modal' aria-label='Close'>";
+    echo "        <span aria-hidden='true'>&times;</span>";
+    echo "      </button>";
+    echo "    </div>";
+    echo "   <div class='modal-body'>";
+    echo "  <p>Are you sure you want to remove all this requirements?</p>";
+        echo "    </div>";
+        echo "   <div class='modal-footer'>";
+        echo "    <button type='button' class='btn btn-outline-secondary' data-dismiss='modal'>Close</button>";
+        echo "     <button type='button' onclick='delete_user()' class='btn btn-danger'>Remove</button>";
+        echo "   </div>";
+        echo "  </div>";
+  echo " </div>";
+  echo " </div>";
+
+
+  echo "  <div class='modal fade' id='dealsModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>";
+  echo " <div class='modal-dialog' role='document'>";
+  echo "   <div class='modal-content'>";
+  echo "     <div class='modal-header'>";
+  echo "       <h5 class='modal-title' id='exampleModalLabel'>Remove Closed Deals</h5>";
+  echo "       <button type='button' class='close' data-dismiss='modal' aria-label='Close'>";
+  echo "        <span aria-hidden='true'>&times;</span>";
+  echo "      </button>";
+  echo "    </div>";
+  echo "   <div class='modal-body'>";
+  echo "  <p>Are you sure you want to remove all closed deals?</p>";
+      echo "    </div>";
+      echo "   <div class='modal-footer'>";
+      echo "    <button type='button' class='btn btn-outline-secondary' data-dismiss='modal'>Close</button>";
+      echo "     <button type='button' onclick='delete_deals()' class='btn btn-danger'>Remove</button>";
+      echo "   </div>";
+      echo "  </div>";
+echo " </div>";
+echo " </div>";
+
+    include 'footer.php';
+    ?>
+            
+
+
+
 

@@ -44,16 +44,16 @@ echo "                          <span class='mdc-list-item__text'>Logout</span>"
 echo "                        </a>";                
 echo "                      </nav>";
 
-echo "                    </div>";
-echo "                    <div class='textbottom'> ";
-echo "          <table style='border: none; width: 100%;'>                       ";
-echo "                      <tr>";
-echo "                        <td><p style='padding-left:20px;' class='text-muted'>© Everbright v0.0</p></td>";
-echo "                        <td style='padding-right:30px; padding-bottom:20px' class='text-right'><a href='logout.php' class='text-decoration-none'>Log out</a></td>";
-echo "                      </tr>   ";
-echo "                  </table>";
-echo "        </div>";
-echo "                     </div>";                     
+// echo "                    </div>";
+// echo "                    <div class='textbottom'> ";
+// echo "          <table style='border: none; width: 100%;'>                       ";
+// echo "                      <tr>";
+// echo "                        <td><p style='padding-left:20px;' class='text-muted'>© Everbright v0.0</p></td>";
+// echo "                        <td style='padding-right:30px; padding-bottom:20px' class='text-right'><a href='logout.php' class='text-decoration-none'>Log out</a></td>";
+// echo "                      </tr>   ";
+// echo "                  </table>";
+// echo "        </div>";
+// echo "                     </div>";                     
 echo "                  </aside>";
 
 

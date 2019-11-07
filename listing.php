@@ -31,7 +31,7 @@ echo "                    <div style='height: 90%;' class='mdc-drawer__content'>
 echo "                      <nav class='mdc-list'>";
                              
 
-echo "                             <a id='navbutton' class='mdc-list-item'  href='indexsample.php' aria-selected='true'>";
+echo "                             <a id='navbutton' class='mdc-list-item'  href='dashboard.php' aria-selected='true'>";
 echo "                              <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>dashboard</i>";
 echo "                          <span class='mdc-list-item__text'>Dashboard</span>";
 echo "                        </a>";
@@ -39,23 +39,23 @@ echo "                        <a id='navbutton' class='mdc-list-item mdc-list-it
 echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>format_list_bulleted</i>";
 echo "                          <span class='mdc-list-item__text'>Listing</span>";
 echo "                        </a>";
-echo "                        <a id='navbutton' class='mdc-list-item' href='#' >";
-echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>person</i>";
-echo "                          <span class='mdc-list-item__text'>Accounts</span>";
-echo "                        </a>";
+echo "                        <a id='navbutton' class='mdc-list-item' href='login.php' >";
+echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>exit_to_app</i>";
+echo "                          <span class='mdc-list-item__text'>Logout</span>";
+echo "                        </a>";  
 echo "                        <hr class='mb-4'>";                 
 echo "                      </nav>";
 
-echo "                    </div>";
-echo "                    <div class='textbottom'> ";
-echo "          <table style='border: none; width: 100%;'>                       ";
-echo "                      <tr>";
-echo "                        <td><p style='padding-left:20px;' class='text-muted'>© Everbright v0.0</p></td>";
-echo "                        <td style='padding-right:30px; padding-bottom:20px' class='text-right'><a href='logout.php' class='text-decoration-none'>Log out</a></td>";
-echo "                      </tr>   ";
-echo "                  </table>";
-echo "        </div>";
-echo "                     </div>";
+// echo "                    </div>";
+// echo "                    <div class='textbottom'> ";
+// echo "          <table style='border: none; width: 100%;'>                       ";
+// echo "                      <tr>";
+// echo "                        <td><p style='padding-left:20px;' class='text-muted'>© Everbright v0.0</p></td>";
+// echo "                        <td style='padding-right:30px; padding-bottom:20px' class='text-right'><a href='logout.php' class='text-decoration-none'>Log out</a></td>";
+// echo "                      </tr>   ";
+// echo "                  </table>";
+// echo "        </div>";
+// echo "                     </div>";
                          
 echo "                  </aside>";
        

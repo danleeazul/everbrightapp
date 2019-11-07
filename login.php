@@ -54,7 +54,7 @@ $access_denied=false;
                 // else, redirect only to 'Customer' section
                 else{
                 
-                   echo "<script type='text/javascript'> document.location = 'https://www.everbright.com.ph/everbrightapp/index.php?action=login_success'; </script>";
+                   echo "<script type='text/javascript'> document.location = 'https://www.everbright.com.ph/everbrightapp/dashboard.php?action=login_success'; </script>";
                 }
             }
             // if username does not exist or password is wrong
