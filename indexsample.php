@@ -88,10 +88,14 @@ echo "<div class='mdc-drawer-app-content'>";
         echo "          <div class='col-md-5 order-md-2 mb-4'>";
         echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
         echo "              <span class='text-muted'>Closed Deals &nbsp<span class='badge badge-secondary'>{$num}</span></span>";
+        echo " <div> ";
         echo "           <a href='create_deals.php'><button type='button' href='create_deals.php' class='btn btn-primary btn-sm'>Add</button></a>"; 
         echo "           <a><button type='button' data-toggle='modal' data-target='#exampleModal' class='btn btn-outline-danger btn-sm'>Remove</button></a>"; 
+        echo " </div> ";
+
         echo "            </h4>";
-       echo "            <ul class='list-group mb-3'>";
+       
+        echo "            <ul class='list-group mb-3'>";
 
 
         // table body will be here
