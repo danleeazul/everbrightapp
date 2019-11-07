@@ -15,10 +15,16 @@ function delete_deals(){
          document.location = 'deletedeals.php';
      }
 
+function logout_modals(){
+         document.location = 'login.php';
+     }     
+
 
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
 }
+
+
 
 
 

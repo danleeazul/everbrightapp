@@ -38,7 +38,7 @@ echo "                        <a id='navbutton' class='mdc-list-item' href='list
 echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>format_list_bulleted</i>";
 echo "                          <span class='mdc-list-item__text'>Listing</span>";
 echo "                        </a>";
-echo "                        <a id='navbutton' class='mdc-list-item' href='login.php' >";
+echo "                        <a id='navbutton' data-toggle='modal' data-target='#logoutModal' class='mdc-list-item' >";
 echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>exit_to_app</i>";
 echo "                          <span class='mdc-list-item__text'>Logout</span>";
 echo "                        </a>";                
@@ -210,47 +210,71 @@ echo "<div class='mdc-drawer-app-content'>";
  
     echo "        </div>";
 
-
-    echo "  <div class='modal fade' id='exampleModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>";
-    echo " <div class='modal-dialog' role='document'>";
-    echo "   <div class='modal-content'>";
-    echo "     <div class='modal-header'>";
-    echo "       <h5 class='modal-title' id='exampleModalLabel'>Remove Requirements</h5>";
-    echo "       <button type='button' class='close' data-dismiss='modal' aria-label='Close'>";
-    echo "        <span aria-hidden='true'>&times;</span>";
-    echo "      </button>";
-    echo "    </div>";
-    echo "   <div class='modal-body'>";
-    echo "  <p>Are you sure you want to remove all this requirements?</p>";
+//REQ MODAL
+        echo "  <div class='modal fade' id='exampleModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>";
+        echo " <div class='modal-dialog' role='document'>";
+        echo "   <div class='modal-content'>";
+        echo "     <div class='modal-header'>";
+        echo "       <h5 class='modal-title' id='exampleModalLabel'>Remove Requirements</h5>";
+        echo "       <button type='button' class='close' data-dismiss='modal' aria-label='Close'>";
+        echo "        <span aria-hidden='true'>&times;</span>";
+        echo "      </button>";
+        echo "    </div>";
+        echo "   <div class='modal-body'>";
+        echo "  <p>Are you sure you want to remove all this requirements?</p>";
         echo "    </div>";
         echo "   <div class='modal-footer'>";
         echo "    <button type='button' class='btn btn-outline-secondary' data-dismiss='modal'>Close</button>";
         echo "     <button type='button' onclick='delete_user()' class='btn btn-danger'>Remove</button>";
         echo "   </div>";
         echo "  </div>";
-  echo " </div>";
-  echo " </div>";
+        echo " </div>";
+        echo " </div>";
+  //END REQ MODAL
 
-
-  echo "  <div class='modal fade' id='dealsModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>";
-  echo " <div class='modal-dialog' role='document'>";
-  echo "   <div class='modal-content'>";
-  echo "     <div class='modal-header'>";
-  echo "       <h5 class='modal-title' id='exampleModalLabel'>Remove Closed Deals</h5>";
-  echo "       <button type='button' class='close' data-dismiss='modal' aria-label='Close'>";
-  echo "        <span aria-hidden='true'>&times;</span>";
-  echo "      </button>";
-  echo "    </div>";
-  echo "   <div class='modal-body'>";
-  echo "  <p>Are you sure you want to remove all closed deals?</p>";
+//DEALS MODAL
+      echo "  <div class='modal fade' id='dealsModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>";
+      echo " <div class='modal-dialog' role='document'>";
+      echo "   <div class='modal-content'>";
+      echo "     <div class='modal-header'>";
+      echo "       <h5 class='modal-title' id='exampleModalLabel'>Remove Closed Deals</h5>";
+      echo "       <button type='button' class='close' data-dismiss='modal' aria-label='Close'>";
+      echo "        <span aria-hidden='true'>&times;</span>";
+      echo "      </button>";
+      echo "    </div>";
+      echo "   <div class='modal-body'>";
+      echo "  <p>Are you sure you want to remove all closed deals?</p>";
       echo "    </div>";
       echo "   <div class='modal-footer'>";
       echo "    <button type='button' class='btn btn-outline-secondary' data-dismiss='modal'>Close</button>";
       echo "     <button type='button' onclick='delete_deals()' class='btn btn-danger'>Remove</button>";
       echo "   </div>";
       echo "  </div>";
-echo " </div>";
-echo " </div>";
+      echo " </div>";
+      echo " </div>";
+//END DEALS MODAL
+
+//LOGOUT MODAL
+    echo "  <div class='modal fade' id='logoutModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>";
+    echo " <div class='modal-dialog' role='document'>";
+    echo "   <div class='modal-content'>";
+    echo "     <div class='modal-header'>";
+    echo "       <h5 class='modal-title' id='exampleModalLabel'>Log out</h5>";
+    echo "       <button type='button' class='close' data-dismiss='modal' aria-label='Close'>";
+    echo "        <span aria-hidden='true'>&times;</span>";
+    echo "      </button>";
+    echo "    </div>";
+    echo "   <div class='modal-body'>";
+    echo "  <p>Are you sure you want to log out?</p>";
+    echo "    </div>";
+    echo "   <div class='modal-footer'>";
+    echo "    <button type='button' class='btn btn-outline-secondary' data-dismiss='modal'>Close</button>";
+    echo "     <button type='button' onclick='logout_modals()' class='btn btn-primary'>Log out</button>";
+    echo "   </div>";
+    echo "  </div>";
+    echo " </div>";
+    echo " </div>";
+//END LOGOUT MODAL
 
     include 'footer.php';
     ?>
