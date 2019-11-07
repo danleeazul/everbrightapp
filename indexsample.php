@@ -125,7 +125,7 @@ echo "<div class='mdc-drawer-app-content'>";
     }
      
     }
-    elseif($num!=0){
+    else{
         echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
         echo "  <p>No Closed Deals yet</p>";
         echo "              </li>";
