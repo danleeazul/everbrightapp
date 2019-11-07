@@ -6,7 +6,7 @@ try {
     // delete query
     $query = "DELETE * FROM tbl_requirements";
     $stmt = $con->prepare($query);
-    $stmta->execute();
+    $stmt->execute();
 }
  
 // show error
