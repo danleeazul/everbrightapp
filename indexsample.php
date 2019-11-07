@@ -89,8 +89,9 @@ echo "<div class='mdc-drawer-app-content'>";
         echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
         echo "              <span class='text-muted'>Closed Deals &nbsp<span class='badge badge-secondary'>{$num}</span></span>";
         echo " <div> ";
+        echo "                       <a>   <i class='material-icons mdc-list-item__graphic'data-toggle='modal' data-target='#exampleModal' aria-hidden='true'>delete</i></a>";
+        // echo "           <a><button type='button' data-toggle='modal' data-target='#exampleModal' class='btn btn-outline-danger btn-sm'>Remove</button></a>"; 
         echo "           <a href='create_deals.php'><button type='button' href='create_deals.php' class='btn btn-primary btn-sm'>Add</button></a>"; 
-        echo "           <a><button type='button' data-toggle='modal' data-target='#exampleModal' class='btn btn-outline-danger btn-sm'>Remove</button></a>"; 
         echo " </div> ";
 
         echo "            </h4>";
