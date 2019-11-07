@@ -32,6 +32,11 @@ $(document).ready(function(){
 
 });
 
+// confirm record deletion
+function delete_user(){
+         window.location = 'deletereq.php';
+     } 
+
 
                function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
