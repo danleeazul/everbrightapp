@@ -201,7 +201,7 @@ echo "<div class='mdc-drawer-app-content'>";
   echo "    </div>";
   echo "   <div class='modal-footer'>";
   echo "    <button type='button' class='btn btn-outline-secondary' data-dismiss='modal'>Close</button>";
-  echo "     <button type='button' onclick='delete_reqsingle({$requirements_id})' class='btn btn-danger'>Remove</button>";
+  echo "     <button type='button' onclick='delete_reqsingle({$requirements_id});' class='btn btn-danger'>Remove</button>";
   echo "   </div>";
   echo "  </div>";
   echo " </div>";
