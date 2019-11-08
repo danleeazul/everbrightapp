@@ -155,7 +155,7 @@ if($_POST){
                     Valid Position is required.
                     </div>  
               </div>
-              <input name="status" value="1" visibility="hidden">
+              <input name="status" value="1" style="visibility: hidden;">
            </div> <!--Row -->
 
            <h4 class="mb-3">Login Credentials</h4>
