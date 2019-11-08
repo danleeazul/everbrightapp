@@ -4,7 +4,7 @@ include 'config/database.php';
  
 try {
 
-    $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
+    $id=isset($_GET['requirements_id']) ? $_GET['requirements_id'] : die('ERROR: Record ID not found.');
 
     // delete query
     $query = "DELETE FROM tbl_requirementsWHERE id = ?";

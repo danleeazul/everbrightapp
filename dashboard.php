@@ -197,7 +197,7 @@ echo "<div class='mdc-drawer-app-content'>";
   echo "      </button>";
   echo "    </div>";
   echo "   <div class='modal-body'>";
-  echo "  <p>Are you sure you want to remove this requirement?</p>";
+  echo "  <p>Are you sure you want to remove this requirement id {$requirements_id}?</p>";
   echo "    </div>";
   echo "   <div class='modal-footer'>";
   echo "    <button type='button' class='btn btn-outline-secondary' data-dismiss='modal'>Close</button>";
