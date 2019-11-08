@@ -87,6 +87,7 @@ if($_POST){
 <form class="needs-validation" novalidate action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
       <!--DEALS-->
       <hr class="mb-4">
+      <h4 class="mb-3">Employee Information</h4>
        <div class="row">
                <div class="col-md-4 mb-3">
                <label for="lastName">First Name</label>
@@ -148,6 +149,7 @@ if($_POST){
            </div> <!--Row -->
 
            <hr class="mb-4">
+           <h4 class="mb-3">Login Credentials</h4>
            <div class="row">
            <div class="col-md-4 mb-3">
                  <label for="firstName">Email</label>
@@ -167,24 +169,25 @@ if($_POST){
              </div> <!-- ROW -->
  
            <hr class="mb-4">
+           <h4 class="mb-3">Governement ID's</h4>
            <div class="row">
            <div class="col-md-4 mb-3">
                  <label for="firstName">SSS No</label>
-                 <input type="text" class="form-control" name="sss" onkeypress="return isNumberKey(event)" placeholder="" value="" required>  
+                 <input type="text" class="form-control" name="sss" onkeypress="return isNumberKey(event)" placeholder="" value="">  
                  <div class="invalid-feedback">
                     Valid SSS is required.
                     </div>  
               </div>
               <div class="col-md-4 mb-3">
                  <label for="firstName">PagIbig No</label>
-                 <input type="text" class="form-control" name="pagibig" onkeypress="return isNumberKey(event)" placeholder="" value="" required>  
+                 <input type="text" class="form-control" name="pagibig" onkeypress="return isNumberKey(event)" placeholder="" value="">  
                  <div class="invalid-feedback">
                     Valid PagIbig No is required.
                     </div>  
               </div>
               <div class="col-md-4 mb-3">
                  <label for="firstName">Tin No</label>
-                 <input type="text" class="form-control" name="sss" onkeypress="return isNumberKey(event)" placeholder="" value="" required>  
+                 <input type="text" class="form-control" name="sss" onkeypress="return isNumberKey(event)" placeholder="" value="">  
                  <div class="invalid-feedback">
                     Valid SSS is required.
                     </div>  
