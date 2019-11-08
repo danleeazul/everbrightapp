@@ -5,7 +5,7 @@
 <script>
 delete_dealsingle
 //SINGLE DEAL 
-function delete_reqsingle( id ){
+function delete_dealsingle( id ){
          document.location = 'deletedealssingle.php?id=' + id;
      } 
 
