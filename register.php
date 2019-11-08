@@ -169,25 +169,25 @@ if($_POST){
              </div> <!-- ROW -->
  
            <hr class="mb-4">
-           <h4 class="mb-3">Governement ID's</h4>
+           <h4 class="mb-3">Government ID's</h4>
            <div class="row">
            <div class="col-md-4 mb-3">
                  <label for="firstName">SSS No</label>
-                 <input type="text" class="form-control" name="sss" onkeypress="return isNumberKey(event)" placeholder="" value="">  
+                 <input type="text"  name="sss" onkeypress="return isNumberKey(event)" placeholder="" value="">  
                  <div class="invalid-feedback">
                     Valid SSS is required.
                     </div>  
               </div>
               <div class="col-md-4 mb-3">
                  <label for="firstName">PagIbig No</label>
-                 <input type="text" class="form-control" name="pagibig" onkeypress="return isNumberKey(event)" placeholder="" value="">  
+                 <input type="text"  name="pagibig" onkeypress="return isNumberKey(event)" placeholder="" value="">  
                  <div class="invalid-feedback">
                     Valid PagIbig No is required.
                     </div>  
               </div>
               <div class="col-md-4 mb-3">
                  <label for="firstName">Tin No</label>
-                 <input type="text" class="form-control" name="sss" onkeypress="return isNumberKey(event)" placeholder="" value="">  
+                 <input type="text" name="sss" onkeypress="return isNumberKey(event)" placeholder="" value="">  
                  <div class="invalid-feedback">
                     Valid SSS is required.
                     </div>  
