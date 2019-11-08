@@ -35,11 +35,12 @@ if($_POST){
  
     // include database connection
     include 'database.php';
+    $utils = new Utils();
 
     try{
      
         // insert query
-        $query = "INSERT INTO tbl_requirements SET name=:name, building=:building, location=:location, type=:type, requirements=:requirements, price=:price";
+        $query = "INSERT INTO tbl_users SET name=:name, building=:building, location=:location, type=:type, requirements=:requirements, price=:price";
  
         // prepare query for execution
         $stmt = $con->prepare($query);
@@ -113,7 +114,7 @@ if($_POST){
  
               <div class="col-md-12 mb-3">
                  <label for="firstName">Address</label>
-                 <input type="text" class="form-control" name="lastname" placeholder="" value="" required>  
+                 <input type="text" class="form-control" name="address" placeholder="" value="" required>  
                  <div class="invalid-feedback">
                     Valid Address is required.
                     </div>  
@@ -145,6 +146,25 @@ if($_POST){
                     </div>  
               </div>
            </div> <!--Row -->
+
+           <hr class="mb-4">
+           <div class="row">
+           <div class="col-md-4 mb-3">
+                 <label for="firstName">Email</label>
+                 <input type="text" class="form-control" name="email" placeholder="" value="" required>  
+                 <div class="invalid-feedback">
+                    Valid Email is required.
+                    </div>  
+              </div>
+
+              <div class="col-md-4 mb-3">
+                 <label for="firstName">Password</label>
+                 <input type="password" class="form-control" name="password" placeholder="" value="" required>  
+                 <div class="invalid-feedback">
+                    Valid Password is required.
+                    </div>  
+              </div>
+             </div> <!-- ROW -->
  
            <hr class="mb-4">
            <div class="row">
