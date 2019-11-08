@@ -4,7 +4,7 @@
 
 <script>
 //SINGLE DELETE REQ
-function delete_reqsingle( id ){
+function delete_reqsingle(id){
          document.location = 'deletereqsingle.php?id=' + id;
      } 
 
