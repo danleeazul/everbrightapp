@@ -9,6 +9,7 @@ try {
     // delete query
     $query = "DELETE FROM tbl_requirements WHERE requirements_id = ?";
     $stmt = $con->prepare($query);
+    $stmt->bindParam(1, $id);
     
     if($stmt->execute()){
        // header('Location: index.php');
