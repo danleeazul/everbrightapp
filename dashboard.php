@@ -184,9 +184,8 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "                        </tr>";
     echo "                    </table>";
     echo"                     <button type='button' data-toggle='modal' data-target='#singlereqModal' class='close'aria-label='Close'><span aria-hidden='true'>&times;</span></button>            ";
-    echo "              </li>";
-
-      //SINGLE REQ MODAL
+    
+          //SINGLE REQ MODAL
   echo "  <div class='modal fade' id='singlereqModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>";
   echo " <div class='modal-dialog' role='document'>";
   echo "   <div class='modal-content'>";
@@ -207,6 +206,10 @@ echo "<div class='mdc-drawer-app-content'>";
   echo " </div>";
   echo " </div>";
 //END SINGLE REQ MODAL
+    
+    echo "              </li>";
+
+
 
 
         }//while
