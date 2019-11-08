@@ -84,7 +84,7 @@ if($_POST){
         // $stmt->bindParam(':password', $password_hash);
 
         $birthdate = date('Y-m-d', strtotime($birthdate));
-         $stmt->bindParam(':deals_date', $birthdate);
+         $stmt->bindParam(':birthdate', $birthdate);
 
         // Execute the query
         if($stmt->execute()){
