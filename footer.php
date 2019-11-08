@@ -6,7 +6,7 @@
 delete_dealsingle
 //SINGLE DEAL 
 function delete_dealsingle( id ){
-         document.location = 'deletedealssingle.php?id=' + id;
+         document.location = 'deletedealsingle.php?id=' + id;
      } 
 
 //SINGLE DELETE REQ
