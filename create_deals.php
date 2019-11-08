@@ -92,6 +92,7 @@ if($_POST){
                     <select class="custom-select d-block w-100" name="name" id="nameimage" onchange="GetSelectedValue()" required>
                       <option value="">Select...</option>
                       <option value="https://www.everbright.com.ph/headshot/EB-MsPatty.png">Ms. Patty</option>
+                      <option value="https://www.everbright.com.ph/headshot/EB-SirAlvin.png">Sir Alvin</option>
                       <option value="https://www.everbright.com.ph/headshot/EB-SirMarion.png">Sir Marion</option>
                       <option value="https://www.everbright.com.ph/headshot/EB-Joana.png">Joana Marie Legaspi</option>
                       <option value="https://www.everbright.com.ph/headshot/EB-Aj.png">Aira Joy Lim</option> 

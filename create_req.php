@@ -151,6 +151,7 @@ if($_POST){
             <div class="col-md-4 mb-3">
             <label for="firstName">Price</label>
              <input type="text" class="form-control" name="price" placeholder="Php" value="" required> 
+             <small id="emailHelp" class="form-text text-muted">You can input a text eg. 10M | FMV | 100K-200K | 1K/SQM</small>
              <div class="invalid-feedback">
                     Valid price is required.
             </div>      
