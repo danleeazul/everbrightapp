@@ -102,6 +102,14 @@ if($_POST){
                     Valid Middle Name is required.
                     </div>  
               </div>
+
+              <div class="col-md-4 mb-3">
+                 <label for="firstName">Last Name</label>
+                 <input type="text" class="form-control" name="lastname" placeholder="" value="" required>  
+                 <div class="invalid-feedback">
+                    Valid Last Name is required.
+                    </div>  
+              </div>
  
               <div class="col-md-12 mb-3">
                  <label for="firstName">Address</label>
@@ -112,6 +120,7 @@ if($_POST){
               </div>
             </div>
  
+            <div class="row">
             <div class="col-md-4 mb-3">
                 <label for="lastName">Birthdate</label>
                 <input id="deals_dates" class="form-control" name="deals_date" width="auto" onchange="getDate()" required />
@@ -125,16 +134,43 @@ if($_POST){
             <input type="text" class="form-control" name="contact" placeholder="" value="" onkeypress="return isNumberKey(event)"  required>    
              <div class="invalid-feedback">
                     Valid Contact Number
-            </div>      
+                </div>      
            </div>
+
+           <div class="col-md-4 mb-3">
+                 <label for="firstName">Position</label>
+                 <input type="text" class="form-control" name="position" placeholder="" value="" required>  
+                 <div class="invalid-feedback">
+                    Valid Position is required.
+                    </div>  
+              </div>
+           </div> <!--Row -->
  
-          <div class="col-md-12 mb-3">
-             <label for="firstName">Specification</label>
-             <textarea class="form-control" id="exampleFormControlTextarea1" name="requirements" rows="3" required></textarea>      
-             <div class="invalid-feedback">
-                    Valid specification is required.
-            </div>      
-          </div>
+           <hr class="mb-4">
+           <div class="row">
+           <div class="col-md-4 mb-3">
+                 <label for="firstName">SSS No</label>
+                 <input type="text" class="form-control" name="sss" pattern="\d{3}-?\d{2}-?\d{4}" placeholder="" value="" required>  
+                 <div class="invalid-feedback">
+                    Valid SSS is required.
+                    </div>  
+              </div>
+              <div class="col-md-4 mb-3">
+                 <label for="firstName">PagIbig No</label>
+                 <input type="text" class="form-control" name="pagibig" placeholder="" value="" required>  
+                 <div class="invalid-feedback">
+                    Valid PagIbig No is required.
+                    </div>  
+              </div>
+              <div class="col-md-4 mb-3">
+                 <label for="firstName">Tin No</label>
+                 <input type="text" class="form-control" name="sss" placeholder="" value="" required>  
+                 <div class="invalid-feedback">
+                    Valid SSS is required.
+                    </div>  
+              </div>
+           </div><!--  Row -->
+       
 
 
        </div>
