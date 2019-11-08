@@ -169,7 +169,7 @@ if($_POST){
                     Valid SSS is required.
                     </div>  
               </div>
-           </div><!--  Row -->
+           
        
 
 
@@ -180,7 +180,7 @@ if($_POST){
             <button type="submit" value='Save'  class="btn btn-primary">Submit</button>
             </div>
             
-
+</div><!--  Row -->
           
 </form>
         
