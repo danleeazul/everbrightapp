@@ -46,12 +46,12 @@ if($_POST){
  
         // posted values
         $firstname=htmlspecialchars(strip_tags($_POST['firstname']));
-        $lastname=htmlspecialchars(strip_tags($_POST['lastname']));
         $middlename=htmlspecialchars(strip_tags($_POST['middlename']));
+        $lastname=htmlspecialchars(strip_tags($_POST['lastname']));
         $address=htmlspecialchars(strip_tags($_POST['address']));
         $birhdate=htmlspecialchars(strip_tags($_POST['birthdate']));
-        $position=htmlspecialchars(strip_tags($_POST['position']));
         $contact_number=htmlspecialchars(strip_tags($_POST['contact_number']));
+        $position=htmlspecialchars(strip_tags($_POST['position']));
         $email=htmlspecialchars(strip_tags($_POST['email']));
         $password=htmlspecialchars(strip_tags($_POST['password']));
         $status=htmlspecialchars(strip_tags($_POST['status']));
@@ -65,23 +65,25 @@ if($_POST){
 
         // bind the parameters
         $stmt->bindParam(':firstname', $firstname);
-        $stmt->bindParam(':lastname', $lastname);
         $stmt->bindParam(':middlename', $middlename);
+        $stmt->bindParam(':lastname', $lastname);      
         $stmt->bindParam(':address', $address);
-        $stmt->bindParam(':birthdate', $birthdate);
-        $stmt->bindParam(':position', $position);
         $stmt->bindParam(':contact_number', $contact_number);
+        $stmt->bindParam(':position', $position);
         $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':password', $password);
         $stmt->bindParam(':status', $status);
         $stmt->bindParam(':access_level', $access_level);
         $stmt->bindParam(':sss', $sss);
         $stmt->bindParam(':pagibig', $pagibig);
         $stmt->bindParam(':tin', $tin);
-        $stmt->bindParam(':password', $password);
 
         //  // hash the password before saving to database
         // $password_hash = password_hash($password, PASSWORD_BCRYPT);
         // $stmt->bindParam(':password', $password_hash);
+
+        $birthdate = date('Y-m-d', strtotime($birthdate));
+         $stmt->bindParam(':deals_date', $birthdate);
 
         // Execute the query
         if($stmt->execute()){
@@ -143,7 +145,7 @@ if($_POST){
             <div class="row">
             <div class="col-md-4 mb-3">
                 <label for="lastName">Birthdate</label>
-                <input id="deals_dates" class="form-control" name="birthdate" width="auto" onchange="getDate()" required />
+                <input id="birthdate" class="form-control" name="birthdate" width="auto" onchange="getDate()" required />
                     <div class="invalid-feedback">
                     Valid Birthdate is required.
                     </div>  
@@ -239,13 +241,13 @@ function isNumberKey(evt)
           return true;
        }
 
-$('#deals_dates').datepicker({
+$('#birthdate').datepicker({
             uiLibrary: 'bootstrap4',
             //format: 'yyyy-mm-dd'
         });
 
  function getDate(){
-   var x = document.getElementById("deals_dates").value;
+   var x = document.getElementById("birthdate").value;
    document.getElementById("deals_datex").innerHTML = x;
  }
 
