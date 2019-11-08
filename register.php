@@ -35,12 +35,11 @@ if($_POST){
  
     // include database connection
     include 'database.php';
-    $utils = new Utils();
 
     try{
      
         // insert query
-        $query = "INSERT INTO tbl_users SET firstname=:firstname, middlename=:middlename, lastname=:lastname,  address=:address, birthdate=:birthdate, contact_number=:contact_number, email=:email, password=:password, access_level=:access_level, status=:status";
+        $query = "INSERT INTO tbl_users SET firstname=:firstname, middlename=:middlename, lastname=:lastname,  address=:address, birthdate=:birthdate, contact_number=:contact_number, email=:email, password=:password, access_level=:access_level, status=:status, sss=:sss, pagibig=:pagibig, tin=:tin";
  
         // prepare query for execution
         $stmt = $con->prepare($query);
@@ -55,6 +54,9 @@ if($_POST){
         $email=htmlspecialchars(strip_tags($_POST['email']));
         $password=htmlspecialchars(strip_tags($_POST['password']));
         $status=htmlspecialchars(strip_tags($_POST['status']));
+        $sss=htmlspecialchars(strip_tags($_POST['sss']));
+        $pagibig=htmlspecialchars(strip_tags($_POST['pagibig']));
+        $tin=htmlspecialchars(strip_tags($_POST['tin']));
 
 
 
@@ -68,10 +70,14 @@ if($_POST){
         $stmt->bindParam(':contact_number', $contact_number);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':status', $status);
+        $stmt->bindParam(':sss', $sss);
+        $stmt->bindParam(':pagibig', $pagibig);
+        $stmt->bindParam(':tin', $tin);
+        $stmt->bindParam(':password', $password);
 
-         // hash the password before saving to database
-        $password_hash = password_hash($password, PASSWORD_BCRYPT);
-        $stmt->bindParam(':password', $password_hash);
+        //  // hash the password before saving to database
+        // $password_hash = password_hash($password, PASSWORD_BCRYPT);
+        // $stmt->bindParam(':password', $password_hash);
 
         // Execute the query
         if($stmt->execute()){
@@ -80,7 +86,6 @@ if($_POST){
             echo "<div class='alert alert-danger'>Unable to save record.</div>";
             
         }
-         
     }
      
     // show error
@@ -134,7 +139,7 @@ if($_POST){
             <div class="row">
             <div class="col-md-4 mb-3">
                 <label for="lastName">Birthdate</label>
-                <input id="deals_dates" class="form-control" name="deals_date" width="auto" onchange="getDate()" required />
+                <input id="deals_dates" class="form-control" name="birthdate" width="auto" onchange="getDate()" required />
                     <div class="invalid-feedback">
                     Valid Birthdate is required.
                     </div>  
@@ -142,7 +147,7 @@ if($_POST){
     
             <div class="col-md-4 mb-3">
             <label for="firstName">Contact No</label>
-            <input type="text" class="form-control" name="contact" placeholder="" value="" onkeypress="return isNumberKey(event)"  required>    
+            <input type="text" class="form-control" name="contact_number" placeholder="" value="" onkeypress="return isNumberKey(event)"  required>    
              <div class="invalid-feedback">
                     Valid Contact Number
                 </div>      
@@ -191,7 +196,7 @@ if($_POST){
               </div>
               <div class="col-md-4 mb-3">
                  <label for="firstName">Tin No</label>
-                 <input type="text" class="form-control" name="sss" onkeypress="return isNumberKey(event)" placeholder="" value="">  
+                 <input type="text" class="form-control" name="tin" onkeypress="return isNumberKey(event)" placeholder="" value="">  
                  
               </div>
            
