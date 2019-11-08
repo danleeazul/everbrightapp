@@ -173,24 +173,18 @@ if($_POST){
            <div class="row">
            <div class="col-md-4 mb-3">
                  <label for="firstName">SSS No</label>
-                 <input type="text"  name="sss" onkeypress="return isNumberKey(event)" placeholder="" value="">  
-                 <div class="invalid-feedback">
-                    Valid SSS is required.
-                    </div>  
+                 <input type="text" class="form-control" name="sss" onkeypress="return isNumberKey(event)" placeholder="" value="">  
+                  
               </div>
               <div class="col-md-4 mb-3">
                  <label for="firstName">PagIbig No</label>
-                 <input type="text"  name="pagibig" onkeypress="return isNumberKey(event)" placeholder="" value="">  
-                 <div class="invalid-feedback">
-                    Valid PagIbig No is required.
-                    </div>  
+                 <input type="text" class="form-control" name="pagibig" onkeypress="return isNumberKey(event)" placeholder="" value="">  
+                 
               </div>
               <div class="col-md-4 mb-3">
                  <label for="firstName">Tin No</label>
-                 <input type="text" name="sss" onkeypress="return isNumberKey(event)" placeholder="" value="">  
-                 <div class="invalid-feedback">
-                    Valid SSS is required.
-                    </div>  
+                 <input type="text" class="form-control" name="sss" onkeypress="return isNumberKey(event)" placeholder="" value="">  
+                 
               </div>
            
        
