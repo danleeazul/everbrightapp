@@ -54,6 +54,7 @@ if($_POST){
         $email=htmlspecialchars(strip_tags($_POST['email']));
         $password=htmlspecialchars(strip_tags($_POST['password']));
         $status=htmlspecialchars(strip_tags($_POST['status']));
+        $access_level=htmlspecialchars(strip_tags($_POST['access_level']));
         $sss=htmlspecialchars(strip_tags($_POST['sss']));
         $pagibig=htmlspecialchars(strip_tags($_POST['pagibig']));
         $tin=htmlspecialchars(strip_tags($_POST['tin']));
@@ -70,6 +71,7 @@ if($_POST){
         $stmt->bindParam(':contact_number', $contact_number);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':status', $status);
+        $stmt->bindParam(':access_level', $access_level);
         $stmt->bindParam(':sss', $sss);
         $stmt->bindParam(':pagibig', $pagibig);
         $stmt->bindParam(':tin', $tin);
