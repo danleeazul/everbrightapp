@@ -4,12 +4,12 @@ include 'config/database.php';
  
 try {
 
-    $requirements_id=isset($_GET['requirements_id']) ? $_GET['requirements_id'] : die('ERROR: Record ID not found.');
+    $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
 
     // delete query
     $query = "DELETE FROM tbl_requirements WHERE requirements_id = ?";
     $stmt = $con->prepare($query);
-    $stmt->bindParam(1, $requirements_id);
+    $stmt->bindParam(1, $id);
 
     if($stmt->execute()){
        // header('Location: index.php');
