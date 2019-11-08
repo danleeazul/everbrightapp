@@ -118,6 +118,7 @@ echo "<div class='mdc-drawer-app-content'>";
         echo "                        </td>";
         echo "                        </tr>";
         echo "                    </table>";
+        echo"                     <button type='button' onclick='delete_dealsingle({$deals_id})'  class='close'aria-label='Close'><span aria-hidden='true'>&times;</span></button>            ";
         echo "              </li>";
                             
         
@@ -172,7 +173,7 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "                    </td>";
     echo "                     <td style='width: 800px; padding-left: 10px; padding-right: 10px;'>";
     echo "                  <h6 class='my-0 card-title'>{$building}</h6>";
-    echo "                  <small>{$location} | {$type} | {$requirements_id}</small>";
+    echo "                  <small>{$location} | {$type}</small>";
     echo "                  <br />";
     echo "                  <p class='card-text cardtextmin'>{$requirements}</p>";
     echo "                        </td>";
@@ -182,7 +183,7 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "                        </td>";
     echo "                        </tr>";
     echo "                    </table>";
-    echo"                     <button type='button' data-toggle='modal' onclick='delete_reqsingle({$requirements_id})'  data-target='#singlereqModal' class='close'aria-label='Close'><span aria-hidden='true'>&times;</span></button>            ";
+    echo"                     <button type='button' onclick='delete_reqsingle({$requirements_id})' class='close'aria-label='Close'><span aria-hidden='true'>&times;</span></button>            ";
     
 
     

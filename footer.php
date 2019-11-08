@@ -3,11 +3,16 @@
 </div>
 
 <script>
+delete_dealsingle
+//SINGLE DEAL 
+function delete_reqsingle( id ){
+         document.location = 'deletedealssingle.php?id=' + id;
+     } 
+
 //SINGLE DELETE REQ
 function delete_reqsingle( id ){
          document.location = 'deletereqsingle.php?id=' + id;
      } 
-
 
 // confirm record deletion
 function delete_user(){
