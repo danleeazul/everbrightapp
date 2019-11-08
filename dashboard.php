@@ -13,7 +13,7 @@ $page_title="Everbright App";
 include_once 'header.php';
 
 include_once 'config/database.php';
-$query = 'SELECT deals_id, name, building, unit_no, type, deals_date, FORMAT(price, 2) FROM tbl_deals ORDER BY deals_id DESC';
+$query = 'SELECT deals_id, name, building, unit_no, type, deals_date, FORMAT(2) price FROM tbl_deals ORDER BY deals_id DESC';
 $stmt = $con->prepare($query);
 $stmt->execute();
 
