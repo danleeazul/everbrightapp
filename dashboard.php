@@ -162,7 +162,28 @@ echo "<div class='mdc-drawer-app-content'>";
         while ($rowa = $stmta->fetch(PDO::FETCH_ASSOC)){
         
             extract($rowa);
-           
+    
+                      //SINGLE REQ MODAL
+  echo "  <div class='modal fade' id='singlereqModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>";
+  echo " <div class='modal-dialog' role='document'>";
+  echo "   <div class='modal-content'>";
+  echo "     <div class='modal-header'>";
+  echo "       <h5 class='modal-title' id='exampleModalLabel'>Remove Requirements</h5>";
+  echo "       <button type='button' class='close' data-dismiss='modal' aria-label='Close'>";
+  echo "        <span aria-hidden='true'>&times;</span>";
+  echo "      </button>";
+  echo "    </div>";
+  echo "   <div class='modal-body'>";
+  echo "  <p>Are you sure you want to remove this requirement id {$requirements_id}?</p>";
+  echo "    </div>";
+  echo "   <div class='modal-footer'>";
+  echo "    <button type='button' class='btn btn-outline-secondary' data-dismiss='modal'>Close</button>";
+  echo "     <button type='button' onclick='delete_reqsingle({$requirements_id})' class='btn btn-danger'>Remove</button>";
+  echo "   </div>";
+  echo "  </div>";
+  echo " </div>";
+  echo " </div>";
+//END SINGLE REQ MODAL
            
 
     echo "              <li class='list-group-item d-flex justify-content-between lh-condensed'>";
@@ -185,27 +206,7 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "                    </table>";
     echo"                     <button type='button' data-toggle='modal' data-target='#singlereqModal' class='close'aria-label='Close'><span aria-hidden='true'>&times;</span></button>            ";
     
-          //SINGLE REQ MODAL
-  echo "  <div class='modal fade' id='singlereqModal' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>";
-  echo " <div class='modal-dialog' role='document'>";
-  echo "   <div class='modal-content'>";
-  echo "     <div class='modal-header'>";
-  echo "       <h5 class='modal-title' id='exampleModalLabel'>Remove Requirements</h5>";
-  echo "       <button type='button' class='close' data-dismiss='modal' aria-label='Close'>";
-  echo "        <span aria-hidden='true'>&times;</span>";
-  echo "      </button>";
-  echo "    </div>";
-  echo "   <div class='modal-body'>";
-  echo "  <p>Are you sure you want to remove this requirement id {$requirements_id}?</p>";
-  echo "    </div>";
-  echo "   <div class='modal-footer'>";
-  echo "    <button type='button' class='btn btn-outline-secondary' data-dismiss='modal'>Close</button>";
-  echo "     <button type='button' onclick='delete_reqsingle({$requirements_id})' class='btn btn-danger'>Remove</button>";
-  echo "   </div>";
-  echo "  </div>";
-  echo " </div>";
-  echo " </div>";
-//END SINGLE REQ MODAL
+
     
     echo "              </li>";
 
