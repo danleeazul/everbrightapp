@@ -39,7 +39,7 @@ if($_POST){
     try{
      
         // insert query
-        $query = "INSERT INTO tbl_users SET firstname=:firstname, middlename=:middlename, lastname=:lastname,  address=:address, birthdate=:birthdate, contact_number=:contact_number, email=:email, password=:password, access_level=:access_level, status=:status, sss=:sss, pagibig=:pagibig, tin=:tin";
+        $query = "INSERT INTO tbl_users SET firstname=:firstname, middlename=:middlename, lastname=:lastname, position=:position,  address=:address, birthdate=:birthdate, contact_number=:contact_number, email=:email, password=:password, access_level=:access_level, status=:status, sss=:sss, pagibig=:pagibig, tin=:tin";
  
         // prepare query for execution
         $stmt = $con->prepare($query);
@@ -50,6 +50,7 @@ if($_POST){
         $middlename=htmlspecialchars(strip_tags($_POST['middlename']));
         $address=htmlspecialchars(strip_tags($_POST['address']));
         $birhdate=htmlspecialchars(strip_tags($_POST['birthdate']));
+        $position=htmlspecialchars(strip_tags($_POST['position']));
         $contact_number=htmlspecialchars(strip_tags($_POST['contact_number']));
         $email=htmlspecialchars(strip_tags($_POST['email']));
         $password=htmlspecialchars(strip_tags($_POST['password']));
@@ -68,6 +69,7 @@ if($_POST){
         $stmt->bindParam(':middlename', $middlename);
         $stmt->bindParam(':address', $address);
         $stmt->bindParam(':birthdate', $birthdate);
+        $stmt->bindParam(':position', $position);
         $stmt->bindParam(':contact_number', $contact_number);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':status', $status);
