@@ -170,7 +170,6 @@ if($_POST){
             <div class="text-right">
             <a href='indexsample.php'><button type="button" href='dashboard.php' class="btn btn-outline-secondary">Cancel</button></a>
             <button type="submit" value='Save'  class="btn btn-primary">Submit</button>
-            
             </div>
             
 
