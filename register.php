@@ -150,21 +150,21 @@ if($_POST){
            <div class="row">
            <div class="col-md-4 mb-3">
                  <label for="firstName">SSS No</label>
-                 <input type="text" class="form-control" name="sss" pattern="\d{3}-?\d{2}-?\d{4}" placeholder="" value="" required>  
+                 <input type="text" class="form-control" name="sss" onkeypress="return isNumberKey(event)" placeholder="" value="" required>  
                  <div class="invalid-feedback">
                     Valid SSS is required.
                     </div>  
               </div>
               <div class="col-md-4 mb-3">
                  <label for="firstName">PagIbig No</label>
-                 <input type="text" class="form-control" name="pagibig" placeholder="" value="" required>  
+                 <input type="text" class="form-control" name="pagibig" onkeypress="return isNumberKey(event)" placeholder="" value="" required>  
                  <div class="invalid-feedback">
                     Valid PagIbig No is required.
                     </div>  
               </div>
               <div class="col-md-4 mb-3">
                  <label for="firstName">Tin No</label>
-                 <input type="text" class="form-control" name="sss" placeholder="" value="" required>  
+                 <input type="text" class="form-control" name="sss" onkeypress="return isNumberKey(event)" placeholder="" value="" required>  
                  <div class="invalid-feedback">
                     Valid SSS is required.
                     </div>  
