@@ -137,7 +137,7 @@ if($_POST){
  
           <div class="col-md-4 mb-3">
              <label for="firstName">Price</label>
-             <input type="text" class="form-control" name="price" placeholder="Php" value="" required>    
+             <input type="text" class="form-control" name="price" placeholder="Php" value="" onkeypress="return isNumberKey(event)"  required>    
              <div class="invalid-feedback">
                     Valid price is required.
                     </div>         
@@ -177,6 +177,17 @@ if($_POST){
 
 
  <script>
+function isNumberKey(evt)
+       {
+          var charCode = (evt.which) ? evt.which : evt.keyCode;
+          if (charCode != 46 && charCode > 31 
+            && (charCode < 48 || charCode > 57))
+             return false;
+
+          return true;
+       }
+
+
           (function () {
   'use strict'
 
