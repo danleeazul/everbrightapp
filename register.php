@@ -39,7 +39,7 @@ if($_POST){
     try{
      
         // insert query
-        $query = "INSERT INTO tbl_users SET firstname=:firstname, middlename=:middlename, lastname=:lastname, position=:position,  address=:address, birthdate=:birthdate, contact_number=:contact_number, email=:email, password=:password, access_level=:access_level, status=:status, sss=:sss, pagibig=:pagibig, tin=:tin";
+        $query = "INSERT INTO tbl_users SET firstname=:firstname, middlename=:middlename, lastname=:lastname, position=:position, email=:email, contact_number=:contact_number, birthdate=:birthdate, address=:address, password=:password, sss=:sss, pagibig=:pagibig, tin=:tin, access_level=:access_level, status=:status, ";
  
         // prepare query for execution
         $stmt = $con->prepare($query);
@@ -49,7 +49,7 @@ if($_POST){
         $middlename=htmlspecialchars(strip_tags($_POST['middlename']));
         $lastname=htmlspecialchars(strip_tags($_POST['lastname']));
         $address=htmlspecialchars(strip_tags($_POST['address']));
-        $birhdate=htmlspecialchars(strip_tags($_POST['birthdate']));
+        $birthdate=htmlspecialchars(strip_tags($_POST['birthdate']));
         $contact_number=htmlspecialchars(strip_tags($_POST['contact_number']));
         $position=htmlspecialchars(strip_tags($_POST['position']));
         $email=htmlspecialchars(strip_tags($_POST['email']));
@@ -66,17 +66,18 @@ if($_POST){
         // bind the parameters
         $stmt->bindParam(':firstname', $firstname);
         $stmt->bindParam(':middlename', $middlename);
-        $stmt->bindParam(':lastname', $lastname);      
-        $stmt->bindParam(':address', $address);
-        $stmt->bindParam(':contact_number', $contact_number);
+        $stmt->bindParam(':lastname', $lastname);  
         $stmt->bindParam(':position', $position);
         $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':contact_number', $contact_number);
+        $stmt->bindParam(':address', $address);
         $stmt->bindParam(':password', $password);
-        $stmt->bindParam(':status', $status);
-        $stmt->bindParam(':access_level', $access_level);
         $stmt->bindParam(':sss', $sss);
         $stmt->bindParam(':pagibig', $pagibig);
         $stmt->bindParam(':tin', $tin);
+        $stmt->bindParam(':access_level', $access_level);
+        $stmt->bindParam(':status', $status);
+  
 
         //  // hash the password before saving to database
         // $password_hash = password_hash($password, PASSWORD_BCRYPT);
