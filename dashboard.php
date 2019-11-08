@@ -204,7 +204,7 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "                        </td>";
     echo "                        </tr>";
     echo "                    </table>";
-    echo"                     <button type='button' data-toggle='modal' onclick='delete_reqsingle({$requirements_id})' data-target='#singlereqModal' class='close'aria-label='Close'><span aria-hidden='true'>&times;</span></button>            ";
+    echo"                     <button type='button' data-toggle='modal'  data-target='#singlereqModal' class='close'aria-label='Close'><span aria-hidden='true'>&times;</span></button>            ";
     
 
     
