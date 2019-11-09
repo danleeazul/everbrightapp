@@ -63,6 +63,7 @@ if($_POST){
 
 
 
+
         // bind the parameters
         $stmt->bindParam(':firstname', $firstname);
         $stmt->bindParam(':middlename', $middlename);
