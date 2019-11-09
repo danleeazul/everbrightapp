@@ -1,8 +1,6 @@
 <?php
 // core configuration
-include_once "https:www.everbright.com.ph/config/core.php";
-
-
+include_once "../config/core.php";
  
 // set page title
 $page_title="Everbright App";
@@ -10,11 +8,11 @@ $page_title="Everbright App";
 // include login checker
 // $require_login=true;
 // include_once "login_checker.php";
+
 // include page header HTML
-include_once 'https:www.everbright.com.ph/header.php';
+include_once '../header.php';
 
-
-include_once 'https:www.everbright.com.ph/config/database.php';
+include_once '../config/database.php';
 $query = 'SELECT deals_id, name, building, unit_no, type, deals_date, price FROM tbl_deals ORDER BY deals_id DESC';
 $stmt = $con->prepare($query);
 $stmt->execute();
@@ -277,7 +275,7 @@ echo "<div class='mdc-drawer-app-content'>";
     echo " </div>";
 //END LOGOUT MODAL
 
-    include 'https:www.everbright.com.ph/footer.php';
+    include '../footer.php';
     ?>
             
 
