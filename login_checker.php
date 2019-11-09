@@ -3,7 +3,7 @@
  
 // if access level was not 'Admin', redirect him to login page
 if(isset($_SESSION['access_level']) && $_SESSION['access_level']=="Admin"){
-    header("Location: {$home_url}admin/dashboard.php?action=logged_in_as_admin");
+    header("Location: {$home_url}admin/dashboard.php");
 }
  
 // if $require_login was set and value is 'true'
