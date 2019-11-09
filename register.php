@@ -39,7 +39,7 @@ if($_POST){
     try{
      
         // insert query
-        $query = "INSERT INTO tbl_users SET firstname=:firstname, middlename=:middlename, lastname=:lastname, position=:position, email=:email, contact_number=:contact_number, birthdate=:birthdate, address=:address, password=:password, sss=:sss, pagibig=:pagibig, tin=:tin, access_level=:access_level, status=:status, ";
+        $query = "INSERT INTO tbl_users SET firstname=:firstname, middlename=:middlename, lastname=:lastname, position=:position, email=:email, contact_number=:contact_number, birthdate=:birthdate, address=:address, password=:password, sss=:sss, pagibig=:pagibig, tin=:tin, access_level=:access_level, status=:status";
  
         // prepare query for execution
         $stmt = $con->prepare($query);
