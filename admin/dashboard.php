@@ -83,6 +83,10 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "          <div class='col-md-5 order-md-2 mb-4'>";
     echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
     echo "              <span class='text-muted'>Closed Deals &nbsp<span class='badge badge-secondary'>{$num}</span></span>";
+    echo " <div> ";
+    echo "           <a><button type='button' data-toggle='modal' data-target='#dealsModal' class='btn btn-outline-danger btn-sm'>Remove</button></a>"; 
+    echo "           <a href='create_deals.php'><button type='button' href='create_deals.php' class='btn btn-primary btn-sm'>Add</button></a>"; 
+    echo " </div> ";
 
     echo "            </h4>";
    
@@ -114,6 +118,7 @@ echo "<div class='mdc-drawer-app-content'>";
         echo "                        </td>";
         echo "                        </tr>";
         echo "                    </table>";
+        echo"                     <button type='button' onclick='delete_dealsingle({$deals_id})'  class='close'aria-label='Close'><span aria-hidden='true'>&times;</span></button>            ";
         echo "              </li>";
                             
         
@@ -140,6 +145,7 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
     echo "                    <span class='text-muted'>Requirements</span>"; 
     echo "          <div>";   
+    echo "           <a><button type='button' data-toggle='modal' data-target='#exampleModal' class='btn btn-outline-danger btn-sm'>Remove</button></a>"; 
     echo "           <a href='create_req.php'><button type='button' href='create_req.php' class='btn btn-primary btn-sm'>Add</button></a>";
     echo "            </h4>";
     echo "          <div>"; 
@@ -177,6 +183,7 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "                        </td>";
     echo "                        </tr>";
     echo "                    </table>";
+    echo"                     <button type='button' onclick='delete_reqsingle({$requirements_id})' class='close'aria-label='Close'><span aria-hidden='true'>&times;</span></button>            ";
     
 
     
