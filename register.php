@@ -72,7 +72,7 @@ if($_POST){
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':contact_number', $contact_number);
         $stmt->bindParam(':address', $address);
-        $stmt->bindParam(':password', $password);
+        //$stmt->bindParam(':password', $password);
         $stmt->bindParam(':sss', $sss);
         $stmt->bindParam(':pagibig', $pagibig);
         $stmt->bindParam(':tin', $tin);
@@ -80,9 +80,9 @@ if($_POST){
         $stmt->bindParam(':status', $status);
   
 
-        //  // hash the password before saving to database
-        // $password_hash = password_hash($password, PASSWORD_BCRYPT);
-        // $stmt->bindParam(':password', $password_hash);
+        // hash the password before saving to database
+         $password_hash = password_hash($password, PASSWORD_BCRYPT);
+        $stmt->bindParam(':password', $password_hash);
 
         $birthdate = date('Y-m-d', strtotime($birthdate));
          $stmt->bindParam(':birthdate', $birthdate);
