@@ -8,12 +8,14 @@ $page_title="Everbright App";
 // include login checker
 $require_login=true;
 include_once "login_checker.php";
+
+ // to prevent undefined index notice
+ $action = isset($_GET['action']) ? $_GET['action'] : "";
  
 // include page header HTML
 include_once 'header.php';
 
-    // to prevent undefined index notice
-    $action = isset($_GET['action']) ? $_GET['action'] : "";
+   
 
 include_once 'config/database.php';
 $query = 'SELECT deals_id, name, building, unit_no, type, deals_date, price FROM tbl_deals ORDER BY deals_id DESC';
