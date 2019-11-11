@@ -301,7 +301,7 @@ if($_POST){
         
     </div> <!-- end .container -->
       
-    <p id="image" style="visibility: hidden;"  name="image">url</p>     
+    <!-- <p id="image" style="visibility: hidden;"  name="image">url</p>      -->
 
 
  <!-- Optional JavaScript -->
@@ -329,13 +329,6 @@ $('#birthdate').datepicker({
    document.getElementById("deals_datex").innerHTML = x;
  }
 
-function GetSelectedValue(){
-  var e = document.getElementById("nameimage");
-  var result = e.options[e.selectedIndex].value;
-  var unitcode = result
-
-document.getElementById("image").innerHTML = unitcode;
-}
 
     </script>
 
