@@ -21,9 +21,9 @@
 include_once "config/core.php"; 
 
 // include login checker
-$require_login=true;
+$require_login=false;
 include_once "login_checker.php";
-//$access_denied=false;
+$access_denied=false;
     if($_POST){
     try{
         include_once "config/database.php";

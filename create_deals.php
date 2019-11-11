@@ -27,6 +27,8 @@
         <!-- PHP insert code will be here -->
         <?php
 
+$require_login=true;
+include_once "login_checker.php";
 
 if($_POST){
  
