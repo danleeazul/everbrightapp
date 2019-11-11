@@ -240,7 +240,7 @@ if($_POST){
                     </div>  
               </div>
 
-              <input name="status" value="1" style="visibility: hidden;">
+              <input name="status" value="0" style="visibility: hidden;">
               <input name="access_level" value="Customer" style="visibility: hidden;">
            </div> <!--Row -->
 
