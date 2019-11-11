@@ -118,10 +118,6 @@ if($_POST){
                 $file_upload_error_messages.="<div>Only JPG, JPEG, PNG files are allowed.</div>";
             }
 
-            // make sure file does not exist
-            if(file_exists($target_file)){
-                $file_upload_error_messages.="<div>Image already exists. Try to change file name.</div>";
-            }
 
             // make sure the 'uploads' folder exists
             // if not, create it
