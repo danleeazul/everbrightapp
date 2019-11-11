@@ -67,7 +67,7 @@ echo "                  </aside>";
     echo "  <div class='mdc-top-app-bar__row'>";
     echo "  <section class='mdc-top-app-bar__section mdc-top-app-bar__section--align-start'>";
     echo "   <a type='button' onclick='openNav()' id='sidebarCollapse' class='demo-menu material-icons mdc-top-app-bar__navigation-icon'>menu</a>";
-    echo "   <h3 style='margin-left: 15px;'>Listing</h3>";
+    echo "   <h3 style='margin-left: 15px;'>Users</h3>";
     echo "  </section>";
     echo " </div>";
     echo " </header>";
@@ -80,7 +80,7 @@ echo "                  </aside>";
 //  INSERT HERE THE CONTENT
    
 
-echo "        <div class='col-md-7 order-md-1'>";
+echo "        <div class='col-md-12 order-md-1'>";
 echo "            <h4 class='d-flex justify-content-between align-items-center mb-3'>";
 echo "                    <span class='text-muted'>Users</span>"; 
 echo "          <div>";   
@@ -111,7 +111,7 @@ echo "                  <img  src='' width='50' height='50'>";
 echo "                    </td>";
 echo "                     <td style='width: 800px; padding-left: 10px; padding-right: 10px;'>";
 echo "                  <h6 class='my-0 card-title'>{$firstname} {$lastname}</h6>";
-echo "                  <small>{$positions}</small>";
+echo "                  <small>{$position}</small>";
 echo "                  <br />";
 echo "                  <p class='card-text cardtextmin'></p>";
 echo "                        </td>";
