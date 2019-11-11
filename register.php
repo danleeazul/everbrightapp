@@ -237,7 +237,7 @@ if($_POST){
 
               <div class="col-md-4 mb-3">
                  <label for="customFile">Profile Picture</label>
-                 <input type="file" name="image" class="form-control custom-file-input" id="customFile" placeholder="" value="" required>
+                 <input type="file" name="image" class="custom-file-input" id="customFile" placeholder="" value="" required>
                  <div class="invalid-feedback">
                     Valid Photo is required.
                     </div>  
