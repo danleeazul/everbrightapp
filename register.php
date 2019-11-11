@@ -247,10 +247,10 @@ if($_POST){
            <h4 class="mb-3">Login Credentials</h4>
            <div class="row">
            <div class="col-md-4 mb-3">
-                 <label for="firstName">Email</label>
+                 <label for="firstName">Username</label>
                  <input type="text" class="form-control" name="email" placeholder="" value="" required>  
                  <div class="invalid-feedback">
-                    Valid Email is required.
+                    Valid username is required.
                  </div>  
               </div>
 

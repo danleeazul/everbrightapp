@@ -118,7 +118,7 @@ echo "                  <p class='card-text cardtextmin'></p>";
 echo "                        </td>";
 echo "                        <td style='width: 100px;'>";
     
-echo "                <span class='text-muted'></span>";
+echo "                <span class='badge badge-pill badge-warning'>Pending</span>";
 echo "                        </td>";
 echo "                        </tr>";
 echo "                    </table>";
