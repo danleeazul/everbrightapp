@@ -1,6 +1,6 @@
 <?php
 // core configuration
-include_once "config/core.php";
+include_once "../config/core.php";
  
 // set page title
 $page_title="Everbright App";
@@ -10,9 +10,9 @@ $page_title="Everbright App";
 //include_once "login_checker_two.php";
  
 // include page header HTML
-include_once 'header.php';
+include_once '../header.php';
 
-include_once 'config/database.php';
+include_once '../config/database.php';
 $query = 'SELECT * FROM tbl_deals ORDER BY deals_id DESC';
 $stmt = $con->prepare($query);
 $stmt->execute();
@@ -166,5 +166,5 @@ echo " </div>";
 echo " </div>";
 //END LOGOUT MODAL
 
-    include 'footer.php';
+    include '../footer.php';
     ?>
