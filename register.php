@@ -291,7 +291,7 @@ if($_POST){
        </div>
             <hr class="mb-4">
             <div class="text-right">
-            <a href='www.everbright.com.ph/everbrightapp/admin/users.php'><button type="button" href='www.everbright.com.ph/everbrightapp/admin/users.php' class="btn btn-outline-secondary">Cancel</button></a>
+            <a href='www.everbright.com.ph/everbrightapp/admin/users.php'><button type="button" class="btn btn-outline-secondary">Cancel</button></a>
             <button type="submit" value='Save'  class="btn btn-primary">Submit</button>
             </div>
             
