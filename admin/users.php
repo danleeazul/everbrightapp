@@ -103,7 +103,7 @@ if($numa>0){
     
         extract($rowa);
        
-echo "  <a href='#'>";
+echo "  <button href='#'>";
 echo "              <li class='list-group-item list-group-item-action d-flex justify-content-between lh-condensed'>";
 echo "  <table style='border: none;'>";
 echo "                     <tr>";
@@ -130,7 +130,7 @@ if($status==0){
 echo "                        </td>";
 echo "                        </tr>";
 echo "                    </table>";
-echo "                    </a>";
+echo "                    </button>";
 echo"                     <button type='button' class='btn btn-default'><i class='fas fa-pen'></i></button>";
 // onclick='delete_reqsingle({$id}')    
 
