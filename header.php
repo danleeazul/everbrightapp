@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://www.everbright.com.ph/everbrightapp/libs/css/style.css">
+    <script src="https://kit.fontawesome.com/e374117953.js" crossorigin="anonymous"></script>
 
   </head>
   <body class="mdc-typography">
