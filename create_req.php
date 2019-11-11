@@ -4,7 +4,7 @@ include_once "config/core.php";
 
 // include login checker
 $require_login=true;
-include_once "login_checker.php";
+include_once "login_checker_two.php";
 
  // to prevent undefined index notice
  $action = isset($_GET['action']) ? $_GET['action'] : "";

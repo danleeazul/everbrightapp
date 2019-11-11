@@ -11,21 +11,21 @@ function delete_dealsingle( id ){
 
 //SINGLE DELETE REQ
 function delete_reqsingle( id ){
-         document.location = 'deletereqsingle.php?id=' + id;
+         document.location = 'https://www.everbright.com.ph/everbrightapp/deletereqsingle.php?id=' + id;
      } 
 
 // confirm record deletion
 function delete_user(){
-         document.location = 'deletereq.php';
+         document.location = 'https://www.everbright.com.ph/everbrightapp/deletereq.php';
      } 
 
      // confirm record deletion
 function delete_deals(){
-         document.location = 'deletedeals.php';
+         document.location = 'https://www.everbright.com.ph/everbrightapp/deletedeals.php';
      }
 
 function logout_modals(){
-         document.location = 'login.php';
+         document.location = 'https://www.everbright.com.ph/everbrightapp/login.php';
      }     
 
 
