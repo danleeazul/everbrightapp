@@ -181,3 +181,9 @@
        }
      
   }
+
+  a.deco-none {
+    color:#000000 !important;
+    text-decoration:none;
+
+}
