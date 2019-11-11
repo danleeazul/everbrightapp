@@ -95,3 +95,9 @@ div#blueimp-gallery div.modal{ overflow: visible; }
     -webkit-border-radius: 50%;
     border-radius: 50%;
 }
+
+a.deco-none {
+    color:#000000 !important;
+    text-decoration:none;
+
+}

@@ -103,7 +103,7 @@ if($numa>0){
     
         extract($rowa);
        
-echo "  <a href=#>";
+echo "  <a href=# class='deco-none'>";
 echo "              <li class='list-group-item list-group-item-action d-flex justify-content-between lh-condensed'>";
 echo "  <table style='border: none;'>";
 echo "                     <tr>";
