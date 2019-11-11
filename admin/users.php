@@ -37,7 +37,7 @@ echo "                      <nav class='mdc-list'>";
                             if(isset($_SESSION['access_level']) && $_SESSION['access_level']=="Customer"){
                                 echo " <a id='navbutton' class='mdc-list-item' href='{$home_url}dashboard.php' >";
                             }
-echo "                              <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>dashboard</i>";
+echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>dashboard</i>";
 echo "                          <span class='mdc-list-item__text'>Dashboard</span>";
 echo "                        </a>";
 
@@ -121,8 +121,10 @@ echo "                <span class='text-muted'></span>";
 echo "                        </td>";
 echo "                        </tr>";
 echo "                    </table>";
-echo"                     <button type='button' class='btn btn-default'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></button>";
+echo"                     <button type='button' class='btn btn-default'><i class='fas fa-pen'></i></button>";
 // onclick='delete_reqsingle({$id}')    
+
+
 
  
 echo "              </li>";

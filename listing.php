@@ -46,10 +46,16 @@ echo "                          <i class='material-icons mdc-list-item__graphic'
 echo "                          <span class='mdc-list-item__text'>Listing</span>";
 echo "                        </a>";
 
-echo "                        <a id='navbutton' class='mdc-list-item' >";
+                                if(isset($_SESSION['access_level']) && $_SESSION['access_level']=="Admin"){
+echo "                        <a id='navbutton' href='{$home_url}admin/users.php' class='mdc-list-item' >";
 echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>supervisor_account</i>";
 echo "                          <span class='mdc-list-item__text'>Users</span>";
 echo "                        </a>";
+                                }
+                                if(isset($_SESSION['access_level']) && $_SESSION['access_level']=="Customer"){
+
+                                }
+
 
 echo "                        <a id='navbutton' data-toggle='modal' data-target='#logoutModal' class='mdc-list-item' >";
 echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>exit_to_app</i>";
