@@ -169,7 +169,16 @@ if($_POST){
        </div>
             <hr class="mb-4">
             <div class="text-right">
-            <a href='dashboard.php'><button type="button" href='dashboard.php' class="btn btn-outline-secondary">Cancel</button></a>
+            <?php
+                  if(isset($_SESSION['access_level']) && $_SESSION['access_level']=="Admin"){
+                      //header("Location: {$home_url}admin/dashboard.php");
+                      echo "            <a href='{$home_url}admin/dashboard.php'><button type='button' href='{$home_url}admin/dashboard.php' class='btn btn-outline-secondary'>Cancel</button></a>                  ";
+                  }
+                  if(isset($_SESSION['access_level']) && $_SESSION['access_level']=="Customer"){
+                    echo "            <a href='dashboard.php'><button type='button' href='dashboard.php' class='btn btn-outline-secondary'>Cancel</button></a>                  ";
+                  }
+            ?>
+            <!-- <a href='dashboard.php'><button type="button" href='dashboard.php' class="btn btn-outline-secondary">Cancel</button></a> -->
             <button type="submit" value='Save'  class="btn btn-primary">Submit</button>
             </div>
             
