@@ -108,7 +108,7 @@ echo "              <li class='list-group-item d-flex justify-content-between lh
 echo "  <table style='border: none;'>";
 echo "                     <tr>";
 echo "                      <td>";
-echo "           $image    <img  src='uploads/{$image}' width='50' height='50'>";
+echo "       <img  src='../uploads/{$image}' width='50' height='50'>";
 echo "                    </td>";
 echo "                     <td style='width: 800px; padding-left: 10px; padding-right: 10px;'>";
 echo "                  <h6 class='my-0 card-title'>{$firstname} {$lastname}</h6>";
