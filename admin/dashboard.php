@@ -9,7 +9,6 @@ $page_title="Everbright App";
 $require_login=true;
 include_once "../admin/login_checker.php";
 
-
 // include page header HTML
 include_once '../header.php';
 
@@ -35,10 +34,17 @@ echo "                             <a id='navbutton' class='mdc-list-item mdc-li
 echo "                              <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>dashboard</i>";
 echo "                        <span class='mdc-list-item__text'>Dashboard</span>";
 echo "                        </a>";
+
 echo "                        <a id='navbutton' class='mdc-list-item' href='{$home_url}listing.php' >";
 echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>format_list_bulleted</i>";
 echo "                          <span class='mdc-list-item__text'>Listing</span>";
 echo "                        </a>";
+
+echo "                        <a id='navbutton' class='mdc-list-item mdc-list-item--activated' >";
+echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>supervisor_account</i>";
+echo "                          <span class='mdc-list-item__text'>Users</span>";
+echo "                        </a>";
+
 echo "                        <a id='navbutton' data-toggle='modal' data-target='#logoutModal' class='mdc-list-item' >";
 echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>exit_to_app</i>";
 echo "                          <span class='mdc-list-item__text'>Logout</span>";
