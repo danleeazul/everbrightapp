@@ -236,8 +236,13 @@ if($_POST){
               </div>
 
               <div class="col-md-4 mb-3">
-                 <label for="customFile">Profile Picture</label>
-                 <input type="file" name="image" class="custom-file-input" id="customFile" placeholder="" value="" required>
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" name="image" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+                <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+            </div>
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
+            </div>
                  <div class="invalid-feedback">
                     Valid Photo is required.
                     </div>  
@@ -254,7 +259,7 @@ if($_POST){
                  <input type="text" class="form-control" name="email" placeholder="" value="" required>  
                  <div class="invalid-feedback">
                     Valid Email is required.
-                    </div>  
+                 </div>  
               </div>
 
               <div class="col-md-4 mb-3">
