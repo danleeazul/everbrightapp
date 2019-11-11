@@ -40,7 +40,7 @@ echo "                          <i class='material-icons mdc-list-item__graphic'
 echo "                          <span class='mdc-list-item__text'>Listing</span>";
 echo "                        </a>";
 
-echo "                        <a id='navbutton' href='{$home_url}/admin/users.php' class='mdc-list-item' >";
+echo "                        <a id='navbutton' href='{$home_url}admin/users.php' class='mdc-list-item' >";
 echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>supervisor_account</i>";
 echo "                          <span class='mdc-list-item__text'>Users</span>";
 echo "                        </a>";
