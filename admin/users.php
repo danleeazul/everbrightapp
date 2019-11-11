@@ -130,8 +130,7 @@ if($status==0){
 echo "                        </td>";
 echo "                        </tr>";
 echo "                    </table>";
-echo "                    </a>";
-echo "  </div>";
+
 echo"                     <button type='button' class='btn btn-default'><i class='fas fa-pen'></i></button>";
 // onclick='delete_reqsingle({$id}')    
 
@@ -140,7 +139,8 @@ echo"                     <button type='button' class='btn btn-default'><i class
  
 echo "              </li>";
 
-
+echo "                    </a>";
+echo "  </div>";
 
 
     }//while
