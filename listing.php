@@ -7,7 +7,7 @@ $page_title="Everbright App";
  
  //include login checker
  $require_login=true;
- include_once "login_checker_two.php";
+include_once "login_checker_two.php";
  
 // include page header HTML
 include_once 'header.php';
@@ -31,10 +31,11 @@ echo "                    <div style='height: 90%;' class='mdc-drawer__content'>
 echo "                      <nav class='mdc-list'>";
 
                             if(isset($_SESSION['access_level']) && $_SESSION['access_level']=="Admin"){
-                                echo "            <a href='{$home_url}admin/dashboard.php'><button type='button' href='{$home_url}admin/dashboard.php' class='btn btn-outline-secondary'>Cancel</button></a>                  ";
+                                echo " <a id='navbutton' class='mdc-list-item' href='{$home_url}admin/dashboard.php' >";
+
                             }
                             if(isset($_SESSION['access_level']) && $_SESSION['access_level']=="Customer"){
-                            echo "            <a href='dashboard.php'><button type='button' href='dashboard.php' class='btn btn-outline-secondary'>Cancel</button></a>                  ";
+                                echo " <a id='navbutton' class='mdc-list-item' href='{$home_url}dashboard.php' >";
                             }
 echo "                              <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>dashboard</i>";
 echo "                          <span class='mdc-list-item__text'>Dashboard</span>";
