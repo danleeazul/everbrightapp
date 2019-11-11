@@ -236,12 +236,10 @@ if($_POST){
               </div>
 
               <div class="col-md-4 mb-3">
+              <label for="firstName">Picture</label>
               <div class="custom-file">
                 <input type="file" class="custom-file-input" name="image" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
                 <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
-            </div>
-            <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
             </div>
                  <div class="invalid-feedback">
                     Valid Photo is required.
