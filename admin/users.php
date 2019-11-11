@@ -118,11 +118,11 @@ echo "                  <p class='card-text cardtextmin'></p>";
 echo "                        </td>";
 echo "                        <td style='width: 100px;'>";
 
-if($user->status==1){
+if($status==1){
     echo "                <span class='badge badge-pill badge-primary'>Active</span>";
 
 }
-if($user->status==0){
+if($status==0){
     echo "                <span class='badge badge-pill badge-warning'>Pending</span>";
 }
 
