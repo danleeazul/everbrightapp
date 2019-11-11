@@ -5,9 +5,9 @@ include_once "../admin/core.php";
 // set page title
 $page_title="Everbright App";
  
-// include login checker
-// $require_login=true;
-//include_once "../admin/login_checker.php";
+ //include login checker
+ $require_login=true;
+include_once "../admin/login_checker.php";
 
 
 // include page header HTML
@@ -86,7 +86,7 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "              <span class='text-muted'>Closed Deals &nbsp<span class='badge badge-secondary'>{$num}</span></span>";
     echo " <div> ";
     echo "           <a><button type='button' data-toggle='modal' data-target='#dealsModal' class='btn btn-outline-danger btn-sm'>Remove</button></a>"; 
-    echo "           <a href='create_deals.php'><button type='button' href='create_deals.php' class='btn btn-primary btn-sm'>Add</button></a>"; 
+    echo "           <a href='{$home_url}create_deals.php'><button type='button' href='{$home_url}create_deals.php' class='btn btn-primary btn-sm'>Add</button></a>"; 
     echo " </div> ";
 
     echo "            </h4>";
@@ -147,7 +147,7 @@ echo "<div class='mdc-drawer-app-content'>";
     echo "                    <span class='text-muted'>Requirements</span>"; 
     echo "          <div>";   
     echo "           <a><button type='button' data-toggle='modal' data-target='#exampleModal' class='btn btn-outline-danger btn-sm'>Remove</button></a>"; 
-    echo "           <a href='create_req.php'><button type='button' href='create_req.php' class='btn btn-primary btn-sm'>Add</button></a>";
+    echo "           <a href='{$home_url}create_req.php'><button type='button' href='{$home_url}create_req.php' class='btn btn-primary btn-sm'>Add</button></a>";
     echo "            </h4>";
     echo "          <div>"; 
 
