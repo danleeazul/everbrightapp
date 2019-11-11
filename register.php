@@ -237,10 +237,11 @@ if($_POST){
 
               <div class="col-md-4 mb-3">
               <label for="firstName">Picture</label>
-              <div class="custom-file">
+              <input type="file" class="form-control" name="image">  
+              <!-- <div class="custom-file">
                 <input type="file" class="custom-file-input" name="image" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
                 <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
-            </div>
+            </div> -->
                  <div class="invalid-feedback">
                     Valid Photo is required.
                     </div>  
