@@ -1,3 +1,12 @@
+<?php
+// include login checker
+$require_login=true;
+include_once "login_checker.php";
+
+ // to prevent undefined index notice
+ $action = isset($_GET['action']) ? $_GET['action'] : "";
+?>
+
 <!DOCTYPE HTML>
 <html>
 <head>
