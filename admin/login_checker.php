@@ -14,7 +14,7 @@ else if($_SESSION['access_level']!="Admin"){
  
 else{
     // no problem, stay on current page
-    header("Location: {$home_url}/admin/dashboard.php");
+    header("Location: {$home_url}admin/dashboard.php");
 
 }
 ?>
