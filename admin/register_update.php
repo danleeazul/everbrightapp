@@ -93,7 +93,6 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
             $contact_number=htmlspecialchars(strip_tags($_POST['contact_number']));
             $position=htmlspecialchars(strip_tags($_POST['position']));
             $email=htmlspecialchars(strip_tags($_POST['email']));
-            $status=htmlspecialchars(strip_tags($_POST['status']));
             $access_level=htmlspecialchars(strip_tags($_POST['access_level']));
             $sss=htmlspecialchars(strip_tags($_POST['sss']));
             $pagibig=htmlspecialchars(strip_tags($_POST['pagibig']));
