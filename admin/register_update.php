@@ -303,7 +303,7 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
              </div> <!-- ROW -->
  
            <h4 class="mb-3">Government ID's</h4>
-           <div class="row">
+        <div class="row">
            <div class="col-md-4 mb-3">
                  <label for="firstName">SSS No</label>
                  <input type="text" class="form-control" name="sss" onkeypress="return isNumberKey(event)" placeholder="" value="<?php echo htmlspecialchars($sss, ENT_QUOTES);  ?>">  
@@ -319,9 +319,22 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
                  <input type="text" class="form-control" name="tin" onkeypress="return isNumberKey(event)" placeholder="" value="<?php echo htmlspecialchars($tin, ENT_QUOTES);  ?>">  
               </div>        
        </div>
-       <div class="row">
+
+
        <h4 class="mb-3">Access Level</h4>
-               <br />
+        <div class="row">
+           <div class="col-md-4 mb-3">
+                 <label for="firstName">Status</label>
+                 <input type="text" class="form-control" name="sss" onkeypress="return isNumberKey(event)" placeholder="" value="<?php echo htmlspecialchars($sss, ENT_QUOTES);  ?>">  
+                  
+              </div>
+              <div class="col-md-4 mb-3">
+                 <label for="firstName">Access level</label>
+                 <input type="text" class="form-control" name="pagibig" onkeypress="return isNumberKey(event)" placeholder="" value="<?php echo htmlspecialchars($pagibig, ENT_QUOTES);  ?>">              
+              </div>      
+       </div>
+       
+       <h4 class="mb-3">Access Level</h4>
            <div class="col-md-4 mb-3">
                  <label for="firstName">Status</label>
                  <select class="custom-select d-block w-100" name="status" id="status" onchange="GetSelectedValue()">
@@ -339,9 +352,9 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
                       <option value="Agent">Agent</option>
                  </select>                
               </div> 
-        </div>
-
         
+
+
             <hr class="mb-4">
             <div class="text-right">
             <a href='/everbrightapp/admin/users.php'><button type="button" class="btn btn-outline-secondary">Cancel</button></a>
