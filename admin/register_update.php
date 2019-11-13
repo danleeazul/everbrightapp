@@ -228,8 +228,8 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
                  <label for="firstName">Status</label>
                  <select class="custom-select d-block w-100" name="status" id="status" onchange="GetSelectedValue()">
                  <option value="">Select...</option>
-                      <option value="https://www.everbright.com.ph/headshot/EB-MsPatty.png">Active</option>
-                      <option value="https://www.everbright.com.ph/headshot/EB-SirAlvin.png">Pending</option>
+                      <option value="1">Active</option>
+                      <option value="0">Pending</option>
                  </select>  
               </div>
               <div class="col-md-4 mb-3">
