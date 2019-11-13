@@ -248,7 +248,7 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
             <div class="row">
             <div class="col-md-4 mb-3">
                 <label for="lastName">Birthdate</label>
-                <input id="birthdate" class="form-control" name="birthdate" width="auto" value="<?php echo htmlspecialchars($birthdate, ENT_QUOTES);  ?>" onchange="getDate()" required />
+                <input id="birthdate" class="form-control" name="birthdate" width="auto" value="<?php echo htmlspecialchars($birthdate, ENT_QUOTES);  ?>" onchange="getDate()" />
                     <div class="invalid-feedback">
                     Valid Birthdate is required.
                     </div>  
@@ -295,7 +295,7 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
 
               <div class="col-md-4 mb-3">
                  <label for="firstName">Password</label>
-                 <input type="password" class="form-control" name="password" placeholder="" value="" required>  
+                 <input type="password" class="form-control" name="password" placeholder="" value="">  
                  <div class="invalid-feedback">
                     Valid Password is required.
                     </div>  
@@ -336,7 +336,7 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
                  <select class="custom-select d-block w-100" name="access-level" id="access-level">
                  <option value="">Select...</option>
                       <option value="Admin">Admin</option>
-                      <option value="Agent">Agent</option>
+                      <option value="Customer">Agent</option>
                  </select>               
               </div>      
        </div>
