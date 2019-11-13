@@ -1,5 +1,5 @@
 <?php
- include 'database.php';
+include '../config/database.php';
 $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
 ?>
 
