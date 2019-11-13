@@ -325,24 +325,11 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
         <div class="row">
            <div class="col-md-4 mb-3">
                  <label for="firstName">Status</label>
-                 <input type="text" class="form-control" name="sss" onkeypress="return isNumberKey(event)" placeholder="" value="<?php echo htmlspecialchars($sss, ENT_QUOTES);  ?>">  
-                  
-              </div>
-              <div class="col-md-4 mb-3">
-                 <label for="firstName">Access level</label>
-                 <input type="text" class="form-control" name="pagibig" onkeypress="return isNumberKey(event)" placeholder="" value="<?php echo htmlspecialchars($pagibig, ENT_QUOTES);  ?>">              
-              </div>      
-       </div>
-       
-       <h4 class="mb-3">Access Level</h4>
-           <div class="col-md-4 mb-3">
-                 <label for="firstName">Status</label>
                  <select class="custom-select d-block w-100" name="status" id="status" onchange="GetSelectedValue()">
                  <option value="">Select...</option>
                       <option value="https://www.everbright.com.ph/headshot/EB-MsPatty.png">Active</option>
                       <option value="https://www.everbright.com.ph/headshot/EB-SirAlvin.png">Pending</option>
                  </select>  
-                  
               </div>
               <div class="col-md-4 mb-3">
                  <label for="firstName">Access level</label>
@@ -350,10 +337,11 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
                  <option value="">Select...</option>
                       <option value="Admin">Admin</option>
                       <option value="Agent">Agent</option>
-                 </select>                
-              </div> 
-        
-
+                 </select>               
+              </div>      
+       </div>
+       
+      
 
             <hr class="mb-4">
             <div class="text-right">
