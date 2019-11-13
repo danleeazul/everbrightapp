@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Everbright App</title>
-      
+    
       <!-- Required meta tags -->
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,7 +20,7 @@
           
 </head>
 <body>
-  
+
     <!-- container -->
     <div class="container">
    
@@ -31,140 +31,49 @@
         <?php
 
 $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
-
-
-if($_POST){
  
     // include database connection
     include 'database.php';
 
     try{
-     
+    
         // insert query
-        $query = "INSERT INTO tbl_users SET firstname=:firstname, middlename=:middlename, lastname=:lastname, position=:position, email=:email, contact_number=:contact_number, birthdate=:birthdate, address=:address, password=:password, sss=:sss, pagibig=:pagibig, tin=:tin, access_level=:access_level, status=:status, image=:image";
- 
+        $query = "SELECT  firstname, middlename, lastname, position, email, contact_number, birthdate, address, password, sss, pagibig, tin, access_level, status, image FROM tbl_users WHERE id = ? LIMIT 0,1";
+        
         // prepare query for execution
         $stmt = $con->prepare($query);
- 
-        // posted values
-        $firstname=htmlspecialchars(strip_tags($_POST['firstname']));
-        $middlename=htmlspecialchars(strip_tags($_POST['middlename']));
-        $lastname=htmlspecialchars(strip_tags($_POST['lastname']));
-        $address=htmlspecialchars(strip_tags($_POST['address']));
-        $birthdate=htmlspecialchars(strip_tags($_POST['birthdate']));
-        $contact_number=htmlspecialchars(strip_tags($_POST['contact_number']));
-        $position=htmlspecialchars(strip_tags($_POST['position']));
-        $email=htmlspecialchars(strip_tags($_POST['email']));
-        $password=htmlspecialchars(strip_tags($_POST['password']));
-        $status=htmlspecialchars(strip_tags($_POST['status']));
-        $access_level=htmlspecialchars(strip_tags($_POST['access_level']));
-        $sss=htmlspecialchars(strip_tags($_POST['sss']));
-        $pagibig=htmlspecialchars(strip_tags($_POST['pagibig']));
-        $tin=htmlspecialchars(strip_tags($_POST['tin']));
 
-        // new 'image' field
-        $image=!empty($_FILES["image"]["name"])
-                ? sha1_file($_FILES['image']['tmp_name']) . "-" . basename($_FILES["image"]["name"])
-                : "";
-        $image=htmlspecialchars(strip_tags($image));
-
-
-
-        // bind the parameters
-        $stmt->bindParam(':firstname', $firstname);
-        $stmt->bindParam(':middlename', $middlename);
-        $stmt->bindParam(':lastname', $lastname);  
-        $stmt->bindParam(':position', $position);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':contact_number', $contact_number);
-        $stmt->bindParam(':address', $address);
-        //$stmt->bindParam(':password', $password);
-        $stmt->bindParam(':sss', $sss);
-        $stmt->bindParam(':pagibig', $pagibig);
-        $stmt->bindParam(':tin', $tin);
-        $stmt->bindParam(':access_level', $access_level);
-        $stmt->bindParam(':status', $status);
-        $stmt->bindParam(':image', $image);
-  
-
-        // hash the password before saving to database
-         $password_hash = password_hash($password, PASSWORD_BCRYPT);
-        $stmt->bindParam(':password', $password_hash);
-
-        $birthdate = date('Y-m-d', strtotime($birthdate));
-         $stmt->bindParam(':birthdate', $birthdate);
-
-
-         // now, if image is not empty, try to upload the image
-        if($image){
+        // this is the first question mark
+        $stmt->bindParam(1, $id);
         
-            // sha1_file() function is used to make a unique file name
-            $target_directory = "uploads/";
-            $target_file = $target_directory . $image;
-            $file_type = pathinfo($target_file, PATHINFO_EXTENSION);
-        
-            // error message is empty
-            $file_upload_error_messages="";
+        // execute our query
+        $stmt->execute();
 
-            // make sure that file is a real image
-            $check = getimagesize($_FILES["image"]["tmp_name"]);
-            if($check!==false){
-                // submitted file is an image
-            }else{
-                $file_upload_error_messages.="<div>Submitted file is not an image.</div>";
-            }
+        // store retrieved row to a variable
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            // make sure certain file types are allowed
-            $allowed_file_types=array("jpg", "jpeg", "png");
-            if(!in_array($file_type, $allowed_file_types)){
-                $file_upload_error_messages.="<div>Only JPG, JPEG, PNG files are allowed.</div>";
-            }
+        // values to fill up our form
+        $firstname = $row['firstname'];
+        $middlename = $row['middlename'];
+        $price = $row['price'];
+        $lastname = $row['lastname'];
+        $position = $row['position'];
+        $email = $row['email'];
+        $price = $row['price'];
+        $contact_number = $row['contact_number'];
+        $address = $row['address'];
+        $password = $row['password'];
+        $sss = $row['sss'];
+        $pagibig = $row['pagibig'];
+        $tin = $row['tin'];
 
-
-            // make sure the 'uploads' folder exists
-            // if not, create it
-            if(!is_dir($target_directory)){
-                mkdir($target_directory, 0777, true);
-            }
-
-            // if $file_upload_error_messages is still empty
-            if(empty($file_upload_error_messages)){
-                // it means there are no errors, so try to upload the file
-                if(move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)){
-                    // it means photo was uploaded
-                }else{
-                    echo "<div class='alert alert-danger'>";
-                        echo "<div>Unable to upload photo.</div>";
-                        echo "<div>Update the record to upload photo.</div>";
-                    echo "</div>";
-                }
-            }
-            
-            // if $file_upload_error_messages is NOT empty
-            else{
-                // it means there are some errors, so show them to user
-                echo "<div class='alert alert-danger'>";
-                    echo "<div>{$file_upload_error_messages}</div>";
-                    echo "<div>Update the record to upload photo.</div>";
-                echo "</div>";
-            }
-        
-        }
-
-        // Execute the query
-        if($stmt->execute()){
-            echo "<div class='alert alert-success'>Record was saved.</div>";
-        }else{
-            echo "<div class='alert alert-danger'>Unable to save record.</div>";
-            
-        }
     }
      
     // show error
     catch(PDOException $exception){
         die('ERROR: ' . $exception->getMessage());
     }
-}
+
 
 
 ?>
@@ -177,7 +86,7 @@ if($_POST){
        <div class="row">
                <div class="col-md-4 mb-3">
                <label for="lastName">First Name</label>
-               <input type="text" class="form-control" name="firstname" placeholder="" value="" required>  
+               <input type="text" class="form-control" name="firstname" placeholder="" value="<?php echo htmlspecialchars($firstname, ENT_QUOTES);  ?>" required>  
                     <div class="invalid-feedback">
                     Valid First name is required.
                     </div>         
@@ -185,7 +94,7 @@ if($_POST){
  
               <div class="col-md-4 mb-3">
                  <label for="firstName">Middle Name</label>
-                 <input type="text" class="form-control" name="middlename" placeholder="" value="" required>  
+                 <input type="text" class="form-control" name="middlename" placeholder="" value="<?php echo htmlspecialchars($middlename, ENT_QUOTES);  ?>" required>  
                  <div class="invalid-feedback">
                     Valid Middle Name is required.
                     </div>  
@@ -193,7 +102,7 @@ if($_POST){
 
               <div class="col-md-4 mb-3">
                  <label for="firstName">Last Name</label>
-                 <input type="text" class="form-control" name="lastname" placeholder="" value="" required>  
+                 <input type="text" class="form-control" name="lastname" placeholder="" value="<?php echo htmlspecialchars($lastname, ENT_QUOTES);  ?>" required>  
                  <div class="invalid-feedback">
                     Valid Last Name is required.
                     </div>  
@@ -201,7 +110,7 @@ if($_POST){
  
               <div class="col-md-12 mb-3">
                  <label for="firstName">Address</label>
-                 <input type="text" class="form-control" name="address" placeholder="" value="" required>  
+                 <input type="text" class="form-control" name="address" placeholder="" value="<?php echo htmlspecialchars($address, ENT_QUOTES);  ?>" required>  
                  <div class="invalid-feedback">
                     Valid Address is required.
                     </div>  
@@ -211,7 +120,7 @@ if($_POST){
             <div class="row">
             <div class="col-md-4 mb-3">
                 <label for="lastName">Birthdate</label>
-                <input id="birthdate" class="form-control" name="birthdate" width="auto" onchange="getDate()" required />
+                <input id="birthdate" class="form-control" name="birthdate" width="auto" value="<?php echo htmlspecialchars($birthdate, ENT_QUOTES);  ?>" onchange="getDate()" required />
                     <div class="invalid-feedback">
                     Valid Birthdate is required.
                     </div>  
@@ -219,7 +128,7 @@ if($_POST){
     
             <div class="col-md-4 mb-3">
             <label for="firstName">Contact No</label>
-            <input type="text" class="form-control" name="contact_number" placeholder="" value="" onkeypress="return isNumberKey(event)"  required>    
+            <input type="text" class="form-control" name="contact_number" placeholder="" value="<?php echo htmlspecialchars($contact_number, ENT_QUOTES);  ?>"onkeypress="return isNumberKey(event)"  required>    
              <div class="invalid-feedback">
                     Valid Contact Number
                 </div>      
@@ -227,7 +136,7 @@ if($_POST){
 
            <div class="col-md-4 mb-3">
                  <label for="firstName">Position</label>
-                 <input type="text" class="form-control" name="position" placeholder="" value="" required>  
+                 <input type="text" class="form-control" name="position" placeholder="" value="<?php echo htmlspecialchars($position, ENT_QUOTES);  ?>" required>  
                  <div class="invalid-feedback">
                     Valid Position is required.
                     </div>  
@@ -250,7 +159,7 @@ if($_POST){
            <div class="row">
            <div class="col-md-4 mb-3">
                  <label for="firstName">Username</label>
-                 <input type="text" class="form-control" name="email" placeholder="" value="" required>  
+                 <input type="text" class="form-control" name="email" placeholder="" value="<?php echo htmlspecialchars($email, ENT_QUOTES);  ?>" required>  
                  <div class="invalid-feedback">
                     Valid username is required.
                  </div>  
@@ -269,17 +178,17 @@ if($_POST){
            <div class="row">
            <div class="col-md-4 mb-3">
                  <label for="firstName">SSS No</label>
-                 <input type="text" class="form-control" name="sss" onkeypress="return isNumberKey(event)" placeholder="" value="">  
+                 <input type="text" class="form-control" name="sss" onkeypress="return isNumberKey(event)" placeholder="" value="<?php echo htmlspecialchars($sss, ENT_QUOTES);  ?>">  
                   
               </div>
               <div class="col-md-4 mb-3">
                  <label for="firstName">PagIbig No</label>
-                 <input type="text" class="form-control" name="pagibig" onkeypress="return isNumberKey(event)" placeholder="" value="">  
+                 <input type="text" class="form-control" name="pagibig" onkeypress="return isNumberKey(event)" placeholder="" value="<?php echo htmlspecialchars($pagibig, ENT_QUOTES);  ?>">  
                  
               </div>
               <div class="col-md-4 mb-3">
                  <label for="firstName">Tin No</label>
-                 <input type="text" class="form-control" name="tin" onkeypress="return isNumberKey(event)" placeholder="" value="">  
+                 <input type="text" class="form-control" name="tin" onkeypress="return isNumberKey(event)" placeholder="" value="<?php echo htmlspecialchars($tin, ENT_QUOTES);  ?>">  
                  
               </div>
 
