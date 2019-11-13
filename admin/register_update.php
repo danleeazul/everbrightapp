@@ -319,7 +319,7 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
                  <input type="text" class="form-control" name="tin" onkeypress="return isNumberKey(event)" placeholder="" value="<?php echo htmlspecialchars($tin, ENT_QUOTES);  ?>">  
               </div>
 
-              <h4 class="mb-3">Access Level</h4>
+              <h4 class="mb-3">Access Level</h4> <br />
            <div class="col-md-4 mb-3">
                  <label for="firstName">Status</label>
                  <select class="custom-select d-block w-100" name="status" id="status" onchange="GetSelectedValue()">
