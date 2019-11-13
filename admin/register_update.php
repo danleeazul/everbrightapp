@@ -25,10 +25,12 @@
     <div class="container">
    
     <div class="py-5 text-center">
-        <h2>Register User</h2>
+        <h2>Update User</h2>
     </div>
         <!-- PHP insert code will be here -->
         <?php
+
+$id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
 
 
 if($_POST){
@@ -281,11 +283,34 @@ if($_POST){
                  
               </div>
 
+              <h4 class="mb-3">Access Level</h4>
+           <div class="row">
+           <div class="col-md-4 mb-3">
+                 <label for="firstName">Status</label>
+                 <select class="custom-select d-block w-100" name="status" id="status" onchange="GetSelectedValue()">
+                 <option value="">Select...</option>
+                      <option value="https://www.everbright.com.ph/headshot/EB-MsPatty.png">Active</option>
+                      <option value="https://www.everbright.com.ph/headshot/EB-SirAlvin.png">Pending</option>
+                 </select>  
+                  
+              </div>
+              <div class="col-md-4 mb-3">
+                 <label for="firstName">Access level</label>
+                 <select class="custom-select d-block w-100" name="access-level" id="access-level">
+                 <option value="">Select...</option>
+                      <option value="Admin">Admin</option>
+                      <option value="Agent">Agent</option>
+                 </select>                
+              </div>
+           
+       
+
+
        </div>
             <hr class="mb-4">
             <div class="text-right">
             <a href='/everbrightapp/admin/users.php'><button type="button" class="btn btn-outline-secondary">Cancel</button></a>
-            <button type="submit" value='Save'  class="btn btn-primary">Submit</button>
+            <button type="submit" value='Save'  class="btn btn-primary">Update</button>
             <br />
             <br />
             </div>

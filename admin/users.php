@@ -102,8 +102,7 @@ if($numa>0){
     while ($rowa = $stmta->fetch(PDO::FETCH_ASSOC)){
     
         extract($rowa);
-       
-echo "  <a href=# class='deco-none'>";
+echo "  <a href='/everbrightapp/admin/register_update.php?id={$id}' class='deco-none'>";
 echo "              <li class='list-group-item list-group-item-action d-flex justify-content-between lh-condensed'>";
 echo "  <table style='border: none;'>";
 echo "                     <tr>";
@@ -131,7 +130,6 @@ echo "                        </td>";
 echo "                        </tr>";
 echo "                    </table>";
 echo "                    </a>";
-echo"                     <button type='button' class='btn btn-default'><i class='fas fa-pen'></i></button>";
 // onclick='delete_reqsingle({$id}')    
 
 
