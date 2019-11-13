@@ -80,7 +80,7 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
         try{
          
             // insert query
-            $query = "UPDATE tbl_users SET firstname=:firstname, middlename=:middlename, lastname=:lastname, position=:position, email=:email, contact_number=:contact_number, address=:address, sss=:sss, pagibig=:pagibig, tin=:tin, access_level=:access_level, status=:status, WHERE id= :id";
+            $query = "UPDATE tbl_users SET firstname=:firstname, middlename=:middlename, lastname=:lastname, position=:position, email=:email, contact_number=:contact_number, address=:address, sss=:sss, pagibig=:pagibig, tin=:tin, access_level=:access_level, status=:status WHERE id= :id";
      
             // prepare query for execution
             $stmt = $con->prepare($query);
@@ -117,9 +117,7 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
             $stmt->bindParam(':access_level', $access_level);
             $stmt->bindParam(':status', $status);
     
-    
-             // now, if image is not empty, try to upload the image
-            
+                
 
               // Execute the query
         if($stmt->execute()){
