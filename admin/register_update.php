@@ -98,7 +98,9 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
             $sss=htmlspecialchars(strip_tags($_POST['sss']));
             $pagibig=htmlspecialchars(strip_tags($_POST['pagibig']));
             $tin=htmlspecialchars(strip_tags($_POST['tin']));
-    
+            $access_level=htmlspecialchars(strip_tags($_POST['access_level']));
+            $status=htmlspecialchars(strip_tags($_POST['status']));
+
 
     
     
