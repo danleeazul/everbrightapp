@@ -317,11 +317,9 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
               <div class="col-md-4 mb-3">
                  <label for="firstName">Tin No</label>
                  <input type="text" class="form-control" name="tin" onkeypress="return isNumberKey(event)" placeholder="" value="<?php echo htmlspecialchars($tin, ENT_QUOTES);  ?>">  
-                 
               </div>
 
               <h4 class="mb-3">Access Level</h4>
-           <div class="row">
            <div class="col-md-4 mb-3">
                  <label for="firstName">Status</label>
                  <select class="custom-select d-block w-100" name="status" id="status" onchange="GetSelectedValue()">
@@ -339,10 +337,9 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
                       <option value="Agent">Agent</option>
                  </select>                
               </div>
-           
-       
 
 
+              
        </div>
             <hr class="mb-4">
             <div class="text-right">
