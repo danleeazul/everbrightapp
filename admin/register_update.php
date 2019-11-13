@@ -1,3 +1,8 @@
+<?php
+$id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
+
+?>
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -30,7 +35,6 @@
         <!-- PHP insert code will be here -->
         <?php
 
-$id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
  
     // include database connection
     include 'database.php';
@@ -38,7 +42,7 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
     try{
     
         // insert query
-        $query = "SELECT  firstname, middlename, lastname, position, email, contact_number, birthdate, address, password, sss, pagibig, tin, access_level, status, image FROM tbl_users WHERE id = ? LIMIT 0,1";
+        $query = "SELECT firstname, middlename, lastname, position, email, contact_number, birthdate, address, password, sss, pagibig, tin, access_level, status, image FROM tbl_users WHERE id = ? LIMIT 0,1";
         
         // prepare query for execution
         $stmt = $con->prepare($query);
