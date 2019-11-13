@@ -207,7 +207,7 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
 ?>
  
 <!-- html form here where the product information will be entered -->
-<form class="needs-validation" novalidate action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
+<form class="needs-validation" novalidate action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"] . "?id={$id}");?>" method="post" enctype="multipart/form-data">
       <!--DEALS-->
       <hr class="mb-4">
       <h4 class="mb-3">Employee Information</h4>
