@@ -80,7 +80,7 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
         try{
          
             // insert query
-            $query = "UPDATE tbl_users SET firstname=:firstname, middlename=:middlename, lastname=:lastname, position=:position, email=:email, contact_number=:contact_number, birthdate=:birthdate, address=:address, password=:password, sss=:sss, pagibig=:pagibig, tin=:tin, access_level=:access_level, status=:status, image=:image WHERE id= :id";
+            $query = "UPDATE tbl_users SET firstname=:firstname, middlename=:middlename, lastname=:lastname, position=:position, email=:email, contact_number=:contact_number, address=:address, sss=:sss, pagibig=:pagibig, tin=:tin, access_level=:access_level, status=:status, WHERE id= :id";
      
             // prepare query for execution
             $stmt = $con->prepare($query);
@@ -90,22 +90,16 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
             $middlename=htmlspecialchars(strip_tags($_POST['middlename']));
             $lastname=htmlspecialchars(strip_tags($_POST['lastname']));
             $address=htmlspecialchars(strip_tags($_POST['address']));
-            $birthdate=htmlspecialchars(strip_tags($_POST['birthdate']));
             $contact_number=htmlspecialchars(strip_tags($_POST['contact_number']));
             $position=htmlspecialchars(strip_tags($_POST['position']));
             $email=htmlspecialchars(strip_tags($_POST['email']));
-            $password=htmlspecialchars(strip_tags($_POST['password']));
             $status=htmlspecialchars(strip_tags($_POST['status']));
             $access_level=htmlspecialchars(strip_tags($_POST['access_level']));
             $sss=htmlspecialchars(strip_tags($_POST['sss']));
             $pagibig=htmlspecialchars(strip_tags($_POST['pagibig']));
             $tin=htmlspecialchars(strip_tags($_POST['tin']));
     
-            // new 'image' field
-            $image=!empty($_FILES["image"]["name"])
-                    ? sha1_file($_FILES['image']['tmp_name']) . "-" . basename($_FILES["image"]["name"])
-                    : "";
-            $image=htmlspecialchars(strip_tags($image));
+
     
     
     
@@ -122,80 +116,10 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
             $stmt->bindParam(':tin', $tin);
             $stmt->bindParam(':access_level', $access_level);
             $stmt->bindParam(':status', $status);
-            $stmt->bindParam(':image', $image);
-      
-    
-            // hash the password before saving to database
-             $password_hash = password_hash($password, PASSWORD_BCRYPT);
-            $stmt->bindParam(':password', $password_hash);
-    
-            $birthdate = date('Y-m-d', strtotime($birthdate));
-             $stmt->bindParam(':birthdate', $birthdate);
     
     
              // now, if image is not empty, try to upload the image
-            if($image){
             
-                // sha1_file() function is used to make a unique file name
-                $target_directory = "uploads/";
-                $target_file = $target_directory . $image;
-                $file_type = pathinfo($target_file, PATHINFO_EXTENSION);
-            
-                // error message is empty
-                $file_upload_error_messages="";
-    
-                // make sure that file is a real image
-                $check = getimagesize($_FILES["image"]["tmp_name"]);
-                if($check!==false){
-                    // submitted file is an image
-                }else{
-                    $file_upload_error_messages.="<div>Submitted file is not an image.</div>";
-                }
-    
-                // make sure certain file types are allowed
-                $allowed_file_types=array("jpg", "jpeg", "png");
-                if(!in_array($file_type, $allowed_file_types)){
-                    $file_upload_error_messages.="<div>Only JPG, JPEG, PNG files are allowed.</div>";
-                }
-    
-    
-                // make sure the 'uploads' folder exists
-                // if not, create it
-                if(!is_dir($target_directory)){
-                    mkdir($target_directory, 0777, true);
-                }
-    
-                // if $file_upload_error_messages is still empty
-                if(empty($file_upload_error_messages)){
-                    // it means there are no errors, so try to upload the file
-                    if(move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)){
-                        // it means photo was uploaded
-                    }else{
-                        echo "<div class='alert alert-danger'>";
-                            echo "<div>Unable to upload photo.</div>";
-                            echo "<div>Update the record to upload photo.</div>";
-                        echo "</div>";
-                    }
-                }
-                
-                // if $file_upload_error_messages is NOT empty
-                else{
-                    // it means there are some errors, so show them to user
-                    echo "<div class='alert alert-danger'>";
-                        echo "<div>{$file_upload_error_messages}</div>";
-                        echo "<div>Update the record to upload photo.</div>";
-                    echo "</div>";
-                }
-            
-            }
-    
-            // Execute the query
-            if($stmt->execute()){
-                echo "<div class='alert alert-success'>Record was saved.</div>";
-            }else{
-                echo "<div class='alert alert-danger'>Unable to save record.</div>";
-                
-            }
         }
          
         // show error
@@ -246,13 +170,6 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
             </div>
  
             <div class="row">
-            <div class="col-md-4 mb-3">
-                <label for="lastName">Birthdate</label>
-                <input id="birthdate" class="form-control" name="birthdate" width="auto" value="<?php echo htmlspecialchars($birthdate, ENT_QUOTES);  ?>" onchange="getDate()" />
-                    <div class="invalid-feedback">
-                    Valid Birthdate is required.
-                    </div>  
-           </div>
     
             <div class="col-md-4 mb-3">
             <label for="firstName">Contact No</label>
@@ -270,14 +187,6 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
                     </div>  
               </div>
 
-              <div class="col-md-4 mb-3">
-              <label for="firstName">Picture</label>
-              <input type="file" class="form-control" name="image">  
-
-                 <div class="invalid-feedback">
-                    Valid Photo is required.
-                    </div>  
-              </div>
 
               <input name="status" value="0" style="visibility: hidden;">
               <input name="access_level" value="Customer" style="visibility: hidden;">
@@ -291,14 +200,6 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
                  <div class="invalid-feedback">
                     Valid username is required.
                  </div>  
-              </div>
-
-              <div class="col-md-4 mb-3">
-                 <label for="firstName">Password</label>
-                 <input type="password" class="form-control" name="password" placeholder="" value="">  
-                 <div class="invalid-feedback">
-                    Valid Password is required.
-                    </div>  
               </div>
              </div> <!-- ROW -->
  
