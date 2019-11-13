@@ -317,9 +317,11 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
               <div class="col-md-4 mb-3">
                  <label for="firstName">Tin No</label>
                  <input type="text" class="form-control" name="tin" onkeypress="return isNumberKey(event)" placeholder="" value="<?php echo htmlspecialchars($tin, ENT_QUOTES);  ?>">  
-              </div>
-
-              <h4 class="mb-3">Access Level</h4> <br />
+              </div>        
+       </div>
+       <div class="row">
+       <h4 class="mb-3">Access Level</h4>
+               <br />
            <div class="col-md-4 mb-3">
                  <label for="firstName">Status</label>
                  <select class="custom-select d-block w-100" name="status" id="status" onchange="GetSelectedValue()">
@@ -336,11 +338,10 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
                       <option value="Admin">Admin</option>
                       <option value="Agent">Agent</option>
                  </select>                
-              </div>
+              </div> 
+        </div>
 
-
-              
-       </div>
+        
             <hr class="mb-4">
             <div class="text-right">
             <a href='/everbrightapp/admin/users.php'><button type="button" class="btn btn-outline-secondary">Cancel</button></a>
