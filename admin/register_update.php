@@ -120,7 +120,18 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
     
              // now, if image is not empty, try to upload the image
             
+
+              // Execute the query
+        if($stmt->execute()){
+            echo "<div class='alert alert-success'>Record was saved.</div>";
+        }else{
+            echo "<div class='alert alert-danger'>Unable to save record.</div>";
+            
         }
+        }
+
+
+        
          
         // show error
         catch(PDOException $exception){
