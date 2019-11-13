@@ -80,6 +80,136 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
 
 
 
+    if($_POST){
+ 
+    
+        try{
+         
+            // insert query
+            $query = "UPDATE tbl_users SET firstname=:firstname, middlename=:middlename, lastname=:lastname, position=:position, email=:email, contact_number=:contact_number, birthdate=:birthdate, address=:address, password=:password, sss=:sss, pagibig=:pagibig, tin=:tin, access_level=:access_level, status=:status, image=:image WHERE id= :id";
+     
+            // prepare query for execution
+            $stmt = $con->prepare($query);
+     
+            // posted values
+            $firstname=htmlspecialchars(strip_tags($_POST['firstname']));
+            $middlename=htmlspecialchars(strip_tags($_POST['middlename']));
+            $lastname=htmlspecialchars(strip_tags($_POST['lastname']));
+            $address=htmlspecialchars(strip_tags($_POST['address']));
+            $birthdate=htmlspecialchars(strip_tags($_POST['birthdate']));
+            $contact_number=htmlspecialchars(strip_tags($_POST['contact_number']));
+            $position=htmlspecialchars(strip_tags($_POST['position']));
+            $email=htmlspecialchars(strip_tags($_POST['email']));
+            $password=htmlspecialchars(strip_tags($_POST['password']));
+            $status=htmlspecialchars(strip_tags($_POST['status']));
+            $access_level=htmlspecialchars(strip_tags($_POST['access_level']));
+            $sss=htmlspecialchars(strip_tags($_POST['sss']));
+            $pagibig=htmlspecialchars(strip_tags($_POST['pagibig']));
+            $tin=htmlspecialchars(strip_tags($_POST['tin']));
+    
+            // new 'image' field
+            $image=!empty($_FILES["image"]["name"])
+                    ? sha1_file($_FILES['image']['tmp_name']) . "-" . basename($_FILES["image"]["name"])
+                    : "";
+            $image=htmlspecialchars(strip_tags($image));
+    
+    
+    
+            // bind the parameters
+            $stmt->bindParam(':firstname', $firstname);
+            $stmt->bindParam(':middlename', $middlename);
+            $stmt->bindParam(':lastname', $lastname);  
+            $stmt->bindParam(':position', $position);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':contact_number', $contact_number);
+            $stmt->bindParam(':address', $address);
+            $stmt->bindParam(':sss', $sss);
+            $stmt->bindParam(':pagibig', $pagibig);
+            $stmt->bindParam(':tin', $tin);
+            $stmt->bindParam(':access_level', $access_level);
+            $stmt->bindParam(':status', $status);
+            $stmt->bindParam(':image', $image);
+      
+    
+            // hash the password before saving to database
+             $password_hash = password_hash($password, PASSWORD_BCRYPT);
+            $stmt->bindParam(':password', $password_hash);
+    
+            $birthdate = date('Y-m-d', strtotime($birthdate));
+             $stmt->bindParam(':birthdate', $birthdate);
+    
+    
+             // now, if image is not empty, try to upload the image
+            if($image){
+            
+                // sha1_file() function is used to make a unique file name
+                $target_directory = "uploads/";
+                $target_file = $target_directory . $image;
+                $file_type = pathinfo($target_file, PATHINFO_EXTENSION);
+            
+                // error message is empty
+                $file_upload_error_messages="";
+    
+                // make sure that file is a real image
+                $check = getimagesize($_FILES["image"]["tmp_name"]);
+                if($check!==false){
+                    // submitted file is an image
+                }else{
+                    $file_upload_error_messages.="<div>Submitted file is not an image.</div>";
+                }
+    
+                // make sure certain file types are allowed
+                $allowed_file_types=array("jpg", "jpeg", "png");
+                if(!in_array($file_type, $allowed_file_types)){
+                    $file_upload_error_messages.="<div>Only JPG, JPEG, PNG files are allowed.</div>";
+                }
+    
+    
+                // make sure the 'uploads' folder exists
+                // if not, create it
+                if(!is_dir($target_directory)){
+                    mkdir($target_directory, 0777, true);
+                }
+    
+                // if $file_upload_error_messages is still empty
+                if(empty($file_upload_error_messages)){
+                    // it means there are no errors, so try to upload the file
+                    if(move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)){
+                        // it means photo was uploaded
+                    }else{
+                        echo "<div class='alert alert-danger'>";
+                            echo "<div>Unable to upload photo.</div>";
+                            echo "<div>Update the record to upload photo.</div>";
+                        echo "</div>";
+                    }
+                }
+                
+                // if $file_upload_error_messages is NOT empty
+                else{
+                    // it means there are some errors, so show them to user
+                    echo "<div class='alert alert-danger'>";
+                        echo "<div>{$file_upload_error_messages}</div>";
+                        echo "<div>Update the record to upload photo.</div>";
+                    echo "</div>";
+                }
+            
+            }
+    
+            // Execute the query
+            if($stmt->execute()){
+                echo "<div class='alert alert-success'>Record was saved.</div>";
+            }else{
+                echo "<div class='alert alert-danger'>Unable to save record.</div>";
+                
+            }
+        }
+         
+        // show error
+        catch(PDOException $exception){
+            die('ERROR: ' . $exception->getMessage());
+        }
+    }
+
 ?>
  
 <!-- html form here where the product information will be entered -->
