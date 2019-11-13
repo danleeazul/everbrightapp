@@ -1,6 +1,6 @@
 <?php
+ include 'database.php';
 $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
-
 ?>
 
 <!DOCTYPE HTML>
@@ -33,11 +33,7 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
         <h2>Update User</h2>
     </div>
         <!-- PHP insert code will be here -->
-        <?php
-
- 
-    // include database connection
-    include 'database.php';
+        <?php   
 
     try{
     
@@ -59,14 +55,12 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
         // values to fill up our form
         $firstname = $row['firstname'];
         $middlename = $row['middlename'];
-        $price = $row['price'];
         $lastname = $row['lastname'];
         $position = $row['position'];
         $email = $row['email'];
         $price = $row['price'];
         $contact_number = $row['contact_number'];
         $address = $row['address'];
-        $password = $row['password'];
         $sss = $row['sss'];
         $pagibig = $row['pagibig'];
         $tin = $row['tin'];
