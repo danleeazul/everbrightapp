@@ -58,6 +58,8 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
         $lastname = $row['lastname'];
         $email = $row['email'];
         $price = $row['price'];
+        $status = $row['status'];
+        $access_level = $row['access_level'];
         $contact_number = $row['contact_number'];
         $address = $row['address'];
         $sss = $row['sss'];
@@ -221,14 +223,14 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
            <div class="col-md-4 mb-3">
                  <label for="firstName">Status</label>
                  <select class="custom-select d-block w-100" name="status" id="status">
-                 <option value="">Select...</option>
+                 <option value="<?php echo htmlspecialchars($status, ENT_QUOTES);  ?>">Select...</option>
                       <option value="1">Active</option>
                       <option value="0">Pending</option>
                  </select>  
               </div>
               <div class="col-md-4 mb-3">
                  <label for="firstName">Access level</label>
-                 <select class="custom-select d-block w-100" name="access_level" id="access_level">
+                 <select value="<?php echo htmlspecialchars($access_level, ENT_QUOTES);  ?>" class="custom-select d-block w-100" name="access_level" id="access_level">
                  <option value="">Select...</option>
                       <option value="Admin">Admin</option>
                       <option value="Customer">Agent</option>
