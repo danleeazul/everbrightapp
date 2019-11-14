@@ -117,7 +117,9 @@ if($_POST){
         </button>
       </div>
       <div class="modal-body">
-      <p>Kindly register to this form. The Login Credentials will be take effect next week after the update.</p>
+      <p>Kindly register to this form for the next update of the Everbright System. 
+      
+      The Login Credentials will be take effect next week after the update.</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
