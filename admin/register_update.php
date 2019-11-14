@@ -56,7 +56,6 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
         $firstname = $row['firstname'];
         $middlename = $row['middlename'];
         $lastname = $row['lastname'];
-        $position = $row['position'];
         $email = $row['email'];
         $price = $row['price'];
         $contact_number = $row['contact_number'];
@@ -79,7 +78,7 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
     
         try{
          
-            $query = "UPDATE tbl_users SET firstname=:firstname, middlename=:middlename, lastname=:lastname, position=:position, email=:email, contact_number=:contact_number, address=:address, sss=:sss, pagibig=:pagibig, tin=:tin, access_level=:access_level, status=:status WHERE id = :id";
+            $query = "UPDATE tbl_users SET firstname=:firstname, middlename=:middlename, lastname=:lastname, email=:email, contact_number=:contact_number, address=:address, sss=:sss, pagibig=:pagibig, tin=:tin, access_level=:access_level, status=:status WHERE id = :id";
  
             // prepare query for execution
             $stmt = $con->prepare($query);
@@ -90,7 +89,6 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
             $lastname=htmlspecialchars(strip_tags($_POST['lastname']));
             $address=htmlspecialchars(strip_tags($_POST['address']));
             $contact_number=htmlspecialchars(strip_tags($_POST['contact_number']));
-            $position=htmlspecialchars(strip_tags($_POST['position']));
             $email=htmlspecialchars(strip_tags($_POST['email']));
             $status=htmlspecialchars(strip_tags($_POST['status']));
             $access_level=htmlspecialchars(strip_tags($_POST['access_level']));
@@ -106,7 +104,6 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
             $stmt->bindParam(':firstname', $firstname);
             $stmt->bindParam(':middlename', $middlename);
             $stmt->bindParam(':lastname', $lastname);  
-            $stmt->bindParam(':position', $position);
             $stmt->bindParam(':email', $email);
             $stmt->bindParam(':contact_number', $contact_number);
             $stmt->bindParam(':address', $address);
@@ -115,7 +112,7 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
             $stmt->bindParam(':tin', $tin);
             $stmt->bindParam(':access_level', $access_level);
             $stmt->bindParam(':status', $status);
-                
+            $stmt->bindParam(':id', $id);
 
               // Execute the query
         if($stmt->execute()){
@@ -185,15 +182,6 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
                     Valid Contact Number
                 </div>      
            </div>
-
-           <div class="col-md-4 mb-3">
-                 <label for="firstName">Position</label>
-                 <input type="text" class="form-control" name="position" placeholder="" value="<?php echo htmlspecialchars($position, ENT_QUOTES);  ?>" required>  
-                 <div class="invalid-feedback">
-                    Valid Position is required.
-                    </div>  
-              </div>
-
 
            
            </div> <!--Row -->
