@@ -8,6 +8,7 @@ if(isset($require_login) && $require_login==true){
         header("Location: {$home_url}login.php?action=please_login");
     }
 }
+
  
 else{
     // no problem, stay on current page

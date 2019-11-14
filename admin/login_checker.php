@@ -1,14 +1,15 @@
 <?php
 // login checker for 'admin' access level
  
-// if the session value is empty, he is not yet logged in, redirect him to login page
-if(empty($_SESSION['logged_in'])){
-    header("Location: {$home_url}login.php?action=not_yet_logged_in");
-}
- 
-// if access level was not 'Admin', redirect him to login page
-else if($_SESSION['access_level']!="Admin"){
+ if($_SESSION['access_level']!="Admin"){
     header("Location: {$home_url}login.php?action=not_admin");
+}
+
+else if(isset($require_login) && $require_login==true){
+    // if user not yet logged in, redirect to login page
+    if(!isset($_SESSION['access_level'])){
+        header("Location: {$home_url}login.php?action=please_login");
+    }
 }
  
 else{
