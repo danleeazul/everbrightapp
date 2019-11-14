@@ -203,8 +203,8 @@ if($_POST){
               </div>
              </div> <!-- ROW -->
  
-           <h4 class="mb-3">Government ID's</h4>
-           <small class="form-text text-muted">For Admin purposes. Not yet required but it nice to fill up</small>
+           <!-- <h4 class="mb-3">Government ID's</h4>
+           <small class="form-text text-muted">For Admin purposes. Not yet required but it's nice to fill up</small>
            <div class="row">
            <div class="col-md-4 mb-3">
                  <label for="firstName">SSS No</label>
@@ -220,7 +220,7 @@ if($_POST){
                  <label for="firstName">Tin No</label>
                  <input type="text" class="form-control" name="tin" onkeypress="return isNumberKey(event)" placeholder="" value="">  
                  
-              </div>
+              </div> -->
 
        </div>
             <hr class="mb-4">
