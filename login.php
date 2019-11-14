@@ -57,9 +57,11 @@ $verified=false;
                 
                    echo "<script type='text/javascript'> document.location = 'https://www.everbright.com.ph/everbrightapp/dashboard.php?action=login_success'; </script>";
                 }
-                elseif ($status==0) {
-                    $verified=true;
-                }
+               
+            }
+
+            elseif ($status==0) {
+                $verified=true;
             }
             
             // if username does not exist or password is wrong
