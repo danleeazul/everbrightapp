@@ -58,7 +58,7 @@ $access_denied=false;
                 }
             }
             elseif ($status==0){
-                $access_denied=='statuspending';
+                $accesspending=='statuspending';
             }
             // if username does not exist or password is wrong
             else{
@@ -96,7 +96,7 @@ $access_denied=false;
                 </div>";
             }
             
-            if($access_denied=='statuspending'){
+            if($accesspending=='statuspending'){
                 echo "<div class='alert alert-danger margin-top-40' role='alert'>
                     Your account is still in pending. Contact the admin to activate it.
                 </div>";
