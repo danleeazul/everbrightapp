@@ -107,7 +107,7 @@ if($_POST){
 
 ?>
 
-<div class="modal" tabindex="-1" role="dialog">
+<div class="modalannouncement" data-show="true" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -262,6 +262,9 @@ if($_POST){
 
 
  <script>
+
+$('#modalannouncement').modal(options)
+
 
 function isNumberKey(evt)
        {
