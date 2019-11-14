@@ -264,7 +264,7 @@ if($_POST){
  <script>
 
 $(window).on('load',function(){
-    $('#exampleModal').modal(show)
+    $('#exampleModal').modal(show);
 
 }
 
