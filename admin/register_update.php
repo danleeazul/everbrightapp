@@ -251,7 +251,7 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
                   }
                   else {
                      echo"<option value'' selected>Select...</option>";
-                     echo"<option value'Customer' selected>Agent</option>";
+                     echo"<option value'Customer'>Agent</option>";
                      echo"<option value'Admin'>Admin</option>";
                   }
                   
