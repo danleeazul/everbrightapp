@@ -223,7 +223,7 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
            <div class="col-md-4 mb-3">
                  <label for="firstName">Status</label>
                  <select class="custom-select d-block w-100" name="status" id="status">
-                 <option value="<?php echo htmlspecialchars($status, ENT_QUOTES);  ?>">Select...</option>
+                 <option value="<?php echo htmlspecialchars($status, ENT_QUOTES);  ?>"><?php echo htmlspecialchars($status, ENT_QUOTES);  ?></option>
                       <option value="1">Active</option>
                       <option value="0">Pending</option>
                  </select>  
