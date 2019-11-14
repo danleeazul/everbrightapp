@@ -107,7 +107,7 @@ if($_POST){
 
 ?>
 
-<div class="modal show fade" data-show="true" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal show fade in" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -265,8 +265,8 @@ if($_POST){
 
 $(window).on('load',function(){
     $('#exampleModal').modal(show);
-
 }
+
 
 function isNumberKey(evt)
        {
