@@ -203,8 +203,8 @@ if($_POST){
               </div>
              </div> <!-- ROW -->
  
-           <h4 class="mb-3">Government ID's <span class="text-muted">For Admin purposes.</span></h4>
-           <small class="form-text text-muted">Not yet required but it nice to have already</small>
+           <h4 class="mb-3">Government ID's</h4>
+           <small class="form-text text-muted">For Admin purposes. Not yet required but it nice to fill up</small>
            <div class="row">
            <div class="col-md-4 mb-3">
                  <label for="firstName">SSS No</label>
