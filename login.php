@@ -99,7 +99,7 @@ $verified=false;
                 </div>";
             }
             
-            if($verified){
+            if($verified=true){
                 echo "<div class='alert alert-danger margin-top-40' role='alert'>
                     Your account is still in pending. Contact the admin to activate it.
                 </div>";
