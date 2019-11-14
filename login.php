@@ -58,11 +58,11 @@ $access_denied=false;
                 }
             }
 
-            if($status==0){
-                echo "<div class='alert alert-danger margin-top-40' role='alert'>
-                Your account still pending. Contact your admin to activate it.
-            </div>";
-            }
+            // if($status==0){
+            //     echo "<div class='alert alert-danger margin-top-40' role='alert'>
+            //     Your account still pending. Contact your admin to activate it.
+            // </div>";
+            // }
             
             // if username does not exist or password is wrong
             else{
@@ -100,7 +100,7 @@ $access_denied=false;
                 </div>";
             }
             
-            if($verified){
+            if($status==0){
                 echo "<div class='alert alert-danger margin-top-40' role='alert'>
                     Your account is still in pending. Contact the admin to activate it.
                 </div>";
