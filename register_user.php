@@ -263,9 +263,8 @@ if($_POST){
 
  <script>
 
-window.addEventListener('load', function () {
     $('#exampleModal').modal(show)
-}
+
 
 
 
