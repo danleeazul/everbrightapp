@@ -263,10 +263,10 @@ if($_POST){
 
  <script>
 
-// $(window).on('load',function(){
-//     $('#exampleModal').modal(show)
+$(window).on('load',function(){
+    $('#exampleModal').modal(show)
 
-// }
+}
 
 function isNumberKey(evt)
        {
