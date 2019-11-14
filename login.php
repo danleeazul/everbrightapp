@@ -57,9 +57,9 @@ $access_denied=false;
                    echo "<script type='text/javascript'> document.location = 'https://www.everbright.com.ph/everbrightapp/dashboard.php?action=login_success'; </script>";
                 }
             }
-            elseif ($status==0){
-                $accesspending=='statuspending';
-            }
+            // elseif ($status==0){
+            //     $accesspending=='statuspending';
+            // }
             // if username does not exist or password is wrong
             else{
                 $access_denied=true;
@@ -96,7 +96,7 @@ $access_denied=false;
                 </div>";
             }
             
-            if($accesspending=='statuspending'){
+            if($status==0){
                 echo "<div class='alert alert-danger margin-top-40' role='alert'>
                     Your account is still in pending. Contact the admin to activate it.
                 </div>";
