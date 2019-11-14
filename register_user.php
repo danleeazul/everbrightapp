@@ -107,7 +107,7 @@ if($_POST){
 
 ?>
 
-<div class="modalannouncement" data-show="true" tabindex="-1" role="dialog">
+<div class="modalannouncement fade" data-show="true" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -120,7 +120,7 @@ if($_POST){
         <p>Kindly register to this form. The Login Credentials will be take effect next week after the update.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Ok</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
       </div>
     </div>
   </div>
