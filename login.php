@@ -59,7 +59,9 @@ $access_denied=false;
             }
 
             if($status==0){
-                $verified==true;
+                echo "<div class='alert alert-danger margin-top-40' role='alert'>
+                Your account still pending. Contact your admin to activate it.
+            </div>";
             }
             
             // if username does not exist or password is wrong
@@ -107,7 +109,7 @@ $access_denied=false;
             // tell the user if access denied
             if($access_denied){
                 echo "<div class='alert alert-danger margin-top-40' role='alert'>
-                    Your username or password maybe incorrect
+                    Your username or password maybe incorrect.
                 </div>";
             }
         ?>
