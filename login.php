@@ -24,6 +24,7 @@ include_once "config/core.php";
 $require_login=true;
 include_once "login_checker.php";
 $access_denied=false;
+$verified=false;
     if($_POST){
     try{
         include_once "config/database.php";
@@ -58,11 +59,9 @@ $access_denied=false;
                 }
             }
 
-            // if($status==0){
-            //     echo "<div class='alert alert-danger margin-top-40' role='alert'>
-            //     Your account still pending. Contact your admin to activate it.
-            // </div>";
-            // }
+             if($status==0){
+                 $verified=true;
+             }
             
             // if username does not exist or password is wrong
             else{
@@ -100,7 +99,7 @@ $access_denied=false;
                 </div>";
             }
             
-            if($status==0){
+            if($verified){
                 echo "<div class='alert alert-danger margin-top-40' role='alert'>
                     Your account is still in pending. Contact the admin to activate it.
                 </div>";
