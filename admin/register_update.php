@@ -246,6 +246,14 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
                 </div>      
            </div>
 
+           <div class="col-md-4 mb-3">
+              <label for="firstName">Picture</label>
+              <input type="file" class="form-control" name="image">  
+
+                 <div class="invalid-feedback">
+                    Valid Photo is required.
+                    </div>  
+              </div>
            
            </div> <!--Row -->
 
