@@ -31,15 +31,28 @@ echo "                    <div style='height: 90%;' class='mdc-drawer__content'>
 echo "                      <nav class='mdc-list'>";
 
                             if(isset($_SESSION['access_level']) && $_SESSION['access_level']=="Admin"){
-                                echo " <a id='navbutton' class='mdc-list-item' href='{$home_url}admin/dashboard.php' >";
-
-                            }
-                            if(isset($_SESSION['access_level']) && $_SESSION['access_level']=="Customer"){
-                                echo " <a id='navbutton' class='mdc-list-item' href='{$home_url}dashboard.php' >";
-                            }
+echo "                      <a id='navbutton' class='mdc-list-item' href='{$home_url}admin/dashboard.php' >";
 echo "                              <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>dashboard</i>";
 echo "                          <span class='mdc-list-item__text'>Dashboard</span>";
 echo "                        </a>";
+
+                            }
+
+                            if(isset($_SESSION['access_level']) && $_SESSION['access_level']=="Officer"){
+echo "                      <a id='navbutton' class='mdc-list-item' href='{$home_url}admin/dashboard.php' >";
+echo "                              <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>dashboard</i>";
+echo "                          <span class='mdc-list-item__text'>Dashboard</span>";
+echo "                        </a>";
+                            }      
+                            
+                            
+                            if(isset($_SESSION['access_level']) && $_SESSION['access_level']=="Customer"){
+echo "                         <a id='navbutton' class='mdc-list-item' href='{$home_url}dashboard.php' >";
+echo "                              <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>dashboard</i>";
+echo "                          <span class='mdc-list-item__text'>Dashboard</span>";
+echo "                        </a>";
+                            }
+
 
 echo "                        <a id='navbutton' class='mdc-list-item mdc-list-item--activated' >";
 echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>format_list_bulleted</i>";
