@@ -15,7 +15,6 @@ else if(isset($require_login) && $require_login==true){
 else{
     // no problem, stay on current page
     header("Location: {$home_url}admin/dashboard.php");
-
 }
 ?>
 

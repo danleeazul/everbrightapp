@@ -6,7 +6,7 @@ if(isset($_SESSION['access_level']) && $_SESSION['access_level']=="Admin"){
     header("Location: {$home_url}admin/dashboard.php");
 }
 
-if(isset($_SESSION['access_level']) && $_SESSION['access_level']=="Officer"){
+elseif(isset($_SESSION['access_level']) && $_SESSION['access_level']=="Officer"){
     header("Location: {$home_url}admin/dashboard.php");
 }
  
