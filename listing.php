@@ -52,7 +52,10 @@ echo "                          <i class='material-icons mdc-list-item__graphic'
 echo "                          <span class='mdc-list-item__text'>Users</span>";
 echo "                        </a>";
                                 }
-                                if(isset($_SESSION['access_level']) && $_SESSION['access_level']=="Customer"){
+                                if(isset($_SESSION['id']) && $_SESSION['id']==33){
+
+                                }
+                                if(isset($_SESSION['access_level']) && $_SESSION['access_level']=="Officer"){
 
                                 }
 
