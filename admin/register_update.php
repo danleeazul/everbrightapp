@@ -80,23 +80,24 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
     
         try{
          
-            $query = "UPDATE tbl_users SET firstname=:firstname, middlename=:middlename, lastname=:lastname, email=:email, contact_number=:contact_number, address=:address, sss=:sss, pagibig=:pagibig, tin=:tin, access_level=:access_level, status=:status, image=:image WHERE id = :id";
- 
+           // $query = "UPDATE tbl_users SET firstname=:firstname, middlename=:middlename, lastname=:lastname, email=:email, contact_number=:contact_number, address=:address, sss=:sss, pagibig=:pagibig, tin=:tin, access_level=:access_level, status=:status, image=:image WHERE id = :id";
+            $query = "INSERT INTO tbl_users SET image=:image WHERE id = :id";
+
             // prepare query for execution
             $stmt = $con->prepare($query);
      
             // posted values
-            $firstname=htmlspecialchars(strip_tags($_POST['firstname']));
-            $middlename=htmlspecialchars(strip_tags($_POST['middlename']));
-            $lastname=htmlspecialchars(strip_tags($_POST['lastname']));
-            $address=htmlspecialchars(strip_tags($_POST['address']));
-            $contact_number=htmlspecialchars(strip_tags($_POST['contact_number']));
-            $email=htmlspecialchars(strip_tags($_POST['email']));
-            $status=htmlspecialchars(strip_tags($_POST['status']));
-            $access_level=htmlspecialchars(strip_tags($_POST['access_level']));
-            $sss=htmlspecialchars(strip_tags($_POST['sss']));
-            $pagibig=htmlspecialchars(strip_tags($_POST['pagibig']));
-            $tin=htmlspecialchars(strip_tags($_POST['tin']));
+            // $firstname=htmlspecialchars(strip_tags($_POST['firstname']));
+            // $middlename=htmlspecialchars(strip_tags($_POST['middlename']));
+            // $lastname=htmlspecialchars(strip_tags($_POST['lastname']));
+            // $address=htmlspecialchars(strip_tags($_POST['address']));
+            // $contact_number=htmlspecialchars(strip_tags($_POST['contact_number']));
+            // $email=htmlspecialchars(strip_tags($_POST['email']));
+            // $status=htmlspecialchars(strip_tags($_POST['status']));
+            // $access_level=htmlspecialchars(strip_tags($_POST['access_level']));
+            // $sss=htmlspecialchars(strip_tags($_POST['sss']));
+            // $pagibig=htmlspecialchars(strip_tags($_POST['pagibig']));
+            // $tin=htmlspecialchars(strip_tags($_POST['tin']));
     
              // new 'image' field
             $image=!empty($_FILES["image"]["name"])
@@ -107,18 +108,18 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
     
     
             // bind the parameters
-            $stmt->bindParam(':firstname', $firstname);
-            $stmt->bindParam(':middlename', $middlename);
-            $stmt->bindParam(':lastname', $lastname);  
-            $stmt->bindParam(':email', $email);
-            $stmt->bindParam(':contact_number', $contact_number);
-            $stmt->bindParam(':address', $address);
-            $stmt->bindParam(':sss', $sss);
-            $stmt->bindParam(':pagibig', $pagibig);
-            $stmt->bindParam(':tin', $tin);
-            $stmt->bindParam(':access_level', $access_level);
-            $stmt->bindParam(':status', $status);
-            $stmt->bindParam(':id', $id);
+            // $stmt->bindParam(':firstname', $firstname);
+            // $stmt->bindParam(':middlename', $middlename);
+            // $stmt->bindParam(':lastname', $lastname);  
+            // $stmt->bindParam(':email', $email);
+            // $stmt->bindParam(':contact_number', $contact_number);
+            // $stmt->bindParam(':address', $address);
+            // $stmt->bindParam(':sss', $sss);
+            // $stmt->bindParam(':pagibig', $pagibig);
+            // $stmt->bindParam(':tin', $tin);
+            // $stmt->bindParam(':access_level', $access_level);
+            // $stmt->bindParam(':status', $status);
+            // $stmt->bindParam(':id', $id);
             $stmt->bindParam(':image', $image);
 
             // now, if image is not empty, try to upload the image
