@@ -1,12 +1,8 @@
 <?php
 // login checker for 'admin' access level
  
- if($_SESSION['access_level']!="Admin"){
+ if($_SESSION['access_level']!="Admin" || $_SESSION['access_level']!="Officer"){
     header("Location: {$home_url}login.php?action=not_admin");
-}
-
-if($_SESSION['access_level']=="Officer"){
-    header("Location: {$home_url}admin/dashboard.php");
 }
 
 else if(isset($require_login) && $require_login==true){
