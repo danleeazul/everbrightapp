@@ -81,7 +81,7 @@ $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
         try{
          
            // $query = "UPDATE tbl_users SET firstname=:firstname, middlename=:middlename, lastname=:lastname, email=:email, contact_number=:contact_number, address=:address, sss=:sss, pagibig=:pagibig, tin=:tin, access_level=:access_level, status=:status, image=:image WHERE id = :id";
-            $query = "INSERT INTO tbl_users SET image=:image WHERE id = :id";
+            $query = "UPDATE tbl_users SET image=:image WHERE id = :id";
 
             // prepare query for execution
             $stmt = $con->prepare($query);
