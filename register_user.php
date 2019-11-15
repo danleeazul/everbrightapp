@@ -209,7 +209,7 @@ if($_POST){
            <div class="row">
            <div class="col-md-4 mb-3">
                  <label for="firstName">Username</label>
-                 <input type="text" class="form-control" name="email" placeholder="" value="" required>  
+                 <input type="text" class="form-control" name="email" placeholder="Username" value="" required>  
                  <div class="invalid-feedback">
                     Valid username is required.
                  </div>  
