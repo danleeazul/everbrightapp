@@ -1,7 +1,7 @@
 <?php
 // login checker for 'admin' access level
  
- if($_SESSION['access_level']!="Admin" || $_SESSION['access_level']!="Officer"){
+ if($_SESSION['access_level']!="Admin"){
     header("Location: {$home_url}login.php?action=not_admin");
 }
 
