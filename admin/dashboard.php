@@ -5,6 +5,10 @@ include_once "../admin/core.php";
 // set page title
 $page_title="Everbright App";
  
+
+include_once "../config/core.php"; 
+
+
  //include login checker
 $require_login=true;
 include_once "../admin/login_checker.php";
@@ -39,6 +43,16 @@ echo "                        <a id='navbutton' class='mdc-list-item' href='{$ho
 echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>format_list_bulleted</i>";
 echo "                          <span class='mdc-list-item__text'>Listing</span>";
 echo "                        </a>";
+
+if(isset($_SESSION['access_level']) && $_SESSION['access_level']=="Officer"){
+   
+}
+else {
+echo "                        <a id='navbutton' href='{$home_url}admin/users.php' class='mdc-list-item' >";
+echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>supervisor_account</i>";
+echo "                          <span class='mdc-list-item__text'>Users</span>";
+echo "                        </a>";
+}
 
 echo "                        <a id='navbutton' href='{$home_url}admin/users.php' class='mdc-list-item' >";
 echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>supervisor_account</i>";
