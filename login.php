@@ -49,7 +49,7 @@ $verified=false;
                 $_SESSION['lastname'] = $user->lastname;
                 // if access level is 'Admin', redirect to admin section
                 if($user->access_level=='Admin'){
-                    echo "<script type='text/javascript'> document.location = 'https://www.everbright.com.ph/everbrightapp/admin/dashboard.php?id={$id}'; </script>";
+                    echo "<script type='text/javascript'> document.location = 'https://www.everbright.com.ph/everbrightapp/admin/dashboard.php?id={$user->id}'; </script>";
                 }
 
                 // else, redirect only to 'Customer' section
