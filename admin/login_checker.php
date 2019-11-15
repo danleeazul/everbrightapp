@@ -5,8 +5,8 @@
     header("Location: {$home_url}login.php?action=not_admin");
 }
 
-elseif($_SESSION['access_level']!="Officer"){
-    header("Location: {$home_url}login.php?action=not_officer");
+if($_SESSION['access_level']=="Officer"){
+    header("Location: {$home_url}admin/dashboard.php");
 }
 
 else if(isset($require_login) && $require_login==true){
