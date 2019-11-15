@@ -15,6 +15,9 @@ include_once "../admin/login_checker.php";
 // include page header HTML
 include_once '../header.php';
 
+
+$id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
+
 include_once '../config/database.php';
 $query = 'SELECT deals_id, name, building, unit_no, type, deals_date, price FROM tbl_deals ORDER BY deals_id DESC';
 $stmt = $con->prepare($query);
@@ -43,8 +46,9 @@ echo "                          <i class='material-icons mdc-list-item__graphic'
 echo "                          <span class='mdc-list-item__text'>Listing</span>";
 echo "                        </a>";
 
-if(isset($_SESSION['access_level']) && $_SESSION['access_level']=="Officer"){
-}
+if ($id == 41) {
+    
+ }                       
 
 else {
     echo "                        <a id='navbutton' href='{$home_url}admin/users.php' class='mdc-list-item' >";
