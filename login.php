@@ -52,6 +52,11 @@ $verified=false;
                     echo "<script type='text/javascript'> document.location = 'https://www.everbright.com.ph/everbrightapp/admin/dashboard.php?action=login_success'; </script>";
 
                 }
+
+                elseif($user->access_level=='Officer'){
+                    echo "<script type='text/javascript'> document.location = 'https://www.everbright.com.ph/everbrightapp/admin/dashboard.php?action=login_success'; </script>";
+                 }
+
                 // else, redirect only to 'Customer' section
                 elseif($user->access_level=='Customer'){
                 
