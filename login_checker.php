@@ -13,8 +13,17 @@ elseif (isset($_SESSION['access_level']) && $_SESSION['access_level']=="Officer"
 // if $require_login was set and value is 'true'
 else if(isset($require_login) && $require_login==true){
     // if user not yet logged in, redirect to login page
-    if(isset($_SESSION['access_level']) && $_SESSION['access_level']!=""){
-        header("Location: {$home_url}login.php?action=please_logins");
+    if(isset($_SESSION['access_level']) && $_SESSION['access_level']=="Admin"){
+        header("Location: {$home_url}admin/dashboard.php");
+    }
+    elseif (isset($_SESSION['access_level']) && $_SESSION['access_level']=="Officer") {
+        header("Location: {$home_url}admin/dashboard.php");
+    }
+    elseif (isset($_SESSION['access_level']) && $_SESSION['access_level']=="Customer") {
+        header("Location: {$home_url}dashboard.php");
+    }
+    else {
+        header("Location: {$home_url}login.php?action=please_login");
     }
 }
  
