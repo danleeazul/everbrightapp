@@ -21,7 +21,7 @@
 include_once "config/core.php"; 
 
 // include login checker
-$require_login=true;
+$require_login=false;
 include_once "login_checker.php";
 $access_denied=false;
 $verified=false;
@@ -57,7 +57,7 @@ $verified=false;
                 }
 
                 // else, redirect only to 'Customer' section
-                elseif($user->access_level=='Customer'){
+                else{
                    echo "<script type='text/javascript'> document.location = 'https://www.everbright.com.ph/everbrightapp/dashboard.php?action=login_success'; </script>";
                 }
                
