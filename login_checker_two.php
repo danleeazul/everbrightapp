@@ -5,7 +5,9 @@
     // if user not yet logged in, redirect to login page
 
     if($_SESSION['access_level']!="Admin"){
+        header("Location: {$home_url}login.php?action=not_admin");
         if($_SESSION['access_level']!="Officer"){
+            header("Location: {$home_url}login.php?action=not_admin");
             if($_SESSION['access_level']!="Customer"){
                 header("Location: {$home_url}login.php?action=not_admin");
             }
