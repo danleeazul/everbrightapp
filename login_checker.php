@@ -1,11 +1,13 @@
 <?php
 // login checker for 'customer' access level
  
-if($_SESSION['access_level']!="Admin"){
-    if($_SESSION['access_level']!="Officer"){
-        header("Location: {$home_url}login.php?action=not_admin");
-    }
+if(isset($_SESSION['access_level']) && $_SESSION['access_level']=="Admin"){
+    header("Location: {$home_url}login.php?action=not_admin");
 }
+if(isset($_SESSION['access_level']) && $_SESSION['access_level']=="Officer"){
+    header("Location: {$home_url}login.php?action=not_officer");
+}
+
 
 // // if access level was not 'Admin', redirect him to login page
 // if(isset($_SESSION['access_level']) && $_SESSION['access_level']=="Admin"){
