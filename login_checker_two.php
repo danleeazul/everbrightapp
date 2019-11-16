@@ -2,7 +2,7 @@
 // login checker for 'customer' access level
  
 // if $require_login was set and value is 'true'
-if(isset($require_login) && $require_login==true){
+if($require_login==true){
     // if user not yet logged in, redirect to login page
 
     if($_SESSION['access_level']!="Admin"){
