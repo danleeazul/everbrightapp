@@ -5,6 +5,10 @@
 if(isset($_SESSION['access_level']) && $_SESSION['access_level']=="Admin"){
     header("Location: {$home_url}admin/dashboard.php?action=logged_in_as_admin");
 }
+
+elseif (isset($_SESSION['access_level']) && $_SESSION['access_level']=="Officer") {
+    header("Location: {$home_url}admin/dashboard.php?action=logged_in_as_Officer");
+}
  
 // if $require_login was set and value is 'true'
 else if(isset($require_login) && $require_login==true){
