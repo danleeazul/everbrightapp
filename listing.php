@@ -6,8 +6,8 @@ include_once "config/core.php";
 $page_title="Everbright App";
  
  //include login checker
- $require_login=true;
- include_once "login_checker_two.php";
+ //$require_login=true;
+ //include_once "login_checker_two.php";
  
 // include page header HTML
 include_once 'header.php';
