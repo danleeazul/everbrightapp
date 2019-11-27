@@ -105,7 +105,7 @@ $verified=false;
             
             if($verified){
                 echo "<div class='alert alert-danger margin-top-40' role='alert'>
-                    Your account is still in pending. Contact the admin to activate it.
+                Your username or password maybe incorrect or your account is still in pending. Contact the admin to activate it.
                 </div>";
             }
 
