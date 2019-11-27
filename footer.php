@@ -25,7 +25,7 @@ function delete_deals(){
      }
 
 function logout_modals(){
-         document.location = 'https://app.everbright.com.ph/login.php';
+         document.location = 'https://app.everbright.com.ph/index.php';
      }     
 
 
