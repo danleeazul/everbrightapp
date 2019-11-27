@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://www.everbright.com.ph/everbrightapp/libs/css/style.css">
+    <link rel="stylesheet" href="app.everbright.com.ph/libs/css/style.css">
 
 
     <!-- Bootstrap CSS -->
