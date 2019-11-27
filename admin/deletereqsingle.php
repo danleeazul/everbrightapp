@@ -13,7 +13,7 @@ try {
 
     if($stmt->execute()){
        // header('Location: index.php');
-        echo "<script type='text/javascript'> document.location = 'https://www.everbright.com.ph/everbrightapp/admin/dashboard.php'; </script>";
+        echo "<script type='text/javascript'> document.location = 'https://app.everbright.com.ph/admin/dashboard.php'; </script>";
     }else{
         die('Unable to delete record.');
     }
