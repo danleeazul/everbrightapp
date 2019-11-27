@@ -118,7 +118,7 @@ $verified=false;
         ?>
 
                 <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-                <h5 class="h3 mb-3 font-weight-normal">You may use now your new credentials</h5>
+                <h6 class="h6 mb-3 font-weight-normal">You may use now your new credentials</h6>
                 <label for="inputEmail" class="sr-only">Username</label>
                 <input type="text" name="email" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
                 <label for="inputPassword" class="sr-only">Password</label>
