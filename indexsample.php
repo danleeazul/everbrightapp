@@ -38,7 +38,7 @@ echo "                        <a id='navbutton' class='mdc-list-item' href='list
 echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>format_list_bulleted</i>";
 echo "                          <span class='mdc-list-item__text'>Listing</span>";
 echo "                        </a>";
-echo "                        <a id='navbutton' class='mdc-list-item' href='login.php' >";
+echo "                        <a id='navbutton' class='mdc-list-item' href='index.php' >";
 echo "                          <i class='material-icons mdc-list-item__graphic' aria-hidden='true'>exit_to_app</i>";
 echo "                          <span class='mdc-list-item__text'>Logout</span>";
 echo "                        </a>";                

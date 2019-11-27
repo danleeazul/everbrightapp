@@ -7,7 +7,7 @@
         header("Location: {$home_url}admin/dashboard.php");
     }
     else {
-        header("Location: {$home_url}login.php?action=please_login");
+        header("Location: {$home_url}index.php?action=please_login");
     }
 }
  
